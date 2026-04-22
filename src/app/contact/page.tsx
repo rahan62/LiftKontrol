@@ -19,8 +19,8 @@ export default function ContactPage() {
         <ul className="mt-10 space-y-6 text-slate-200">
           <li>
             <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">E-posta</div>
-            <a href="mailto:info@liftkontrol.com" className="mt-1 inline-block text-lg text-amber-400 hover:text-amber-300">
-              info@liftkontrol.com
+            <a href="mailto:support@liftkontrol.com" className="mt-1 inline-block text-lg text-amber-400 hover:text-amber-300">
+              support@liftkontrol.com
             </a>
           </li>
           <li>

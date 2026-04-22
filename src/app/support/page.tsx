@@ -28,8 +28,8 @@ export default function SupportPage() {
           <ul className="space-y-3 text-slate-200">
             <li>
               <span className="text-slate-500">E-posta: </span>
-              <a href="mailto:info@liftkontrol.com" className="text-amber-400 hover:text-amber-300">
-                info@liftkontrol.com
+              <a href="mailto:support@liftkontrol.com" className="text-amber-400 hover:text-amber-300">
+                support@liftkontrol.com
               </a>
             </li>
             <li>
@@ -50,8 +50,8 @@ export default function SupportPage() {
           <p>
             <strong className="text-slate-300">Hata veya öneri:</strong> Lütfen mümkünse ekran görüntüsü ve cihaz
             modeli ile birlikte{" "}
-            <a href="mailto:info@liftkontrol.com" className="text-amber-500/90 hover:text-amber-400">
-              info@liftkontrol.com
+            <a href="mailto:support@liftkontrol.com" className="text-amber-500/90 hover:text-amber-400">
+              support@liftkontrol.com
             </a>{" "}
             adresine yazın.
           </p>

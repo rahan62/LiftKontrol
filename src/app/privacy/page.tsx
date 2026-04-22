@@ -26,8 +26,8 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-white">Veri sorumlusu</h2>
           <p>
             Sorularınız için:{" "}
-            <a href="mailto:info@liftkontrol.com" className="text-amber-400 hover:text-amber-300">
-              info@liftkontrol.com
+            <a href="mailto:support@liftkontrol.com" className="text-amber-400 hover:text-amber-300">
+              support@liftkontrol.com
             </a>
             ,{" "}
             <a href="tel:+905332716358" className="text-amber-400 hover:text-amber-300">

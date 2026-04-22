@@ -21,11 +21,8 @@ export function SiteFooter() {
             <Link href="/privacy" className="text-slate-300 hover:text-white">
               Gizlilik
             </Link>
-            <a href="mailto:info@liftkontrol.com" className="text-slate-300 hover:text-white">
-              info@liftkontrol.com
-            </a>
-            <a href="tel:+905332716358" className="text-slate-300 hover:text-white">
-              +90 533 271 63 58
+            <a href="mailto:support@liftkontrol.com" className="text-slate-300 hover:text-white">
+              support@liftkontrol.com
             </a>
           </nav>
         </div>
