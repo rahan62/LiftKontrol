@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ExpoPathSync } from "@/components/expo-path-sync";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,9 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Asansör saha servisi",
+  title: "Lift Kontrol — asansör saha servisi",
   description:
-    "Çok kiracılı asansör bakım, onarım ve montaj operasyonları için servis şirketleri.",
+    "Asansör bakım, onarım ve montaj operasyonları için Lift Kontrol: müşteriler, sahalar, bakım ve saha ekipleri.",
+  metadataBase: new URL("https://liftkontrol.com"),
 };
 
 export default function RootLayout({
@@ -30,10 +30,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-dvh max-h-dvh overflow-hidden antialiased`}
     >
       <body className="flex h-dvh max-h-dvh flex-col overflow-hidden">
-        <ExpoPathSync />
         {/*
-          Lock document scroll: WKWebView (Expo) scrolls the whole document by default; that outer
-          scroll layer can intercept taps on the app chrome header. Inner panes use overflow-y-auto.
+          Lock document scroll: embedded WebViews may scroll the document; inner panes use overflow-y-auto.
         */}
         <div className="flex min-h-0 flex-1 flex-col overflow-hidden">{children}</div>
       </body>
