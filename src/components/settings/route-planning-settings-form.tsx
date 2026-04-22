@@ -5,7 +5,7 @@ import { btnPrimary, field, label } from "@/components/forms/field-classes";
 import {
   MAX_CLUSTER_RADIUS_KM,
   MAX_UNITS_PER_CLUSTER_CAP,
-} from "@/lib/data/tenant-route-settings";
+} from "@/lib/domain/route-planning-settings-constants";
 import { tr } from "@/lib/i18n/tr";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";

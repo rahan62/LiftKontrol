@@ -1,13 +1,24 @@
+import "server-only";
+
 import { isSupabaseConfigured } from "@/lib/auth/config";
 import { getPool } from "@/lib/db/pool";
+import {
+  DEFAULT_CLUSTER_RADIUS_KM,
+  DEFAULT_MAX_UNITS_PER_CLUSTER,
+  MAX_CLUSTER_RADIUS_KM,
+  MAX_UNITS_PER_CLUSTER_CAP,
+  ROUTE_PLANNING_SETTINGS_KEY,
+} from "@/lib/domain/route-planning-settings-constants";
 import { createClient } from "@/lib/supabase/server";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
-export const ROUTE_PLANNING_SETTINGS_KEY = "route_planning";
-export const DEFAULT_CLUSTER_RADIUS_KM = 2;
-export const MAX_CLUSTER_RADIUS_KM = 15;
-export const DEFAULT_MAX_UNITS_PER_CLUSTER = 10;
-export const MAX_UNITS_PER_CLUSTER_CAP = 50;
+export {
+  DEFAULT_CLUSTER_RADIUS_KM,
+  DEFAULT_MAX_UNITS_PER_CLUSTER,
+  MAX_CLUSTER_RADIUS_KM,
+  MAX_UNITS_PER_CLUSTER_CAP,
+  ROUTE_PLANNING_SETTINGS_KEY,
+} from "@/lib/domain/route-planning-settings-constants";
 
 export type RoutePlanningSettings = {
   cluster_radius_km: number;
