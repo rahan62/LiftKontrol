@@ -12,9 +12,9 @@
 		741B91DD915D37B8872EE20E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B153051F3974D97850F671FD /* LoginView.swift */; };
 		7988319663F3B40CB968EC60 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5EB4E5D70F72E9BD98F35124 /* Supabase */; };
 		7DEABD1E6DD471C575931C86 /* MainShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC18B6D1639D483D051684 /* MainShellView.swift */; };
-		A55E70000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55E70000000000000000001 /* Assets.xcassets */; };
 		A1B2C3D45E6F708192A3B4C6 /* WorkspaceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D45E6F708192A3B4C5 /* WorkspaceAccess.swift */; };
 		A2729601FD6CFB21196C153C /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B37ECFAA8CDD0A6B7361E31 /* AppViewModel.swift */; };
+		A55E70000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55E70000000000000000001 /* Assets.xcassets */; };
 		AC69B967A89C02208D4DDCEC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DFFDDB0728D323045AD748 /* RootView.swift */; };
 		B13344FB83871506C4603F00 /* WorkspaceDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8FFF5BD71BAF2AA87EE8C8 /* WorkspaceDashboardView.swift */; };
 		B2C3D4E56F708192A3B4C5D7 /* TrStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E56F708192A3B4C5D6 /* TrStrings.swift */; };
@@ -25,19 +25,18 @@
 		C1A2B3D4E5F60718293A4B58 /* AssetsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3D4E5F60718293A4B57 /* AssetsListView.swift */; };
 		C1A2B3D4E5F60718293A4B5A /* AssetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3D4E5F60718293A4B59 /* AssetDetailView.swift */; };
 		C1A2B3D4E5F60718293A4B5C /* AssetCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3D4E5F60718293A4B5B /* AssetCreateView.swift */; };
-		D1D1D1D1D1D10718293A4E20 /* En8120NextControlDueFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1D1D1D1D10718293A4E21 /* En8120NextControlDueFormatting.swift */; };
-		E6E6E6E6E6E60718293A4F10 /* FieldRoutePlanningSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6E6E6E6E60718293A4F11 /* FieldRoutePlanningSync.swift */; };
-		G6G6G6G6G6G60718293A4F20 /* RouteClusterLocalRebuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = G6G6G6G6G6G60718293A4F21 /* RouteClusterLocalRebuilder.swift */; };
 		C3FF64B3F04587A4FDB22A71 /* TenantMembership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C6B36756DB221F8557D989 /* TenantMembership.swift */; };
 		CDFE2359DD62A40CAC174149 /* ElevatorFieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6717B811705988A1425D296A /* ElevatorFieldApp.swift */; };
+		D1D1D1D1D1D10718293A4E20 /* En8120NextControlDueFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D1D1D1D1D10718293A4E21 /* En8120NextControlDueFormatting.swift */; };
 		D4C3B2A1098765432100AB00 /* FinancesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C3B2A1098765432100AB01 /* FinancesListView.swift */; };
 		E1E1E1E1E1E10718293A4B70 /* ScheduleRoutePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E1E1E1E1E10718293A4B71 /* ScheduleRoutePlanView.swift */; };
-		F5F5F5F5F5F50718293A4D10 /* ScheduleClustersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5F5F5F5F50718293A4D11 /* ScheduleClustersView.swift */; };
 		E2E2E2E2E2E20718293A4B91 /* FieldInventoryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2E2E2E2E20718293A4B90 /* FieldInventoryViews.swift */; };
 		E3E3E3E3E3E30718293A4B93 /* FieldTabBarChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E3E3E3E3E30718293A4B92 /* FieldTabBarChrome.swift */; };
 		E4E4E4E4E4E40718293A4C10 /* FieldMobileModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E4E4E4E4E40718293A4C11 /* FieldMobileModules.swift */; };
+		E6E6E6E6E6E60718293A4F10 /* FieldRoutePlanningSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6E6E6E6E60718293A4F11 /* FieldRoutePlanningSync.swift */; };
 		ED6F70EC6E9968DDAE815B0B /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34ACFAFAA8C276DFFFEC4 /* AppConfig.swift */; };
 		F1F1F1F1F1F10718293A4C00 /* TechComplianceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1F1F1F1F10718293A4C01 /* TechComplianceViews.swift */; };
+		F5F5F5F5F5F50718293A4D10 /* ScheduleClustersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5F5F5F5F50718293A4D11 /* ScheduleClustersView.swift */; };
 		F8E7D6C5B4A3928171625312 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7D6C5B4A3928171625311 /* OnboardingView.swift */; };
 		F8E7D6C5B4A3928171625322 /* CustomersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7D6C5B4A3928171625321 /* CustomersListView.swift */; };
 		F8E7D6C5B4A3928171625332 /* CustomerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7D6C5B4A3928171625331 /* CustomerDetailView.swift */; };
@@ -46,6 +45,7 @@
 		F8E7D6C5B4A3928171625362 /* WorkOrdersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7D6C5B4A3928171625361 /* WorkOrdersListView.swift */; };
 		F8E7D6C5B4A3928171625372 /* WorkOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7D6C5B4A3928171625371 /* WorkOrderDetailView.swift */; };
 		F9E8D7C6B5A4938271605123 /* AssetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8D7C6B5A4938271605124 /* AssetEditView.swift */; };
+		G6G6G6G6G6G60718293A4F20 /* RouteClusterLocalRebuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = G6G6G6G6G6G60718293A4F21 /* RouteClusterLocalRebuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,18 +74,17 @@
 		C1A2B3D4E5F60718293A4B59 /* AssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailView.swift; sourceTree = "<group>"; };
 		C1A2B3D4E5F60718293A4B5B /* AssetCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCreateView.swift; sourceTree = "<group>"; };
 		D1D1D1D1D1D10718293A4E21 /* En8120NextControlDueFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = En8120NextControlDueFormatting.swift; sourceTree = "<group>"; };
-		E6E6E6E6E6E60718293A4F11 /* FieldRoutePlanningSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldRoutePlanningSync.swift; sourceTree = "<group>"; };
-		G6G6G6G6G6G60718293A4F21 /* RouteClusterLocalRebuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteClusterLocalRebuilder.swift; sourceTree = "<group>"; };
 		D4C3B2A1098765432100AB01 /* FinancesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancesListView.swift; sourceTree = "<group>"; };
 		D7DFFDDB0728D323045AD748 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		DDF6B0E1365DF5B47C1277FC /* ElevatorField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevatorField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E1E1E1E1E10718293A4B71 /* ScheduleRoutePlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRoutePlanView.swift; sourceTree = "<group>"; };
-		F5F5F5F5F5F50718293A4D11 /* ScheduleClustersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleClustersView.swift; sourceTree = "<group>"; };
 		E2E2E2E2E2E20718293A4B90 /* FieldInventoryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldInventoryViews.swift; sourceTree = "<group>"; };
 		E3E3E3E3E3E30718293A4B92 /* FieldTabBarChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTabBarChrome.swift; sourceTree = "<group>"; };
 		E4E4E4E4E4E40718293A4C11 /* FieldMobileModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldMobileModules.swift; sourceTree = "<group>"; };
+		E6E6E6E6E6E60718293A4F11 /* FieldRoutePlanningSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldRoutePlanningSync.swift; sourceTree = "<group>"; };
 		F127AE91498F28690813165E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		F1F1F1F1F1F10718293A4C01 /* TechComplianceViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechComplianceViews.swift; sourceTree = "<group>"; };
+		F5F5F5F5F5F50718293A4D11 /* ScheduleClustersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleClustersView.swift; sourceTree = "<group>"; };
 		F8E7D6C5B4A3928171625311 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F8E7D6C5B4A3928171625321 /* CustomersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersListView.swift; sourceTree = "<group>"; };
 		F8E7D6C5B4A3928171625331 /* CustomerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailView.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		F8E7D6C5B4A3928171625361 /* WorkOrdersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOrdersListView.swift; sourceTree = "<group>"; };
 		F8E7D6C5B4A3928171625371 /* WorkOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOrderDetailView.swift; sourceTree = "<group>"; };
 		F9E8D7C6B5A4938271605124 /* AssetEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEditView.swift; sourceTree = "<group>"; };
+		G6G6G6G6G6G60718293A4F21 /* RouteClusterLocalRebuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteClusterLocalRebuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,7 +301,6 @@
 			baseConfigurationReference = 4C685C88CDFCE09619D64C63 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ElevatorField/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -446,7 +445,6 @@
 			baseConfigurationReference = F127AE91498F28690813165E /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ElevatorField/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
