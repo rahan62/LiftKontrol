@@ -62,8 +62,8 @@ export default function SupportPage() {
             İletişim sayfası
           </Link>
           {" · "}
-          <Link href="/privacy" className="text-amber-500/90 hover:text-amber-400">
-            Gizlilik bildirimi
+          <Link href="/gizlilik-sozlesmesi" className="text-amber-500/90 hover:text-amber-400">
+            Gizlilik sözleşmesi
           </Link>
         </p>
       </main>

@@ -31,6 +31,12 @@ export function MarketingHeader() {
           <Link href="/support" className="text-slate-400 hover:text-white">
             Destek
           </Link>
+          <Link href="/hakkimda" className="text-slate-400 hover:text-white">
+            Hakkında
+          </Link>
+          <Link href="/gizlilik-sozlesmesi" className="text-slate-400 hover:text-white">
+            Gizlilik sözleşmesi
+          </Link>
           <Link
             href="/login"
             className="rounded-md bg-white px-3 py-1.5 font-medium text-slate-900 hover:bg-slate-200"

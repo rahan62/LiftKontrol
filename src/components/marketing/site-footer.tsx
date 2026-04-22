@@ -18,8 +18,11 @@ export function SiteFooter() {
             <Link href="/support" className="text-slate-300 hover:text-white">
               Destek
             </Link>
-            <Link href="/privacy" className="text-slate-300 hover:text-white">
-              Gizlilik
+            <Link href="/hakkimda" className="text-slate-300 hover:text-white">
+              Hakkında
+            </Link>
+            <Link href="/gizlilik-sozlesmesi" className="text-slate-300 hover:text-white">
+              Gizlilik sözleşmesi
             </Link>
             <a href="mailto:support@liftkontrol.com" className="text-slate-300 hover:text-white">
               support@liftkontrol.com
