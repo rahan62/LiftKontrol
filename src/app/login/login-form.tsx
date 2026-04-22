@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { localLoginAction, supabaseLoginAction, type LoginActionState } from "@/app/login/actions";
+import { BrandLogo } from "@/components/layout/brand-logo";
 import { isSupabaseConfigured } from "@/lib/auth/config";
 import { tr } from "@/lib/i18n/tr";
 import { useSearchParams } from "next/navigation";
@@ -16,6 +17,9 @@ export function LoginForm() {
 
   return (
     <div className="w-full max-w-sm rounded-xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+      <div className="mb-6 flex justify-center">
+        <BrandLogo height={72} priority className="max-w-[12rem]" />
+      </div>
       <h1 className="text-center text-lg font-semibold text-slate-900 dark:text-white">{tr.auth.signIn}</h1>
       <p className="mt-1 text-center text-sm text-slate-600 dark:text-slate-400">{tr.auth.tagline}</p>
       <form action={formAction} className="mt-6 space-y-4">

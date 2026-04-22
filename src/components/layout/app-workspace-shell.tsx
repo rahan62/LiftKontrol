@@ -2,6 +2,7 @@
 
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { signOutClient } from "@/lib/auth/sign-out-client";
+import { BrandLogo } from "@/components/layout/brand-logo";
 import { appNavItems } from "@/components/layout/app-nav-config";
 import { cn } from "@/lib/utils";
 import { tr } from "@/lib/i18n/tr";
@@ -63,8 +64,14 @@ function NavLinks({
 function BrandHeader() {
   return (
     <div className="border-b border-slate-800 px-4 py-4">
-      <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">{tr.brand.fieldService}</div>
-      <div className="mt-1 text-sm font-semibold text-white">{tr.brand.appName}</div>
+      <Link
+        href="/app"
+        className="inline-block rounded-md outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
+      >
+        <BrandLogo height={48} priority className="max-w-[11rem]" />
+      </Link>
+      <div className="mt-3 text-xs font-semibold uppercase tracking-wider text-slate-500">{tr.brand.fieldService}</div>
+      <div className="mt-0.5 text-sm font-semibold text-white">{tr.brand.appName}</div>
     </div>
   );
 }
@@ -225,10 +232,13 @@ export function AppWorkspaceShell({
             aria-modal="true"
             aria-label={tr.layout.menu}
           >
-            <div className="flex items-center justify-between gap-2 border-b border-slate-800 px-3 py-3 pr-2">
-              <div className="min-w-0">
-                <div className="text-xs font-semibold uppercase text-slate-500">{tr.brand.fieldService}</div>
-                <div className="truncate text-sm font-semibold text-white">{tr.brand.appName}</div>
+            <div className="flex items-start justify-between gap-2 border-b border-slate-800 px-3 py-3 pr-2">
+              <div className="flex min-w-0 flex-1 items-start gap-2.5">
+                <BrandLogo height={40} className="shrink-0" />
+                <div className="min-w-0 pt-0.5">
+                  <div className="text-xs font-semibold uppercase text-slate-500">{tr.brand.fieldService}</div>
+                  <div className="truncate text-sm font-semibold text-white">{tr.brand.appName}</div>
+                </div>
               </div>
               <button
                 type="button"
