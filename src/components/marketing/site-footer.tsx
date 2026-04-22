@@ -12,6 +12,9 @@ export function SiteFooter() {
             İletişim
           </Link>
           <nav className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <Link href="/fiyatlar" className="text-slate-300 hover:text-white">
+              Fiyatlar
+            </Link>
             <Link href="/support" className="text-slate-300 hover:text-white">
               Destek
             </Link>
