@@ -1,0 +1,7 @@
+# Copy to local.properties (gitignored). Android Studio usually creates local.properties with sdk.dir.
+
+sdk.dir=/Users/YOU/Library/Android/sdk
+
+# Same Supabase project as the web app (.env.local NEXT_PUBLIC_*).
+supabaseUrl=https://exmcayqqwlaqqnardids.supabase.co
+supabaseAnonKey=PASTE_ANON_KEY_FROM_SUPABASE_DASHBOARD

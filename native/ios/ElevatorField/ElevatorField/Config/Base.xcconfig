@@ -1,0 +1,5 @@
+// Default placeholders — override in Local.xcconfig (see Local.example.xcconfig).
+SUPABASE_URL = https:/$()/REPLACE_ME.supabase.co
+SUPABASE_ANON_KEY = REPLACE_ME
+// Web panel (QR kodda tam URL); REPLACE_ME bırakılırsa iOS yalnızca kayıt oluşturur, qr_payload web’den veya düzenlemede dolar.
+PUBLIC_APP_URL = https:/$()/REPLACE_ME_WEB_PUBLIC_APP

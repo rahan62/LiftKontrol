@@ -1,0 +1,2295 @@
+Asansörlerde EN 81-20-50 Standardı
+
+### MAKALELER / Asansörlerde EN 81-20-50 Standardı
+
+[◄ Önceki Sayfaya Dön](javascript:history.go(-1))
+
+[◄ Asansörlerde EN 81-20-50 Standardı](https://arge7.com/detay.php?id=658)
+
+Asansörlerde EN 81-20-50 Standardı
+
+Yazının Kaynağı:
+
+1--Asansörlerin periyodik kontrolüne ilişkin usul ve esaslar, 24/6/2015 tarihli ve 29396 sayılı Resmî Gazetede yayımlanan Asansör İşletme, Bakım ve Periyodik Kontrol Yönetmeliği ve 15/7/2015 tarihli ve 29417 mükerrer 2 nci sayılı Resmî Gazetede yayımlanan Asansör Periyodik Kontrolleri İçin Yetkilendirilecek A Tipi Muayene Kuruluşlarına Dair Tebliğ (SGM: 2015/24) ile belirlenmiş bulunmakta olup periyodik kontroller bahsi geçen Tebliğin Ek 1 “Elektrik Tahrikli Asansörler İçin Periyodik Kontrol Listesi” ve Ek 2 “Hidrolik Tahrikli Asansörler İçin Periyodik Kontrol Listesi”nde belirtilen kontrol kriterleri kapsamında yürütülmektedir.
+
+2--Ancak zamanla asansör periyodik kontrollerinde, ilgili mevzuatın ve standartların öngördüğü gerekliliklerin kontrol edilmesi aşamasında A tipi muayene kuruluşlarınca yoruma ve değerlendirmeye dayalı farklı kararlar verilmesi nedeniyle söz konusu farklı kararların tamamen ortadan kaldırılabilmesi amacıyla, Asansör Teknik Komitesi (ASTEK) bünyesinde ASTEK üyeleri, Bakanlığımızca yetkilendirilen bazı A tipi muayene kuruluşları temsilcileri katılımı ile oluşturulan bir alt çalışma grubu Bakanlığımız koordinasyonunda kısa süre içerisinde çalışmalarını tamamlamış bulunmaktadır.
+
+3--Bu çalışama ile bahsedilen Tebliğin Ek 1 “Elektrik Tahrikli Asansörler İçin Periyodik Kontrol Listesi” ve Ek 2 “Hidrolik Tahrikli Asansörler İçin Periyodik Kontrol Listesi”nde belirtilen kontrol kriterlerinin detayları ilgili mevzuat ve standartlar temelinde oluşturularak uygunsuzluk tanımlamaları yapılmış bulunmaktadır.
+
+4--Bu doğrultuda yazımız ekinde (CD olarak) yer alan detaylı periyodik kontrol listelerinin 01/9/2017 tarihi itibarıyla uygulanmaya başlanması hususundaki talimat, 25/07/2017 tarihli ve 45380111 – 100.E.1170 sayılı yazımız ile Bakanlığımız tarafından yetkilendirilen A tipi muayene kuruluşlarına iletilmiş bulunmaktadır.
+
+Bilim, Sanayi Ve Teknoloji Bakanlığı Sanayi Genel Müdürlüğü Asansör Ve Teleferik Sanayi Şube Müdürlüğü-- Ankara—Telefon:0 312 201 56 13
+
+Ek:
+
+1. Elektrikli asansörler için kontrol kriterleri (81-1 & 81-80) (CD içinde)
+
+2. Hidrolik asansörler için kontrol kriterleri (81-2 & 81-80) (CD içinde)
+
+3. Elektrikli asansörler için kontrol kriterleri (81-20) (CD içinde)
+
+4. Hidrolik asansörler için kontrol kriterleri (81-20) (CD içinde)
+
+5—Yorum:Yapı ruhsatları yada onaylanmış asansör uygulama projelerinde 01.09.2017 tarihinden önce yapılan asansörlerde TS EN 81-1+A3, sonra ki tarihler için TS EN 81-20-50 Standardına uygun olarak yapılmış olması gerekir.
+
+EK 1:
+
+1--ELEKTRİK TAHRİKLİ ASANSÖRLER İÇİN (TS EN 81-20) STANDARDI
+
+1--Periyodik Kontrol Kriterleri Ve Uygunsuzlıkların Tanımı (TS EN 81-20)
+
+Sıra No-Kontrol Kriteri-Uygunsuzluğun Tanımı
+
+1.1.Makina ve makara dairesine güvenli erişim*
+
+1--Makina dairesine/mekanına ulaşım için kullanılan merdivenin çevresinde 1,5 m yatay mesafe içinde, merdiven boyundan daha fazla yükseklikten düşme riski engellenmiş olmalıdır.
+
+2--Taşınabilir merdivenle 3 m yüksekliği aşan erişimlerde düşmeye karşı koruma sağlanmış olmalıdır. Merdiven, madde 5.2.2.5 gerekliliklerini sağlamalıdır.
+
+3--Makina dairesi veya makara mekanlarına ulaşım yolu aydınlatması 50 lüx olmalıdır. (madde 5.2.2.2 )
+
+4--Makina dairesine/mekanına erişim özel mekanlardan geçmeye gerek kalmadan, her zaman rahat ve güvenilir bir şekilde kullanılabilmelidir. (madde 5.2.2.3)
+
+4--Makina dairesine/mekanına ulaşım için kullanılan merdiveninüstucunda, elin kolayca ulaşabileceği mesafede en az bir adet tutamak bulunmalıdır.
+
+5--Tahrik makinaları, bunlarla ilgili teçhizat ve makaralar, sağlam duvarları, tavan ve kapısı ve/veya kapağı olan özel bir odada bulunmalı ve buraya yalnız yetkili kişiler müdahale edebilmelidir (Bakım, kontrol ve kurtarma).
+
+1.2.Makina veya makara dairesi giriş kapısı "kilit, açılma yönü ve uyarı levhası"
+
+1--Makina/makara mekânlarına giriş için kullanılan kapı veya döşeme kapaklarının (durak kapıları, acil durum kapıları ve deney panoları hariç) dış yüzlerine “Asansör makinaları - Tehlike - Yetkili olmayan giremez" ifadelerini içeren bir ikaz levhası takılmalıdır.
+
+2--Kuyu içerisine açılan makina mekanı giriş kapıları deliksiz olmalı, durak kapıları ile aynı mekanik mukavemet şartlarını sağlamalı ve söz konusu bina ile ilgili yangına karşı koruma düzenlemelerine uygun olmalıdır. (madde 5.2.3.3-f)
+
+3--Makina/makara mekânlarına giriş için kullanılan döşeme kapaklarının üzerinde sürekli görülebilir "Düşme tehlikesi-Kapağı kapatınız" ikaz levhası takılmalıdır.
+
+4--Makina dairelerine ve kuyuya giriş kapıları, 2,0 m asgari yüksekliğe ve 0,60 m asgari genişliğe sahip olmalıdır. (madde 5.2.3.2-a)
+
+5--Makara dairesi giriş kapıları en az 0,6 m genişlikte ve en az 1,4 m yükseklikte olmalıdır.
+
+6--Makina/makara mekanına giriş amacıyla döşemede yapılan kapaklar, en az 0,8 m x 0,8 m’lik bir serbest geçiş alanı sağlamalı ve kapak ağırlığını dengeleyen bir tertibata sahip olmalıdır.
+
+" 7--Giriş kapakları kapalı olduğunda, herhangi bir yerdeki 0,20 m x 0,20 m alan üzerinde 2000 N yükü taşıyabilmelidir.
+
+8--Makina/makara mekanlarına ulaşım için kuyunun içine açılan giriş kapıları ve döşeme kapakları deliksiz olmalıdır.
+
+9--Makina/makara mekanı döşeme kapakları açık durumda iken insanların düşmesine karşı (korkuluk ve bezeri) tedbirler alınmalıdır ve dengeleme ağırlığı kullanılmalıdır.
+
+10--Makina/makara dairesi giriş kapıları makina /makara dairesi içine doğru açılmamalıdır.
+
+1.3.Kurtarma talimatı* "Türkçe"
+
+1--Makina dairesinin içinde, makina dolabında veya acil durum ve deney panosunda/panolarında asansörün beklenmedik bir şekilde durması durumunda özellikle elektrikli veya elle acil durum hareket ettirme tertibatı ve durak kapılarının kilit açma anahtarının kullanımı ile ilgili ayrıntılı Türkçe ve kurtarma işlemleri için asansör tipine uygun olarak hazırlanmış talimat bulunmalıdır.
+
+2--Kurtarma çalışması yapılan yerde, özellikle frenin serbest bırakılması, yukarı çıkan kabini aşırı hızdan koruma tertibatları, kontrolsüz kabin hareketinden koruma tertibatları, güvenlik tertibatı, varsa özel aletlerin tanımlanması dâhil konularda detaylı talimatlar bulunmalıdır.
+
+1.4.Makina ve makara dairesinde yeterli aydınlatma*
+
+1--Makina/makara mekanlarında döşeme seviyesinde, çalışma alanlarında en az 200 lüx, çalışma alanları arasında kalan bölgelerde 50 lüx şiddetinde bir aydınlatma sağlayacak sabit elektrik tesisatı bulunmalıdır. Kullanılacak armatürler dolaylı dokunmaya karşı korunmalı olmalı ve stroboskobik yanılgı oluşturmamalıdır. (madde 5.2.1.4.2)
+
+2--Makina dairesinde bulunan ekipmanların(kumanda panosu, makina motor, regülatör, elektrikçi panosu ve benzeri) önünde 200 lüx şiddetinde aydınlatma sağlanmalıdır.
+
+1.5.Makina veya makara dairesinde kaymayan zemin Makina/makara mekanı dairesi döşemesi şap atılmış beton, baklavalı sac gibi kaymayan bir yüzeye sahip olmalıdır. (madde 5.2.1.9)
+
+1.6.Yeterli havalandırma
+
+1--Makina mekanı havalandırması motorlar, kumanda cihazları ve elektrik kablolarını yeterince iyi biçimde toz, zararlı duman ve nemden koruyacak şekilde yapılmalıdır (Tel kafes, panjur veya bina havalandırma sistemi).
+
+2--Makina mekanı/dolabı uygun şekilde havalandırılmalıdır.
+
+3--Kuyu, makina alanları ve makara dairesi, asansöre ait olanlardan farklı dairelerin havalandırılmasını sağlamak için kullanılmamalıdır. (madde 5.2.1.3 ve Ek E.3)
+
+1.7.Taşıma vasıtaları için metal destek veya halkalar
+
+1--Makina mekanlarında, ağır donanımların kaldırılıp taşınması için, bir veya birden fazla, uygun şekilde yerleştirilmiş, üzerilerine güvenli taşıma kapasiteleri yazılmış metal destekler veya taşıyıcı kancalar bulunmalıdır.
+
+1.8.Asansörün güvenli kullanımına ve bakımına ilişkin bilgiler
+
+1--Makara dairesindeki durdurma anahtarı üstünde veya yakınında, durdurma konumunun karıştırılma riski olmayacak bir şekilde “DUR/STOP” kelimesi bulunmalıdır.
+
+2--Makina dairesi/mekanında kumanda tablolarındaki kontaktör, röle, sigorta ve bağlantı klemensleri, kumanda şemasına uygun olarak işaretlenmelidir. Sigorta tutucularının üstünde veya yakınında, tip ve değer gibi gerekli sigorta özellikleri belirtilmelidir.
+
+3--Hız regülâtörü üstünde hız regülâtörünü imal eden firmanın adı, tip kontrolü ile ilgili işaret ve referanslar ve ayarlandığı çalışma hızı bilgilerini ve CE işareti içeren bir bilgi levhası bulunmalıdır.
+
+4--Makina dairesindeki durdurma anahtarı üstünde veya yakınında, durdurma konumunun karıştırılma riski olmayacak bir şekilde “DUR/STOP” kelimesi bulunmalıdır.
+
+5--Asansöre ait bakım ve kayıt (eski adı ile seyir) defterinde güncel kayıtlar tutulmalıdır.
+
+6--Asansöre ait bakım ve kayıt (eski adı ile seyir) defteri bulunmalıdır.
+
+7--Farklı asansörlerin parçaları aynı makina ve/veya makara dairesinde bulunuyorsa, her asansör numara veya harf ile işaretlenmelidir. Bu işaretler asansörün bütün ana parçaları için kullanılmalıdır (makina, kumanda panosu, hız regülâtörü, elektrik anahtarları,kabin). Bakım çalışmalarını kolaylaştırmak için, kabin üstünde, kuyu dibinde veya gerekli başka yerlerde aynı tanıtma işaretleri kullanılmalıdır.
+
+(varsa)
+
+8--Platform üzerinde müsaade edilen en büyük yük belirtilmelidir. (Kuyu içerisinde kullanılan makinalar için geçerlidir.)
+
+9--Makina ve makara mekanlarına ana anahtar veya anahtarlar ile ışık anahtarının kolaylıkla fark edilmesini sağlayacak ikaz levhaları bulunmalıdır. Bir ana anahtarın açılmasından sonra bazı kısımlar gerilim altında kalıyorsa (Asansörler arasındaki bağlantılar, ışık devreleri ve benzeri) bu belirtilmelidir.
+
+10--Elektrikli elle kumanda butonlarının üstünde veya yanında hareket yönünü gösteren işaretler bulunmalıdır.
+
+1.9.Makina dairesinde farklı seviyeler ve çıkıntılar
+
+1--Makina dairesi zemini 5 cm’den daha fazla derinliğindeki herhangi bir girintiye ve 5 cm ile 50 cm arasındaki genişliğe veya herhangi bir kanallara sahip olduğunda, bunların üstü kapatılmalıdır. (madde 5.2.6.3.2.5)
+
+2--Makina platformu ve makina dairesi döşemesindeki delikler kullanım amacına uygun olarak en küçük boyutta olmalıdır. Malzemelerin düşme tehlikesini önlemek için, kuyu üzerindeki delikler ve kablo geçişlerinin çevresinde platform veya bitmiş döşemeden en az 50 mm yükseklikte engelleyici çıkıntılar yapılmalıdır. (madde 5.2.6.3.3)
+
+3--Makina dairesindeki farklı seviyedeki döşemeler arasında 50 cm’den fazla bir yükseklik farkı varsa, düşme tehlikesine karşı uygun korkuluklar ile donatılmalıdır. (madde 5.2.6.3.2.4)
+
+1.10.Makina platformuna çıkış merdiveni ve korkuluk
+
+1--Makina platformuna çıkış merdiveni sabitlenmelidir.
+
+2--Makina platformu korkuluğu standarda uygun hale getirilmelidir.
+
+3--Makina platformu çıkış merdivenine tutamak takılmalıdır.
+
+4--Makina platformu korkuluğu sabitlenmelidir.
+
+5--Makina platformuna çıkış için makina dairesindeki farklı seviyedeki döşemeler arasında 0,5 m’den fazla bir yükseklik farkı varsa, korkuluk ve merdiven veya basamaklar bulunmalıdır.
+
+6--Makina platformu korkuluğu, merdiven veya basamakların mukavemeti uygun olmalıdır.
+
+1.11.Makina dairesinde yatay açıklıklar
+
+1--Makina dairesinde gerekli olan yerlerde hareketli parçaların bakım ve kontrolü için bakımın yapılacağı tarafta, ve varsa elle kata getirme tertibatı için en az 0,5 m x 0,6 m’lik bir serbest yatay alan bulunmalıdır.
+
+2--Geçiş yolları en az 0,5 m genişliğinde olmalıdır. Hareketli parçaların bulunmadığı yerlerde bu genişlik 0,4 m’ye kadar azaltılabilir.
+
+3--Makina dairesinde geçiş yolları üstündeki serbest yükseklik en az 1,8 m olmalıdır.
+
+4--Makina dairesinde, özellikle çalışma alanları üstünde en az 2,10 m serbest yükseklik olmalıdır. (madde 5.2.6.3.2.1)
+
+5--Makina dairesi kumanda panoları ve tablolarının önünde, derinlik muhafazaların dış yüzeyinden en az 0,7 m olmalıdır. Genişlik ise en az 0,5 m veya kumanda panoları veya tablolarının toplam genişliği kadar olmalıdır.
+
+1.12.Volan üzerindeki yön şareti
+
+1--Kabinin hareket yönü, makina üzerinde elle kata getirme çarkı yakınında açıkça belirtilmelidir. Sökülemeyen tipte elle kata getirme çarkı kullanılması durumunda bu işaretler çarkın üstüne de konulabilir.
+
+2--Makina dairesinden, kabinin kilit açılma bölgesi içinde olup olmadığı kolaylıkla anlaşılabilmelidir. Bu, meselâ askı veya hız regülâtörü halatlarına işaretler konularak sağlanabilir.
+
+1.13.Acil durum çalıştırma sistemi**
+
+1--"Acil durum müdahalesi için tertibatlar gerekli olduğu yerlerde (madde 5.9.2.2.2.9-b), aşağıdakilerden birisi (a veya b) sağlanmış olmalıdır:
+
+a) Kabin yarı yükle yüklü iken kabini durağa getirmek için el gücü, 150 N’u geçmediği durumda aşağıdakilere uygun olan bir mekanik tertibat:
+
+1) Kabin hareketi için tertibatları, asansörün hareketi ile tahrik edilebilirse, bu durumda bu tertibat düzgün, deliksiz volan olmalıdır,
+
+2) Tertibatlar sökülebiliyorsa, makina alanında kolaylıkla erişebilir bir yere bunlar yerleştirilmelidir. Tasarımlandığı makinaya göre herhangi bir karıştırılma riski varsa tertibat uygun şekilde işaretlenmiş olmalıdır,
+
+3) Tertibatlar sökülebiliyorsa veya makinadan bağlantısı kesilebilirse, madde 5.11.2’ye uygun olarak elektrikli bir güvenlik tertibatı, en geç tertibatların makinayla birleşmesi söz konusu olduğunda harekete geçirilmiş olmalıdır ; veya
+
+b) Aşağıdakilere uygun olan elektrikli vasıtalar:
+
+1) Güç beslemesi, bir arızadan sonra herhangi bir yükle yüklü kabini en yakın durağa 1 h içinde getirebilmelidir,
+
+2) Hız, 0,30 m/s’den büyük olmamalıdır."
+
+2--Beyan yükü ile yüklenmiş kabinin yukarı yönde hareket etmesi için el ile uygulanması gereken kuvvet, 400 N’dan büyükse veya madde 5.9.2.3.1 a’da belirtilen mekanik vasıtalar sağlanmamışsa, elektrikle çalışan acil durum tertibatları, madde 5.12.1.6’ya uygun olarak sağlanmalıdır.
+
+3--Beyan yükü ile yüklü kabini yukarı doğru hareket ettirmek için gerekli kuvvet 400 N’dan büyükse, uygun olarak makina dairesinden/deney panosundan kumanda edilebilen bir elektrikli elle kumanda tertibatı bulunmalıdır. Acil durum çalıştırma sistemi elektrik kesildiğinde kullanılmaması durumunda ikincil bir enerji kaynağından beslenen acil durum çalıştırma sistemi çalışır hale getirilmelidir. (UPS, jeneratör, akü devresi ve benzeri)
+
+1.14.Asansör beyan hızı*
+
+1--Asansör beyan hızı beyan yükünün yarısıyla yüklü olarak seyir mesafesinin orta bölgesinde aşağı doğru hareket ederken, hızlanma ve yavaşlama periyotları hesaba katılmadan, beyan hızını %5’ten fazla aşmamalıdır ve %8 düşük olmamalıdır.
+
+1.15.Kabin kapıları açıkken kabinin kontrolsüz hareketini önlemek için tahrik makinası tasarımı
+
+1--Kabin kapıları açıkken kabinin kontrolsüz hareketini önlemek için tahrik makinası madde 5.9.2.2'ye uygun fren tertibatı tespit edilir veya madde 5.6.7'ye göre kontrolsüz kabin hareketine karşı koruma önlem alınmalıdır.
+
+1.16. Tahrik makinası*
+
+1--Tahrik makinası montaj cıvatalarına kontra somun veya yaylı rondela takılmalıdır.
+
+2--Kuyu dışından her bir fren setinin bağımsız olarak deneye tabi tutulması mümkün olmalıdır. (madde 5.9.2.2.2.7) Açıklama: "Motorun tip onay belgesi varsa tek frende test yapılır."
+
+3--Tahrik makinası elektromekanik fren tiji gevşek kontra somunları sıkılmalıdır.
+
+4--Tahrik sisteminde bir elle kata getirme tertibatı varsa, fren elle açılabilmeli ve elle açma kolu bırakıldığında kendiliğinden kapanmalıdır.
+
+5--Tahrik makinası elektromekanik fren bobinini besleyen elektrik enerjisinin kesilmesiyle birlikte fren, ilâve bir gecikme olmaksızın etkili olmalıdır.
+
+6--Fren tamburu veya diski üzerindeki frenleme etkisinin sağlanmasına katkıda bulunan, frene ait mekanik parçaların bobin haricinde tümü ikişer adet olmalıdır. Parçalardan birinin devre dışı kalması durumunda dahi, aşağı yönde hareket eden ve beyan yükü ile yüklü kabini güvenlikle durduracak ölçüde frenleme etkisi sağlanmalıdır.
+
+7--Eletromekanik fren uygun hale getirilmeli ve ayarlanmalıdır.
+
+8--Tahrik makinası yan yatak cıvataları takılmalıdır. (varsa) Tahrik makinası yan yatak montajı uygun hale getirilmelidir.
+
+9--Tahrik grubu kaplin montaj civataları tamamlanmalıdır.
+
+10--(varsa) Motor soğutma fanı çalışır hale getirilmelidir.
+
+11--Motor kablo girişleri rekorlanmalı veya izole edilmelidir.
+
+12--Motor terminal bağlantı kapağı takılmalıdır.
+
+13--Makina sehpasının duvara/betona teması engellenmelidir.
+
+14--Makina sehpasının montajındaki dengesizlikler giderilmelidir (Stabil olmalıdır).
+
+1.17.Tahrik makinasının durdurulması ve durma konumunun kontrolü**
+
+1--Tahrik makinası madde 5.11.2.'ye göre bir elektrik güvenlik tertibatının çalışması ile durdurulmalıdır. Tahrik makinasının beslemesi en az aşağıdaki şartlardan birine sahip olmalıdır.
+
+2--Tahrik makinasının doğrudan beslemesi durumunda, kontakları motor devresinde seri bağlı, birbirinden bağımsız iki adet kontaktörle kesilmelidir. Tahrik makinasının durdurulması iki kontaktörden birinin ana kontaklarının asansör durduğunda devreyi açmaması durumunda, en geç bunu takip eden hareket yönü değişiminde, asansörün yeniden harekete geçmesi engellenmiş olmalıdır. Tahrik makinası elektromekanik freni her yön için seri iki kontaktörden enerjilendirilmelidir.
+
+2--Tüm kutuplarda akımı kesen bir kontaktör ve statik elemanlardaki enerji akışını kesen bir kumanda tertibatı ve asansörün her duruşunda, enerji akışının kesildiğini kontrol eden bir izleme tertibatı olmalıdır.
+
+3--Elektrik devresi madde 5.11.2.3'e uygun güvelik devresi şartlarını taşımalıdır.(TS EN 81-50 standardı madde 5.6 şartlarını karşılamalıdır.)
+
+4--En az 1'in bir donanım arızası toleransıyla SIL3 gereklerini yerine getiren TS EN 61800-5-2 standardı madde 4.2.2.2’ye göre güvenli bir tork kapatma (STO) fonksiyonlu hızı ayarlanabilir elektrikli bir güç tahrik sistemine sahip olmalıdır.
+
+1.18.Tahrik kasnağı, kasnak kanallarının ve kasnak mili yatağının kontrolü*
+
+1--Tahrik kasnağı kanallarının yarıdan fazlasının aşınmadan dolayı tahrik yeteneği kaybolmuş tahrik kasnağı uygun hale getirilmelidir.
+
+2--Tahrik kasnağı kanal ölçülerine uygun halat seçimi yapılmalıdır.
+
+3--Tahrik kasnağının duvara ve zemine teması engellenmelidir.
+
+4--Halatlardan en az bir adedinin tahrik kasnağı kanalını aşındırmasından dolayı Halat gerginlik ayarları yapılmalıdır.
+
+5--Tahrik kasnağı çıkışında halatların birbirine teması önlenmelidir. (270 derece sarım)
+
+6--Tahrik ve saptırma kasnakları arasındaki eksen kaçıklığı giderilmelidir.
+
+7--Tahrik kasnağı, makara ve tamburun (Halat ortasından ortasına ölçülen) çapları ile halat çapının oranı, halat yapısından bağımsız olarak en az 40 olmalıdır. (Asansör için onaylanmış özel halatlarda bu oran daha az olabilir.)
+
+8--Tahrik kasnağındaki çatlaklardan dolayı kasnak yenilenmelidir.
+
+1.19.Saptırma kasnağı ve sarılma açısı*
+
+1--Saptırma kasnağının duvara ve zemine teması engellenmelidir.
+
+2--Saptırma kasnağı/palangaların çapı halat çapının en az 40 katı olmalıdır. (Asansörler için onaylanmış olan özel halatlarda bu değer daha az olabilir.)
+
+3--Saptırma kasnağındaki çatlaklardan dolayı kasnak yenilenmelidir.
+
+4--Kasnak halat çapına uygun olmalıdır.
+
+1.20.Gerektiği durumda, elektronik aksamları içeren güvenlik şalterleri şeklindeki elektrikli güvenlik ekipmanları**
+
+1--Elektronik elemanlara sahip güvenlik devreleri bir güvenlik elemanı olarak görülür ve CE işareti taşımalıdır.
+
+1.21.Kabin tampona oturmuş iken kasnak kaydırma kontrolü ve enerji kesintisinde ani duruş kontrolü
+
+1--Karşı ağırlık tam kapalı tampon üzerine oturduğunda kabin yukarı yönde harekete devam etmemelidir. Bu halatlar tahrik kasnağı üzerinde kayarak veya madde 5.11.2'ye uygun elektrik güvenlik tertibatı yardımıyla sağlanmalıdır. (madde 5.5.3)
+
+2--Test yapılamamıştır. (Fren kolu yok/çalışmıyor)
+
+3--Boş kabin yukarı giderken tahrik makinasının en sert frenleme etkisiyle birden fazla durma denemesi ile tahrik yeteneğinin kontrolünde her denemede kabin tam olarak durmalıdır.
+
+4--Test yapılamamıştır. (Tamponlar uygun değil)
+
+5--Kabin karşı ağırlık yarı yük dengesi ayarlanmalıdır.
+
+6--Test yapılamamıştır. (Kabinin tavana çarpma veya kabin patenlerinin raydan çıkma riskinden dolayı)
+
+1.22.Kasnaktan veya makaradan çıkan halat/zincire karşı koruma Tahrik kasnakları halat atma pimleri mesafeleri ayarlanmalıdır.
+
+1--Kasnakların kanallarından halatların çıkmasını engelleyen tertibat; halatların kasnağa girdiği ve çıktığı yerin yanında bir emniyet tutucusuna ve makaranın yatay ekseni altında 60°den daha büyük sarım açısıyla yerleştirilmişse ve toplam sarım açısı 120° den daha büyükse en az bir ara tutucuya sahip olmalıdır. (madde 5.5.7.2. Şekil 19)
+
+2--Makina/makara mekanında bulunan tahrik ve saptırma kasnakları ile zincir makaraları için gevşek halatların veya zincirlerin, kasnaktan veya makaralardan çıkmasını engelleyici teçhizat bulunmalıdır.
+
+3--Saptırma kasnakları halat atma pimleri mesafeleri ayarlanmalıdır.
+
+4--Hız regülatörü kasnakları halat atma pimi takılmalıdır.
+
+5--Hız regülatörü kasnakları halat atma pimi ayarlanmalıdır.
+
+1.23.Halatlar veya zincirler ile kasnak veya makara arasına yabancı cisim girmesine karşı koruma
+
+1--Halatlar/zincirler ve makaralar/dişliler arasına cisimlerin girmesini önlemek için kasnaklar, makaralar ve zincir dişlileri, hız regülatörü, gergi ağırlığı makaraları için madde 5.5.7.1 Çizelge 10'a göre tedbirler alınmalıdır.
+
+1.24.Kasnak, zincir makaraları yaralamalarına karşı koruma
+
+1--Korumalar, dönen parçalarının görünür olduğu, kontrol ve bakımlarının engellenmediği bir şekilde tasarımlanmalıdır ve bunlar delikli ise, boşluklar TS EN ISO 13857, Çizelge 4’e uygun olmalıdır.
+
+2--Halatlar/zincirler ve makaralar/dişliler şahısların yaralanmasını önlemek için kasnaklar, makaralar ve zincir dişlileri, hız regülatörü, gergi ağırlığ makaraları için madde 5.5.7.1 Çizelge 10'a göre tedbirler alınmalıdır.
+
+1.25.Acil durdurma tertibatı*
+
+1--Makina motor grubu yakınında 1 m içinde doğrudan erişilebilir bir ana anahtar veya başka bir acil durdurma tertibatı mevcut ve çalışır halde olmalıdır.
+
+1.26.Zararlı malzeme bulunmayan tesis Fren balatalarında kullanılan asbest malzeme zararlı olmayan malzemeyle değiştirilmelidir ve sökülen asbest üzerine çalışma yapmayın uyarı levhası konmalıdır.
+
+1.27.Makina dairesinde kilitlenebilir ana anahtarın bulunması Her bir asansör için ayrı bir ana şalter olmalıdır ve kapatıldığında motor güç devresi ve UPS/Kurtaran sistemi dahil tüm sistemin elektriğini kesmelidir.
+
+1--Ana şalter aydınlatma ve priz devrelerinin enerjisini kesmemelidir.
+
+2--Elektrik panosunda boştaki elemanlar panoya sabitlenmelidir.
+
+3--Ana anahtarın kumanda mekanizması, makina dairesi girişinden veya girişlerinden çabuk ve kolay erişilebilir olmalıdır.
+
+4--Asansör aydınlatma devreleri motor güç devresinden bağımsız olmalıdır.
+
+5--Ana anahtar, sabit “0” ve “1” konumlarına sahip olmalı ve istenmeyen bir şekilde çalıştırılmasını engellemek için “0” konumunda bir asma kilit veya benzeri tertibatla kilitlenebilmelidir.
+
+6--Motor hattının koruması termik manyetik şalter ile yapıldığı durumda kilitlenebilir ana şalter 3 faz +1 nötr hattını kesmelidir.
+
+7--Ana anahtar, a) varsa makina dairesine, b) makina dairesi yoksa kumanda panosunun asansör kuyusunda bulunduğu durumlar hariç kumanda panosuna veya c) kumanda panosunun asansör kuyusunda bulunduğu durumlarda ise acil durum ve deney panosuna/panolarına yerleştirilmelidir.
+
+8--Elektrik panosundaki kilitlenebilir ana şalter çalışır hale getirilmelidir.
+
+1.28.Elektrik kuvvet panosunun muhafazası ve pano içerisindeki işaretlemeler Elektrik kuvvet panosu muhafaza içine alınmalıdır.
+
+1--Elektrik kuvvet panosu makina dairesi içine alınmalıdır.
+
+2--Elektrik kuvvet panosu ve içerisinde bulunan elemanlar karıştırılma riskine karşı adreslenmelidir.
+
+3--Elektrik kuvvet panosuna yetkisiz kişilerin erişimi engellenmelidir (MRL'lerde kilitli olmalıdır).
+
+1.29.Priz ve kuyu aydınlatma anahtarı Makina dairesi/mekanı aydınlatma anahtarı çalışır hale getirilmelidir.
+
+1--Makina dairesi/mekanı aydınlatması etanj ise çift izoleli olmalıdır.
+
+2--Makina dairesi/mekanı aydınlatma kablo ekleri koruma altına alınmalıdır.
+
+3--Makina dairesi/mekanı prizi mevcut, çalışır ve güvenlik hatlı (topraklı) olmalıdır.
+
+4--Makina dairesi/mekanı prizi uygun şekilde monte edilmelidir.
+
+5--Makina dairesi/mekanı aydınlatma anahtarı takılmalı ve adreslenmelidir.
+
+6--Ana anahtar veya anahtarlar ile ışık anahtarının kolaylıkla fark edilmesini sağlayacak ikaz levhaları bulunmalıdır.
+
+1.30Priz ve aydınlatma şalterleri Makina dairesinde/mekanında kuyu aydınlatma anahtarı takılmalı ve adreslenmelidir.
+
+1--Makina dairesinde/mekanında kuyu aydınlatma anahtarı çalışır hale getirilmelidir.
+
+1.31.Sigortalar Kuyu aydınlatma sigortası takılmalı ve adreslenmelidir.
+
+1--Elektrik panosunda motor hattı için 4'lü grup W otomat takılmalıdır. Elektrik panosunda motor hattı için 4'lü grup W otomat çalışır hale getirilmelidir.
+
+2--Elektrik panosunda 4'lü grup W otomatın beslemesi kaçak akım rölesinden sonra olmalıdır.
+
+3--Makina dairesi/mekanı aydınlatma sigortası takılmalı ve adreslenmelidir.
+
+4--Kuyu aydınlatma sigortası çalışır hale getirilmelidir.
+
+5--Kabin, kuyu ve makina/makara dairesi aydınlatma sigortaları çalışır hale getirilmelidir.
+
+6--Makina dairesi/mekanı sigortası, kuyu sigortası ile kabin sigortası ayrı ayrı olmalıdır.
+
+7--Makina dairesi/mekanı sigortası ile kuyu sigortası ayrı ayrı olmalıdır.
+
+8--Kabin aydınlatma sigortası takılmalı ve adreslenmelidir.
+
+9--Makina dairesi/mekanı aydınlatma sigortası çalışır hale getirilmelidir.
+
+10--Kabin aydınlatma sigortası çalışır hale getirilmelidir.
+
+11--Kabin, kuyu ve makina/makara dairesi aydınlatma sigortaları takılmalı ve adreslenmelidir.
+
+12--Sigorta değerleri kablo kesitine uygun olmalıdır.
+
+1.32.Kablo bağlantıları ve klemensler (Kuvvet panosunda) Elektrik kuvvet panosunda doğrudan dokunmaya karşı korunması, en az IP 2X koruma derecesine sahip mahfazalarla sağlanmalıdır.
+
+1--Elektrik kuvvet panosu sigorta muhafazası takılmalıdır.
+
+2--Elektrik panosu içindeki sigortalar sabitlenmelidir.
+
+3--Elektrik kuvvet panosu kablo bağlantıları düzenlenmelidir.
+
+4--"Elektrik panosunda doğrudan dokunmaya karşı korunma;
+
+4.1- En az IP 2X koruma derecesine sahip mahfazalarla sağlanmalıdır bunların haricindeki bağlantılar, klemensler ve konnektörler, bu amaç için yapılan pano, buat veya tabloların içinde bulunmalıdır veya
+
+4.2- Bir asansörün ana anahtarı veya anahtarlarının açılmasından sonra bazı klemenslerde gerilim bulunuyorsa, bunlar gerilim bulunmayan klemenslerden açık bir şekilde ayrılmalı ve gerilim 50 V’tan büyük ise uygun bir şekilde işaretlenmelidir veya
+
+4.3- Grup sigortalarında, her bir ayrı sigortanın ana beslemesi kapatıldığında halen sistemde elektrik olabileceğine dair bakım personeli için uyarı levhaları sağlanmalıdır."
+
+5--Mekanik korumanın kesintisizliğini sağlamak için, iletken ve kabloların koruyucu kılıfları, anahtar kutuları veya cihazların içine kadar sokulmalı veya uygun bir rakor içinde son bulmalıdır.
+
+6--Makina dairesinde/mekanında tek izoleli elektrik besleme kabloları çift izoleli olmalı veya koruma altına alınmalıdır.
+
+7--Makina ve makara dairelerindeki tesisat doğrudan dokunmaya karşı korunma, en az IP2X koruma derecesinde sahip mahfazalarla sağlanmalıdır bunların haricindeki bağlantılar, klemensler ve konnektörler, bu amaç için yapılan pano, buat veya tabloların içinde bulunmalıdır.
+
+1.33."Hata akımına karşı koruma**
+
+1--50 V AC'den daha büyük gerilim altında olan kontrol devrelerine sahip kat kumanda ve kat göstergeleri ile emniyet devrelerinde hata akımına karşı koruma (30 mA)
+
+2--50 V AC'den daha büyük gerilim altında çalışan asansör kabini üzerindeki devrelerde hata akımına karşı koruma (30 mA)
+
+3--Kabin ve kuyu aydınlatmasına dahil priz devreleri (30 mA)
+
+4--Güç devresi ve buna bağlı devrelerin ana şalterinde eşik değeri topraklama direncine bağlı olarak seçilen ve uygulanan hata akımına karşı koruma" Elektrik panosuna 30 mA Kaçak akım rölesi takılmalıdır.
+
+5--Tüm sistem kaçak akıma karşı korunmalıdır.
+
+6--Kaçak akım rölesi çalışır hale getirilmelidir.
+
+7--Kaçak akım rölesi 30 mA olmalıdır.
+
+8--makina dairesi aydınlatması ayrı bir tesisatla beslenmesi durumunda 30 mA kaçak akım rölesiyle korunmalıdır.
+
+9--Şebeke elektriğinin kesilmesi durumunda devreye giren elektrikli acil kurtarma sisteminin (Kurtaran veya UPS) hata akımına karşı 30 mA kaçak akım rölesiyle korunmalıdır. (İzole sistemlerde aranmaz)
+
+10--Emniyet devreleri hata akımına karşı 30 mA kaçak akım rölesiyle korunmalıdır. (İzole sistemlerde aranmaz. İzolasyon trafosu sonrası gerekli koruma tedbirleri alınacaktır)
+
+11--Emniyet devreleri hata akımına karşı 30 mA kaçak akım rölesi (veya diğer önlemler) çalışır hale getirilmelidir.
+
+12--Asansör kabini üzerindeki devreler hata akımına karşı 30 mA kaçak akım rölesiyle korunmalıdır.
+
+13--Asansör kabini üzerindeki devreler hata akımına karşı 30 mA kaçak akım rölesi çalışır hale getirilmelidir.
+
+14--Kuyu aydınlatması dahil priz devreleri hata akımına karşı 30 mA kaçak akım rölesiyle korunmalıdır.
+
+15--Kabin aydınlatması dahil priz devreleri hata akımına karşı 30 mA kaçak akım rölesiyle korunmalıdır.
+
+16--Kabin ve kuyu aydınlatması dahil priz devreleri hata akımına karşı 30 mA kaçak akım rölesi çalışır hale getirilmelidir.
+
+17--Güç devresi ve buna bağlı devrelerin ana şalterinde eşik değeri topraklama direncine bağlı olarak seçilen ve uygulanan hata akımına karşı korunmalıdır.
+
+1.34.Topraklama**
+
+1--Nötr hattının toprak hattı ile bağlantısı engellenmelidir. (TT sistemlerde geçerlidir.)
+
+2--Elektrik kuvvet panosu topraklama bağlantısı yapılmalıdır.
+
+4--Hidrolik tamponların topraklama bağlantıları yapılmalıdır.
+
+5--Kabin topraklama bağlantısı yapılmalıdır.
+
+6--Topraklama kablo bağlantıları yüksük veya civatalı veya kablo pabucu ile yapılmalıdır.
+
+7--Topraklama barasına ana toprak bağlantısı yapılmalıdır.
+
+8--Topraklama kablo kesitleri standarda uygun hale getirilmelidir.
+
+9--Gevşek topraklama bağlantıları sıkılmalıdır.
+
+10--Kumanda panosu topraklama bağlantısı yapılmalıdır.
+
+11--Makina motor grubu topraklama bağlantısı yapılmalıdır.
+
+12--Hız regülatörü topraklama bağlantısı yapılmalıdır.
+
+13--Sınır kesici şalter topraklama bağlantısı yapılmalıdır. (3 faz sınır kesiciler için geçerlidir.)
+
+14--Makina dairesinde/mekanında paralel bara sistemli topraklama tesisatı yapılmalıdır.
+
+1.35.Kumanda panosunun muhafazası ve pano içerisindeki işaretlemeler Kumanda panosu içindeki tüm komponentler panoya sabitlenmelidir.
+
+1--Kumanda panosuna uygun şekilde erişim sağlanmalıdır.
+
+2--Kumanda panosu klemens ve komponent rumuzları devre şemasına uygun hale getirilmelidir.
+
+3--Kumanda panosuna yetkisiz kişilerin erişimi engellenmelidir.
+
+4--Kumanda panosu kablo kanal kapakları kapatılmalıdır.
+
+5--Kumanda panosu sabitlenmelidir.
+
+6--Kumanda panosu muhafaza içine alınmalıdır.
+
+1.36.Kumanda kartı ve kontaktör*
+
+1--Kumanda panosu içerisindeki kontaktörlerde ark giderilmelidir.
+
+2--Kumanda kartı sabitlenmelidir.
+
+3--Kumanda kartı kablo bağlantıları düzenlenmelidir.
+
+1.37.Tahrik makinası motoru koruması*
+
+1--"Kısa devre, aşırı ısınma (PTC devresi ve benzeri)" Tahrik makinası motoru 1. hız termik röle uygun çalışır hale getirilmelidir.
+
+2--Tahrik makinası motoru aşırı yüke karşı korunması için 1. hız/2. hız termik röle veya PTC devresi takılmalıdır.
+
+3--Tahrik makinası motoru aşırı yüke karşı korunması için 1. hız/2. hız termik röle veya PTC devresi çalışır hale getirilmelidir.
+
+4--Tahrik makinası motoru 2.hız termik röle akım değeri motorun çektiği akım değerine uygun olmalıdır.
+
+5--Tahrik makinası motoru 1.hız termik röle akım değeri motorun çektiği akım değerine uygun olmalıdır.
+
+1.38.Emniyet devresi koruma*
+
+1--Emniyet devrelerindeki kısa devre (şönt) bağlantıları çıkartılmalıdır.
+
+2--Emniyet devresi açık konumda (fiş priz, emniyet kontakları ve benzeri) iken asansör hareket etmemelidir. (Revizyon hızı dahil)
+
+3--Arızalı kapı kontak devreli asansörün, normal çalışmasının önlenmesi gerekir. (madde 5.12.1.9) (Kapı güvenlik devrelerinden sadece bir grubunun kısa devre edilmesi durumunda asansör ikinci çağrıyı almamalıdır.)
+
+1.39.Motor hareket süresi sınırlayıcısı Sürtünme tahrikli asansörler bir motor hareket süresi sınırlayıcısı ile donatılmalıdır.
+
+1--Motor hareket süre sınırlayıcının normal çalışmaya dönüşü, ancak elle müdahale ile mümkün olmalıdır. Enerjinin kesilip tekrar gelmesi durumunda, makinanın hareketsiz konumda tutulması gerekli değildir.
+
+2--Motor hareket süresi sınırlayıcısı, bakım kumandası ve elektrikli elle çalışma kumandası sırasında kabinin hareketini engellememelidir.
+
+3--Motor hareket süresi sınırlayıcısı, 45 saniye veya en uzun seyir mesafesi için gerekli süreye en çok 10 saniye ilave edilmesiyle bulunan sürelerden küçük olanını geçmeyecek bir zaman içinde çalışmalıdır.
+
+1.40.Güç faz sırası değişiminden kaynaklanan hatalı çalışmaların olmaması**
+
+1--Asansörde güç faz sırası değişiminin asansörün tehlikeli olarak hatalı çalışmasına sebebiyet vermemesi için faz sırası değişimi koruma tertibatı tesis edilmelidir.
+
+2--Faz sıralı koruma rölesi çalışır hale getirilmelidir. (Hız kontrollü sistemlerde aranmaz.)
+
+1.41.Elektrik çarpmalarına karşı koruma (IP2X) ile elektrik donanımın korunması ve işaretlenmesi
+
+1--Bir asansörün ana anahtarı veya anahtarlarının açılmasından sonra bazı klemenslerde gerilim bulunuyorsa, bunlar gerilim bulunmayan klemenslerden açık bir şekilde ayrılmalı ve gerilim 50 V’tan büyük ise uygun bir şekilde işaretlenmelidir.
+
+1--Grup kontrolörlerinde, her bir ayrı kontrolörün ana beslemesi kapatıldığında halen sistemde elektrik olabileceğine dair bakım personeli için uyarı levhaları sağlanmalıdır.
+
+3--Makina ve makara dairelerinde doğrudan dokunmaya karşı korunma, en az IP 2X koruma derecesine sahip mahfazalarla sağlanmalıdır bunların haricindeki bağlantılar, klemensler ve konnektörler, bu amaç için yapılan pano, buat veya tabloların içinde bulunmalıdır.
+
+4--Kumanda panosunda kablo bağlantı uçları dokunmaya karşı IP2X seviyesinde korunmalıdır.
+
+1.42.Emniyet devre (Kumanda) şeması
+
+1--Kumanda panosunda emniyet devre şeması olmalıdır.
+
+2--Emniyet devreleri emniyet devre şemasına göre düzenlenmelidir.
+
+1.43.Kablo bağlantıları ve klemensler (Kumanda panosunda)
+
+1--Kumanda panosu kablo girişleri keskin kenarlardan izole edilmelidir.
+
+2--Kumanda panosu kablo bağlantıları ve klemensler düzenlenmelidir.
+
+3--Kumanda panosunda farklı gerilimler ve beslemeler için sigorta olmalıdır.
+
+4--Kumanda panosu kablo bağlantıları uçları düzenlenmelidir.
+
+1.44.Düzgün çalışan güvenlik tertibatına uygun aşırı hız regülâtörü**
+
+1--Aşırı hız regülatörü beyan hızı asansör beyan hızına (asansör tasarım hızı) eşit veya altında olmalıdır. Devreye girme anındaki hız, ani frenlemeli güvenlik tertibatında 0,8 m/s, makaralı tip ani frenlemeli güvenlik tertibatında 1 m/s, 1 m/s’ye kadar olan beyan hızlarında kullanılan kaymalı güvenlik tertibatlarında 1,5 m/s ve 1,0 m/s’yi aşan beyan hızlarında kullanılan kaymalı güvenlik tertibatı için 1,25xV + (0,25/ V) m/s belirtilenlerden daha küçük olmalıdır.
+
+2--Aşırı hız regülatörü ayarlanmış ve mühürlenmiş olmalıdır. (İmalatçı tarafından yapılabilir.)
+
+3--Hız regülâtörü kasnağının (Halat ortasından ortasına ölçülen) çapı ile regülâtör halatı anma çapı arasındaki oran en az 30 olmalıdır.
+
+4--Regülatör halatı, bir gergi makarasıyla gerilmelidir. Bu makara veya bunun gergi ağırlığı kılavuzlanmalıdır.
+
+5--Güvenlik tertibatının çalışması sırasında regülâtör halatı ve bunun bağlantıları, frenleme mesafesinin normalden fazla olması durumunda dahi arızalanmamalıdır.
+
+6--Hız regülatörü kuyu içinde bulunuyorsa, kuyu dışından bulunduğu yerlere girilebilir ve erişilebilir olmalıdır.
+
+7--Kabin hız regülatörü gaga (makara) lastiği aşınması durumunda yenilenmelidir.
+
+8--Kabin hız regülatörü sehpası sabitlenmelidir.
+
+9--Hız regülatörü sabitlenmelidir.
+
+10--Hız regülatörü gaga(makara) lastiği takılmalıdır.
+
+11--Hız regülatörü çalışma yönü aşağı olacak şekilde düzeltilmelidir.
+
+12--Hız regülatör makarasının duvara temas etmesi engellenmelidir.
+
+13--Hız regülatör halatının sınır kesici çatal kollarına temas etmesi engellenmelidir.
+
+14--Hız regülatörü çalışır hale getirilmelidir.
+
+15--Kuyu içerisindeki regülatöre uzaktan erişim sağlanmalı ve güvenlik tertibatı testi yapılır hale getirilmelidir.
+
+16--Güvenlik tertibatının kurtarılmasından sonra hız regülâtörü normal işletme durumuna otomatik olarak gelmiyorsa, madde 5.11.2.'ye uygun bir elektrik güvenlik tertibatı hız regülâtörü normal konumuna dönmedikçe asansörün çalışmasını engellemelidir.
+
+17--Hız regülatörü emniyet kontağı sabitlenmelidir.
+
+18--Hız regülatörü emniyet kontağı ayarlanmalıdır.
+
+1.45.Sınır güvenlik kesicileri**
+
+1--Alt sınır kesici şalter çatal kolları uygun hale getirilmelidir.
+
+2--Üst sınır kesici emniyet kontağı çalışır hale getirilmelidir.
+
+3--Sınır güvenlik kesicileri, son durak seviyelerinin aşılması durumunda mümkün olabildiğince çabuk çalışacak bir şekilde yerleştirilmeli, ancak normal işletmeyi aksatmamalıdır. Bunlar, sınır güvenlik kesicileri kabin veya karşı ağırlık tamponlara değmeden çalışmalıdır. Sınır güvenlik kesicileri, tüm tampon stroku boyunca devrede kalmalıdır.
+
+4--Sınır kesici şalter çatal kolları enerjiyi kesecek şekilde uygun hale getirilmelidir.
+
+5--Üst sınır kesiciye kelepçe yerine füze kullanılmalıdır.
+
+6--Üst sınır kesici tampon stroku boyunca devrede kalmalıdır.
+
+7--Alt sınır kesici şalter kapağı kapatılmalıdır.
+
+8--Alt sınır kesici şalter çalışır hale getirilmelidir.
+
+9--Alt sınır kesici tampon stroku boyunca devrede kalmalıdır.
+
+10--Üst sınır kesici şalter çalışır hale getirilmelidir.
+
+11--Asansör kabini en alt kat seviyesinin dışına çıktığında motorun enerjisini kesecek alt sınır kesici takılmalıdır.
+
+12--Alt sınır kesici asansörün çalıştığı en alt kata göre ayarlanmalıdır.
+
+13--Sınır kesici bıçaklı şalter kendiliğinden devreye girmemelidir.
+
+14--Alt sınır kesici emniyet kontağı çalışır hale getirilmelidir.
+
+15--Alt sınır kesici emniyet kontağı kapağı kapatılmalıdır.
+
+16--Üst sınır kesici emniyet kontağı kapağı kapatılmalıdır.
+
+17--Alt sınır kesiciye kelepçe yerine füze kullanılmalıdır.
+
+18--Üst sınır kesici asansörün çalıştığı en üst kata göre ayarlanmalıdır.
+
+19--Asansör kabini en üst kat seviyesinin dışına çıktığında motorun enerjisini kesecek üst sınır kesici takılmalıdır.
+
+20--Alt ve üst sınır kesiciler madde 5.11.2.'ye uygun bir elektrik güvenlik tertibatı olmalı ve motor ve fren devrelerini besleyen, kontakları seri bağlı iki adet kontaktörün bobin devrelerini zorlayıcı mekanik etkiyle açmalıdır. (Makaralı emniyet kontağı)
+
+1.46.İstem dışı kabin hareketlerine karşı koruma**
+
+1--İstem dışı kabin hareketi güvenlik tertibatı emniyet kontağı takılmalıdır.
+
+2--İstem dışı kabin hareketi güvenlik tertibatı çalışır hale getirilmelidir.
+
+3--İstem dışı kabin hareketine karşı önlem alınmalıdır. (Kapı açık seviyeleme ve/veya kapı ön açma hareketi olmayan asansörlerde dahili yedeklemeli freni olan motor veya makina kullanılması durumunda ilave bir UCM tertibatına gerek yoktur. Fren kontakları panoda kontrol edilmelidir.)
+
+4--İstem dışı kabin hareketi güvenlik tertibatı emniyet kontağı çalışır hale getirilmelidir.
+
+5--"İstem dışı kabin hareketi tertibatı aşağıdaki şartlarda belirtilen bir mesafede kabini durdurmalıdır (bkz. Şekil 20):
+
+a) Durdurma mesafesi, kontrolsüz kabin hareketinin tespit edildiği duraktan itibaren 1,20 m’yi aşmamalıdır,
+
+b) Durak eşiği ile kabin eteği en alt bölümü arasındaki dikey mesafe, 200 mm’yi aşmamalıdır,
+
+c) Madde 5.2.5.2.3’e göre kapatılma durumunda kabin eşiği ile kabin girişine karşılık gelen kuyu duvar yüzünün en alt bölümü arasındaki mesafe, 200 mm’yi aşmamalıdır,
+
+d) Kabin eşiğinden durak kapısı üst eşiğine veya durak eşiğinden kabin kapısı üst eşiğine kadar olan dikey mesafe, 1,0 m’den az olmamalıdır. Bu değerler, durak seviyesinde hazır halde durma konumundan hareket eden bir kabinde, % 100 beyan yüküne kadar olan bütün yüklerde elde edilmelidir."
+
+1.47.Asansöre ait olmayan kanallar, kablolar ve diğer cihazlar
+
+1--Makina dairesinde/mekanında asansöre ait olmayan tesisat/teçhizat sökülmeli veya izole edilmelidir. (Asansöre ait olan iklimlendirme, yangın dedektörleri, söndürücü ve tesisatları bulunabilir.)
+
+2--Makina dairesi/mekanı dış etkenlere karşı (yağmur ve benzeri) koruma altına alınmalıdır.
+
+3--Makina dairesi kapısı yangına dayanıklı ve yanıcı olmayan malzemeden yapılmalıdır.
+
+4--Makina dairesi duvarları ve tavanı ve tabanı yangına dayanıklı ve yanıcı olmayan malzemeden yapılmalıdır.
+
+5--Makina dairesinde/mekanında tehlike yaratan teçhizat (doğal gaz, baca ve benzeri) sökülmelidir.
+
+1.48.Temizlik Makina dairesi/mekanı depo olarak kullanılmamalıdır.
+
+1--Makina dairesi/mekanı içinde çalışmayı engelleyecek malzemeden temizlenmelidir.
+
+2--Makina dairesi/mekanında yanıcı malzeme olmamalıdır.
+
+2.1. Kabin üstünde bakım kumandası* "Kabin üstünde bir sığınma alanından (madde 5.2.5.7.1) 0,30 m yatay mesafe içinde, madde 5.12.1.5’e uygun çalışabilir kumanda tertibatı (bakımda kullanılan) olmalıdır.
+
+"
+
+3--Kabin üstü bakım kumandası devredeyken kabinin normal hareket sınırları aşılmamalıdır.
+
+4--Bakım kumandası devrede iken asansörün çalışması güvenlik devrelerine bağımlı kalmalıdır.
+
+5--Kabin üstü bakım kumandası çalışır hale getirilmelidir.
+
+6--Kabin üstü bakım kumandası devredeyken kabin hızı 0,63 m/s'yi aşmamalıdır.
+
+7--Kabin üstü bakım kumandası kabinin hareketini kumanda butonlarına sürekli basılmak suretiyle sağlanmalıdır.
+
+8--Kabin üstü bakım kumandasının butonları yanlışlıkla çalıştırılmaya karşı korunmuş olmalıdır.
+
+9--Kabin üstü bakım kumandası butonları üzerinde hareket yönleri açıkça işaretlenmiş olmalıdır.
+
+10--Kabin üstündeki bakım kumandası anahtarı iki konumlu olmalı ve yanlışlıkla çalıştırılmaya karşı korunmuş olmalıdır.
+
+11--Kabin üstü bakım kumandası devreye alındığında, otomatik kapıların kumandaları dahil, normal kumandalar, elektrikli elle kumanda ve varsa yükleme rampası hareketi kumandası devre dışı kalmalıdır.
+
+12--Asansörün tekrar normal çalışmaya dönüşü, bakım kumandası anahtarının tekrar çalıştırılmasıyla mümkün olmalıdır.
+
+13--Kabin üstü bakım kumandası çift konumda kararlı uygun bir durdurma tertibatına sahip olmalıdır.
+
+14--Kabin üstü bakımcı kumandası kazara çalışmaya karşı korunmuş “ÇALIŞTIRMA” basmalı butonu olmalıdır. (Buton rengi mavi üstü beyaz)
+
+15--Muayene kumanda istasyonu, asgari IPXXD’nin (TS EN 60529) koruma derecesine sahip olmalıdır. (1 mm çapında tel ile içerisine ulaşılamaz.)
+
+16--Kabin çatısı üzerindeki veya kuyu boşluğundaki herhangi bir ayakta durma alanından dikey yükseklik mesafesi (madde 5.2.5.7.3) 2,0 m veya daha az olduğunda kabin hızı 0,30 m/s’yi aşmamalıdır.
+
+17--Kabin üstünden ve kuyu dibinden revizyona alındığında asansörün hareketi her iki istasyondaki aynı yöndeki butonlara aynı anda basılmasıyla olmalıdır.
+
+2.2.Kabin üstünde durdurma tertibatı*
+
+1--Kabin üstünde, kolay erişilen bir yerde, bakım veya kontrol elemanlarının giriş yerinden en çok 1 m uzaklıkta durdurma tertibatı olmalıdır. (Bakım kumandası üzerindeki durdurma tertibatı bu şartı sağlıyor ise ilave durdurma tertibatı aranmaz.)
+
+2--Kabin üstü durdurma tertibatı çalışır hale getirilmelidir.
+
+3--Kabin üstü durdurma tertibatı iki konumlu ve yanlışlıkla çalışma konumuna getirilmeyecek bir yapıda olmalıdır.
+
+2.3.Kabin üstünden düşmeye karşı koruma*
+
+1--Kabin üstünün dış kenarından itibaren, bu kenara dik olarak ölçülen yatay düzlemdeki serbest mesafe 0,3 m’den fazla ise, buralarda kabin üstünün korkulukla donatılmalıdır.
+
+2--1000 N’luk bir kuvvet korkuluğun en üstündeki herhangi bir noktaya dik açılarda uygulandığında, 50 mm’den daha büyük elastik deformasyon göstermeden dayanmalıdır.
+
+3--Kabin üstü korkuluk, bir el tutamağı, 0,1 m yükseklikte bir ayak koruyucu ve korkuluğun yarı yüksekliğinde yerleştirilmiş bir ara çubuktan meydana gelmelidir.
+
+4--Kabin çatısı dış kenarı üzerine veya korkuluk kullanıldığı durumda dış kenar ile korkuluk pozisyonu arasında, asgari 0,10 m yüksekliğe konumlandırılmış korkuluk eteği ile donatılmalıdır.
+
+5--Kabin üstü korkuluğun el tutamağının iç kenarı ile kuyu duvarının (bkz. Şekil 17)yatay bir düzlemde serbest mesafesi 0,50 m’ye kadar olduğunda en az 0,70 m, mesafe 0,50 m’yi aştığında en az 1,10 m değerlerinde olmalıdır.
+
+6--Kabin üstü korkuluğun el tutamağının dış kenarı ile kuyu içindeki herhangi bir parça (karşı ağırlık veya dengeleme ağırlığı, anahtarlar/şalterler, kılavuz raylar, konsollar ve benzeri) arasındaki yatay mesafe en az 0,1 m olmalıdır.
+
+7--Kabin üstü korkuluğun giriş tarafı veya taraflarındaki korkuluk, kabin üstüne güvenli ve kolay girişe imkan vermelidir.
+
+8--Kabin üstü korkuluk, kabin üstünün kenarından en fazla 0,15 m mesafeye konulmalıdır.
+
+2.4.Yeterli kabin tavanı ve varsa imdat kapağı mukavemeti*
+
+1--Kabin çatısı kalıcı şekil değiştirmeden 0,3 m x 0,3 m bir alan üzerinde herhangi bir noktada asgari 2000 N 'luk bir kuvvete dayanılır.
+
+2--Bir kişinin çalışma için veya çalışma alanları arasında hareket etmek için ihtiyaç duyulan kabin çatı yüzeyi yürüyüş yolunda kaymaya müsaade etmemelidir. (madde 5.4.7.1-b)
+
+2.5.İmdat kapaklarının kilitlenmesi
+
+1--Kabin çatısına, acil durumda kullanılan bir kapağın monte edildiği yer 0,40 m × 0,50 m net açıklık boyutlarında olmalıdır. (Alan müsaade ettiğinde, 0,50 m x 0,70 m boyutlarında bir kapak tercih edilir.)
+
+2--İmdat kapakları ve imdat geçiş kapıları kilitleme tertibatı, kilitleme durumunda madde 5.11.2.'ye uygun bir elektrik güvenlik tertibatıyla denetlenmelidir. Bu tertibat, kilitlemenin etkili olmadığı durumlarda asansörü durdurmalıdır. Asansörün tekrar devreye alınması ancak, kasıtlı bir tekrar kilitleme işleminden sonra mümkün olmalıdır.
+
+3--İmdat kapakları kabin içine doğru açılmamalıdır.
+
+4--İmdat geçiş kapıları, kabin dışından anahtara gerek olmadan, kabin içinden ise kilit açma üçgenine uyan bir anahtarla açılabilmelidir.
+
+5--İmdat geçiş kapıları, kabin dışına doğru açılmamalıdır.
+
+6--İmdat geçiş kapıları, bir kabinden diğerine geçişi engelleyecek şekilde karşı ağırlığın veya dengeleme ağırlığının yolu üzerinde veya sabit bir engelin önünde bulunmamalıdır. (Kabinler arasındaki ayırıcı putreller bu kapsamın dışındadır).
+
+7--İmdat kapakları kabin üstünden anahtara gerek olmadan, kabin içinden ise kilit açma üçgenine uyan bir anahtarla açılabilmelidir.
+
+8--İmdat kapakları açık konumda iken kabin kenarından dışarı taşmamalıdır.
+
+9--Ardışık bulunan iki kabin arasındaki yatay açıklığın 1 m’yi aşmadığı durumlarda acil durum kapıları kullanılabilir. (madde 5.2.3.3)
+
+10--Acil durum kapıları varsa, bunlar en az 1,80 m yüksekliğinde ve 0,40 m genişliğinde olmalıdır.
+
+11--Acil durum kapılarında bulunan tertibat madde 5.11.2’ye uygun elektrikli güvenlik tertibatı ile kilitlendiğinde bitişik asansörü de durdurmalıdır.
+
+2.6.Kabin ve karşı ağırlık askı halatlarının ve bağlantı elemanlarının genel durumu**
+
+1--Halat uçları kabine, karşı ağırlığa veya dengeleme ağırlığı askı noktalarına kendinden sıkştırmalı kama tipi soketler (Örneğin, TS EN 13411-6 standardına veya TS EN 13411-7 standardına göre), ve/veya güvenli halka gözleri (Örneğin, TS EN 13411-3 standardına göre) ve/veya dövme bağlantı tespit uçlarına (Örneğin, TS EN 13411-8 standardına göre) sabitlenmelidir. (madde 5.5.2.3.1)
+
+2--Karşı ağırlık askı halat bağlantıları ters kelepçeleri düzeltilmelidir.
+
+3--Karşı ağırlık askı halat bağlantıları eksik kelepçeleri tamamlanmalıdır.
+
+4--Karşı ağırlık askı halat bağlantıları gevşek kontra somunları sıkılmalıdır.
+
+5--Askı halatları veya zincirlerindeki gerilmelerin dengelenmesi için, bunların en az bir ucunda kendiliğinden çalışan bir tertibat bulunmalıdır. (En az bir tarafında yay veya esnek eleman olmalıdır.)
+
+6--Kabin askı halat bağlantıları gevşek kontra somunları sıkılmalıdır.
+
+7--Karşı ağırlık askı halat bağlantıları lastik takozları/yayları yenilenmelidir.
+
+8--Karşı ağırlık askı halat bağlantı şişesi/şişeleri yenilenmelidir.
+
+9--Kabin askı halat bağlantı şişesi/şişeleri yenilenmelidir.
+
+10--Kabin askı halat bağlantıları eksik kontra somunları tamamlanmalıdır.
+
+11--Karşı ağırlık askı halat bağlantıları eksik kontra somunları tamamlanmalıdır.
+
+12--Kabin askı halat bağlantıları lastik takozları/ yayları yenilenmelidir.
+
+13--Kabinin tüm seyri boyunca askı halatlarının kabin/kabin karkası veya kuyu duvarlarına sürtünmesi önlenmelidir.
+
+14--Askı halatları deformasyondan dolayı yenilenmelidir. (Bir dış demet üzerinde halat çapının 6 katı mesafede 4 adet kırık olduğunda halat yenilenir.)
+
+15--Askı halatları çap daralmasından dolayı yenilenmelidir. (Minimum %6 daralma oluşmuşsa)
+
+16--Askı halatlarında ezilme olmasından dolayı yenilenmelidir.
+
+17--Kabin askı halat bağlantıları eksik kelepçeleri tamamlanmalıdır. (En az iki adet kelepçe olmalı)
+
+18--Kabin askı halat bağlantıları eksik gupilyalar tamamlanmalıdır.
+
+19--Kabin askı halat bağlantıları ters kelepçeleri düzeltilmelidir.
+
+2.7.Kat kapısı kilitleme tertibatı**
+
+1--Kapı emniyet kontakları köprülenmiş.
+
+2--Kapı emniyet kontakları ayarsız.
+
+3--Kapı kilitleri çalışmıyor.
+
+4--Kapı kilitleri ayarsız.
+
+4--Kapı kilidi 2. emniyetleri yok.
+
+5--Kapı kilidi 2. emniyetleri çalışmıyor.
+
+6--Kapı kilidi 2. emniyetleri ayarsız.
+
+7--Kat kapı kilit muhafazaları takılmalı.
+
+8--Kat kapı kilit kolları, makara ve lastikleri takılmalı.
+
+9--Kat kapı kilit pimi yuvasına en az 7 mm girecek şekilde ayarlanmalı.
+
+2.8.Kat kapısı kilitleme tertibatına yetkisiz kişilerce erişilememesi*
+
+1--Kat kapısı kilitleme tertibatına yetkisiz kişilerin erişimini engellemek için deliksiz kuyu duvar mahfazası tespit edilmelidir veya durak kapısı kilitleme tertibatı etrafına koruma tespit edilmelidir.
+
+2.9.Kısmen kapalı kuyularda koruma önlemleri*
+
+1--Kısmen kapalı kuyularda asansörün hareketli kısımları, şahıslar için tehlike yaratmamalıdır.
+
+2--Kısmen kapalı kuyularda şahısların doğrudan veya elde tutulan cisimlerle asansörün güvenli çalışmasına müdahale etmesi engellenmelidir.
+
+3--Kısmen kapalı kuyuların koruma gerektiren kısımların duvarları deliksiz olmalı, duvarlar koridor, galeri veya merdiven kenarından en fazla 0,15 m mesafede olmalı ve başka cihazların, asansörün çalışmasını etkilememesi için gerekli önlemler alınmalıdır.
+
+4--Kısmen kapalı kuyularda durak kapılarının olduğu kenarlarda duvarlar deliksiz olmalı ve en az 3,5 m yükseklikte olmalıdır.
+
+5--Kısmen kapalı kuyularda durak kapılarının olduğu kenarların dışında, asansörün hareketli kısımlarına olan yatay mesafe en az 0,5 m ise duvar 2,5 m yüksekliğinde olmalıdır. Yatay mesafe 0,5 m den fazla ise iki değerin toplamı (Yatay mesafe ile duvar yüksekliği) 3.10 m den az olamaz.
+
+6--Kısmen kapalı kuyularda bina dış cephesinden tırmanan asansörler gibi dış hava etkilerine açık olan asansörlerde özel önlemler alınmalıdır. (Toz ve suya karşı önlem gibi)
+
+2.10.Kuyu duvarı, kuyu tabanı ve tavanının uygunluğu
+
+1--Kuyu tavanı asansörün kütlesinden kaynaklanan yük ve kuvvetlere dayanıklı olmalıdır.
+
+2--Kabin girişine bakan durak kapıları ve kuyu duvarları veya duvar bölümlerinden oluşan kuyu yüzeyi, kabin kapısının tüm genişliği boyunca, kapıların çalışması için gerekli açıklıklar haricinde kesintisiz bir yüzey oluşturmalıdır.
+
+3--Kuyu boşluğu zemini; asılı kılavuz rayları hariç olmak üzere; kılavuz rayların kütlesi dolayısıyla ve ayrıca kılavuz/kılavuzlara sabitlenmiş veya bağlanmış bileşenlere ve/veya acil durdurma (örneğin, raylar üzerinde makina olduğunda dengeleme halatı gergi tertibatı nedeniyle tahrik makarasındaki yük) sırasında meydana gelen herhangi ilave reaksiyona (N) bağlı olarak oluşan ve kılavuz ray klipsleri (kelepçeleri) tarafından uygulanan kuvvet ile güvenlik tertibatının dereye girmesi esnasındaki tepkiye ve herhangi bir itmeye bağlı olarak oluşan herhangi bir ek yük nedeniyle meydana gelen kuvvete her bir kılavuz rayı altında dayanabilmelidir (madde 5.2.1.8.4).
+
+4--Düz veya şekil verilmiş cam paneller lamine edilmiş camdan imal edilmiş olmalıdır. (Üzerinde lamine cam etiketi olmalıdır.)
+
+5--Kuyunun duvarları 0,30 m x 0,30 m daire veya kare alan üzerinde düzgün dağıtılmış 1000 N kuvvet duvara dik açıda uygulandığında 15 mm'den daha büyük elastik şekil değiştirme ve 1 mm'den daha büyük kalıcı şekil bozulması olmamalıdır.
+
+6--Kuyu boşluğu zemini, aşağıdaki eşitlikte ifade edilen kabin tamponlarının toplam sayıları arasında düzgün dağıtılmış tam yüklü kabin kütlesi nedeniyle uygulanan statik yükün dört katına dayanacak kabin tamponu destekleri altında dayanabilmelidir. (madde 5.2.1.8.5)
+
+2.11.Kılavuz raylar, bağlantı elemanları ve bağlantının uygunluğu
+
+1--Kabin ray konsol bağlantılarındaki eksik montaj cıvata-somunları tamamlanmalıdır.
+
+2--Kabin ray konsolları duvara sabitlenmelidir.
+
+3--Kabin eksik ray konsolları tamamlanmalıdır.
+
+4--Kabin kılavuzlamasında boru yerine ray kullanılmalıdır.
+
+5--Kabin altı paten tutucuların eksik civataları tamamlanmalıdır.
+
+6--Kabin altı patenlerindeki boşluk ayarlanmalıdır.
+
+7--Kabin, en az ikişer adet sabit çelik ray ile kılavuzlanmalıdır.
+
+8--Kabin altı paten tutucuları civataları sıkılmalıdır.
+
+9--Kabin altı patenlerinin ayar civataları tamamlanarak ayarlanmalıdır.
+
+10--Kabin altına uygun kılavuzlama paten bloğu takılmalıdır.
+
+11--Kabin üstü paten lastikleri yenilenmeli ve boşluk ayarı yapılmalıdır.
+
+12--Kabin üstü paten boşlukları ayarlanmalıdır.
+
+13--Kabin üstü paten tutucuların eksik montaj civataları takılmalıdır.
+
+14--Kabin üstü paten tutucuları montaj civataları sıkılmalıdır.
+
+15--Kabin üstü patenlerinin ayar civataları tamamlanmalıdır.
+
+16--Kabin üstüne uygun kılavuzlama paten bloğu takılmalıdır.
+
+17--Kılavuz raylar, binanın normal oturmasından veya betonun çekmesinden kaynaklanan etkileri ya kendiliğinden ya da basit bir ayarlama ile dengelemeye imkan verecek şekilde konsollara ve binaya tespit edilmelidir.
+
+18--Kılavuz rayların yerinden kurtulmasına yol açabilecek şekilde bağlantı elemanlarının dönmesi önlenmelidir.
+
+19--Kabin kılavuz rayları tek taraftan sabitlenmelidir.
+
+20--Deforme olan/aşırı korozyona uğrayan kabin kılavuz rayları yenilenmelidir.
+
+21--Kabin kılavuz rayı çalışma yüzeyindeki pürüzlü yüzeyler düzeltilmelidir.
+
+22--Kabin rayları temizlenmelidir.
+
+23--Kabin rayları yağlanmalıdır.
+
+24--Kabin altı paten lastikleri yenilenmeli ve paten boşluk ayarları yapılmalıdır.
+
+25--Kabin ray flanşlarının eksik cıvata-somunları tamamlanmalıdır.
+
+26--Kabin kılavuz rayları birleştirmelerinde kaynaklı kısımlar flanşlı ve cıvatalı bağlantı olmalıdır.
+
+27--Kabin kılavuz raylarındaki eksen kaçıklıkları giderilmelidir.
+
+28--Kabin ray konsol bağlantılarındaki eksik tırnaklar tamamlanmalıdır.
+
+29--Asansörün güvenli çalışmasını sağlamak için kılavuz raylar, kılavuz ray bağlantıları ve tespit yerleri bunları etkileyen yüklere ve kuvvetlere yeterince dayanım göstermelidir.
+
+30--Kabin ray konsol bağlantılarındaki gevşek montaj cıvataları sıkılmalıdır.
+
+31--"Kılavuz rayları, bunların birleştirmeleri ve bağlantı elemanları, asansörün güvenli çalışmasını sağlamayabilmek için kendi üzerlerine uygulanan yüklere ve kuvvetlere dayanabilmelidir. Kılavuz rayları ile ilgili asansörün güvenli çalışmasının aşağıda verilen unsurları içermelidir.
+
+a) Kabin, karşı ağırlık veya dengeleme ağırlığı- kılavuz, güvence sağlamalıdır,
+
+b) Aşağıdakiler nedeniyle olan sehim (sapmalar), bir düzeye kadar sınırlanmış olmalıdır:
+
+1) Kapılarda kontrolsüz kilit açılması meydana gelmemeli ve
+
+2) Güvenlik tertibatı çalışması etkilenmiş olmamalı ve
+
+3) Diğer parçalarla hareketli parçaların çarpışması mümkün olmamalıdır."
+
+2.12. Kuyu elektrik tesisatı
+
+1--Kuyu içi elektrik tesisatı buat kapakları kapatılmalıdır
+
+2--Kuyu içi elektrik tesisatı kablo ekleri buat içerisine alınmalıdır.
+
+3--Kuyu içi elektrik tesisatı kablo kanal kapakları kapatılmalıdır.
+
+3--Kuyu içi elektrik tesisatı düzenlenmelidir.
+
+4--Kuyu içinde açıkta olan elektrik kablo bağlantıları koruma altına alınmalıdır.
+
+5--Kabin üstü dağınık kablo bağlantıları düzenlenmelidir.
+
+6--(Varsa) Kabin üstü bakımcı kumandası üzerindeki korumasız lamba/duy etanj olmalıdır.
+
+7--Kabin üstü priz çalışır hale getirilmelidir.
+
+8--Kabin üstüne topraklı priz takılmalıdır.
+
+9--Kabin üstünde kablo bağlantılarındaki izolesiz kısımlar koruma altına alınmalıdır.
+
+10--Kabin üstü havalandırma fanı muhafaza içine alınmalıdır.
+
+11--Kabin üstü kabloları sabitlenmeli ve koruma altına alınmalıdır.
+
+12--Kabin üstü kablo bağlantı ek kısımları klemens kutusu içerisine alınmalıdır.
+
+13--Kabin üstü tek izoleli kablolar çift izoleli olmalıdır veya spiral/kablo kanalı içine alınmalıdır.
+
+14--Kabin üstü elektrik bağlantı kutusu kapağı takılarak koruma altına alınmalıdır.
+
+2.13.Kuyu üst boşluğunda güvenlik alanı
+
+1--Kabin çatısı üzerinde madde 5.2.5.6.1'e göre kabin en yüksek konumunda iken kabin çatısında, Çizelge 3’ten seçilen ve bir sığınma alanı olarak kullanılabilir en az bir net alan sağlanmalıdır.
+
+2--Kabin çatısında muayene ve bakım işlerini yürütmek için birden fazla kişinin bulunması gerekli ise, ilave her bir kişi başına ek bir sığınma alanı sağlanmalıdır.
+
+3--Birden fazla sığınma alanı bulunması durumunda, bunlar aynı tipte olmalı ve birbirine karışmamalıdır.
+
+4--Karşı ağırlık tam kapalı tampon üzerine oturduğunda kabin patenlerinin raydan çıkması engellenmelidir.
+
+5--"Kabin çatısı üzerinde, madde 5.2.5.6.1’e göre kabin en üst konumunda olduğunda,
+
+1.Tip 1 için dik duruş 0,40x0,50x2 metre olmalıdır.
+
+2. Tip 2 için çömelmiş vaziyetteki duruş 0,50x0,70x1 metre olmalıdır."
+
+6--"Kabin çatısı üzerinde madde 5.2.5.6.1 göre kabin en yüksek konumunda olduğunda, kuyu tavanı üzerinde bulunan en düşük yüksekliğe sahip kısımlar (tavan altına yerleştirilen kirişler ve parçaları dâhil) (bkz. Şekil 5) ile aşağıda verilenler arasındaki net mesafe:
+
+a) b ve c şıklarında belirtilenler hariç olmak üzere, tavanda sabitlenmiş donanımın en yüksek kısımları, kabinin izdüşümü dâhilindeki herhangi bir dikey veya eğik bir doğrultuda en az 0,50 m olmalıdır.
+
+b) Kılavuz patenlerinin veya makaralarının, halat bağlantı uçlarının ve başlığının en yüksek kısımları veya varsa dikey sürgülü kapıların parçaları, kabin izdüşümü dâhilinde 0,40 m yatay mesafe içinde herhangi bir dikey yönde en az 0,10 m olmalıdır."
+
+7--"Kabin üstü korkuluğun en yüksek kısmı, en az aşağıda verilen değerlerde olmalıdır:
+
+1) Kabin izdüşümü dahilinde 0,40 m yatay mesafe içinde 0,30 m ve korkuluğun dış tarafı üzerinde 0,10 m,
+
+2) Kabinin izdüşümü dâhilinde 0,40 m ilerisinde herhangi bir eğimli mesafede 0,50 m."
+
+8--Kabin çatısında, 0,12 m² asgari net alana ve asgari boyutu 0,25 m’den daha büyük olan en küçük kenarlara sahip kabin çatısında tek bir sürekli alan veya kabin çatısı üzerindeki donanım, bir kişinin durabildiği bir yer olarak kabul edilebilir. madde 5.2.5.6.1’e göre kabin en yüksek konumunda olduğunda, böyle bir alan üzerindeki dikey açıklık payı ve kuyu tavanının en kısa kısımları (tavan altında yerleştirilmiş kirişler ve parçalar dahil), madde 5.2.5.7.1’e göre ilgili sığınma alanı/alanları yüksekliğinde olmalıdır.
+
+9--Tahrik kasnakları, makaraları/zincir dişlileri kabinin dikey tarafına (görümüne) yerleştirilmişse, bu durumda kuyunun üst boşluğundaki açıklıklar, madde 5.2.5.7’ye göre olmalıdır. (madde5.5.8)
+
+10--Karşı ağırlık, tam kapalı tampona oturduğunda patenlerin zemine çarpması önlenmelidir.
+
+11--Kabin, karşı ağırlık tam kapalı tampon üzerine oturduğunda 0,035 v2 sıçrama mesafesi dikkate alınmalıdır. Bu mesafeler Çizelge 2'deki şartlara uygun olmalıdır. (madde 5.2.5.6.1.1)
+
+2.14.Asansörün güvenli kullanımına ve bakımına ilişkin bilgiler
+
+1--Kabin üstü bakım kumandası butonlarının üstünde veya yakınında, hareket yönü işaretlenmelidir.
+
+2--Kabin üstü durdurma anahtarının üstünde veya yakınında, durdurma konumunun karıştırılması riski olmayacak bir şekilde “DUR/STOP” kelimesi olmalıdır.
+
+3--Kabin üstü bakım kumandası anahtarının üstünde veya yakınında, “NORMAL” ve “BAKIM” kelimeleri olmalıdır.
+
+4--Kabin üstü korkuluk üzerinde uyarı levhası veya yazısı olmalıdır.
+
+5--Durak kapılarının kilitleme tertibatı üzerinde kilitleme tertibatını imal eden firmanın adı ve tip kontrolü ile ilgili işaret ve referansları ve CE işareti içeren bir bilgi levhası bulunmalıdır.
+
+6--Kabin çatısı üzerinde bulunan ve kabin çatısına erişim imkânı veren duraklardan okunabilir bir işaret, sığınma alanı/alanları için ayrılması düşünülen alanlara müsaade edilen kişi sayısını ve duruş tipini (Çizelge 3) açıkça belirtmelidir.
+
+3.1.Kuyu alt boşluğuna güvenli erişim
+
+1--Kuyu boşluğunda kuyu derinliğinin 2,50 m’yi aşması durumunda bir giriş kapısı olmalıdır.
+
+2--Kuyu derinliğinin 2,50 m’yi aşmaması durumunda; ya bir giriş kapısı ya da durak kapısından kolayca erişilebilir kuyu içerisinde sabitlenmiş veya taşınabilir bir merdiven olmalıdır. (Merdivenler, Ek F’ye uygun olmalıdır.)
+
+3--Asansörün hareketli parçaları ile çarpışma konumunda taşınabilir merdiven kullanımındaki taşınabilir merdivenin bir riske sahip olması halinde, bu taşınabilir merdiven depolama konumunda değilse, asansörün çalışmasını engellemek için madde 5.11.2’ye uygun olarak elektrikli güvenlik cihazı/cihazları ile donatılmalıdır.
+
+4--Kullanım konumunda taşınabilir merdivenin uzunluğu, uygun el tutamakları, durak eşiği seviyesinden dikey olarak asgari 1,10 m yükseklikte olmalıdır. (Ek F.2.3)
+
+5--Kuyuya erişime imkân veren herhangi bir kapı/kapağa bitişik giriş yolu, kalıcı şekilde montaj edilmiş en az 50 lüx şiddetindeki elektrik lambası tesisatı ile aydınlatılmış olmalıdır. (madde 5.2.2.2 )
+
+6--Dikey taşınabilir merdiven olması durumunda herhangi bir basamağın arkası ile kuyu boşluğu duvarı arasında asgari 200 mm net mesafe bulunmalıdır. Durak girişi kenarı ile çalışma konumundaki taşınabilir merdivenin basamak ortası arasındaki mesafe kolayca ulaşılabilir olması için azami 600 mm olmalıdır.
+
+7--Merdivenin portatif olması durumunda kuyudan sökülemeyecek şekilde olmalı ve taşınmasına müsaade etmek için 15 kg 'mı aşmamalıdır.
+
+3.2.Kabin ve karşı ağırlıkta yeterli tampon veya eşdeğeri**
+
+1--Tamponlar kabine veya karşı ağırlığa sabitlenmiş olması durumunda, kuyu boşluğu zemini üzerinde tampon/tamponların darbe alanı/alanları, 300 mm’den küçük olmayan bir yükseklikteki bir engel/engellerle (ayaklı kaide) açıkça belirlenmelidir. Madde 5.2.5.5.1’e göre bir ayırıcı, kuyu boşluğu zeminin üstünde 50 mm’den fazla yüksek olmaması durumunda karşı ağırlığa sabitlenmiş tampon/tamponlar için bir kaide gerekli değildir.
+
+2--Karşı ağırlık tamponu sabitlenmelidir.
+
+3--Karşı ağırlık tamponu karşı ağırlık ray ekseninde olmalıdır.
+
+4--Karşı ağırlık tamponu direkt veya bir destek ile sağlam zemine sabitlenmelidir.
+
+5--Karşı ağırlık altına uygun kapasitede tampon takılmalıdır.
+
+6--Karşı ağırlık tamponu yenilenmelidir. (Deforme olması durumunda)
+
+7--Karşı ağırlık tamponu yenilenmelidir (Yetersiz strok, yaylı tamponda 0,135 v2, hidrolik tamponlarda 0,0674 v2).
+
+8--Kabin tam kapalı tampon üzerine oturduğunda kabin altı ekipmanlarının regülatör halatı gergi kasnağına çarpması engellenmelidir.
+
+9--Kabin tam kapalı tampon üzerine oturduğunda kabin altı ekipmanlarının kuyu dibine çarpması engellenmelidir.
+
+10--Kabin tamponu kaidesi sabitlenmelidir.
+
+11--Kabin en üst kat seviyesinde iken karşı ağırlığın tampona teması önlenmelidir ve sınır kesici çalışma mesafesi ayarlanmalıdır.
+
+12--Kabin tamponu direkt veya bir destek ile sağlam zemine sabitlenmelidir.
+
+13--Kabin tamponu yenilenmelidir (Deforme olması durumunda).
+
+14--Kabin tamponu yenilenmelidir (Yetersiz strok, yaylı tamponda 0,135 v2, hidrolik tamponlarda 0,0674 v2).
+
+15--Kabin altına uygun kapasiteli tampon takılmalıdır.
+
+16--Kabin altı tampon çarpma plakası baskı yüzeyi büyütülmelidir.
+
+17--Kabin altı tampon çarpma plakası tamponu merkezlemelidir.
+
+18--Kabin altı tampon çarpma kiriş ve plakası uygun mukavemette olmalıdır.
+
+19--Karşı ağırlık hidrolik tamponu emniyet kontağı takılmalıdır.
+
+20--Karşı ağırlık hidrolik tamponu emniyet kontağı çalışır hale getirilmelidir.
+
+21--Hidrolik tampon emniyet kontağı çalışma mesafesi ayarlanmalıdır.
+
+22--Kabin altına uygun pozisyonda tampon çarpma plakası takılmalıdır.
+
+23--Kabin hidrolik tamponun emniyet kontağı çalışır hale getirilmelidir.
+
+24--Karşı ağırlık tampon kaidesi sabitlenmelidir.
+
+25--Kabin hidrolik tampona emniyet kontağı takılmalıdır.
+
+26--Kabin tamponu sabitlenmelidir.
+
+27--Beyan hızı 1.0 m/sn üzerinde olan asansörlerde kabin ve karşı ağırlık tamponu olarak hidrolik tampon kullanılmalıdır.
+
+28--Kullanılan tamponların kapasitesi asansör beyan yükü ile uyumlu olmalıdır.
+
+3.3.Kuyu dibi acil durum durdurma tertibatı*
+
+1--Kuyu alt boşluğuna ve kuyu boşluğu zemininden kapı/kapılar açılması halinde madde 5.12.1.11’de verilen gereklere uygun görünebilir ve erişilebilir durdurma cihaz/cihazları bulunmalıdır.
+
+2--Kuyu dibi acil durum durdurma tertibatı sabitlenmelidir.
+
+3--Kuyu dibi acil durum durdurma tertibatı çalışır hale getirilmelidir.
+
+4--Kuyu dibi durdurma butonu 1,60 m’den daha az derinliğe sahip veya bu değere eşit kuyu alt boşlukları için durdurma anahtarı en düşük kat durağı üstünde asgari 0,40 m ve kuyu boşluğu zemininden azami 2,0 m düşey mesafe içinde ve Kuyu dibi durdurma butonu Kapı çerçevesi iç kenarından azami 0,75 m yatay mesafe içinde olmalıdır.
+
+5--"Kuyu dibi durdurma butonu 1,60 m den daha büyük derinliğe sahip kuyu alt boşlukları için iki durdurma anahtarı aşağıdaki gibi bulunmalıdır.
+
+1--- Üstteki anahtar; en düşük durak zemininde asgari 1,0 m dikey mesafe içinde ve kapı çerçeve iç kenarından azami 0,75 m yatay mesafe içinde,
+
+2- Kuyu boşluğu zemininden 1,20 m azami dikey mesafe içerisinde bulunan alttaki anahtar, bir sığınak alanından kullanılabilir."
+
+6--Durak kapıları dışında kuyu boşluğuna giriş kapağı olması halinde, kuyu boşluğu zemininden 1,20 m yüksekteki giriş kapı çerçevesi iç kenarından azami 0,75 m yatay mesafe içerisinde bir tek durdurma anahtarı sağlanmalıdır.
+
+7--Bir sığınma alanının (Kuyu alt boşluğu güvenlik alanı) 0,30 m içerisinde kullanılabilir ve madde 5.12.1.5’e göre kalıcı montajı yapılmış muayene kumanda istasyonu bulunmalıdır.
+
+8--Kuyu dibi bakımcı kumandası kazara çalışmaya karşı korunmuş “ÇALIŞTIRMA” basmalı butonu olmalıdır. (Buton rengi mavi üstü beyaz)
+
+9--Muayene kumanda istasyonu, asgari IPXXD’nin (TS EN 60529) koruma derecesine sahip olmalıdır. (1 mm çapında tel ile içerisine ulaşılamaz.)
+
+10--Kuyu boşluğundaki herhangi bir ayakta durma alanından dikey yükseklik mesafesi (madde 5.2.5.7.3), 2,0 m veya daha az olduğunda kabin hızı 0,30 m/s’yi aşmamalıdır.
+
+11--Asansörün normal çalışmasına geri dönüşü sadece muayene çalışma anahtarının/anahtarlarının normale getirilmesi ve elektrikli tekrar ilk ayar konumuna getirme (reset) tertibatı kuyu dışından çalıştırıldığında mümkün olmalıdır. (madde 5.12.1.5.2.2)
+
+3.4.Kuyu aydınlatma anahtarı ve yeterli kuyu aydınlatması
+
+1--Giriş kat seviyesi üstünde asgari 1,0 m yüksekliğinde ve kuyu boşluğu giriş kapağı çerçevesi iç kenarından 0,75 m azami yatay mesafesi içerisinde konumlandırılmış kuyu aydınlatması (madde 5.2.1.4.1) için anahtarlama tertibatları bulunmalıdır.
+
+2--"Kabinin, kuyu içerisinde gidip gelmesi esnasında kabinin her hangi bir konumunda ve tüm kapıların kapalı olması halinde bile aşağıdaki aydınlatma şiddetini sağlayacak şekilde kuyuda kalıcı monte edilmiş elektrikli aydınlatma sağlanmış olmalıdır.
+
+a)Asansör kuyusunda, durak kapıları kapalı olsa dahi kabin tavanının düşey izdüşümü içerisinde ve döşemenin 1 m üstünde en az 50 lüx şiddetinde bir aydınlatma sağlanmalıdır.
+
+b) Asansör kuyu zemininde en az 50 lüx (lux), çalışma alanları arasında bir kişinin ayakta durabildiği, çalıştığı ve/veya hareket edebildiği her yerde kuyu boşluğu zemininden 1,0 metre mesafede aydınlatma sağlanmalıdır.
+
+c) Asansör kuyusunda kabin veya bileşenlerin oluşturduğu gölgelerin haricinde, madde 5.2.1.4.1 a)’da ve b)’de belirtilen yerlerin dışında en az 20 lüx aydınlatma sağlanmalıdır."
+
+3--Kuyu dibine giriş kapısı açılınca erişilebilen, kuyu aydınlatmasını açıp kapamaya yarayan vaevien/darbe akım anahtarı olmalıdır.
+
+4--Kuyu dibi aydınlatma anahtarı çalışır hale getirilmelidir.
+
+5--Kuyu dibi aydınlatma anahtarı sabitlenmelidir.
+
+6--Kuyu aydınlatmasında yanmayan ampüller çalışır hale getirilmelidir.
+
+7--Kuyu aydınlatma lambaları etanj tip olmalıdır.
+
+8--Kuyu aydınlatma tesisatı etanj olmalıdır.
+
+9--Kuyu aydınlatması çalışır hale getirilmelidir.
+
+10--Kabin üstü aydınlatması kuyu aydınlatmasının bir parçası olabilir.
+
+3.5.Kabin ve/veya karşı ağırlık için uygun aşırı hız regülâtörü tarafından harekete geçirilen güvenlik tertibatı**
+
+1--Kabin güvenlik tertibatı emniyet kontağında normalde kapalı kontak (NC) kullanılmalıdır.
+
+2--Kabin güvenlik tertibatı emniyet kontağı ile baskı sacı arası mesafe ayarlanmalıdır.
+
+3--Kabin güvenlik tertibatı emniyet kontağı emniyet devresine bağlanmalıdır.
+
+4--Kabinde, birden fazla güvenlik tertibatı bulunması durumunda bunların tümü kaymalı cinsten olmalıdır.
+
+5--Kabin güvenlik tertibatı emniyet kontağı sabitlenmelidir.
+
+6--Kabin güvenlik tertibatı emniyet kontağı kapağı takılmalıdır.
+
+7--Kabin güvenlik tertibatı emniyet kontağı çalışır hale getirilmelidir.
+
+8--Kabin güvenlik tertibatı çalışır hale getirilmelidir.
+
+9--Kabin güvenlik tertibatı senkronize çalışır hale getirilmelidir.
+
+10--Kabin güvenlik tertibatı fren tiji bağlantı yayları takılmalıdır.
+
+11--Kabin anma beyan hızına uygun güvenlik tertibatı takılmalıdır.
+
+12--Karşı ağırlığa güvenlik tertibatı tesis edilmelidir.
+
+13--Karşı ağırlık güvenlik tertibatı halat bağlantıları kelepçeleri tamamlanmalıdır.
+
+14--Karşı ağırlık güvenlik tertibatı fren tiji eksik kontra somunları takılmalıdır.
+
+15--Karşı ağırlık güvenlik tertibatı fren tiji gevşek kontra somunları sıkılmalıdır.
+
+16--Karşı ağırlık güvenlik tertibatı çalışır hale getirilmelidir.
+
+17--Karşı ağırlık güvenlik tertibatı senkronize çalışır hale getirilmelidir.
+
+18--Karşı ağırlık güvenlik tertibatı eksik masuraları takılmalıdır.
+
+19--Karşı ağırlık güvenlik tertibatı bağlantı yayları takılmalıdır.
+
+20--Karşı ağırlık güvenlik tertibatı halat bağlantıları ters kelepçeler düzeltilmelidir.
+
+21--Kabin güvenlik tertibatı fren tiji gevşek kontra somunları sıkılmalıdır.
+
+22--Asansör beyan hızının 1 m/s'yi aşması durumunda, karşı ağırlıkta veya dengeleme ağırlığında kullanılan güvenlik tertibatı kaymalı cinsten olmalıdır. Diğer durumlarda anî frenlemeli güvenlik tertibatı kullanılabilir.
+
+23--Kabinde ani frenlemeli (Kamalı sıkıştırma) güvenlik tertibatı 0,63 m/s'yi aşmayan beyan hızlarında kullanılmalıdır.
+
+24--Kabin/karşı ağırlık güvenlik tertibatındaki/hız regülatöründeki eksiklikler giderildikten sonra test takip kontrolünde yapılacaktır.
+
+25--Ani frenlemeli tampon etkili güvenlik tertibatı 1 m/s'yi aşmayan beyan hızlarında kullanılmalıdır. (Makaralı sıkıştırmalı frenler)
+
+26--Kabin güvenlik tertibatı fren tiji eksik kontra somunları takılmalıdır.
+
+27--Asansör beyan hızının 0,63 m/s'yi aşması durumunda kaymalı tip güvenlik tertibatı kullanılmalıdır. (madde 5.6.2.1.2.1)
+
+28--Kabinde uygun güvenlik tertibatı tesis edilmelidir. Yalnız aşağı hareket yönünde etkili olan, beyan yükü ile yüklü kabini hız regülâtörünün devreye girdiği hızda, askı halatlarının kopması durumunda dahi kılavuz raylarda frenleyecek ve sabit tutacak bir güvenlik tertibatı bulunmalıdır.
+
+29--Kabin güvenlik tertibatı halat bağlantıları eksik radansalar takılmalıdır.
+
+30--Kabin güvenlik tertibatı halat bağlantıları ters kelepçeler düzeltilmelidir.
+
+31--Kabin güvenlik tertibatı halat bağlantıları eksik kelepçeleri tamamlanmalıdır. (En az iki adet kelepçe olmalıdır.)
+
+32--Kabin, karşı ağırlık veya dengeleme ağırlığındaki bir güvenlik tertibatının kurtarılması ve otomatik olarak işletmeye hazır konuma gelmesi ancak, kabini, karşı ağırlığı veya dengeleme ağırlığını yukarı yönde hareket ettirmekle mümkün olmalıdır.
+
+33--Güvenlik tertibatının çalışmasından önce veya çalışması sırasında, kabine yerleştirilmiş, madde 5.11.2.3'e uygun bir elektrik güvenlik tertibatı asansör motorunu durdurmalıdır. (Paraşüt kontaklarında kararlılık aranmaz)
+
+34--Karşı ağırlık/dengeleme ağırlığı güvenlik tertibatını beyan hızının 1 m/s'yi aşmadığı durumda hız regülatörü dışında devreye sokan tertibatlar, madde 5.6.2.2.2 askı tertibatı vasıtalarının kopması veya madde 5.6.2.2.2 güvenlik halatı yardımıyla devreye girme şartlarına uygun olmalıdır.
+
+35--Karşı ağırlık/dengeleme ağırlığı güvenlik tertibatını madde 5.6.2.2.2'ye göre askı tertibatı vasıtalarının kopmasıyla devreye sokan tertibat, deney sırasında kuyuya girmeye ihtiyaç olmaksızın güvenlik tertibatının ve bunun harekete geçme mekanizmasının yapılacak bir deney için mümkün olmalı ve Sağlanan vasıtalar mekaniksel ise, çalıştırmak için gerekli olan kuvvet 400 N’u aşmamalıdır.
+
+36--Kullanılan güvenlik tertibatı kapasitesi asansör beyan yükü ile uyumlu olmalıdır.
+
+3.6.Kabinin yukarı doğru aşırı hızlanmasına karşı koruma
+
+1--Yukarı yönde hareket eden kabinin aşırı hızlanmasına karşı koruma tertibatı, kurtarılması için kabin veya karşı ağırlığa müdahaleyi gerektirmemelidir.
+
+2--Sürtünme tahrikli asansörlerde, yukarı yönde hareket eden kabinin aşırı hızlanmasına karşı, uygun koruma tertibatı bulunmalıdır.
+
+3--Yukarı yönde hareket eden kabinin aşırı hızlanmasına karşı koruma tertibatı çalıştıktan sonra, kurtarılması için ehliyetli bir kişinin müdahalesi gerekli olmalıdır.
+
+4--Yukarı yönde hareket eden kabinin aşırı hızlanmasına karşı koruma tertibatı çalıştığında, madde 5.11.2.'ye uygun bir elektrik güvenlik tertibatını devreye sokmalıdır.
+
+5--"Hız izleme ve hızı azaltma elemanlarından oluşan vasıtalar, yukarı yönde hareket eden kabinin (madde 5.6.6.10) aşırı hızlanmasını tespit etmeli ve kabinin durmasına neden olmalı veya en azından kabin hızını karşı ağırlık tamponunun tasarımlandığı hız seviyesine kadar azaltmalıdır. Bu vasıtalar aşağıdaki durumda etkin hale gelmelidir:
+
+a) Normal çalışma,
+
+b) Makina doğrudan görsel izlenemediği veya beyan hızı % 115’ten daha az olacak şekilde diğer vasıtalarla sınırlandırılmadığı takdirde el ile kurtarma çalışması."
+
+6--Yukarı yönde hareket eden kabinin aşırı hızlanmasına karşı koruma tertibatı kurtarıldıktan sonra çalışmaya hazır durumda olmalıdır.
+
+7--Yukarı yönde hareket eden kabinin aşırı hızlanmasına karşı koruma tertibatı çalışır hale getirilmelidir.
+
+8--Yukarı yönde hareket eden kabinin aşırı hızlanmasına karşı makina freninin kullanılması durumunda otomatik izleme işlemine, mekanizmanın düzgün kaldırılması veya indirilmesi veya frenleme gücünün doğrulanması dâhil edilebilir. Bir arıza tespit edildiğinde, asansörün bir sonraki normal başlatılması engellenmelidir. Otomatik izleme, tip incelemesine tabidir. Kabine mekaniksel bir bağlantı, diğer herhangi bir gaye için bu tür bağlantının kullanılıp kullanılmadığına bakılmaksızın bu performansta yardımcı olması için kullanılabilir.
+
+3.7.Kabin ve/veya karşı ağırlık hız regülâtörü halat gerginliği ve halat gergi tertibatında elektrikli güvenlik tertibatı**
+
+1--Kabin hız regülatörü halatının kopması veya aşırı uzaması durumunda, madde 5.11.2'ye uygun bir elektrik güvenlik tertibatı asansörün motorunu durdurmalıdır. (Kontağa basmanın sürekliliği sağlanmışsa kararlı tip kontak aranmaz. Kararlı kontak kullanılması durumunda elektrikli acil kurtarmanın çalışması sağlanmalıdır.)
+
+2--Karşı ağırlık hız regülatörü halatının kopması veya aşırı uzaması durumunda, madde 5.11.2'ye uygun bir elektrik güvenlik tertibatı asansörün motorunu durdurmalıdır. (Kontağa basmanın sürekliliği sağlanmışsa kararlı tip kontak aranmaz. Kararlı kontak kullanılması durumunda elektrikli acil kurtarmanın çalışması sağlanmalıdır.)
+
+3--Karşı ağırlık regülatör gergi makarasına hareketli mafsal kolu takılmalıdır.
+
+4--Hız regülatörü TS EN 12385-5 standardında belirtilen halat teli ile tahrik edilmeli ve halatın asgari kopma yükü, halatlı tahrik tipi hız regülatörü için 0,2’ye eşit bir μ azami sürtünme faktörü dikkate alınarak hız regülatörünün devreye girdiği andaki halatında oluşturulan gerilme kuvveti için en az 8 güvenlik faktörü ile bulunmuş olmalıdır.
+
+5--Kabin regülatör mafsal koluna kontra somun takılmalıdır.
+
+6--Kabin regülatör gergi makarası bağlantılarındaki gevşek somunlar sıkılmalıdır.
+
+7--Kabin regülatör gergi makarasına hareketli mafsal kolu takılmalıdır.
+
+8--Kabin regülatör gergi tertibatı mafsal kolu çalışır hale getirilmelidir.
+
+9--Kabin regülatör gergi makarası ağırlığı/yayı takılmalıdır.
+
+10--Kabin regülatör gergi makarası takılmalıdır.
+
+11--Kabin regülatör gergi makarası ağırlığının yere olan mesafesi halat uzaması dikkate alınarak ayarlanmalıdır.
+
+12--Kabin regülatör gergi makarası ağırlığının duvara temas etmesi engellenmelidir.
+
+13--Kabin regülatör halatı ekli olmamalıdır.
+
+14--Kabin regülatör halatı tellenme/deformasyondan dolayı yenilenmelidir.
+
+15--Kabin regülatör halatının duvara teması engellenmelidir.
+
+16--Kabin regülatör gergi makara çapı halat çapının minimum 30 katı olmalıdır.
+
+17--Kabin regülatör gergi makarası deforme/çatlak olduğundan yenilenmelidir.
+
+18--Kabin regülatör gergi makara yayı ayarlanmalıdır.
+
+19--Kabin regülatör makara yataklaması onarılmalıdır.
+
+20--Kabin regülatör gergi makara halat atma emniyet kontağı çalışır hale getirilmelidir.
+
+21--Kabin regülatör gergi makarası ağırlık montajı uygun hale getirilmelidir.
+
+22--Karşı ağırlık regülatör mafsal koluna kontra somun takılmalıdır.
+
+23--Karşı ağırlık regülatör gergi makarası bağlantılarındaki gevşek somunlar sıkılmalıdır.
+
+24--Karşı ağırlık regülatör gergi tertibatı mafsal kolu çalışır hale getirilmelidir.
+
+25--Karşı ağırlık regülatör gergi makarası ağırlığı/yayı takılmalıdır.
+
+26--Karşı ağırlık regülatör gergi makarası takılmalıdır.
+
+27--Karşı ağırlık regülatör gergi makarası mafsal kolu yere paralel hale getirilmelidir.
+
+28--Karşı ağırlık regülatör gergi makarası ağırlığının duvara temas etmesi engellenmelidir.
+
+29--Karşı ağırlık regülatör halatı, kasnağa ve standarda uygun olmalıdır.
+
+30--Karşı ağırlık regülatör halatı yenilenmelidir.
+
+31--Karşı ağırlık regülatör halatı ekli olmamalıdır.
+
+32--Karşı ağırlık regülatör halatı tellenmeden dolayı yenilenmelidir.
+
+33--Karşı ağırlık regülatör halatının duvara teması engellenmelidir.
+
+34--Karşı ağırlık regülatör halatında deformasyon olduğundan yenilenmelidir.
+
+35--Karşı ağırlık regülatör gergi makara çapı halat çapının minimum 30 katı olmalıdır.
+
+36--Karşı ağırlık regülatör gergi makarası deforme olduğundan yenilenmelidir.
+
+37--Karşı ağırlık regülatör gergi makara yayı ayarlanmalıdır.
+
+38--Karşı ağırlık regülatör makara yataklaması onarılmalıdır.
+
+39--Karşı ağırlık regülatör gergi makara halat atma emniyet kontağı çalışır hale getirilmelidir.
+
+40--Kabin regülatör gergi tertibatı emniyet kontağı pimi ile baskı sacı arasındaki mesafe ayarlanmalı ve emniyet kontağı sabitlenmelidir.
+
+41--Karşı ağırlık regülatör gergi makarası ağırlık montajı uygun hale getirilmelidir.
+
+42--Kabin güvenlik tertibatı (paraşüt sistemi) halat bağlantıları standarda uygun hale getirilmelidir. (Eksik kelepçe, ters kelepçe, gevşek bağlantı ve benzeri)
+
+43--Karşı ağırlık güvenlik tertibatı (paraşüt sistemi) halat bağlantıları standarda uygun hale getirilmelidir (eksik kelepçe, ters kelepçe, gevşek bağlantı ve benzeri)
+
+44--Kabin regülatör mafsal kolu ve emniyet kontağı pimi arasındaki mesafe ayarlanmalı ve emniyet kontağı sabitlenmelidir.
+
+45--Kabin regülatör gergi makarası mafsal kolu yere paralel hale getirilmelidir.
+
+46--Karşı ağırlık regülatör gergi makarası ağırlığının yere olan mesafesi frenleme dikkate alınarak ayarlanmalıdır.
+
+3.8.Karşı veya dengeleme ağırlığı ayırıcı bölmesi
+
+1--Karşı ağırlık veya dengeleme ağırlığının hareket sahası, karşı ağırlığın tam baskısı altındaki tampon/tamponlar üzerinde oturan karşı ağırlığın en alt noktasından veya dengeleme ağırlığı en alt konumunda dengeleme ağırlığı en alt noktasından, kuyu boşluğu zemininden asgari 2,0 m yüksekliğe kadar ayırıcı bölme ile korunmalıdır.
+
+" 2--Karşı ağırlık veya dengeleme ağırlığı seperatörü hiç bir durumda kuyu boşluğundan, bölmenin en alt bölümüne 0,30 m’den daha fazla mesafede olmamalıdır.
+
+3--Karşı ağırlık veya dengeleme ağırlığı seperatörü, gözle muayene maksadı için veya dengeleme tertibatlarının serbest geçişlerine imkan vermek için gerekli asgari genişliğe sahip olan delik/deliklere sahip olabilir. Karşı ağırlık veya dengeleme ağırlığı seperatörü delikli ise, TS EN ISO 13857 standardı madde 4.2.4.1’e uyulmalıdır. Aradaki mesafe 80 mm'den az ise bölme genişliği 10 mm'den fazla olmamalıdır.
+
+4--Karşı ağırlık veya dengeleme ağırlığı seperatörü genişliği en az, karşı veya dengeleme ağırlığı genişliğine eşit olmalıdır.
+
+5--Karşı ağırlık/dengeleme ağırlığı kılavuz rayları ve kuyu duvarı arasındaki boşluğun 0,30 m’yi aşması durumunda bu alan, ayrıca madde 5.2.5.5.1- b) ve c)’ye uygun olarak korunmuş olmalıdır.
+
+6--Karşı ağırlık veya dengeleme ağırlığı seperatörü, kabin ve ilgili parçaları, karşı ağırlığından veya dengeleme ağırlığından (Birisi olması durumunda) ve bunların ilgili parçalarından en az 50 mm mesafede olmalıdır.
+
+7--Karşı ağırlık veya dengeleme ağırlığı ayırıcı bölme duvarı, bunun herhangi bir noktasında dik açıyla 5 cm²’lik yuvarlak veya kare şeklinde bir alana eşit olarak dağılacak 300 N’luk bir kuvvet uygulandığında, karşı ağırlık veya dengeleme ağırlığının onunla çarpışması için saptırılmamasını sağlamak için yeterli rijitliğe sahip olmalıdır.
+
+8--Karşı ağırlık kullanılıyorsa, kabin üst boşluğu boyutlarını korumak için kabin en üst durak seviyesinde iken, karşı ağırlık ve karşı ağırlık tamponları arasında müsaade edilen azami açıklıkları (payları) belirten bir işaret, karşı ağırlığı gösteren bölmeye (madde 5.2.5.5.1) yakın veya üzerine konulmalıdır.
+
+3.9.Aynı asansör kuyusu içerisinde birden fazla asansör bulunduğunda asansörler arasında ayırıcı bölme
+
+1--Asansör kuyusunda birden fazla asansör varsa, diğer asansörlere geçişi engelleyecek şekilde, farklı asansörlere ait hareketli parçalar arasında en az, kabin, karşı ağırlık veya dengeleme ağırlığının en alt hareket noktasından başlayıp, en alt durak seviyesinden en az 2,5 m yüksekliğe kadar uzanan ayırıcı bölme bulunmalıdır.
+
+2--Asansör kuyusunda birden fazla asansör bulunması durumunda kullanılan ayrıcı bölme delikli malzemeden yapılmışsa, TS EN ISO 13857 standardı madde 4.2.4.1 Çizelge 4’e uygun olmalıdır. Hareketli parçalar arası mesafe 200 mm'den az ise bölme hücre aralığı 30 mm'den fazla olmamalıdır.
+
+3--Asansör kuyusunda birden fazla asansör arasına yerleştirilen seperatörün genişliği bir kuyu dibinden diğerine geçişi engelleyecek kadar olmalıdır. (Yerden en fazla 30 cm yükseklikten başlamalıdır.) (madde 5.2.5.5.2.1)
+
+4--Asansör kuyusunda ayırıcı bölme, bunun herhangi bir noktasında dik açıyla 5 cm²’lik yuvarlak veya kare şeklinde bir alana eşit olarak dağılacak 300 N’luk bir kuvvet uygulandığında, karşı ağırlık veya dengeleme ağırlığının onunla çarpışması için saptırılmamasını sağlamak için yeterli rijitliğe sahip olmalıdır.
+
+3.10.Aynı asansör kuyusu içerisinde birden fazla asansör bulunduğunda asansörler ile kuyu arasında ayırıcı bölme
+
+1--Asansör kuyusunda birden fazla asansör arasına yerleştirilen seperatör delikli malzemeden yapılmışsa, TS EN ISO 13857 standardı madde 4.2.4.1 Çizelge 4’e uygun olmalıdır. Hareketli parçalar arası mesafe 200 mm'den az ise bölme hücre aralığı 30 mm'den fazla olmamalıdır.
+
+2--Herhangi bir korkuluğun içinden bitişik asansörün hareketli kısmına (Kabin, karşı ağırlık veya dengeleme ağırlığı) olan yatay uzaklık 0,5 m’den az ise, ayırıcı bölme, kuyunun tam yüksekliğinde yapılmalıdır.
+
+3--Ayırıcı bölmelerin genişliği en az hareketli parçanın veya bunun korunması gereken kısımlarının genişliğinin her iki yanına 0,1 metre ilavesi ile elde edilen genişliği kadar olmalıdır.
+
+3.11.Denge halatı kılavuzlaması ve denge halatı makarası bağlantılarının kontrolü ve denge halatı kontağı testi
+
+1--1,75 m/s’yi aşan beyan hızlarda, germesiz dengeleme tertibatları, döngü yakınında kılavuzlanmış olmalıdır.
+
+2--Askı halatlarının ağırlığına dengelemek için kullanılan tertibat bağlantıları uygun hale getirilmelidir. (3,0 m/s’yi aşmayan beyan hızlarında, zincirler, halatlar veya kayışlar gibi vasıtalar kullanılabilir.)
+
+3--Halat ağırlığını dengelemek için halatlar kullanıldığında gergi makaralarının (Halat ortasından ortasına ölçülen) çapı ile dengeleme halatlarının anma çapı arasındaki oran en az 30 olmalıdır.
+
+4--3,0 m/s’yi aşan beyan hızlarında, dengeleme halatları kullanılmalıdır.
+
+4--"3.5 m/s’yi aşan beyan hızlarında kullanılan dengeleme halatı gergi tertibatı olmalı ve çalışması, madde 5.11.2’ye uygun elektrikli bir güvenlik tertibatı vasıtasıyla asansör makinasının durmasını sağlamalıdır.
+
+3.12.Gevşek halat veya zincir güvenlik tertibatı
+
+1--Kabinin asılması için 2 halat veya 2 zincir kullanılması durumunda, halat veya zincirin biri diğerine göre anormal uzarsa, madde 5.11.2'ye göre bir elektrik güvenlik tertibatı asansörün durmasını sağlamalıdır.
+
+2--Tamburlu ve zincirli asansörlerde kabinin asılması için kullanılan halat veya zincir madde 5.11.2'ye uygun bir elektrik güvenlik tertibatını çalıştıran bir gevşek halat/zincir aygıtına sahip olmalıdır.
+
+3.13.Kuyu alt boşluğunda güvenlik alanı
+
+1--Kuyu boşluğu zemini üzerinde madde 5.2.5.6.1 göre kabin en alt konumunda olduğunda, Çizelge 4’ten seçilen ve bir sığınma alanı olarak kullanılabilen en az bir açık alan sağlanmalıdır.
+
+2--Kuyu boşluğunda muayene ve bakım işlerini yürütmek için birden fazla kişinin bulunması gerekli ise, ilave her bir kişi başına ek bir sığınma alanı sağlanmalıdır.
+
+3--Birden fazla sığınma alanı bulunması durumunda, bunlar aynı tipte olmalı ve birbirine karışmamalıdır.
+
+4--Kuyu boşluğunda, girişten/girişlerden okunabilir bir işaret, müsaade edilen kişilerin sayısını ve sığınma alan/alanları için ayrılması düşünülmüş duruş tipini (Çizelge 4) açıkça belirtmelidir.
+
+5--Kuyu boşluğu zemini üzerinde madde 5.2.5.6.1’e göre kabin en alt konumunda olduğunda madde 5.2.5.8.2-(a) 1)’de ve 2)’de ayrıntısı verilen öğeler dışında örneğin, en yüksek konumda olan dengeleme halatları için bir gergi tertibatı, kuyu boşluğundaki sabit yüksek kısımlar arasındaki serbest düşey mesafe diğer bağlantı parçaları ve kabinin en kısa parçaları, en az 0,30 m olmalıdır
+
+6--"Kuyu boşluğu zemini üzerinde madde 5.2.5.6.1’e göre kabin en alt konumunda olduğunda sığınma alanı boyutuları aşağıdakiler gibi olmalıdır.
+
+1. Tip 1 için dik duruş 0,40x0,50x2 m.
+
+2. Tip 2 için çömelmiş vaziyetteki duruş 0,5x0,7x1 m.
+
+3. Tip 3 yatmış vaziyetteki duruş 0,7x1x0,5 m."
+
+7--Kuyu boşluğu zemini üzerinde madde 5.2.5.6.1’e göre kabin en alt konumunda olduğunda, Kuyu boşluğu zemini ile kabinin en kısa parçaları arasındaki serbest düşey mesafe en az 0,50 m olmalıdır. "1)Bitişik duvara/duvarlara 0,15 metre yatay bir mesafede asgari 0,10 m için kabinin dikey sürgülü kapısının/kapılarının parçaları veya kabinin eteğinin herhangi bir parçası için, 2) Şekil 6’ya ve Şekil 7'ye göre kılavuz raylardan yatay azami bir mesafede bulunan kabin çerçevesi parçaları, güvenlik tertibatı, patenleri için"
+
+8--Kabin tam kapanmış tampon üzerine otururken kabin patenlerinin raydan çıkması önlenmelidir.
+
+3.14.Halatlar veya zincirler ile kasnak veya makara arasına yabancı cisim girmesine karşı koruma
+
+1--Tertibat, dönen parçalarının görünür olduğu, kontrol ve bakımlarının engellenmediği bir şekilde tasarımlanmalıdır ve bunlar delikli ise, boşluklar TS EN ISO 13857 standardı Çizelge 4’e uygun olmalıdır.
+
+2--Kasnakların kanallarından halatların çıkmasını engelleyen tertibat; halatların kasnağa girdiği ve çıktığı yerin yanında bir emniyet tutucusuna ve makaranın yatay ekseni altında 60°den daha büyük sarım açısıyla yerleştirilmişse ve toplam sarım açısı 120° den daha büyükse en az bir ara tutucuya sahip olmalıdır. (bkz. Şekil 19)
+
+3--Karşı ağırlık kasnak halat atma pimi mesafesi ayarlanmalıdır.
+
+4--Kabin altı kasnak halat atma pimi mesafesi ayarlanmalıdır.
+
+5--Karşı ağırlık/dengeleme ağırlığı kasnağı ile zincir makaraları için kasnak veya makara arasına yabancı maddelerin girmesi engellenmelidir.
+
+6--Karşı ağırlık/dengeleme ağırlığı kasnağı ile zincir makaraları için gevşek halatların veya zincirlerin, kasnaktan veya makaralardan çıkmasını önleyici tertibat olmalıdır.
+
+7--Kabin üstü kasnak halat atma pimi mesafesi ayarlanmalıdır.
+
+8--Kabin üstü kasnakları ile zincir makaraları için halatlarla veya zincirlerle, kasnak veya makara arasına yabancı maddelerin girmesini, şahısların yaralanması ve halatın veya zincirin kasnaktan çıkmasını engelleyici teçhizat bulunmalıdır.
+
+9--Kabin üstü kasnakları ile zincir makaraları için şahısların yaralanmasını engelleyici teçhizat bulunmalıdır.
+
+10--Kabin üstü kasnakları ile zincir makaraları için gevşek halatların veya zincirlerin, kasnaktan veya makaralardan çıkmasını önleyici tertibat olmalıdır.
+
+11--Karşı ağırlık/dengeleme ağırlığı kasnağı ile zincir makaraları için halatlarla veya zincirlerle, kasnak veya makara arasına yabancı maddelerin girmesini ve halatın veya zincirin kasnaktan çıkmasını engelleyici teçhizat bulunmalıdır.
+
+12--Kabin altı kasnakları ile zincir makaraları için kasnak veya makara arasına yabancı maddelerin girmesi engellenmelidir.
+
+13--Kabin altı kasnakları ile zincir makaraları için gevşek halatların veya zincirlerin, kasnaktan veya makaralardan çıkmasını önleyici tertibat olmalıdır.
+
+14--Kabin altı kasnakları ile zincir makaraları için halatlarla veya zincirlerle, kasnak veya makara arasına yabancı maddelerin girmesini ve halatın veya zincirin kasnaktan çıkmasını engelleyici teçhizat bulunmalıdır.
+
+15--Kabin üstü kasnakları ile zincir makaraları için kasnak veya makara arasına yabancı maddelerin girmesi engellenmelidir.
+
+16--Kuyu alt boşluğunda kasnaklar ile zincir makaraları için halatlarla veya zincirlerle, kasnak veya makara arasına yabancı maddelerin girmesini, şahısların yaralanması ve halatın veya zincirin kasnaktan çıkmasını engelleyici teçhizat bulunmalıdır.
+
+17--Kuyu üst boşluğunda kasnaklar ile zincir makaraları için halatlarla veya zincirlerle, şahısların yaralanması ve halatın veya zincirin kasnaktan çıkmasını engelleyici teçhizat bulunmalıdır.
+
+18--Hız regülatörü gergi makarası kasnağı halatlarla veya zincirlerle, kasnak veya makara arasına yabancı maddelerin girmesi, şahısların yaralanması ve halatın veya zincirin kasnaktan çıkmasını engelleyici teçhizat bulunmalıdır.
+
+3.15.Kat kapısı eşiği altında kuyu duvarı
+
+1--Kuyu duvarı, her durak kapısı eşiği altında en az, kilit açılma bölgesinin yarı uzunluğuna 50 mm ilavesiyle bulunan uzunlukta düşey bir yüzeyle bağlanmalı ve genişliği kabin giriş genişliğini her iki yandan en az 25 mm aşmalıdır.
+
+2--Kuyu duvarı, her durak kapısı eşiği altında yüzeyi sürekli, metal levhalar gibi düzgün sert kaplamalardan mamul olmalı ve duvarın herhangi bir noktasında dikey olarak 5 cm²’lik yuvarlak veya kare şeklinde bir alana eşit olarak dağılacak 300 N’luk bir kuvvet uygulandığında Kalıcı bir şekilde biçim değiştirmemeli ve 10 mm’den fazla esnememelidir.
+
+3--Kat kapısı etek sacı uç kısımları yatay düzlemle en az 60° açı yapan sert ve düzgün bir pah ile aşağıya doğru uzatılmış olmalıdır. Bu pahın yatay düzlemdeki izdüşümü 20 mm’den az olmamalıdır.
+
+4--Kabin girişine bakan durak kapıları ve kuyu duvarları veya duvar bölümlerinden oluşan kuyu yüzeyi, tüm kuyuda, kabin kapısının tüm genişliği boyunca, kapıların çalışması için gerekli açıklıklar haricinde kesintisiz bir yüzey oluşturmalıdır.
+
+5--Kabin kapısına bakan kuyu duvarlarındaki kat kapısı etek sacı çıkıntıları 5 mm'den daha az olmalıdır. 2 mm’yi aşan çıkıntılar yatayla en az 75°’lik bir açı yapacak şekilde pahlanmalıdır.
+
+3.16.Kabin etek sacı**
+
+1--Kabin etek sacına dikey kısmın daha alttaki kenarı boyunca herhangi bir noktasında durak tarafından kabin eteğine dik olarak 5 cm²’lik yuvarlak veya kare şeklinde bir alana eşit olarak dağılacak şekilde 300 N’luk bir kuvvet uygulandığında, 1 mm’den daha büyük kalıcı şekil değişikliğine ve 35 mm’den daha büyük elastik şekil değişikliğine dayanmalıdır.
+
+2--TS EN 81-20 madde 1.3-c) gereği bina kısıtlamaları ile uygulamaya konan sınırlamalar nedeniyle bazı şartlarda mevcut binalardaki insan veya yük taşıyan yeni asansörleri, EN 81-20’nin bazı gereklerini karşılamaz ve TS EN 81-21 dikkate alınmalıdır. Katlanabilir veya kapalı durumdaki teleskopik etek sacı kullanılması durumunda kabin kapısında kilit olmalıdır.
+
+3--Kabinin her bir giriş eşiğinin altında, karşısındaki durak kapısının genişliğinde ve eteğin düşey bölümünün yüksekliği en az 0,75 m olan bir kabin eteği monte edilmiş olmalıdır. (Yükseklik kabin eşiğinin üzerinden ölçülür.)
+
+4--Kabin etek sacı uygun mukavemette olmalıdır. (Esnememelidir.)
+
+5--Kabin etek sacının düşey bölümün ucu, aşağıya doğru, yatay düzlemle en az 60° ‘lik bir açı yapacak şekilde eğik bir kısımla uzatılmalıdır. Bu kısmın yatay düzlemdeki izdüşümü 20 mm’den az olmamalıdır.
+
+6--Kabin etek sacı düz satıh olarak sabitlenmelidir.(Kat kapısına paralel olmalıdır.)
+
+7--Kabin etek sacı tarafındaki (yüzündeki) herhangi bir çıkıntı, bağlantı elemanları gibi, 5 mm’yi aşmamalıdır ve 2 mm’yi aşan çıkıntılar yataya göre en az 75° pahlı olmalıdır.
+
+3.17.Deliksiz duvarlı kuyu mahfazaları
+
+1--Kuyu duvarları, tabanı ve tavanı yangına dayanıklı ve yanıcı olamayan malzemeden yapılmalıdır.
+
+2--Bir binanın içinde, yangının yayılmasına karşı korunmak için asansör kuyusu gerekliyse, bu kuyu tamamen deliksiz duvar, kuyu tabanı ve kuyu tavanı ile çevrilmiş olmalıdır.
+
+3--"Kuyu içerisinden bir duvardan veya genişliği 0.15 m’den daha büyük olan yatay kirişten herhangi bir yatay çıkıntı ve ayırıcı kirişler dâhil, madde 5.4.7.4’e uygun olarak bir kabin üst korkuluğu ile giriş engellenmediği sürece, bir insanın orada ayakta durması engellenmiş olmalıdır. Koruma tedbirleri aşağıdaki gibi olmalıdır:
+
+a) 0,15 m’den daha büyük olan çıkıntı, yatayla en az 45° açı ile pahlanmış olmalıdır veya
+
+b) Dairesel veya dikdörtgen bölümde 5 cm² lik bir yüzey üzerinde herhangi bir noktada saptırıcıya dik açıyla uygulanan düzgün dağıtılmış 300 N’luk bir kuvvete dayanabilen yatayla asgari 45° açıya sahip eğimli yüzey olacak şekilde şekillendirilmiş bir saptırıcı, aşağıdaki şekil değiştirmeler olmaksızın dayanabilmelidir:
+
+1- Kalıcı bir şekil değiştirme olmaksızın,
+
+2- 15 mm’den daha büyük elastik şekil değiştirme olmaksızın."
+
+4--Durak kapısı tarafında sahanlıkta/kapı kenarlarında kuyuya açılan boşluklar kapatılmalıdır.
+
+5--Her asansör kuyusu duvar, kuyu tabanı ve kuyu tavanı ile veya yeterli serbest hacim ile çevrilmiş olmalıdır.
+
+6--Tam kapalı kuyu duvarlarındaki boşluklar kapatılmalıdır.
+
+7--Kuyu duvarları, zemini veya tavanında cam malzeme kullanılması durumunda düz veya şekil verilmiş cam paneller, lamine edilmiş (Katmanlı) camdan imal edilmelidir. Bunlar ve bağlantı parçaları, kuyunun iç ve dış her iki tarafında herhangi bir noktadaki 0,30 m x 0,30 m alan üzerinde yatay statik 1000 N kuvvete kalıcı şekil bozukluğu olmaksızın dayanmalıdır. (madde 5.2.1.8.3)
+
+3.18.Karşı ağırlık/dengeleme ağırlığı kılavuzlama sistemi
+
+1--Karşı ağırlık ray konsolları duvara sabitlenmelidir.
+
+2--Karşı ağırlıkta güvenlik tertibatı olduğunda raylar tek taraftan sabitlenmelidir.
+
+3--Deforme olan/aşırı korozyona uğrayan karşı ağırlık kılavuz rayları yenilenmelidir.
+
+4--Raydan çıkmış olan karşı ağırlık patenlerinin uygun şekilde montajları yapılmalıdır.
+
+5--Karşı ağırlık rayları yağlanmalıdır.
+
+6--Karşı ağırlık karkası altına tampon çarpma plakası takılmalıdır
+
+7--Karşı ağırlık tampon çarpma plakası baskı yüzeyi tampona göre büyütülmeli ve mukavemeti artırılmalıdır.
+
+8--Karşı ağırlık karkasının eksik cıvataları tamamlanmalıdır.
+
+9--Karşı ağırlık karkasındaki çarpıklık giderilmelidir.
+
+10--Karşı ağırlık karkasındaki korozyon giderilmelidir.
+
+11--Karşı ağırlık bloklarının zıplamasına karşı önlem alınmalıdır.
+
+12--Hasarlı olan karşı ağırlık baritleri yenilenmelidir.
+
+13--Karşı ağırlık bloklarındaki deformasyon giderilmelidir.
+
+14--Karşı ağırlık ile kabin arasında en az 50 mm mesafe olmalıdır.
+
+15--Asansörün çalışması esnasında karşı ağırlığın duvara teması engellenmelidir.
+
+16--Ağırlık bloklarını sıkıca tutan iskelet yapılmalıdır.
+
+17--Kabin tam kapalı tampon üzerine oturduğunda karşı ağırlık patenlerinin raydan çıkması engellenmelidir.
+
+18--Karşı ağırlık alt paten lastikleri yenilenmeli ve boşluk ayarı yapılmalıdır.
+
+19--Karşı ağırlık kılavuz raylarındaki eksen kaçıklıkları giderilmelidir.
+
+20--Karşı ağırlık üst paten lastikleri yenilenmelidir.
+
+21--Karşı ağırlık alt ve üst paten lastikleri yenilenmelidir.
+
+22--Karşı ağırlık paten boşlukları ayarlanmalıdır.
+
+23--Karşı ağırlık paten tutucuların eksik montaj cıvataları tamamlanmalıdır.
+
+24--Karşı ağırlık patenleri raya tam oturur hale getirilmelidir.
+
+25--Karşı ağırlığa uygun kılavuzlama paten bloğu takılmalıdır.
+
+26--Karşı ağırlık tam kapalı tampon üzerine oturduğunda patenlerin zemine çarpması engellenmelidir.
+
+27--Karşı ağırlık tam kapalı tampon üzerine oturduğunda patenlerin raydan çıkma riski önlenmelidir.
+
+28--Kabin tam kapalı tampon üzerine oturduğunda karşı ağırlık patenlerin tavana çarpması engellenmelidir.
+
+29--Karşı ağırlık kılavuz rayları birleştirmelerinde kaynaklı kısımlar flanşlı ve civata bağlantılı olmalıdır.
+
+30--Karşı ağırlık ray flanşlarının eksik civataları tamamlanmalıdır.
+
+31--Karşı ağırlık ray flanşlarının eksik somunları tamamlanmalıdır.
+
+32--Karşı ağırlık ray konsol bağlantılarındaki eksik tırnaklar tamamlanmalıdır.
+
+33--Karşı ağırlık ray konsol bağlantılarındaki eksik montaj civataları tamamlanmalıdır.
+
+34--Karşı ağırlık ray konsol bağlantılarındaki gevşek montaj civataları sıkılmalıdır.
+
+35--Karşı ağırlık eksik ray konsolları tamamlanmalıdır.
+
+36--Karşı ağırlık veya dengeleme ağırlığı, üst üste dizilen bloklardan oluşuyorsa, bunların yerinden çıkmasını önlemek için gerekli tedbirler alınmalıdır.
+
+37--Karşı ağırlıkta ilave ağırlıklar muhafaza içerisine alınmalıdır.
+
+38--Kabin ile karşı ağırlık aynı kuyu içerisinde olmalıdır.
+
+3.19.Kabin, karşı ağırlık/dengeleme ağırlığı altında erişilebilir alanlara karşı koruma önlemleri*
+
+1--Kuyunun altında erişilebilir boşluklar mevcutsa, kuyunun zemini en az 5000 N/m² lik maruz kalınan bir yüke göre tasarımlanmalı ve karşı ağırlık veya dengeleyici ağırlığı, güvenlik tertibatıyla donatılmalıdır. (madde 5.2.5.4)
+
+3.20.Karşı ağırlık için düzgün çalışan güvenlik tertibatı bulunması durumunda uygun aşırı hız regülâtörü**
+
+1--Karşı ağırlık/dengeleme ağırlığı hız regülâtörü veya başka bir tertibat madde 5.11.2.'ye uygun bir elektrik güvenlik tertibatı vasıtasıyla, devreye girdiği hıza ulaşmadan asansör motorunu durdurmalıdır.
+
+2--Karşı ağılrık/dengeleme ağırlığı hız regülâtörü kasnağının (Halat ortasından ortasına ölçülen) çapı ile regülâtör halatı anma çapı arasındaki oran en az 30 olmalıdır.
+
+3--Karşı ağırlık/dengeleme ağırlığı hız regülatörü halatı, bir gergi makarasıyla gerilmelidir. Bu makara veya bunun gergi ağırlığı kılavuzlanmalıdır.
+
+4--Karşı ağırlık regülatörü emniyet kontağı çalışır hale getirilmelidir.
+
+5--Karşı/dengeleme ağırlığı için hız regülatörü bulunması durumunda beyan hızına göre imalatçı tarafından ayarlanmış ve mühürlenmiş olmalıdır.
+
+6--Karşı ağırlık/dengeleme ağırlığı hız regülâtörü, kontrol ve bakım için bulunduğu yerlere girilebilir ve erişilebilir olmalıdır.
+
+7--Hız regülatörü TS EN 12385-5 standardında belirtilen halat teli ile tahrik edilmeli ve Halatın asgari kopma yükü, halatlı tahrik tipi hız regülatörü için 0,2’ye eşit bir μ azami sürtünme faktörü dikkate alınarak hız regülatörünün devreye girdiği andaki halatında oluşturulan gerilme kuvveti için en az 8 güvenlik faktörü ile bulunmuş olmalıdır.
+
+3.21.Kuyu içinde mahsur kalan kişilerinin acil kurtulması veya kurtarılması
+
+1--Kuyuda mahsur kalmış kişi/kişilerin kurtulması için hiçbir vasıta sağlanmamışsa, TS EN 81-28 standardına göre alarm sistemi için sığınma alanından/alanlarından kullanılabilecek şekilde alarm başlatma cihazları, mahsur kalma tehlikesinin bulunduğu yerlerde montajı yapılmalıdır. (madde 5.2.1.6)
+
+2--Kuyu dibi alarm butonu güvenlik hacminden ulaşılabilir olmalıdır.
+
+3--Kuyuda bulunan alarm tertibatları ses şiddeti artırılmalıdır.
+
+4--Asansör kuyusu (Kabin üstü/kuyu dibi) içinde çalışan kişilerin mahsur kalma riski varsa ve kabinden veya kuyu içinden kurtulabilmeleri için önlemler alınmamışsa, bu risklerin oluştuğu yerlere alarm tertibatı konulmalıdır.
+
+5--Kabin üstünde normal aydınlatma beslemesinin arızasında otomatik bir şekilde devreye giren, 1 h (saat) için en az 5 lüx bir ışık şiddetini kabin çatısının merkezinde zeminin 1 m üstünde ve kabin çatısında bulunan alarm başlatma cihazı üstünde sağlayabilen otomatik olarak tekrar şarj edilebilir acil durum beslemeli acil durum lambaları bulunmalıdır.
+
+6--Kuyu dibi alarm tertibatı çalışır hale getirilmelidir.
+
+7--Kabin üstü ve kuyu dibi alarm tertibatı akü devresine bağlı çalışır hale getirilmelidir.
+
+3.22.Asansörün güvenli kullanımına ve bakımına ilişkin bilgiler
+
+1--Tamponlar üzerinde (Enerji depolayan tipteki tamponlar hariç), tamponu imal eden firmanın adı, tip kontrolü ile ilgili işaret ve referansları ve CE işareti içeren bir bilgi levhası bulunmalıdır.
+
+2--"Güvenlik tertibatı bilgi plakası üzerinde aşağıdaki bilgiler sabit bir şekilde belirtilmelidir:
+
+a) Güvenlik tertibatı imalatçısının ismi,
+
+b) Tip inceleme sertifikası numarası, CE işareti
+
+c) Güvenlik tertibat tipi,
+
+d) Yük aralığı ile ilişkisi, bakım talimatında belirtilmişse, ayarlanabilir bir güvenlik tertibatı durumunda, müsaade edilen yük aralığı veya ayarlama değişkenleri işaretlenmelidir. "
+
+3--Kuyu dışında bakım kapıları yakınında: “Asansör kuyusu - Tehlike Yetkili olmayan giremez” ikaz levhaları bulunmalıdır.
+
+4--Kuyu alt boşluğundaki durdurma anahtarı üstünde veya yakınında, durdurma konumunun karıştırılması riski olmayacak bir şekilde “DUR/STOP” kelimesi bulunmalıdır.
+
+5--Yük asansörlerinin durak kapılarına, durağın yükleme alanından her zaman görülebilen, beyan yükünü belirten etiketler konulmalıdır.
+
+6--Elle açılan durak kapılarında, diğer bitişik kapılarla karıştırılma ihtimali varsa, “Asansör” kelimesi yazılı ikaz levhaları konulmalıdır.
+
+7--"Doğrusal karakteristikli (madde 5.8.2.1.1) olanlardan farklı olan tamponlar üzerinde, aşağıdaki bilgilere sahip bir bilgi plakası bulunmalıdır:
+
+a) Tamponun imalatçısının ismi,
+
+b) Tip inceleme sertifikası numarası,
+
+c) Tampon tipi,
+
+d) Hidrolik tamponlar olması durumunda hidrolik akışkanın gösterimi ve tipi."
+
+8--Kuyu dibinde asansör parçalarının güvenli bir şekilde bakımlarının yapılabilmesi için gerekli tedbirler alınmalıdır.
+
+9--Kabin güvenlik tertibatında (Paraşüt freni) imal eden firmanın adı, tip kontrolü ile ilgili işaret ve referansları içeren bilgi etiketi olmalıdır.
+
+3.23.Asansöre ait olmayan teçhizat
+
+1--Kuyuda tehlike yaratan teçhizat (Doğal gaz, baca ve benzeri) sökülmelidir.
+
+2--Kuyuda asansöre ait olmayan kablo tesisatı ve teçhizat sökülmeli veya izole edilmelidir.
+
+3.24.Kuyu dibi prizi
+
+1--Kuyu dibi prizi toprak hattı bağlanmalıdır.
+
+2--Kuyu dibine topraklı priz takılmalıdır.
+
+3--Kuyu dibi prizi sabitlenmelidir.
+
+4--Kuyu dibi prizi çalışır hale getirilmelidir.
+
+3.25.Bükülgen kablo ve takoz bağlantısı
+
+1--Kabine bağlı olan bükülgen kablonun zemine teması önlenmelidir.
+
+2--Kabin altı kumanda kablosu uygun takozla düşey konumda kabine bağlanmalıdır.
+
+3--Kabine bağlı bükülgen kablonun hareketli kısmının ray konsollarına ve raya teması önlenmelidir.
+
+4--Kabin bağlantı bükülgen kablosu ile ilave çekilen kablolar birbirine bağlanmalıdır.
+
+5--Kabin altı bükülgen kablo izolasyonu uygun hale getirilmelidir.
+
+3.26.Temizlik ve rutubet durumu
+
+1--Kuyu dibi temizlenmelidir.
+
+2--Kılavuz raylar, tamponlar, ara bölmeler ve benzeri montajından sonra dahi kuyu alt boşluğuna su sızması engellenmiş olmalıdır.
+
+3--Kuyu dibindeki su giderilmeli ve birikmesi önlenmelidir.
+
+4.1.Asansör işletme talimatı
+
+1--Asansörün güvenle kullanılmasını sağlayan talimatı kabin içine takılmalıdır.
+
+4.2.Kabin kapısı/kapıları
+
+1--Her bir kabin kapısı, madde 5.3.13.1‘de belirtilen şartlara uygun olacak şekilde madde 5.11.2’ye uygun olarak kapının kapalı kalmasını sağlayan bir elektrikli güvenlik tertibatıyla donatılmalıdır.
+
+2--Kapılar, normal işletmede sıkışmayacak ve hareket mesafesi sonunda kılavuzlarından çıkmayacak bir yapıya sahip olmalıdır.
+
+3--Kabin kapısı otomatik olmadıkça ve kabin durakta seviyesinde hareketsiz olduğunda açık konumda kalmadıkça madde 5.3.7.2.1-a)’daki gibi durak kapılarında görme paneli/panelleri ile donatılmışsa, kabin kapısı görme paneli/panelleri ile donatılmalıdır. (madde 5.3.7.2.2)
+
+4--Kabin girişine kabin kapısı/kapıları takılmalıdır.
+
+5--Her bir kabin kapısı, madde 5.3.13.1'de belirtilen şartlara uygun olacak şekilde madde 5.11.2’ye uygun olarak kapının kapalı kalmasını sağlayan bir elektrikli güvenlik tertibatı çalışır hale getirilmelidir.
+
+6--Kabin kapısı çalışır hale getirilmelidir.
+
+7--Menteşeli kabin kapılarında, kapıların kabinin dışına savrulmasını önlemek için durdurma mesnetleri konulmalıdır.
+
+8--Düşey hareket eden sürmeli kabin kapılarının panelleri, bağımsız iki askı elemanına tespit edilmelidir. Halat ortasından-ortasına ölçülen makara çapı, halat çapının en az 25 katı olmalıdır.
+
+9--Askı halatları veya zincirlerinin, kasnak oluklarından veya dişlilerden çıkması engellenmelidir.
+
+10--Düşey hareket eden sürmeli kabin kapıları, her iki yandan kılavuzlanmış olmalıdır.
+
+11--Yatay hareket eden sürmeli kabin kapıları, alt ve üstten kılavuzlanmış olmalıdır.
+
+4.3.Deliksiz kat ve kabin kapıları
+
+1--Durak ve kabin kapısı kapalı durumda iken kapı kanatları veya kanatlar ile kasa, eşik veya kasa üstü arasındaki açıklıklar mümkün olduğu kadar küçük olmalı ve 10 mm’yi aşmamalıdır.
+
+2--Kuyu duvarlarındaki asansör kabinine girişi sağlayan durak kapılarına ve kabin kapısına, yüzeyleri deliksiz olan kapılar konulmalıdır.
+
+3--"Yatay hareket eden sürmeli durak kapılarında, en zayıf noktaya, hareket yönünde elle tatbik edilen (Alet kullanmadan) 150 N’luk bir kuvvet etkisi altında TS EN 81-20 stansardında belirtilen açıklıklar 6 mm’den büyük olabilir ancak bu değer;
+
+a) Yana açılan kapılarda 30 mm’den büyük olamaz,
+
+b) Merkezden açılan kapılarda toplam 45 mm’den büyük olamaz."
+
+4.4.Camlı kat ve kabin kapıları
+
+1--Camdan yapılan kapı panelleri, bu standarda uygun olarak uygulanacak kuvvetlerin etkisiyle tahrip olmayacak şekilde tespit edilmelidir. Kapılarda lamine cam kullanılmalı ve camlar etiketlenmiş olmalıdır.
+
+2--Camın kapılara tespit şekli, camın tespit yerlerinden kayarak çıkmasını engellemelidir.
+
+3--Camdan yapılmış kapılar, madde 5.3.7.2.1-a)’ya göre görüş panelleri hariç olmak üzere, bir engel durumunda kapının durdurulması ve 150 N’a kadar açma kuvvetinin sınırlandırılması için vasıtalar ile donatılmalıdır.
+
+4--Kabin kapısı otomatik olmadıkça ve kabin durakta seviyesinde hareketsiz olduğunda açık konumda kalmadıkça madde 5.3.7.2.1-a)’daki gibi durak kapılarında görme paneli/panelleri ile donatılmışsa, kabin kapısı görme paneli/panelleri ile donatılmalıdır.
+
+5--"Elle açılan durak kapılarında, kullanıcı kapıyı açmadan önce, kabinin katta olup olmadığını anlayabilmelidir. Bu amaçla aşağıdakilerden biri sağlanmış olmalıdır:
+
+a) Aşağıdaki şartları yerine getiren bir veya birden fazla ışık geçiren kapı penceresi:
+
+1) Üzerinde bilgi etiketi bulunan minimum 3/0,76/3 mm kalınlıkta lamine cam olacak,
+
+2) Her durak kapısında enaz 0,015 m2 toplam pencere alanı her bir pencere için en az 0,01 m2 alan
+
+3) Pencere genişiliği en az 60 mm en çok 150 mm, pencere genişiliği 80 mm'den fazla ise pencerenin alt kenarı döşemeden en az 1 metre yukarıda olmalıdır.
+
+veya;
+
+b) Sadece kabin ilgili durakta durunca veya durmak üzereyken yanmasına izin verilen bir katta sinyali bulunmalıdır. Bu sinyal kabin durakta durduğu sürece yanmalıdır."
+
+6--Kırık olan çarpma kapılı kat kapı camları yenilenmelidir.
+
+7--Kırık olan kat ve kabin kapısı lamine camları yenilenmelidir.
+
+8--Kat kapı camları sabitlenmelidir.
+
+9--Eksik olan kat kapı cam çerçeveleri takılmalıdır.
+
+10--Camdan yapılan kabin kapısı panelleri, bu standarda uygun olarak uygulanacak kuvvetlerin etkisiyle tahrip olmayacak şekilde tespit edilmelidir.
+
+4.5.Camlı kat kapıları veya yatay sürmeli kabin kapılarında çocukların ellerinin sürüklenmesine karşı tedbirler
+
+1--"Çocukların ellerinin sürüklenmeden dolayı sıkışmasının önlenmesi için, madde 5.3.7.2’de belirtilenden daha büyük boyutlu camdan yapılmış yatay olarak otomatik çalıştırılan sürgülü kapılar, aşağıdakiler yardımıyla riski asgariye indirecek vasıtalarla donatılmalıdır.
+
+1) Asgari 1,10 m yüksekliğe kadar buzlu cam veya buzlu malzeme uygulamasının herhangi birinin kullanımı ile kullanıcıya açık tarafta saydam olmayan cam yardımıyla veya
+
+2) Eşik üstünde en az 1,60 m’ye kadar parmakların varlığının algılanması ve açılış yönünde kapı hareketini durdurma veya
+
+3) Azami 4 mm’ye kadar kapı panelleri ve çerçeve arasındaki boşluğun sınırlandırılması eşik üstünde asgari 1,60 m’ye kadar. Aşınma nedeniyle bu değer 5 mm’ye ulaşabilir. Girintiler (çerçeveli cam ve benzeri) 1 mm'yi aşmamalı ve 4 mm boşluk dâhil edilmelidir. Kapı paneline bitişik çerçevenin dış kenarı üzerindeki azami yarıçap, 4 mm'den daha fazla olmamalıdır."
+
+4.6.Çok panelli sürmeli kapılar
+
+1--Bir sürmeli kapının, doğrudan mekanik bağlantılı çok sayıda paneli varsa: teleskopik kapılarda tek bir kilitlemenin diğer panellerin açılmasını önlemesi kaydıyla, yalnız bir panelin kilitlenmesine izin verilir.
+
+2--Panellerin mekanik bağlantılarının dolaylı olması durumunda (mesela: halat, kayış veya zincir ile), tek bir kilitlemenin diğer panellerin açılmasını önlemesi ve panellerde tutamak bulunmaması kaydıyla, yalnız bir panelin kilitlenmesine izin verilir. Teleskopik kapının panellerinin kilitleme tertibatıyla kilitlenmemiş diğer panel veya panellerin kapalı durumda olduğu madde 5.11.2.'ye uygun bir elektrik güvenlik tertibatıyla denetlenmelidir.
+
+4.7.Menteşeli kat kapısı kapatıldığında makina gücü ile çalışan kabin kapıları
+
+1--Kabin kapısı, sadece durak kapısı kapatıldığında çalışmalıdır.
+
+4.8.Kat kapılarında aydınlatma
+
+1--Kapıyı açıp kabine girmek isteyen bir kullanıcı, kabin aydınlatması arızalı olsa dahi, önünde ne olduğunu görebilecek şekilde, durak kapıları civarındaki tâbiî ve sunî aydınlatma döşeme seviyesinde en az 50 lüx olmalıdır.
+
+2--Kat kapısı sahanlık aydınlatmaları çalışır hale getirilmelidir.
+
+4.9.Kat kapı bağlantılarının mukavemeti*
+
+1--Kat kapıları, kilitli durumda iken yeterli mekanik dayanıma sahip olmalıdır.
+
+2--Kat kapıları, normal işletmede sıkışmayacak ve hareket mesafesi sonunda kılavuzlarından çıkmayacak bir yapıya sahip olmalıdır.
+
+4.10.Engelliler tarafından kullanılması amaçlanan/amaçlanmayan kabin ve kat kapılarında koruyucu tertibat**
+
+1--Durak kapısı ve kabin kapısının bununla sabit bir şekilde bağlantılı mekanik parçaların, ortalama kapanma hızında hesapla veya ölçme ile bulunan kinetik enerjisi 10 J'ü geçmemelidir.
+
+2--Düşey hareket eden sürmeli durak kapıları yalnızca yük asansörlerinde kullanılabilir. Bu tip kapılarda kapının kapanması, kullanıcının sürekli kontrolü altında gerçekleşmelidir.
+
+3--Kabin kapısı emniyet kontağı takılmalıdır.
+
+4--Boy fotoseli ve sıkışma kontağı çalışır hale getirilmelidir.
+
+5--Kabin kapının kapanmasını engellemek için gerekli olan kuvvet 150 N’u geçmemelidir.
+
+6--Kabin kapısı emniyet kontağı zorlayıcı mekanik etkiyle ayrılmalıdır.
+
+7--Kabin kapısı emniyet kontağı çalışır hale getirilmelidir.
+
+8--"Bir koruyucu tertibat, kapı/kapıların kapanma hareketi esnasında bir kişinin kapı girişinden geçmekte olduğu sırada kapı/kapıların otomatik olarak yeniden açılmasını başlatmalıdır (aktive etmelidir). Bu koruyucu
+
+tertibat, kapı kapanma aralığının son 20 mm’sinde devre dışı bırakılabilinir.
+
+1) Koruyucu tertibatı (Örneğin ışık perdesi), kabin kapısı eşiği üzerinde en az 25 mm ve 1600 mm arasındaki mesafe üzerinden açıklığı örtmelidir.
+
+2) Koruyucu tertibatı, asgari 50 mm çapında engelleri tespit edebilmelidir,
+
+3) Kapı kapatılırken, kalıcı engelleri ortadan kaldırmak için koruma tertibatı önceden belirlenmiş bir sürenin sonrasında devre dışı kalabilir.
+
+4) Arıza veya devre dışı kalması durumunda kapının kinetik enerjisi 4 joule ile sınırlandırılmalıdır, bu durumda asansör çalışmaya devam edecek ise kapının her kapanmasında bir akustik sinyal vermelidir. (madde 5.3.6.2.2.1)"
+
+9--Kapı kapanma hareketinin önlenmesi, kapının yeniden açılmasını başlatmalıdır. Bir katlanır kabin kapısını açılmadan engellemek için gerekli kuvvet 150 N'u aşmamalıdır.
+
+10--Katlanır kabin kapısı bir girinti içerisine giriyorsa kabin kapısının herhangi bir dış kenarı ile bu girinti arasındaki mesafe en az 15 mm olmalıdır.
+
+11--Kapı panellerinin öncü kenarlarındaki labirentler 25 mm'yi aşmamalıdır, cam kapı durumunda öncü panelin kenar kalınlığı 20 mm'den daha az olmamalıdır.
+
+4.11.Kapı topraklama bağlantıları**
+
+1--Kat kapıları gevşek topraklama bağlantıları sıkılmalıdır.
+
+2--Kat kapısı topraklama hatlarında asansör durak kapısı gövdesi topraklama iletkeni olarak kullanılmamalıdır.
+
+3--Kat kapı topraklama bağlantıları yüksük veya civatalı veya kablo pabucu ile olmalıdır.
+
+4--Kat kapılarının topraklama bağlantıları olmalıdır.
+
+4.12.Kabin ile kabin girişine bakan kuyu duvarı arasındaki açıklık
+
+1--Kabin eşiği ile durak kapısı eşiği arasındaki yatay açıklık 35 mm’yi aşmamalıdır.
+
+4.13. Kabin kapısı ile kat kapısı arasındaki yatay mesafe Kabin kapısı ile kapalı durak kapıları arasındaki yatay açıklık veya kapılar arasındaki girilebilir aralık normal çalışmada 0,12 m’yi aşmamalıdır.
+
+2--Menteşeli durak kapıları ile katlanır tipteki kabin kapılarının müşterek kullanılması durumunda 0,15 m çapındaki bir kürenin kapalı kapılar arasındaki herhangi bir açıklığa sığması mümkün olmamalıdır.
+
+4.14.Kuyu iç yüzeyi ile kabin eşiği/kabin kapısının çerçevesi/sürmeli kapılarda kapanan kenar arasındaki yatay mesafe
+
+1--"Asansör kuyusu iç yüzeyi ile kabin eşiği veya kabin kapısının çerçevesi veya sürgülü kapılarda kapanan kenar arasındaki yatay açıklık, kuyu boyunca 0,15 m’yi aşmamalıdır (bkz. Şekil 3).
+
+a) 0,5 m’yi aşmayan bir yükseklik üzerinden 0,2 m’ye kadar uzatılabilir. İki ardışık durak kapısı arasındaki bu tür girintiler birden fazla olmamalıdır,
+
+b) Düşey hareketli sürgülü durak kapılarıyla donatılmış yük asansörlerinde, bütün seyir hareketi mesafesi boyunca 0,2 m uzatılabilir,
+
+c) Madde 5.3.9.2’ye göre mekanik olarak kilitlenen ve sadece bir durak kapısının kilit açılma bölgesinde açılabilen bir kapı ile kabinin donatıldığı durumlarda bu mesafe sınırlanmamıştır."
+
+4.15.Yay, amortisör, paten ve makara
+
+1--Kapı yayları/ağırlıkları uygun değil. Kapı serbest bırakıldığında kendiliğinden kapanmıyor.
+
+2--Kapı amortisörleri uygun değil. Kapı serbest bırakıldığında çok sert çarpıyor.
+
+3--Kapı panellerindeki patenler uygun değil. Kapı klavuzlardan çıkıyor.
+
+4.16.Kat butonları ve göstergeler*
+
+1--Kat butonu çalışır hale getirilmelidir.
+
+2--Kat buton ışıkları yanar hale getirilmelidir.
+
+3--Kat göstergeleri sabitlenmelidir.
+
+4--Katlarda gösterge camları takılmalıdır.
+
+5--Katlarda gösterge yönleri düzeltilmelidir.
+
+6--(Varsa) Katlarda gösterge yön ışıkları çalışır hale getirilmelidir.
+
+7--Kırık olan kat butonları yenilenmelidir.
+
+4.17.Acil durumlarda kat kapılarının özel alet kullanılarak açılması
+
+1--Kilit açma üçgeninin konumu, kapı paneli veya çerçevesi üzerinde olabilir. Bir dikey düzlemde, kapı paneli veya çerçevesi üzerinde, kilit açma üçgeninin konumu, eşik seviyesinden itibaren yüksekliği 2,00 m’yi aşmamalıdır.
+
+2--Kilit açma üçgeni, çerçeve ve yatay düzlemde aşağı doğru bir anahtar deliğin üzerinde ise, durak zemininden kilit açma deliğinin azami yüksekliği 2,70 m olmalıdır.
+
+3--Acil durumda kilit açma anahtarı, 0,20 m’den daha büyük uzunluğa sahip olması durumunda özel bir alet olarak kabul edilmiştir ve montaj yerinde hazır bulundurulmalıdır.
+
+4--Acil durum kilit açma anahtarı ile bir kilit açılma işleminden sonra, durak kapısı kapanınca kilitleme tertibatı açık konumda kalmamalıdır.
+
+5--Kabin kilit açılma bölgesi dışında iken kabin sınırlama mekanizmasını 1000 N bir kuvvet ile 50 mm'den daha fazla açmak mümkün olmamalı ve aynı zamanda otomatik bir güç çalışması altında kapı açılmamalıdır.
+
+6--Durak kapılarından her biri, kilit açma üçgenine uyacak bir anahtar yardımıyla dışarıdan açılabilmelidir.
+
+7--Acil durum kilit açma anahtarı binada sorumlu bir kişiye verilmelidir ve anahtarla birlikte, kilidin açılmasından sonra tekrar kapama işleminin tam olarak yapılmamasından kaynaklanabilecek kazaları engellemek için alınması gereken başlıca önlemleri içeren yazılı bir talimat makina dairesine veya kumanda panosuna asılmalıdır.
+
+4.18.Yatay sürmeli kapıların otomatik olarak kapanması
+
+1--Durak kapılarının kabin kapısı tarafından tahrik edildiği durumlarda, kabin kilit açılma bölgesinin dışında iken her ne sebeple olursa olsun durak kapısı açıldığında, bir tertibat (Ağırlık veya yay) durak kapısının otomatik olarak kapanmasını temin etmelidir.
+
+4.19.Yangına karşı dirençli kat kapıları
+
+1--Yapı yüksekliğinin 51,50 m den düşük binalardaki asansör kat kapıları TS EN 81-58 standardı E30’a uygun yangına karşı dirençli kat kapılarıyla donatılmalıdır.
+
+2--Yapı yüksekliğinin 51,50 m den yüksek binalardaki asansör kat kapıları TS EN 81-58 standardı E60’a uygun yangına karşı dirençli kat kapılarıyla donatılmalıdır.
+
+3--Her bir durak kapısı kanatları üzerinde yangın dayanımına ilişkin imalatçının adı, kapı tipi, yangın dayanım sınıfı (E30/E60) ve TS EN 81-58 standardına göre test sertifikası bilgilerini içeren bilgi etiketi bulunmalıdır.
+
+5.1.Beyan yükü, kişi sayısı, imal yılı ve asansör monte edene ilişkin bilgileri içeren etiket*
+
+1--Kabinde, asansörün beyan yükü ……kg olarak ve taşıyacağı insan sayısı …..kişi olarak ikaz levhasında belirtilmelidir.
+
+5.2.Asansörün güvenli kullanımına ve bakımına ilişkin bilgiler
+
+1--Yeterince görülebilen yazı veya göstergeler, kabinde bulunanların asansörün hangi katta durduğunu anlayabilmelerini sağlamalıdır.
+
+2--Kabinde kırmızı ve sarı renkler diğer butonlarda kullanılmamalıdır. Bu renkler ancak, ışıklı çağrı kayıt sinyallerinde kullanılabilir.
+
+3--Kabin içerisinde asansörün güvenlikle kullanılmasını sağlayan talimat, gerekli olduğu durumlarda kabinde bulunmalıdır.
+
+4--Kabinde motor gücüyle çalışan kabin iç kapısını tekrar açma butonu açık bir şekilde işaretlenmelidir.
+
+5--Kabinde İmdat butonu (varsa), sarı renkli olmalı ve sembolle belirtilmelidir.
+
+6--Kabinde (varsa) durdurma anahtarının tahrik elemanı kırmızı renkte olmalı ve durdurma konumunun karıştırılması riski olmayacak bir şekilde “DUR” kelimesiyle işaretlenmelidir.
+
+7--Kabinde asansör seri numarası, imal yılı ve monte eden firma adı olmalıdır.
+
+8--Kabin iç kumanda buton cihazları, görevlerine göre açık bir şekilde işaretlenmelidir.
+
+5.3.Güvenli kabin taban alanı beyan yükü oranı*
+
+1--Kabinin, insanlar tarafından aşırı bir şekilde yüklenmesini engellemek için beyan yüküne bağlı olarak, kullanılabilir kabin alanı uygun hale getirilmelidir.
+
+5.4.Kabin duvarlarının, taban ve tavan yapısının uygunluğu
+
+1--"Kabin gövdesinin yapı desteklemesi, alev almaz malzemelerden yapılmalıdır. Kabin zemini, duvar ve tavan son işlemleri (kaplamaları) için seçilen malzemeler, aşağıda listelendiği gibi TS EN 13501-1 standardı gerekliliklerine uygun olmalıdır.
+
+- Zemin kaplaması Cfl-s2
+
+- Duvar C-s2-d1
+
+- Tavan C-s2-d0
+
+2--Yüzeydeki boya, duvar üzerindeki 0,30 mm'ye kadar lamineler ve çalıştırma tertibatı gibi donanım, aydınlatma ve göstergeler yukarıdaki gereklerden hariçtir."
+
+3--Kabin içinde kullanılan aynalar veya diğer cam tamamlayıcılar, kırılabilir malzemeden ise TS EN 12600 standardı Ek C’ye göre B veya C moduna uygun olmalıdır. (Ek C'de Tip B ve C olarak geçen camlar: termal olarak temperlenmiş silikat emniyet camı, lamine emniyet camı, telli cam, parlatılmış telli cam ve filmle kaplanmış temperli cam)
+
+4--Kabin üstü eksik montaj cıvataları tamamlanmalıdır.
+
+4--Camdan yapılan kabin duvarları döşeme seviyesinden 1,1 m’den daha alçakta ise, döşemeden 0,9 ile 1,1 m arasında yüksekliğe el tutamağı konulmalıdır. Bu tutamak camdan bağımsız olarak tespit edilmelidir.
+
+5--Kabin altı eksik montaj civataları tamamlanmalıdır.
+
+6--Kabin altı bağlantı takozları/lastikleri değiştirilmelidir.
+
+7--Kabin üstü alev almaz malzemeden olmalıdır.
+
+8--Kabin üstü kaynaklı bağlantılar cıvata bağlantıları ile desteklenmelidir.
+
+9--Kırık olan kabin duvarlarındaki lamine cam yenilenmelidir.
+
+10--Kabin duvarlarındaki lamine cam üzerinde imalâtçının adı, ticarî markası, camın tipi ve kalınlığını belirten bilgi etiketi olmalıdır.
+
+11--Camdan yapılan kabin duvarlarına lamine cam kullanılmalıdır.
+
+12--Kabin altı aydınlatma tesisatı sökülmelidir.
+
+13--Kabin altı yanmaz malzemeden olmalıdır.
+
+14--Kabin üstü gevşek montaj somunları sıkılmalıdır.
+
+15--Kabinin her bir duvarı, içten dışa doğru herhangi bir noktasında dik olarak 5 cm²’lik yuvarlak veya kare şeklinde bir alana eşit olarak dağılacak 300 N’luk bir kuvvet uygulandığında 1 mm’den daha büyük herhangi bir kalıcı biçim değişikliği olmamalı ve 15 mm’den daha fazla elastik şekil değişikliği olmamalıdır.
+
+16--Kabin ve karkas bağlantılarında eksik kontra somunlar takılmalıdır.
+
+17--Kabin üstü temizlenmelidir.
+
+18--Kabin süspansiyon bağlantılarındaki gevşeklikler giderilmelidir.
+
+19--Kabin altı metal malzemelerdeki korozyon giderilmelidir.
+
+20--Kabin altı gevşek montaj somunları sıkılmalıdır.
+
+21--Kabin altı kaynaklı bağlantılar civata bağlantıları ile desteklenmelidir.
+
+22--Kabin üstündeki ağırlık blokları kaldırılmalı ve kabin ile karşı ağırlık dengesi sağlanmalıdır.
+
+5.5.Kabin kapısız asansörlerde çift konumda kararlı acil durdurma fonksiyonu**
+
+1--Kabindeki durdurma butonu kabin aydınlatmasını kesmemelidir.
+
+2--Kabindeki durdurma butonu çift konumlu (kararlı) olmalıdır.
+
+3--Kabindeki çift konumlu durdurma butonu çalışır hale getirilmelidir.
+
+4--Kabine çift konumlu (kararlı) durdurma butonu takılmalıdır.
+
+5--Kabindeki durdurma butonu adreslenmelidir.
+
+5.6.Kabin kapısı otomatik olan asansörlerde kapı açma butonu
+
+1--Makina gücü ile otomatik çalışan kapılarda, kapanmakta olan kapının tekrar açılmasını sağlayan bir tertibat diğer kabin kumandalarının yanında bulunmalıdır.
+
+2--Kapı açma butonu adreslenmelidir.
+
+3--Kabinde dur butonu yerine kapı açma butonu takılmalı ve standardına uygun çalışır hale getirilmelidir.
+
+4--Kapı açma butonu kat arasında asansörü durdurmamalı ve kapıyı açmamalıdır.
+
+5--Kapı açma butonu çalışır hale getirilmelidir.
+
+6--Kapı aç butonu durak kayıtlarını silmemelidir.
+
+5.7.Kumanda butonları ve göstergeler
+
+1--Kumanda buton adreslemeleri yapılmalıdır.
+
+2--Toplama kumanda asansörlerde kumanda butonlarının kayıt ışıkları yanar hale getirilmelidir.
+
+3--Kumanda göstergesi çalışır hale getirilmelidir.
+
+4--Kırık olan kumanda butonu yenilenmelidir.
+
+5--Kumanda butonları çalışır hale getirilmelidir.
+
+5.8.Kabin içerisinde normal aydınlatma
+
+1--Kabin içerisinde normal aydınlatma asansör işletmeye hazır durumda iken kabin sürekli olarak aydınlatılmalıdır. Makina gücü ile otomatik olarak çalışan kapıların bulunması durumunda, kabin bir durakta kapıları kapalı olarak park etmişse aydınlatma devre dışı bırakılabilir.
+
+2--Kabin aydınlatması armatürleri direkt temasa karşı korumalı olmalıdır.
+
+3--Kabin, herhangi bir duvardan 100 mm’den az olmayan herhangi bir noktadaki zeminden 1 m yukarıda ve bir kumanda tertibatı üzerinde en az 100 lüx (lux) şiddetinde bir aydınlatma sağlayacak kalıcı olarak montajı yapılmış elektrikli aydınlatma ile donatılmalıdır. (madde 5.4.10.1)
+
+4--Kabin duraklarda kapıları açık bir şekilde beklerken kabin içinde sabit aydınlatma sağlanmalıdır.
+
+5--En az paralel olarak bağlanmış iki lamba bulunmalıdır.
+
+5.9.Kabin içerisinde acil durum aydınlatması**
+
+1--Kabinde normal aydınlatma beslemesinin arızasında otomatik bir şekilde devreye giren, 1 h (saat) için en az 5 lüx bir ışık şiddetini kabinin merkezinde zeminin 1 m üstünde sağlayabilen otomatik olarak tekrar şarj edilebilir acil durum beslemeli acil durum lambaları bulunmalıdır.
+
+5.10.Alarm tertibatı*
+
+1--Gerektiğinde dışarıdan yardım istemek için, kabin içinde kolaylıkla fark edilebilir ve acil durum aydınlatma besleme kaynağından veya eşdeğer bir besleme kaynağından beslenen erişilebilir bir sesli alarm tertibatı ve iki yönlü haberleşme bulunmalıdır.
+
+2--Sesli alarm tertibatı akü devresine bağlı çalışır hale getirilmelidir.
+
+3--İki yönlü haberleşme, yardım edecek kişinin bulunduğu mahal (Konutlarda bu mahal yok ise giriş kat kabul edilebilir) ile sürekli iki yönlü haberleşmeyi sağlamalıdır. Haberleşme sisteminin çalıştırılmasından sonra, kabinde mahsur kalan kişinin başka bir işlem yapmasına gerek olmamalıdır.
+
+4--İki yönlü haberleşme tertibatı çalışır hale getirilmelidir.
+
+5--Sesli alarm tertibatı ses şiddeti kuyu dışından duyulabilecek şekilde uygun hale getirilmelidir.
+
+5.11.Makina dairesi ile kabin arasında doğrudan haberleşme
+
+1--Asansör seyir mesafesinin 30 m’yi aşması durumunda, kabin içi ile makina dairesi arasında acil durum kaynağından beslenen bir interkom sistemi veya benzeri tesis edilmelidir.
+
+2--makina dairesi ile kabin arasındaki doğrudan haberleşme çalışır hale getirilmelidir.
+
+5.12.Kabin yükü kontrol tertibatı**
+
+1--Asansör, kabinin aşırı yüklenmesi durumunda, otomatik seviyeleme dahil kabinin normal harekete geçmesini önleyen tertibat, beyan yükü, en az 75 kg olmak kaydıyla, % 10 dan fazla aşılırsa devreye girecek şekilde ayarlanmalıdır.
+
+2--Kabin hareket halindeyken aşırı yük tertibatı devreye girmemelidir.
+
+3--Asansör, kabinin aşırı yüklenmesi durumunda, otomatik seviyeleme dahil kabinin normal harekete geçmesini önleyen, beyan yükü, en az 75 kg olmak kaydıyla, % 10 dan fazla aşılırsa devreye giren bir tertibatla donatılmalıdır.
+
+4--Kabin aşırı yüklendiğinde kullanıcılar kabin içindeki sesli ve/veya görünür bir sinyal ile bilgilendirilmelidir. Motor gücüyle tahrik edilen otomatik kapılar tam olarak açılmalıdır. Elle çalışan kapılar kilitlenmemiş durumda kalmalıdır.
+
+5--Kabin aşırı yük elektrik tesisatı sabitlenmeli ve koruma altına alınmalıdır.
+
+6--Kabinde aşırı yük sistemi çalışır hale getirilmelidir.
+
+5.13.Yeterli kabin havalandırması (varsa)
+
+1--Kabin üstü havalandırma fanı muhafaza içine alınmalıdır.
+
+2--(varsa) Kabin havalandırma fanı çalışır hale getirilmelidir.
+
+3--Deliksiz yüzeyli kapıları olan kabinlerde, kabinin alt ve üst kısımlarında havalandırma menfezleri bulunmalıdır.
+
+4--Havalandırma deliklerinin yapım ve düzenlenmesi, 10 mm çapında düz ve yuvarlak bir çubuğun, içeriden dışarıya geçirilmesi mümkün olmayacak bir şekilde olmalıdır.
+
+5.14.Katta durma ve seviyeleme doğruluğu
+
+1--Kabinin katlarda durma hassasiyeti (Kat seviye ayarı) ± 10 mm. olmalıdır.
+
+2--Kabinin katlarda kat seviyesinden ± 20 mm. kayması durumunda otomatik seviyeleme olmalıdır.
+
+6.1.Makinanın kuyu içerisindeki bağlantılarının uygunluğu**
+
+1--Makina grubu montaj cıvataları sıkılmalıdır.
+
+2--Makina grubu montaj cıvataları tamamlanmalıdır.
+
+3--Makina platformunun duvara montajı uygun hale getirilmelidir.
+
+4--Makina montaj cıvatalarına kontra somun takılmalıdır.
+
+5--Asansör kuyularının, binanın dış tarafında kısmen kapalı olduğu durumlarda makinalar çevresel etkilere karşı uygun şekilde korunmalıdır.
+
+6--Makinanın montajındaki dengesizlikler giderilmelidir. (Stabil olmalı)
+
+7--Kuyu içerisinde bir çalışma alanından diğer bir çalışma alanına hareket için serbest yükseklik en az 1,80 m olmalıdır.
+
+6.2.Gerekli olduğu durumda kabinin hareketini önlemek için mekanik tertibat**
+
+1--makinalerin bakım ve muayene faaliyetlerinin kabin içinden veya çatısından yapılması gerektiğinde kabinin herhangi bir beklenmedik veya kontrolsüz hareketini engellemek için mekanik bir tertibat bulunmalıdır.
+
+2--"Kabinde mekanik tertibat etkin konumunda olduğunda ve kendi üzerine uygulanan kuvvetler nedeniyle devre dışı kalamadığında, asansör kuyusunun terk edilebilmek için;
+
+1) Kabin kapısı üst tertibatı/ kapı tahriki üzerinde en az 0,50 m x 0,70 m veya net bir açıklık ile durak kapısından veya
+
+2) Madde 5.4.6’ya göre kabin çatısındaki acil durum kapağı üzerinden giriş sağlanarak kabinden.
+
+3--Basamaklar, taşınabilir merdiven ve/veya el tutamak/tutamakları, kabin içinde güvenli bir inişe müsaade etmek için sağlanmalıdır veya
+
+3) Madde 5.2.3’deki gibi, acil bir durum kapısı yardımıyla sağlanmalıdır.
+
+4--Kaçış prosedürleri ile ilgili talimatlar, asansör dosyasında verilmelidir."
+
+5--Makinalarda çalışma alanlarının boyutları, donanım üzerinde kolay ve güvenli çalışmaya müsaade edecek şekilde özellikle çalışma alanlarında 2,10 m net yükseklik bulunmalıdır. (madde 5.2.6.4.2.1)
+
+6--Mekanik tertibat hareketli konumda iken, tüm kabin hareketleri uygun elektrikli güvenlik tertibatı ile engellenmelidir.
+
+6.3.Gerekli olduğu durumda kuyu dibinde mekanik tertibatın (makina kuyu dibinde ise) kontrolü**
+
+1--Kabinin hareketini önlemek için mekanik tertibat emniyet kontağı çalışır hale getirilmelidir.
+
+2--Mekanik tertibat hareketli konumda iken, tüm kabin hareketleri uygun elektrikli güvenlik tertibatı ile engellenmelidir.
+
+3--Makinalarda çalışma alanlarının boyutları, donanım üzerinde kolay ve güvenli çalışmaya müsaade edecek şekilde özellikle çalışma alanlarında 2,10 m net yükseklik bulunmalıdır.
+
+4--Asansör normal çalışmaya yeniden başlaması, sadece kuyu dışına yerleştirilen ve yetkili kişiler tarafından erişilebilir olan (örneğin kilitli pano içinde) elektrikli yeniden çalışmaya başlama tertibatının çalıştırılması ile mümkün olmalıdır.(madde 5.2.6.4.4.1-g)
+
+5--Kuyu alt boşluğuna giriş sağlyan herhangi bir kapının anahtar kullanılarak açılması asansörün sonraki bütün hareketlerini önleyen madde 5.11.2'ye uygun bir elektrikli güvenlik tertibatıyla denelenmelidir.
+
+6--Makinalarda bakımın/kontrollerin kuyu dibinde yapılması gerekiyorsa, kabinin herhangi bir tehlikeli hareketi mekanik bir tertibat ile engellenmelidir.
+
+6.4.Acil durum çalışması ve deney işlemleri için tertibat**
+
+1--Acil durum çalışması yapılan panonun üzerine veya yakınına yerleştirilmiş bir anahtar, panonun/panoların aydınlatılmasını kumanda etmelidir.
+
+2--Kurtarma işleminin yapılacağı alanda pano/makina-motor 200 lüx aydınlatma şiddeti sağlanmalıdır. (madde 5.2.6.6.3)
+
+3--Acil durum çalışması ve deney işlemleri için pano/panolar yalnızca uygun çalışma alanının bulunduğu yerlerde tesis edilmelidir.
+
+4--Acil durum çalışması ve deney işlemlerinin yapıldığı panoda/panolarda bir interkom sistemi, dinamik deneylerin yürütülmesini sağlayan kumanda tertibatları, asansör tahrik makinasının doğrudan gözlenmesi veya gösterge/göstergelerden kilit açılma bölgesine ulaşıldığı ve asansör kabinin hızı görülebilmelidir.
+
+5--Acil durum çalışması ve deney işlemleri için tertibatlar bir makina dolabı içinde korunmuyorsa, uygun bir mahfaza içine yerleştirilmiş olmalıdır.
+
+6--Makinaların kuyu içerisinde bağlantıları makina mesnetleri ve kuyu içinde çalışma alanları, maruz kalacakları yük ve kuvvetlere dayanacak şekilde inşa edilmelidir.
+
+7--Makina dairesiz asansörlerde asansörün tüm acil durum çalışmaları ve gerekli dinamik deneyleri için, gerekli tertibatlar asansör kuyusu dışından taşımaya uygun olarak bir panonun/panoların üzerinde bulunmalıdır. Bu pano/panolar, yalnızca yetkili kişilerce erişilebilir olmalıdır. Bu husus, bakım işleminin/işlemlerinin kabinin hareket ettirilmesini gerektirdiği ve çalışmanın asansör kuyusu içinde tahsis edilmiş çalışma alanlarından güvenli olarak yapılamayacağı bakımlarda kullanılan vasıtalar için de geçerlidir.
+
+7.1.Kuyuya ve kuyu alt boşluğuna erişim için kilitleme tertibatları**
+
+1--Giriş ve acil durum kapıları ile muayene kapakları, kuyu içine doğru açılmamalıdır.
+
+2--Asansörün normal çalışması giriş ve acil durum kapıları ve muayene kapaklarının kapalı olması durumunda mümkün olmalıdır. Bu amaç için madde 5.11.2' de belirtilen özelliklere uygun elektrik güvenlik tertibatı kullanılmalıdır.
+
+3--Giriş ve acil durum kapıları, Anahtarla kilitlenme, anahtarsız tekrar kapatılma ve tekrar kilitlenme özelliğine sahip olmalı ve Kilitlenmiş olsa bile kuyu, makina veya makara dairesi içinden anahtarsız açılabilme özelliği olmalıdır.
+
+7.2.Asansör kuyusuna açılan ve kuyu alt boşluğuna erişim sağlayan muayene ve imdat kapakları**
+
+1--Birbirini takip eden durak kapısı eşikleri arasındaki mesafe 11 m’yi geçtiği takdirde, kapı eşikleri arasındaki mesafe 11 m’yi geçmeyecek şekilde acil durum kapıları konulmalıdır. Birbirine komşu ardışık çalışan Kabinlerde acil durum kapıları bulunuyorsa bu kurala gerek yoktur.
+
+2--Giriş ve acil durum kapıları, deliksiz olmalı ve mekanik dayanıklılık açısından durak kapılarının aynı özelliklerine sahip bulunmalı ve ilgili binanın yangından korunması için geçerli düzenlemelere uygun olmalıdır.
+
+3--Giriş ve acil durum kapıları, kuyunun dış yüzeyinin herhangi bir noktasında dikey olarak 0,30 m x 0,30 m yuvarlak veya kare şeklinde bir alan üzerinde eşit olarak dağılacak 1000 N’luk bir kuvvet uygulandığında oluşan mekanik dayanıma sahip olmalı, 15 mm’den daha büyük elastik şekil değiştirme olmaksızın dayanmalıdır.
+
+4--Asansörün çalışması ancak, giriş ve acil durum kapıları ve muayene kapakları kapalı olması durumunda mümkün olmalıdır. Bu amaç için madde 5.11.2'de belirtilen özelliklere uygun elektrik güvenlik tertibatı kullanılmalıdır.
+
+5--Acil durum kapıları; 1,80 m asgari yüksekliğe ve 0,50 m asgari genişliğe sahip olmalıdır.
+
+6--Muayene kapakları en fazla 0,5 m yükseklikte ve en fazla 0,5 m genişlikte olmalıdır.
+
+7--Makina dairelerine ve kuyuya giriş kapıları, 2,0 m asgari yüksekliğe ve 0,60 m asgari genişliğe sahip olmalıdır.
+
+7.3.Kasıtlı tahribata karşı tedbirler
+
+1--Spor stadyumlarında, hastanelerin acil servis bölümlerinde, üst geçitlerde, sosyal konut alanlarında ve tren istasyonlarındaki asansörlerde kasıtlı tahribata karşı TS EN 81-71 standardı kategori-2 şartlarını karşılayacak tedbirler alınmalıdır.
+
+7.4.Engelli kişiler için erişim sağlamaya yönelik tedbirler
+
+1--Asansörün kabin ölçüleri, kapı ölçüleri, kapı tipi, hızı ve durak sayısı ilgili idarenin onaylı avan veya uygulama projelerine uygun olmalıdır.
+
+2--Kamuya açık binalardaki (Otel, sinema, tiyatro, hastane, lokanta, okul, yurt, lokal, işyeri (belediye kamu binaları ve benzeri), açık ve kapalı spor tesisleri, eğitim ve dinlenme tesisi ve benzeri binalar) asansörlerde engelli kişiler için erişim sağlamaya yönelik tedbirler alınmalıdır.
+
+3--Kabin durduğunda sözlü olarak (Türkçe), kabin konumu bildirilmelidir. (TS EN 81-70 standardı madde 5.4.4.2)
+
+4--Konum işareti, kabin çalıştırma panelinin üzerine veya üst kısmına yerleştirilmelidir. Göstergenin merkez hattı kabin tabanından 1,60 m ilâ 1,80 m yukarıda olmalıdır. Katları gösteren rakamların yüksekliği 30 mm ilâ 60 mm olmalıdır. (TS EN 81-70 standardı madde 5.4.4.1)
+
+5--Binanın çıkış katını gösteren buton: diğer butonlardan (5 ± 1) mm daha önde (tercihan yeşil renkte) olmalıdır. (TS EN 81-70 standardı Çizelge 2, h)
+
+6--Kabine girmeden önce, kumanda sistemi yeni seyir yönünü belirliyorsa (müşterek kumanda) aydınlatılmış işaret okları kapının üstüne veya yakınına yerleştirilmelidir. Sesli işaret, okların aydınlatılması ile birlikte verilmelidir. Yukarı ve aşağı için farklı sesli işaretleri kullanılmalıdır. (TS EN 81-70 standardı madde 5.4.3.2)
+
+7--Basınca çalışan butonlu kumanda sistemlerinde, durakta, kapının açılmaya başladığı sesli bir işaret ile bildirilmelidir. Kapının kendi gürültüsünden, kapının açıldığı anlaşılabiliyorsa yeterli kabul edilir. (TS EN 81-70 standardı madde 5.4.3.1)
+
+8--İç ve kat kumanda butonlarına basıldığında ışıklı ve sesli ikaz vermelidir. Sesli ikazlar çağrı kaydı daha önce yapılmış olsa bile, butona her basışta verilmelidir. (TS EN 81-70 standardı Çizelge 2, g)
+
+9--Durak kumanda butonunun en üstteki butonun merkez hattı ile zemin seviyesi arasındaki azamî mesafe 110 cm olmalıdır. (TS EN 81-70 standardı Çizelge 2, o)
+
+10--Kabin iç kumanda butonlarının en üstteki butonun merkez hattı ile zemin seviyesi arasındaki azamî mesafe 120 cm olmalıdır. (TS EN 81-70 standardı Çizelge 2, o)
+
+11--Yana açılan kapılı asansörlerde, kabin kumanda paneli kapının kapanma kenarı tarafında yer almalıdır. (TS EN 81-70 standardı madde 5.4.2.3 b)
+
+12--Ortadan açılan kapılı asansörlerde, kabin kumanda paneli kabine girerken sağ tarafta yer almalıdır. (TS EN 81-70 standardı madde 5.4.2.3 a)
+
+13--Tek yatay sıra için çağrı butonlarının sıralanması soldan sağa olmalıdır. Tek düşey sıra için çağrı butonlarının sıralanması alttan üste doğru olmalı, birden fazla düşey sıra için bu sıralama önce soldan sağa daha sonra alttan üste doğru olmalıdır. (TS EN 81-70 standardı madde 5.4.2.2.c)
+
+14--Çağrı butonları imdat ve kapı butonlarının üst kısmında yer almalıdır. (TS EN 81-70 standardı madde 5.4.2.2 b)
+
+15--Görme engelliler için dokunmayla hissedilebilen şekillerin rahat algılanabilmeleri için kat kumanda buton sembollerinin konumu butonların çalışan kısımlarının üzerinde veya 10 mm ilâ 15 mm solunda olmalıdır. Kabartma şeklin profili en az yüksekliği 0,8 mm olmalıdır. (TS EN 81-70 standardı Çizelge 2, i,k)
+
+16--İmdat ve kapı butonlarının merkez hattı kabin tabanından en az 900 mm yüksekliğe yerleştirilmelidir. (TS EN 81-70 standardı madde 5.4.2.2 a)
+
+17--Kabinin en az bir yan duvarına tutamak monte edilmelidir. Tutamağın üst kenarının kabin tabanından yüksekliği (900 ± 25) mm dâhilinde olmalıdır. (TS EN 81-70 standardı madde 5.3.2.1)
+
+18--Kumanda sistemi kapının açık kalma süresini asansörün tesis edildiği yerin şartlarına uygun şekilde ayarlanmasına imkân vermelidir. Bu zamanı azaltmak için vasıtalar, örneğin kabindeki kapı kapatma butonunu kullanarak, tesis edilmelidir.
+
+19--TS EN 81-70 standardı madde 5.3.1'e göre tek girişli veya karşılıklı çift girişli kabinlerin iç boyutları Çizelge 1’e uygun olmalıdır.(Tip 1 için 450 kg Kabin genişliği: 1000 mm Kabin derinliği: 1250 mm, Tip 2 için Kabin genişliği: 1100 mm Kabin derinliği: 1400 mm)
+
+20--Planlı Alanlar Tip İmar Yönetmeliği kapsamında asansörde engelli kişiler için erişim sağlamaya yönelik tek asansörlü binalarda asansör kabininin dar kenarı (1,20) m. ve alanı (1,80) m2 den, kapı genişliği ise (0,90) m. den az olamaz.
+
+21--Kabin ve durak kapıları otomatik makina gücü ile çalışan yatay kayar kapı olarak imal edilmelidir.(TS EN 81-70 standardı madde 5.2.1)
+
+22--Engelliler tarafından kullanılması amaçlanan asansörün kabin kapısında kabin kapı eşiğinden 25 mm ile 1800 mm yukarı bir mesafeye kadar kapsayan (Örneğin, ışın perdesi) ve kullanıcı ile kapanan kapı panel/panellerinin ön kenarları arasındaki fiziksel teması önleyecek bir algılayıcı olmalıdır.
+
+23--Planlı Alanlar Tip İmar Yönetmeliği kapsamında birden fazla asansör bulunan binalarda engelli kişiler için erişim sağlamaya yönelik asansör sayısının yarısı kadar asansörün ölçüleri asansör kabininin dar kenarı (1,20) m. ve alanı (1,80) m2 den, kapı genişliği ise (0,90) m. den az olamaz. (1/10/2017 tarihinden sonra Planlı Alanlar İmar Yönetmeliği referans alınır.)
+
+7.5.Yangın durumunda, çalıştırmaya yönelik tedbirler
+
+1--Asansör yaptırıcısı veya bina sorumlusu tarafından asansör kontrol panosu ucuna kadar yangın algılama sisteminin/deprem sensörünün tesisat uçları getirilmelidir.
+
+2--Yangın söndürücü sistemler kullanıldığında, bu yangın söndürücülerin etkin hale gelmesi; sadece asansör durakta duruyorken ve asansör elektrik beslemesi ve aydınlatma donanımı otomatik bir şekilde yangın veya duman tespit sistemi tarafından kapatıldığında mümkün olmalıdır. (Makina dairesi ve kuyuda)
+
+3--Yüksek binalarda, topluma açık yapılarda asansör yangın uyarısı aldığında makina gücü ile çalışan otomatik kapılı asansörler, durakta park hâlindeyken, kapılarını kapatıp belirlenmiş durağa duraksız hareket etmelidir. (TS EN 81-73 standardı madde 5.3.1)
+
+4--Tüm yapılardaki asansörlerde TS ISO 3864-1 standardına uygun asansörün yangın anında kullanılmayacağına dair bir yasak işareti kolaylıkla görülebilecek şekilde bütün duraklarda asansörün yakınında yer almalıdır. İşaretin büyüklüğü en az 50 mm ve grafik sembolü Şekil-1'de gösterildiği gibi olmalıdır. (TS EN 81-73 standardı madde 5.1.3)
+
+5--Acil durum asansörünün kabin alanının en az 1.8 m², hızının zemin kattan en üst kata 1 dakikada erişecek hızda olması ve enerji kesilmesi hâlinde, otomatik olarak devreye girecek özellikte ve 60 dakika çalışır durumda kalmasını sağlayacak bir acil durum jenaratörüne bağlı bulunması gerekir.
+
+6--Aynı kuyu içinde 3’den fazla asansör kabini düzenlenemez. 4 asansör kabini düzenlendiği takdirde, ikişerli gruplar halinde araları yangına 60 dakika dayanıklı bir malzeme ile ayrılır.
+
+7--Yüksek binalarda, topluma açık yapılarda yangın anında asansör kabinin belirlenmiş durağa gitmesi ve yolcuların çıkmasının sağlanması amacıyla elektrik sinyali/sinyalleri otomatik yangın algılama ve alarm sistemi veya elle çağırma tertibatı tarafından sağlanmalıdır. (TS EN 81-73 standardı madde 5.1.1)
+
+8--Yüksek binalarda ve topluma açık yapılarda asansör yangın uyarısı aldığında bir arıza nedeniyle asansör durdurulmuş ise, yangın algılama sisteminden asansör kumanda sistemine giden sinyal, asansörün çalışmasını başlatmamalıdır. (TS EN 81-73 standardı madde 5.1.2.1)
+
+9--Yüksek binalarda ve topluma açık yapılarda asansör yangın uyarısı aldığında bakım veya elektrikli acil durum kumandaları yangın algılama sisteminden etkilenmemelidir. (TS EN 81-73 standardı madde 5.1.2.2)
+
+10--Birinci ve ikinci derece deprem bölgelerinde bulunan yüksek binalarda, deprem sensöründen uyarı alarak (asansör yaptırıcı/bina sorumlusu tarafından asansör kontrol panosuna kadar getirilmiş deprem sensörü ucu) asansörlerin deprem sırasında durabileceği en yakın kata gidip, kapılarını açıp, hareket etmeyecek tertibat ve programa sahip olması gerekir. (T.C. Başbakanlık Afed ve Acil Durum Yönetimi Başkanlığı (AFAD) tarafından yayımlanan "Deprem Bölgeleri Haritası" referans alınacaktır.)
+
+11--Yüksek binalarda ve topluma açık yapılarda asansör yangın uyarısı aldığında, bütün durak kumandaları ve “kapıyı tekrar açma butonu” dâhil kabin kumandaları etkisiz kılınmalı ve bütün mevcut kayıtlı çağrılar iptal edilmelidir. (TS EN 81-73 standardı madde 5.3.1)
+
+12--Yüksek binalarda ve topluma açık yapılarda elektrik sinyalinin elle çağırma tertibatının sağlandığı yerlerde, bu tertibat
+
+a) iki konumda kararlı çalışmalı,
+
+b) konumu hakkında herhangi bir hataya neden olmamak üzere açıkça işaretlenmeli,
+
+c) amacına uygun işaretlenmeli,
+
+d) binanın yönetim merkezinde veya belirlenmiş ana durakta yer almalı ve
+
+e) herkes tarafından erişilebilir ise yanlış kullanımlara karşı, örneğin, cam bir panel arkasına yerleştirilmeli veya güvenli bir alana yerleştirilmelidir. (TS EN 81-73 madde 5.1.1)
+
+13--Yüksek binalarda ve topluma açık yapılarda yangın uyarısı almış asansör otomatik yangın algılama sistemi sıfırlandığında Bu sistemden gelen elektrik sinyali ile veya yalnızca yetkili kişilerce sıfırlanabilecek şekilde tasarımlanmış elle çağırma sisteminin sıfırlanması ile otomatik olarak normal çalışacak hâle gelmelidir. (TS EN 81-73 madde 5.3.7)
+
+14--Yüksek binalarda ve topluma açık yapılarda birbirine bağlı asansör grubunda bir asansörün arızalanması diğer asansörlerin belirlenmiş durağa dönüşünü engellememelidir. (TS EN 81-73 standardı madde 5.3.4)
+
+15--Yüksek binalarda ve topluma açık yapılarda asansör yangın uyarısı aldığında elle çalışan veya makina gücü ile çalışan otomatik olmayan kapılar, kapılar açık durakta park hâlindeyse, durakta hareketsiz hâlde kalmalıdır. Kapılar kapalı ise belirlenmiş dura
+
+16--Yüksek binalarda ve topluma açık yapılarda asansör yangın uyarısı aldığında belirlenmiş duraktan uzaklaşan asansörler normal olarak durmalı ve mümkün olan en yakın durakta kapıları açılmadan hareket yönünü değiştirmeli ve belirlenmiş durağa gitmelidir.
+
+17--Yüksek binalarda ve topluma açık yapılarda makina gücü ile çalışan kapıları bulunan asansörler belirlenmiş durağa geldiğinde kabin ve durak kapıları açık ve hizmet dışı kalmış olarak park hâlinde kalmalıdır. (TS EN 81-73 standardı madde 5.3.5)
+
+18--Yüksek binalarda ve topluma açık yapılarda asansör yangın uyarısı aldığında belirlenmiş durağa doğru hareket eden asansörler belirlenmiş durağa duraksız harekete devam etmelidir. (TS EN 81-73 standardı madde 5.3.1)
+
+19--Yüksek binalarda ve topluma açık yapılarda asansör yangın uyarısı aldığında güvenlik tertibatının çalışması nedeniyle hareketi engellenen asansörler hareketsiz kalmalıdır. (TS EN 81-73 standardı madde 5.3.1)
+
+20--Yüksek binalarda ve topluma açık yapılarda elle çalışan kapıları bulunan asansörler belirlenmiş durağa geldiğinde kapılarının kilitleri açılmalı ve asansör hizmet dışı kalmalıdır. (TS EN 81-73 standardı madde 5.3.6)
+
+21--Yüksek binalarda ve topluma açık yapılardaki asansörlerde ısı veya dumandan etkilenebilecek kapı hareket yönünü değiştirme cihazları, kapıların kapalı kalmasını sağlamak üzere etkisiz kılınmalıdır. (TS EN 81-1 standardı madde 7.5.2.1.1.3 veya TS EN 81-2 madde 7.5.2.1.1.)
+
+22--Acil durum asansörünün makina dairesi ayrı olmalı ve asansör kuyusu basınçlandırılmalıdır.(TS EN 81-72)
+
+23--Acil durum asansörlerinin elektrik tesisatının ve kablolarının yangına karşı en az 60 dakika dayanıklı olması ve asansör boşluğu içindeki tesisatın sudan etkilenmemesi gerekir.
+
+24--Acil durum asansörleri önünde, aynı zamanda kaçış merdivenine de geçiş sağlayacak şekilde, her katta 6 m2’den az, 10 m2’den çok ve herhangi bir boyutu 2 m’den az olmayacak yangın güvenlik holü olmalıdır.
+
+25--Yapı yüksekliği 51.50 m'den daha fazla olan yapılarda, en az 1 asansörün acil hâllerde kullanılmak üzere TS EN 81-72 standardına göre acil durum asansörü olarak düzenlenmesi şarttır.
+
+26--Tamamen açık alanda inşa edilen yaya üst geçitlerine ait olan asansör kuyu duvarlarında yangına dayanım ve burada monte edilmiş olan asansörde/asansörlerde yangın anındaki davranışlar periyodik kontrolde kapsam dışı tutulur.
+
+Makalenin İzlenme Sayısı : 24081 Eklenme Tarihi : 24.01.2020 [Whatsapp'ta paylaş](https://api.whatsapp.com/send?phone=&text=Merhaba,%20bu%20ara%C5%9Ft%C4%B1rma%20yaz%C4%B1s%C4%B1n%C4%B1%20ve%20web%20sitesini%20incelemenizi%20%C3%B6neririm.%20:%20https://www.arge7.com/detay.php?id=658) [Facebook'ta paylaş](https://www.facebook.com/sharer/sharer.php?u=https://www.arge7.com/detay.php?id=658) [Önceki sayfaya geri dön.](javascript:history.go(-1))
+
+Scroll

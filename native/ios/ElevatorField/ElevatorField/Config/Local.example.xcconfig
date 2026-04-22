@@ -1,0 +1,8 @@
+// Copy to Local.xcconfig (gitignored). Dashboard → Settings → API.
+// Rules: no quotes around values. Never `https://` on the line — `//` starts an xcconfig comment.
+// Use https:/$()/YOUR_REF.supabase.co . Never postgresql:// DATABASE_URL here.
+
+SUPABASE_URL = https:/$()/exmcayqqwlaqqnardids.supabase.co
+SUPABASE_ANON_KEY = PASTE_ANON_KEY_FROM_SUPABASE_DASHBOARD
+// Web kökü — .env içindeki NEXT_PUBLIC_APP_URL ile aynı (mobil API, QR). Simülatör: http:/$()/localhost:3000
+PUBLIC_APP_URL = http:/$()/localhost:3000

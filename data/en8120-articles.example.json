@@ -1,0 +1,8 @@
+[
+  {
+    "article_code": "5.3.8.1",
+    "title": "Düşme tehlikesine karşı koruma",
+    "description": "Normal bir çalışmada, kabin durmadıkça veya durma noktasında olmadıkça, kapı kilit açılma bölgesinde olmadıkça bir durak kapısını (veya çok panelli kapı durumunda panellerin her hangi birisini) açmak mümkün olmamalıdır.\n\nKilit açılma bölgesi, durak seviyesinin altına ve üstüne kadar en fazla 0,20 m'den daha fazla uzatılmamalıdır.\n\nBununla birlikte, mekanik olarak çalıştırılan kabin ve durak kapılarının aynı anda çalıştırılması durumunda, kilit açılma bölgesinin, durak seviyesinin altına ve üstüne azami 0,35 m'ye kadar uzanmasına izin verilebilir.",
+    "default_cost_try": null
+  }
+]

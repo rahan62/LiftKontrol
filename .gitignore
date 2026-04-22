@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+mobile-field/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -20,9 +21,17 @@
 # production
 /build
 
+# Expo
+.expo/
+
 # misc
 .DS_Store
+# Large local standard PDFs (use OCR + import script instead of committing)
+scripts/*.pdf
 *.pem
+
+# Local uploads (contracts, etc.); production will use object storage
+/uploads
 
 # debug
 npm-debug.log*
@@ -32,6 +41,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.local.example
 
 # vercel
 .vercel
@@ -39,3 +49,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Native — local secrets (same idea as .env.local)
+native/ios/**/Config/Local.xcconfig
+native/android/local.properties
+
+# Xcode / Android build artifacts
+native/ios/**/*.xcworkspace/xcuserdata
+native/ios/**/*.xcodeproj/xcuserdata
+native/ios/**/DerivedData
+native/android/.gradle
+native/android/**/build
+native/android/**/.idea
+native/android/**/*.iml
+native/android/captures
