@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 mobile-field/node_modules
+# Root uses npm (package-lock.json). Avoid committing a stale pnpm lock; Vercel otherwise picks pnpm and can fail CI.
+/pnpm-lock.yaml
 /.pnp
 .pnp.*
 .yarn/*
