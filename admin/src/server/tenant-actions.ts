@@ -59,8 +59,8 @@ async function resolveUniqueTenantSlug(
   return `${base}-${Date.now()}`.slice(0, 64);
 }
 
+/** Links owner to tenant via service role — avoids tenant_members RLS recursion on upsert. */
 async function linkOrCreateOwner(
-  supabase: Awaited<ReturnType<typeof createClient>>,
   tenantId: string,
   email: string,
   password: string,
@@ -101,7 +101,7 @@ async function linkOrCreateOwner(
     return { ok: false, error: "Kullanıcı oluşturulamadı." };
   }
 
-  const { error: me } = await supabase.from("tenant_members").upsert(
+  const { error: me } = await service.from("tenant_members").upsert(
     {
       tenant_id: tenantId,
       user_id: userId,
@@ -161,7 +161,7 @@ export async function createTenantAction(formData: FormData) {
   const ownerEmail = String(formData.get("owner_email") || "").trim();
   const ownerPassword = String(formData.get("owner_password") || "").trim();
   if (ownerEmail && ownerPassword) {
-    const u = await linkOrCreateOwner(supabase, data.id, ownerEmail, ownerPassword);
+    const u = await linkOrCreateOwner(data.id, ownerEmail, ownerPassword);
     if (!u.ok) {
       redirect(`/tenants/new?error=${q(u.error)}`);
     }
@@ -240,7 +240,6 @@ export async function deleteTenantAction(tenantId: string, formData: FormData) {
 
 export async function addMemberAction(tenantId: string, formData: FormData) {
   await requirePlatformAdmin();
-  const supabase = await createClient();
   const email = String(formData.get("email") || "").trim();
   const password = String(formData.get("password") || "").trim();
   const role = parseRole(String(formData.get("system_role") || ""));
@@ -279,7 +278,7 @@ export async function addMemberAction(tenantId: string, formData: FormData) {
     redirect(`/tenants/${tenantId}?error=${q("Kullanıcı oluşturulamadı.")}`);
   }
 
-  const { error: me } = await supabase.from("tenant_members").upsert(
+  const { error: me } = await service.from("tenant_members").upsert(
     {
       tenant_id: tenantId,
       user_id: userId,
@@ -301,12 +300,12 @@ export async function updateMemberRoleAction(
   formData: FormData,
 ) {
   await requirePlatformAdmin();
-  const supabase = await createClient();
+  const service = createServiceClient();
   const role = parseRole(String(formData.get("system_role") || ""));
   if (!role) {
     redirect(`/tenants/${tenantId}?error=${q("Geçersiz rol.")}`);
   }
-  const { error } = await supabase
+  const { error } = await service
     .from("tenant_members")
     .update({ system_role: role })
     .eq("id", memberId)
@@ -320,8 +319,8 @@ export async function updateMemberRoleAction(
 
 export async function removeMemberAction(tenantId: string, memberId: string) {
   await requirePlatformAdmin();
-  const supabase = await createClient();
-  const { error } = await supabase
+  const service = createServiceClient();
+  const { error } = await service
     .from("tenant_members")
     .delete()
     .eq("id", memberId)
