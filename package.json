@@ -2,16 +2,22 @@
   "name": "elevator-maintenance",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "admin"
+  ],
   "scripts": {
     "dev": "next dev",
+    "dev:admin": "npm run dev -w admin",
     "dev:lan": "next dev -H 0.0.0.0",
     "build": "next build",
+    "build:admin": "npm run build -w admin",
     "start": "next start",
     "lint": "eslint",
     "db:migrate": "node scripts/migrate.cjs",
     "db:apply-sql": "node scripts/apply-sql.cjs",
     "db:seed-admin": "node scripts/seed-admin.cjs",
     "db:seed-supabase-admin": "node scripts/seed-supabase-admin.cjs",
+    "db:seed-platform-operator": "node scripts/seed-platform-operator.cjs",
     "db:seed-user": "node scripts/seed-tenant-user.cjs",
     "db:import-revision-articles": "node scripts/import-revision-articles.mjs",
     "db:parse-en8120-teblig": "node scripts/parse-teblig-en8120-electric.mjs > data/en8120-teblig-ek1-electric.json",

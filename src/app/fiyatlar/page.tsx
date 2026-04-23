@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { SiteFooter } from "@/components/marketing/site-footer";
+import { getMarketingPricing } from "@/lib/data/marketing-pricing";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -11,18 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/fiyatlar" },
 };
 
-const FEATURES = [
-  "Sınırsız kullanıcı ve rol bazlı yetkilendirme",
-  "Müşteri, saha ve asansör varlıkları — tek merkezden",
-  "Aylık bakım planlama, arıza ve iş emirleri",
-  "Günlük ekip sevkı ve rota planlama",
-  "Periyodik kontrol, revizyon ve teklif süreçleri",
-  "Stok, depo ve finans takibi",
-  "iOS saha uygulaması ve QR ile asansör sayfası",
-  "Çok kiracılı, güvenli bulut altyapısı",
-];
+export default async function FiyatlarPage() {
+  const pricing = await getMarketingPricing();
 
-export default function FiyatlarPage() {
   return (
     <div className="relative flex min-h-0 flex-1 flex-col overflow-y-auto bg-slate-950 text-slate-100">
       <div
@@ -38,14 +30,13 @@ export default function FiyatlarPage() {
       <main className="relative mx-auto w-full max-w-6xl flex-1 px-6 py-16 sm:py-24">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400/90">
-            Şeffaf fiyat
+            {pricing.eyebrow}
           </p>
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Tek paket. Tüm operasyonunuz.
+            {pricing.title}
           </h1>
           <p className="mt-4 text-base leading-relaxed text-slate-400 sm:text-lg">
-            Gizli ücret yok, kullanıcı başına ek maliyet yok. İlk yılınıza özel kampanya fiyatı ile
-            Lift Kontrol&apos;ü hemen kullanmaya başlayın.
+            {pricing.description}
           </p>
         </div>
 
@@ -57,23 +48,23 @@ export default function FiyatlarPage() {
           <div className="relative overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900/90 shadow-2xl shadow-black/40 backdrop-blur-sm">
             <div className="border-b border-slate-800 bg-slate-900/80 px-8 pb-6 pt-8 text-center">
               <span className="inline-flex items-center rounded-full border border-amber-500/40 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-400">
-                İlk yıla özel
+                {pricing.campaignBadge}
               </span>
-              <h2 className="mt-5 text-xl font-semibold text-white">Lift Kontrol — Kurumsal</h2>
-              <p className="mt-1 text-sm text-slate-500">Yıllık lisans · tüm modüller dahil</p>
+              <h2 className="mt-5 text-xl font-semibold text-white">{pricing.packageTitle}</h2>
+              <p className="mt-1 text-sm text-slate-500">{pricing.packageSubtitle}</p>
               <div className="mt-8 flex flex-col items-center">
                 <div className="flex items-baseline gap-1">
                   <span className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
-                    12.000
+                    {pricing.priceMain}
                   </span>
-                  <span className="text-xl font-semibold text-slate-400">TL</span>
+                  <span className="text-xl font-semibold text-slate-400">{pricing.priceUnit}</span>
                 </div>
-                <p className="mt-2 text-sm text-slate-500">+ KDV · peşin yıllık faturalama</p>
+                <p className="mt-2 text-sm text-slate-500">{pricing.priceNote}</p>
               </div>
             </div>
 
             <ul className="space-y-3.5 px-8 py-8">
-              {FEATURES.map((line) => (
+              {pricing.features.map((line) => (
                 <li key={line} className="flex gap-3 text-sm leading-snug text-slate-300">
                   <Check
                     className="mt-0.5 h-5 w-5 shrink-0 text-amber-400"
@@ -103,12 +94,10 @@ export default function FiyatlarPage() {
         </div>
 
         <p className="mx-auto mt-12 max-w-md text-center text-xs leading-relaxed text-slate-600">
-          Fiyat, kampanya süresi ve kurumsal ihtiyaçlar için özel koşullar hakkında bilgi almak
-          istiyorsanız{" "}
+          {pricing.footerNote}{" "}
           <Link href="/contact" className="text-amber-500/90 underline-offset-2 hover:text-amber-400 hover:underline">
-            iletişim
-          </Link>{" "}
-          kanallarımızdan yazabilirsiniz.
+            İletişim
+          </Link>
         </p>
       </main>
 
