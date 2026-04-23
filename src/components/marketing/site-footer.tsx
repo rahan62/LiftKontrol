@@ -3,13 +3,13 @@ import { PaymentTrustStrip } from "@/components/marketing/payment-trust-strip";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 px-6 py-10 text-slate-400">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+    <footer className="border-t border-slate-800 bg-slate-950 px-6 py-8 text-slate-400">
+      <div className="mx-auto flex max-w-6xl flex-col gap-5">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
             <Link
               href="/contact"
-              className="inline-flex w-fit items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-amber-400"
+              className="inline-flex w-fit shrink-0 items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-amber-400"
             >
               İletişim
             </Link>
@@ -37,12 +37,10 @@ export function SiteFooter() {
               </a>
             </nav>
           </div>
-          <p className="text-xs text-slate-500 sm:text-right">© {new Date().getFullYear()} Lift Kontrol</p>
+          <p className="shrink-0 text-xs text-slate-500 sm:text-right">© {new Date().getFullYear()} Lift Kontrol</p>
         </div>
 
-        <div className="border-t border-slate-800/80 pt-6">
-          <PaymentTrustStrip />
-        </div>
+        <PaymentTrustStrip compact showSslNote className="border-t border-slate-800/80 pt-4" />
       </div>
     </footer>
   );

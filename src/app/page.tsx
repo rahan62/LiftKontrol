@@ -29,18 +29,6 @@ export default function Home() {
           >
             Fiyatları gör
           </Link>
-          <Link
-            href="/login"
-            className="rounded-md border border-slate-600 px-5 py-2.5 text-sm font-medium text-slate-200 hover:border-slate-400 hover:text-white"
-          >
-            Giriş yap
-          </Link>
-          <Link
-            href="/app"
-            className="rounded-md border border-transparent px-5 py-2.5 text-sm font-medium text-amber-400/90 hover:text-amber-300"
-          >
-            Uygulamayı aç →
-          </Link>
         </div>
       </main>
       <SiteFooter />

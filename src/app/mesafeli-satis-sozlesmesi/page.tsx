@@ -18,13 +18,6 @@ export default function MesafeliSatisPage() {
         <p className="mt-2 text-sm text-slate-500">Son güncelleme: {new Date().getFullYear()}</p>
 
         <div className="mt-10 space-y-6 text-sm leading-relaxed text-slate-400">
-          <p className="rounded-lg border border-amber-900/40 bg-amber-950/20 p-4 text-amber-100/90">
-            Bu sayfa, 6502 sayılı Kanun ve Mesafeli Sözleşmeler Yönetmeliği çerçevesinde müşterilerinizi
-            bilgilendirmek için örnek bir çerçeve sunar. Ticari ünvan, adres, MERSİS, vergi dairesi ve
-            telefon bilgilerinizi <code className="text-amber-200/90">src/lib/legal/seller-info.ts</code>{" "}
-            dosyasından güncelleyin; hukuki metni iş ortağınız veya avukatınızla kesinleştirmeniz önerilir.
-          </p>
-
           <section className="space-y-3">
             <h2 className="text-lg font-semibold text-white">1. Satıcı bilgileri</h2>
             <ul className="list-inside list-disc space-y-1 text-slate-400">
@@ -35,10 +28,10 @@ export default function MesafeliSatisPage() {
                 <strong className="text-slate-300">Adres:</strong> {SELLER_LEGAL.address}
               </li>
               <li>
-                <strong className="text-slate-300">MERSİS:</strong> {SELLER_LEGAL.mersisNo}
-              </li>
-              <li>
-                <strong className="text-slate-300">Telefon:</strong> {SELLER_LEGAL.phone}
+                <strong className="text-slate-300">Telefon:</strong>{" "}
+                <a href={`tel:${SELLER_LEGAL.phone.replace(/\s/g, "")}`} className="text-amber-400 hover:text-amber-300">
+                  {SELLER_LEGAL.phone}
+                </a>
               </li>
               <li>
                 <strong className="text-slate-300">E-posta:</strong>{" "}

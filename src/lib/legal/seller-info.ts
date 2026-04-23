@@ -1,13 +1,7 @@
-/**
- * Mesafeli satış ve teslimat metinlerinde kullanılır.
- * Üretim öncesi ticari ünvan, adres, MERSİS ve telefonu güncelleyin (iyzico / 6502 uyumu).
- */
+/** Mesafeli satış ve teslimat sayfalarında gösterilen satıcı bilgileri. */
 export const SELLER_LEGAL = {
-  tradeName: "Lift Kontrol",
+  tradeName: "Rahan Eski",
   email: "support@liftkontrol.com",
-  /** Örnek; gerçek adresinizi yazın. */
-  address: "[Ticari adres — güncellenmeli]",
-  /** https://mersis.gov.tr */
-  mersisNo: "[MERSİS numarası — güncellenmeli]",
-  phone: "[İletişim telefonu — güncellenmeli]",
+  address: "Sarıkamış Şehitleri Cad. No: 27/68 Etimesgut/ANKARA",
+  phone: "+90 533 271 6358",
 } as const;
