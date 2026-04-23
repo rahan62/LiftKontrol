@@ -76,18 +76,12 @@ export default async function FiyatlarPage() {
               ))}
             </ul>
 
-            <div className="flex flex-col gap-3 border-t border-slate-800 bg-slate-950/50 px-8 py-6 sm:flex-row sm:justify-center">
+            <div className="border-t border-slate-800 bg-slate-950/50 px-8 py-6">
               <Link
-                href="/login"
-                className="inline-flex flex-1 items-center justify-center rounded-lg bg-amber-500 px-5 py-3 text-center text-sm font-semibold text-slate-950 hover:bg-amber-400 sm:flex-initial"
+                href="/odeme"
+                className="flex w-full items-center justify-center rounded-lg bg-amber-500 px-5 py-3 text-center text-sm font-semibold text-slate-950 hover:bg-amber-400"
               >
-                Giriş yap
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex flex-1 items-center justify-center rounded-lg border border-slate-600 px-5 py-3 text-center text-sm font-semibold text-white hover:border-slate-500 hover:bg-slate-800/50 sm:flex-initial"
-              >
-                Bize ulaşın
+                Satın al
               </Link>
             </div>
           </div>

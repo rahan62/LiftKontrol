@@ -145,7 +145,7 @@ export function GizlilikSozlesmesiContent() {
         </Link>
         {" · "}
         <Link href="/hakkimda" className="text-amber-500/90 hover:text-amber-400">
-          Hakkında
+          Hakkımızda
         </Link>
       </p>
     </div>

@@ -32,7 +32,7 @@ export function MarketingHeader() {
             Destek
           </Link>
           <Link href="/hakkimda" className="text-slate-400 hover:text-white">
-            Hakkında
+            Hakkımızda
           </Link>
           <Link href="/gizlilik-sozlesmesi" className="text-slate-400 hover:text-white">
             Gizlilik sözleşmesi

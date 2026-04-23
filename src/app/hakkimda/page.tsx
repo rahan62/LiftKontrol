@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MarketingShell } from "@/components/marketing/marketing-shell";
 
 export const metadata: Metadata = {
-  title: "Hakkında — Lift Kontrol",
+  title: "Hakkımızda — Lift Kontrol",
   description:
     "Lift Kontrol: asansör bakım ve saha servisi şirketleri için operasyon yazılımı. Web ve iOS.",
   alternates: { canonical: "/hakkimda" },
@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function HakkimdaPage() {
   return (
-    <MarketingShell title="Hakkında">
+    <MarketingShell title="Hakkımızda">
       <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-16">
-        <h1 className="text-3xl font-semibold text-white">Hakkında</h1>
+        <h1 className="text-3xl font-semibold text-white">Hakkımızda</h1>
         <p className="mt-2 text-sm text-slate-500">Lift Kontrol</p>
 
         <div className="mt-10 space-y-6 text-slate-400">
@@ -47,11 +47,19 @@ export default function HakkimdaPage() {
             </a>
           </p>
 
-          <p className="text-sm text-slate-500">
+          <p className="flex flex-wrap gap-x-2 gap-y-1 text-sm text-slate-500">
             <Link href="/gizlilik-sozlesmesi" className="text-amber-500/90 hover:text-amber-400">
               Gizlilik sözleşmesi
             </Link>
-            {" · "}
+            <span aria-hidden>·</span>
+            <Link href="/mesafeli-satis-sozlesmesi" className="text-amber-500/90 hover:text-amber-400">
+              Mesafeli satış
+            </Link>
+            <span aria-hidden>·</span>
+            <Link href="/teslimat-ve-iade" className="text-amber-500/90 hover:text-amber-400">
+              Teslimat ve iade
+            </Link>
+            <span aria-hidden>·</span>
             <Link href="/support" className="text-amber-500/90 hover:text-amber-400">
               Destek
             </Link>

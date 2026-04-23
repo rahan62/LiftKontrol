@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  /** iyzipay dinamik `require` kullanır; paket sunucuda harici yüklenir (Turbopack derlemesi için gerekli). */
+  serverExternalPackages: ["iyzipay"],
+  async redirects() {
+    return [{ source: "/hakkimizda", destination: "/hakkimda", permanent: true }];
+  },
   ...(allowedDevOrigins.length > 0 ? { allowedDevOrigins } : {}),
 };
 
