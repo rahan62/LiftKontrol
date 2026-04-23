@@ -31,6 +31,9 @@ export default async function NewTenantPage({
         <div>
           <label className="text-xs font-medium text-slate-400">Slug (boş bırakılırsa üretilir)</label>
           <input name="slug" className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-white" />
+          <p className="mt-1 text-xs text-slate-500">
+            Tüm sistemde benzersiz olmalı. Doluysa otomatik olarak -2, -3… ile yeni bir slug atanır.
+          </p>
         </div>
         <div>
           <label className="text-xs font-medium text-slate-400">Durum</label>

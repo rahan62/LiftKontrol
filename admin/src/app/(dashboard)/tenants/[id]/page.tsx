@@ -48,7 +48,7 @@ export default async function TenantDetailPage({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ error?: string; ok?: string }>;
+  searchParams: Promise<{ error?: string; ok?: string; note?: string }>;
 }) {
   const { id: tenantId } = await params;
   const sp = await searchParams;
@@ -87,6 +87,7 @@ export default async function TenantDetailPage({
 
   const flashOk = okMessage(sp.ok);
   const flashErr = sp.error ? decodeURIComponent(sp.error) : null;
+  const flashNote = sp.note ? decodeURIComponent(sp.note) : null;
 
   return (
     <div className="space-y-10">
@@ -106,6 +107,11 @@ export default async function TenantDetailPage({
       {flashErr ? (
         <p className="rounded-md border border-red-900/50 bg-red-950/30 px-3 py-2 text-sm text-red-200">
           {flashErr}
+        </p>
+      ) : null}
+      {flashNote ? (
+        <p className="rounded-md border border-amber-900/50 bg-amber-950/30 px-3 py-2 text-sm text-amber-100">
+          {flashNote}
         </p>
       ) : null}
 

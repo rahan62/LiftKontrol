@@ -32,6 +32,33 @@ function emptyToNull(formData: FormData, key: string): string | null {
   return v || null;
 }
 
+/** Pick a slug not present in tenants.slug (optional: ignore current row on edit). */
+async function resolveUniqueTenantSlug(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  rawSlug: string,
+  excludeTenantId?: string,
+): Promise<string> {
+  let base = rawSlug.trim().toLowerCase().replace(/-+$/, "").replace(/^-+/g, "");
+  if (!base) {
+    base = "tenant";
+  }
+  for (let n = 0; n < 500; n++) {
+    const candidate = (n === 0 ? base : `${base}-${n + 1}`).slice(0, 64);
+    const { data: existing } = await supabase
+      .from("tenants")
+      .select("id")
+      .eq("slug", candidate)
+      .maybeSingle();
+    if (!existing) {
+      return candidate;
+    }
+    if (excludeTenantId && existing.id === excludeTenantId) {
+      return candidate;
+    }
+  }
+  return `${base}-${Date.now()}`.slice(0, 64);
+}
+
 async function linkOrCreateOwner(
   supabase: Awaited<ReturnType<typeof createClient>>,
   tenantId: string,
@@ -101,6 +128,12 @@ export async function createTenantAction(formData: FormData) {
   if (!slug) {
     slug = slugify(name);
   }
+  if (!slug) {
+    slug = "tenant";
+  }
+
+  const requestedSlug = slug;
+  slug = await resolveUniqueTenantSlug(supabase, slug);
 
   const row = {
     name,
@@ -117,6 +150,11 @@ export async function createTenantAction(formData: FormData) {
 
   const { data, error } = await supabase.from("tenants").insert(row).select("id").single();
   if (error) {
+    if (error.code === "23505" || error.message.includes("tenants_slug_key")) {
+      redirect(
+        `/tenants/new?error=${q("Slug çakışması (eşzamanlı kayıt). Lütfen farklı bir slug ile tekrar deneyin.")}`,
+      );
+    }
     redirect(`/tenants/new?error=${q(error.message)}`);
   }
 
@@ -130,6 +168,11 @@ export async function createTenantAction(formData: FormData) {
   }
 
   revalidatePath("/tenants");
+  if (slug !== requestedSlug) {
+    redirect(
+      `/tenants/${data.id}?note=${q(`"${requestedSlug}" kullanılıyordu; slug "${slug}" olarak kaydedildi.`)}`,
+    );
+  }
   redirect(`/tenants/${data.id}`);
 }
 
@@ -154,8 +197,24 @@ export async function updateTenantAction(tenantId: string, formData: FormData) {
     redirect(`/tenants/${tenantId}?error=${q("Ad ve slug gerekli.")}`);
   }
 
+  const { data: slugOwner } = await supabase
+    .from("tenants")
+    .select("id")
+    .eq("slug", row.slug)
+    .maybeSingle();
+  if (slugOwner && slugOwner.id !== tenantId) {
+    redirect(
+      `/tenants/${tenantId}?error=${q("Bu kısa ad (slug) başka bir firmada kayıtlı. Farklı bir slug seçin.")}`,
+    );
+  }
+
   const { error } = await supabase.from("tenants").update(row).eq("id", tenantId);
   if (error) {
+    if (error.code === "23505" || error.message.includes("tenants_slug_key")) {
+      redirect(
+        `/tenants/${tenantId}?error=${q("Bu slug zaten kullanılıyor. Başka bir kısa ad deneyin.")}`,
+      );
+    }
     redirect(`/tenants/${tenantId}?error=${q(error.message)}`);
   }
   revalidatePath("/tenants");
