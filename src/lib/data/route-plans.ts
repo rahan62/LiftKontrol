@@ -132,7 +132,11 @@ async function loadRoutePoints(
     const { data: assets, error: aErr } = await assetQuery;
     if (aErr || !assets?.length) return [];
     const siteIds = [...new Set(assets.map((a) => a.site_id as string))];
-    const { data: sites } = await supabase.from("sites").select("id, geo").in("id", siteIds);
+    const { data: sites } = await supabase
+      .from("sites")
+      .select("id, geo")
+      .eq("tenant_id", tenantId)
+      .in("id", siteIds);
     const geoBySite = new Map((sites ?? []).map((s) => [s.id as string, s.geo]));
     const out: RoutePoint[] = [];
     for (const row of assets) {
@@ -447,8 +451,16 @@ export async function listDailyStopsForPlan(
     if (!stops?.length) return [];
     const siteIds = [...new Set(stops.map((s) => s.site_id as string))];
     const assetIds = [...new Set(stops.map((s) => s.elevator_asset_id as string))];
-    const { data: sites } = await supabase.from("sites").select("id, name, geo").in("id", siteIds);
-    const { data: assets } = await supabase.from("elevator_assets").select("id, unit_code").in("id", assetIds);
+    const { data: sites } = await supabase
+      .from("sites")
+      .select("id, name, geo")
+      .eq("tenant_id", tenantId)
+      .in("id", siteIds);
+    const { data: assets } = await supabase
+      .from("elevator_assets")
+      .select("id, unit_code")
+      .eq("tenant_id", tenantId)
+      .in("id", assetIds);
     const smap = new Map((sites ?? []).map((s) => [s.id as string, s]));
     const amap = new Map((assets ?? []).map((a) => [a.id as string, a]));
     return stops.map((s) => {

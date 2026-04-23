@@ -1,4 +1,5 @@
 import { isSupabaseConfigured } from "@/lib/auth/config";
+import { selectPrimaryTenantMembershipWithClient } from "@/lib/tenant/membership";
 import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 
@@ -43,16 +44,8 @@ export async function getMobileTenantContext(request: Request): Promise<
     return { ok: false, response: NextResponse.json({ error: "Oturum geçersiz." }, { status: 401 }) };
   }
 
-  const { data: membership, error: memErr } = await supabase
-    .from("tenant_members")
-    .select("tenant_id, system_role")
-    .eq("user_id", user.id)
-    .eq("is_active", true)
-    .order("joined_at", { ascending: true })
-    .limit(1)
-    .maybeSingle();
-
-  if (memErr || !membership?.tenant_id) {
+  const membership = await selectPrimaryTenantMembershipWithClient(supabase, user.id);
+  if (!membership?.tenantId) {
     return { ok: false, response: NextResponse.json({ error: "Kiracı üyeliği yok." }, { status: 403 }) };
   }
 
@@ -60,8 +53,8 @@ export async function getMobileTenantContext(request: Request): Promise<
     ok: true,
     ctx: {
       userId: user.id,
-      tenantId: String(membership.tenant_id),
-      systemRole: String(membership.system_role ?? ""),
+      tenantId: membership.tenantId,
+      systemRole: String(membership.role ?? ""),
     },
   };
 }

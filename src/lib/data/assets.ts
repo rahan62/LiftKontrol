@@ -185,10 +185,13 @@ export async function getAssetWithSiteCustomer(
   if (!asset) return null;
   const siteId = asset.site_id as string;
   const customerId = asset.customer_id as string;
-  const { rows: srows } = await pool.query<{ name: string }>(`SELECT name FROM sites WHERE id = $1`, [siteId]);
+  const { rows: srows } = await pool.query<{ name: string }>(
+    `SELECT name FROM sites WHERE tenant_id = $1 AND id = $2`,
+    [tenantId, siteId],
+  );
   const { rows: crows } = await pool.query<{ legal_name: string }>(
-    `SELECT legal_name FROM customers WHERE id = $1`,
-    [customerId],
+    `SELECT legal_name FROM customers WHERE tenant_id = $1 AND id = $2`,
+    [tenantId, customerId],
   );
   return {
     asset,

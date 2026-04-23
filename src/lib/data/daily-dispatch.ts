@@ -253,8 +253,16 @@ export async function listDailyDispatchStopsDetail(
     if (!stops?.length) return [];
     const assetIds = [...new Set(stops.map((s) => s.elevator_asset_id as string))];
     const siteIds = [...new Set(stops.map((s) => s.site_id as string))];
-    const { data: assets } = await supabase.from("elevator_assets").select("id, unit_code").in("id", assetIds);
-    const { data: sites } = await supabase.from("sites").select("id, name").in("id", siteIds);
+    const { data: assets } = await supabase
+      .from("elevator_assets")
+      .select("id, unit_code")
+      .eq("tenant_id", tenantId)
+      .in("id", assetIds);
+    const { data: sites } = await supabase
+      .from("sites")
+      .select("id, name")
+      .eq("tenant_id", tenantId)
+      .in("id", siteIds);
     const am = new Map((assets ?? []).map((a) => [a.id as string, a]));
     const sm = new Map((sites ?? []).map((s) => [s.id as string, s]));
     return stops.map((s) => ({
