@@ -52,5 +52,7 @@
 	<string>$(SUPABASE_ANON_KEY)</string>
 	<key>PUBLIC_APP_URL</key>
 	<string>$(PUBLIC_APP_URL)</string>
+	<key>IAP_PRODUCT_ID</key>
+	<string>$(IAP_PRODUCT_ID)</string>
 </dict>
 </plist>

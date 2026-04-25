@@ -1,0 +1,72 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "LiftKontrolIAP",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_failTransactionsEnabled" : false,
+    "_locale" : "tr_TR",
+    "_storefront" : "TUR",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "liftkontrol_kurumsal_group",
+      "localizations" : [
+
+      ],
+      "name" : "Kurumsal",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "12.000,00 TL",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "A1B2C3D4",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Yıllık kurumsal abonelik — simülatör / yerel StoreKit testi",
+              "displayName" : "Lift Kontrol Kurumsal",
+              "locale" : "tr_TR"
+            }
+          ],
+          "productID" : "LK100",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Kurumsal yıllık",
+          "subscriptionGroupID" : "liftkontrol_kurumsal_group",
+          "type" : "RecurringSubscription",
+          "winBackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

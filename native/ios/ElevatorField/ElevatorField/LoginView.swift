@@ -11,6 +11,7 @@ struct LoginView: View {
   @State private var busy = false
   @State private var message: String?
   @State private var showSignupInfo = false
+  @State private var showIapSubscribe = false
 
   private let contentMaxWidth: CGFloat = 320
 
@@ -128,6 +129,23 @@ struct LoginView: View {
 
         Spacer(minLength: 16)
 
+        Button {
+          showIapSubscribe = true
+        } label: {
+          Text(TrStrings.Iap.subscribe)
+            .font(.subheadline.weight(.semibold))
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+            .background(
+              RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .strokeBorder(Color.white.opacity(0.35), lineWidth: 1)
+            )
+            .foregroundStyle(.white)
+        }
+        .buttonStyle(.plain)
+        .padding(.horizontal, 24)
+        .padding(.bottom, 4)
+
         Text(TrStrings.Auth.membersOnlyFooter)
           .font(.caption)
           .foregroundStyle(.white.opacity(0.5))
@@ -139,6 +157,11 @@ struct LoginView: View {
     .toolbar(.hidden, for: .navigationBar)
     .sheet(isPresented: $showSignupInfo) {
       SignupInfoView()
+    }
+    .sheet(isPresented: $showIapSubscribe) {
+      IapSubscribeSheet(client: client, onCompleted: onSignedIn)
+        .presentationDetents([.large])
+        .presentationDragIndicator(.visible)
     }
   }
 

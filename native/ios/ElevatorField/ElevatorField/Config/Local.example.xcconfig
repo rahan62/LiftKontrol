@@ -1,8 +1,31 @@
-// Copy to Local.xcconfig (gitignored). Dashboard → Settings → API.
-// Rules: no quotes around values. Never `https://` on the line — `//` starts an xcconfig comment.
-// Use https:/$()/YOUR_REF.supabase.co . Never postgresql:// DATABASE_URL here.
+// =============================================================================
+// Local.xcconfig — KOPYALAYIN: bu dosyayı "Local.xcconfig" olarak kaydedin (gitignore).
+// Kurallar: değerlerde tırnak yok. Satırda `https://` yazmayın; // yorum başlatır.
+// Supabase / web URL için: https:/$()/host... ve http:/$()/host... şablonunu kullanın.
+// =============================================================================
+//
+// Aşağıdakiler Info.plist üzerinden uygulamaya gider (AppConfig.swift / IAP).
+// Sunucu sırları (APPLE_ISSUER_ID, .p8, SUPABASE_SERVICE_ROLE_KEY vb.) BURAYA
+// konmaz — yalnızca Vercel / .env.local içindedir.
+//
+// Xcode’da ayrıca (bu dosyada değil):
+//   • Signing & Capabilities → Team, Bundle Identifier (örn. com.elevatormaintenance.field)
+//   • In-App Purchase capability
+//   • IAP_PRODUCT_ID = App Store Connect’teki auto-renewable subscription Product ID ile birebir aynı
+//     ve kök .env içindeki APPLE_IAP_PRODUCT_ID ile aynı olmalıdır.
+//   • Simülatörde yerel fiyat: Scheme → Run → Options → StoreKit Configuration = Config/Products.storekit
+//
+// Gerçek telefondan bilgisayarınızdaki Next.js’e bağlanıyorsanız PUBLIC_APP_URL olarak
+// makinenizin LAN IP’sini kullanın (ör. http:/$()/192.168.1.10:3000); NEXT_PUBLIC_APP_URL ile aynı.
+// =============================================================================
 
+// --- Supabase (Dashboard → Project Settings → API) ---
 SUPABASE_URL = https:/$()/exmcayqqwlaqqnardids.supabase.co
 SUPABASE_ANON_KEY = PASTE_ANON_KEY_FROM_SUPABASE_DASHBOARD
-// Web kökü — .env içindeki NEXT_PUBLIC_APP_URL ile aynı (mobil API, QR). Simülatör: http:/$()/localhost:3000
+
+// --- Web uygulaması kökü: QR, IAP, pazarlama metni GET /api/public/marketing-pricing ---
 PUBLIC_APP_URL = http:/$()/localhost:3000
+
+// --- App Store In-App Purchase: Subscription Product ID (ASC ile birebir; .env APPLE_IAP_PRODUCT_ID ile aynı) ---
+// Örnek değer: LK100 — kendi Product ID’nizi yazın.
+IAP_PRODUCT_ID = YOUR_SUBSCRIPTION_PRODUCT_ID

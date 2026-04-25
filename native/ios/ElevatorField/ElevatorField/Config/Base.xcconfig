@@ -1,5 +1,8 @@
-// Default placeholders — override in Local.xcconfig (see Local.example.xcconfig).
+// Öntanımlı placeholder’lar — gerçek değerler Local.xcconfig içinde (Local.example.xcconfig’i kopyalayın).
+// Info.plist’e giren tek yapılandırma anahtarları: SUPABASE_URL, SUPABASE_ANON_KEY, PUBLIC_APP_URL, IAP_PRODUCT_ID.
+// https:// satırda yorum açmaması için: https:/$()/... şablonu kullanın.
+
 SUPABASE_URL = https:/$()/REPLACE_ME.supabase.co
 SUPABASE_ANON_KEY = REPLACE_ME
-// Web panel (QR kodda tam URL); REPLACE_ME bırakılırsa iOS yalnızca kayıt oluşturur, qr_payload web’den veya düzenlemede dolar.
 PUBLIC_APP_URL = https:/$()/REPLACE_ME_WEB_PUBLIC_APP
+IAP_PRODUCT_ID = REPLACE_ME_IAP_PRODUCT_ID

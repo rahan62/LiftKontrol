@@ -31,6 +31,8 @@ admin/.next/
 # Large local standard PDFs (use OCR + import script instead of committing)
 scripts/*.pdf
 *.pem
+*.p8
+AuthKey_*.p8
 
 # Local uploads (contracts, etc.); production will use object storage
 /uploads

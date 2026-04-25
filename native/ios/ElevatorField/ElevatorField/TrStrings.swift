@@ -20,6 +20,32 @@ enum TrStrings {
     static let membersOnlyFooter = "Yalnızca üyeler kullanabilir"
   }
 
+  enum Iap {
+    static let subscribe = "Abone ol"
+    static let sheetTitle = "Kurumsal abonelik"
+    static let sheetIntro =
+      "Aşağıdaki bilgiler web sitemizdeki paketle aynıdır. Ödeme App Store üzerinden alınır; ardından firmanız ve yönetici hesabınız oluşturulur."
+    static let accountSection = "Hesap bilgileri"
+    static let companyName = "Firma adı"
+    static let purchaseAndRegister = "Satın al ve hesap oluştur"
+    static let appStorePriceLabel = "App Store ödeme tutarı"
+    static let referencePriceLabel = "Web sitesi referans fiyatı"
+    static let pricingLoadingHint = "App Store fiyatı yükleniyor…"
+    static let storePriceUnavailable =
+      "App Store ürün fiyatı şu an alınamadı. Simülatörde çoğu zaman Scheme → Run → Options altında bir StoreKit Configuration (.storekit) seçmeniz gerekir; gerçek cihazda ürün kimliği ve App Store Connect sözleşmelerini kontrol edin. Satın alma sırasında güncel tutarı yine Apple gösterir."
+    static let misconfiguredProduct =
+      "Uygulama yapılandırması eksik. IAP_PRODUCT_ID (ve web PUBLIC_APP_URL) doğru ayarlanmalı."
+    static let productNotFound =
+      "App Store’da ürün bulunamadı. App Store Connect’te abonelik ve sürüm eşlemesini kontrol edin."
+    static let purchaseCancelled = "Satın alma iptal edildi."
+    static let purchasePending = "Satın alma beklemede (onay sonrası tekrar deneyin)."
+    static let purchaseUnknown = "Satın alma tamamlanamadı."
+    static let apiBaseMissing = "Web sunucu adresi eksik (PUBLIC_APP_URL)."
+    static let registerFailed = "Kayıt tamamlanamadı"
+    static let emailExists = "Bu e-posta zaten kayıtlı. Giriş yapın veya başka bir adres kullanın."
+    static let subscriptionUsed = "Bu abonelik zaten kullanılmış. Destek ile iletişime geçin."
+  }
+
   enum Signup {
     static let title = "Erişim şirketiniz tarafından verilir"
     static let intro =

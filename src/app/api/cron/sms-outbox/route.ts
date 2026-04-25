@@ -2,8 +2,9 @@ import { processSmsOutboxQueue } from "@/lib/data/sms-outbox";
 import { NextResponse } from "next/server";
 
 /**
- * SMS kuyruğunu sırayla işler (Netgsm REST). Önerilen tetik: 10 dakikada bir (Vercel Cron).
- * Güvenlik: `Authorization: Bearer $CRON_SECRET` veya `?secret=`.
+ * SMS kuyruğunu sırayla işler (Netgsm REST).
+ * Vercel Hobby: günde en fazla 1 tetik — `vercel.json` içinde 14:00 UTC (≈ İstanbul 17:00).
+ * Pro’da sıklığı artırabilirsiniz. Güvenlik: `Authorization: Bearer $CRON_SECRET` veya `?secret=`.
  */
 export async function GET(req: Request) {
   const secret = process.env.CRON_SECRET?.trim();
