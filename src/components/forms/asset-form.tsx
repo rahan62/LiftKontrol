@@ -118,11 +118,9 @@ export function AssetForm({
   if (!customers.length) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-8">
-        <p className="text-sm text-slate-600 dark:text-slate-400">
-          Add a customer and site first, then register elevator units.
-        </p>
+        <p className="text-sm text-slate-600 dark:text-slate-400">{tr.assetForm.addCustomerAndSiteFirst}</p>
         <Link href="/app/customers/new" className="mt-4 inline-block text-sm font-medium text-amber-700 hover:underline dark:text-amber-400">
-          New customer
+          {tr.customers.new}
         </Link>
       </div>
     );
@@ -132,16 +130,16 @@ export function AssetForm({
     <form onSubmit={onSubmit} className="mx-auto max-w-2xl space-y-6 px-4 py-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-lg font-semibold text-slate-900 dark:text-white">
-          {mode === "create" ? "New elevator / asset" : "Edit asset"}
+          {mode === "create" ? tr.assetForm.newElevator : tr.assetForm.editAsset}
         </h1>
         <Link href="/app/assets" className="text-sm text-slate-600 hover:underline dark:text-slate-400">
-          Back to list
+          {tr.formActions.backToList}
         </Link>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label className={label}>Customer *</label>
+          <label className={label}>{tr.assetForm.customerLabel}</label>
           <select
             name="customer_id"
             required
@@ -157,7 +155,7 @@ export function AssetForm({
           </select>
         </div>
         <div className="sm:col-span-2">
-          <label className={label}>Site *</label>
+          <label className={label}>{tr.assetForm.siteLabel}</label>
           <select
             key={customerId}
             name="site_id"
@@ -171,7 +169,7 @@ export function AssetForm({
                   : ""
             }
           >
-            <option value="">Select site…</option>
+            <option value="">{tr.assetForm.selectSite}</option>
             {sites.map((s) => (
               <option key={s.id} value={s.id}>
                 {s.name}
@@ -179,21 +177,21 @@ export function AssetForm({
             ))}
           </select>
           {!sites.length ? (
-            <p className="mt-1 text-xs text-slate-500">No sites for this customer — add a site first.</p>
+            <p className="mt-1 text-xs text-slate-500">{tr.assetForm.noSitesForCustomer}</p>
           ) : null}
         </div>
         <div>
-          <label className={label}>Unit code *</label>
+          <label className={label}>{tr.assetForm.unitCode}</label>
           <input
             name="unit_code"
             required
             className={field}
             defaultValue={initial?.unit_code ?? ""}
-            placeholder="e.g. L1, Car A"
+            placeholder={tr.assetForm.unitCodePlaceholder}
           />
         </div>
         <div>
-          <label className={label}>Elevator type</label>
+          <label className={label}>{tr.assetForm.elevatorType}</label>
           <select name="elevator_type" className={field} defaultValue={initial?.elevator_type ?? "other"}>
             {ELEVATOR_TYPES.map((t) => (
               <option key={t.value} value={t.value}>
@@ -203,31 +201,31 @@ export function AssetForm({
           </select>
         </div>
         <div>
-          <label className={label}>Brand</label>
+          <label className={label}>{tr.assetForm.brand}</label>
           <input name="brand" className={field} defaultValue={initial?.brand ?? ""} />
         </div>
         <div>
-          <label className={label}>Model</label>
+          <label className={label}>{tr.assetForm.model}</label>
           <input name="model" className={field} defaultValue={initial?.model ?? ""} />
         </div>
         <div>
-          <label className={label}>Serial number</label>
+          <label className={label}>{tr.assetForm.serialNumber}</label>
           <input name="serial_number" className={field} defaultValue={initial?.serial_number ?? ""} />
         </div>
         <div>
-          <label className={label}>Controller</label>
+          <label className={label}>{tr.assetForm.controller}</label>
           <input name="controller_type" className={field} defaultValue={initial?.controller_type ?? ""} />
         </div>
         <div>
-          <label className={label}>Drive</label>
+          <label className={label}>{tr.assetForm.drive}</label>
           <input name="drive_type" className={field} defaultValue={initial?.drive_type ?? ""} />
         </div>
         <div>
-          <label className={label}>Doors</label>
+          <label className={label}>{tr.assetForm.doors}</label>
           <input name="door_type" className={field} defaultValue={initial?.door_type ?? ""} />
         </div>
         <div>
-          <label className={label}>Stops</label>
+          <label className={label}>{tr.assetForm.stops}</label>
           <input
             name="stops"
             type="number"
@@ -237,7 +235,7 @@ export function AssetForm({
           />
         </div>
         <div>
-          <label className={label}>Capacity (kg)</label>
+          <label className={label}>{tr.assetForm.capacityKg}</label>
           <input
             name="capacity_kg"
             type="number"
@@ -247,7 +245,7 @@ export function AssetForm({
           />
         </div>
         <div>
-          <label className={label}>Persons</label>
+          <label className={label}>{tr.assetForm.persons}</label>
           <input
             name="persons"
             type="number"
@@ -257,7 +255,7 @@ export function AssetForm({
           />
         </div>
         <div>
-          <label className={label}>Speed</label>
+          <label className={label}>{tr.assetForm.speed}</label>
           <input name="speed" type="number" step="any" className={field} defaultValue={initial?.speed ?? ""} />
         </div>
 
@@ -354,7 +352,7 @@ export function AssetForm({
         </div>
 
         <div>
-          <label className={label}>Operational status</label>
+          <label className={label}>{tr.assetForm.operationalStatus}</label>
           <select
             name="operational_status"
             className={field}
@@ -375,7 +373,7 @@ export function AssetForm({
               defaultChecked={initial?.unsafe_flag ?? false}
               className="rounded border-slate-300"
             />
-            Mark unsafe
+            {tr.assetForm.markUnsafe}
           </label>
         </div>
       </div>
@@ -384,13 +382,13 @@ export function AssetForm({
 
       <div className="flex gap-3">
         <button type="submit" disabled={pending} className={btnPrimary}>
-          {pending ? "Saving…" : mode === "create" ? "Create asset" : "Save changes"}
+          {pending ? tr.formActions.saving : mode === "create" ? tr.assetForm.createAsset : tr.formActions.saveChanges}
         </button>
         <Link
           href={assetId ? `/app/assets/${assetId}` : "/app/assets"}
           className="rounded-md border border-slate-300 px-4 py-2 text-sm dark:border-slate-600"
         >
-          Cancel
+          {tr.common.cancel}
         </Link>
       </div>
     </form>

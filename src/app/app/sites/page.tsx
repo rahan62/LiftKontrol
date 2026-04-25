@@ -1,5 +1,6 @@
 import { DataTableShell } from "@/components/module/data-table-shell";
 import { listSites } from "@/lib/data/sites";
+import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
 import Link from "next/link";
 
@@ -11,14 +12,14 @@ export default async function SitesPage() {
 
   return (
     <DataTableShell
-      title="Sites / buildings"
-      description="Service vs billing addresses, access instructions, machine room & shaft notes, emergency numbers."
+      title={tr.sites.listTitle}
+      description={tr.sites.listDescription}
       actions={
         <Link
           href="/app/sites/new"
           className="rounded-md bg-slate-900 px-3 py-1.5 text-sm font-medium text-white dark:bg-white dark:text-slate-900"
         >
-          New site
+          {tr.sites.newSiteCta}
         </Link>
       }
     >
@@ -26,9 +27,9 @@ export default async function SitesPage() {
         <table className="min-w-full divide-y divide-slate-200 text-sm dark:divide-slate-800">
           <thead className="bg-slate-50 text-left text-xs font-semibold uppercase text-slate-600 dark:bg-slate-900 dark:text-slate-400">
             <tr>
-              <th className="px-4 py-2">Site</th>
-              <th className="px-4 py-2">Customer</th>
-              <th className="px-4 py-2">Updated</th>
+              <th className="px-4 py-2">{tr.sites.listColSite}</th>
+              <th className="px-4 py-2">{tr.sites.listColCustomer}</th>
+              <th className="px-4 py-2">{tr.sites.listColUpdated}</th>
               <th className="px-4 py-2" />
             </tr>
           </thead>
@@ -44,7 +45,7 @@ export default async function SitesPage() {
                       href={`/app/sites/${s.id}`}
                       className="text-sm font-medium text-amber-700 hover:underline dark:text-amber-400"
                     >
-                      Open
+                      {tr.customers.open}
                     </Link>
                   </td>
                 </tr>
@@ -52,7 +53,7 @@ export default async function SitesPage() {
             ) : (
               <tr>
                 <td className="px-4 py-8 text-center text-slate-500" colSpan={4}>
-                  No sites yet. Add a customer, then create a site.
+                  {tr.sites.listEmpty}
                 </td>
               </tr>
             )}

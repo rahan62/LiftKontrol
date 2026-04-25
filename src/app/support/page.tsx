@@ -16,7 +16,7 @@ export default function SupportPage() {
   return (
     <MarketingShell title="Destek">
       <main className="mx-auto w-full max-w-2xl flex-1 px-6 py-16">
-        <p className="text-xs font-semibold uppercase tracking-widest text-amber-400/90">Lift Kontrol · Support</p>
+        <p className="text-xs font-semibold uppercase tracking-widest text-amber-400/90">Lift Kontrol · Destek</p>
         <h1 className="mt-3 text-3xl font-semibold text-white">Destek</h1>
         <p className="mt-4 text-slate-400">
           Lift Kontrol mobil ve web uygulaması için yardım ve geri bildirim kanallarımız aşağıdadır. App Store ve

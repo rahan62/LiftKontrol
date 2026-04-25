@@ -1,5 +1,6 @@
 import { DataTableShell } from "@/components/module/data-table-shell";
 import { listCustomers } from "@/lib/data/customers";
+import { customerStatusLabel } from "@/lib/i18n/display-labels";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
 import Link from "next/link";
@@ -41,7 +42,9 @@ export default async function CustomersPage() {
                     {c.code ?? "—"}
                   </td>
                   <td className="px-4 py-2 text-slate-900 dark:text-slate-100">{c.legal_name}</td>
-                  <td className="px-4 py-2 capitalize text-slate-600 dark:text-slate-400">{c.status}</td>
+                  <td className="px-4 py-2 text-slate-600 dark:text-slate-400">
+                    {customerStatusLabel(String(c.status ?? ""))}
+                  </td>
                   <td className="px-4 py-2 text-right">
                     <Link
                       href={`/app/customers/${c.id}`}

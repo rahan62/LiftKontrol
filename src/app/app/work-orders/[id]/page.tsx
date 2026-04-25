@@ -3,6 +3,7 @@ import { WorkOrderBlockingCrewForm } from "@/components/work-orders/work-order-b
 import { DataTableShell } from "@/components/module/data-table-shell";
 import { listFieldCrews } from "@/lib/data/field-crews";
 import { getWorkOrder } from "@/lib/data/work-orders";
+import { workOrderStatusLabel, workOrderTypeLabel } from "@/lib/i18n/display-labels";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
 import { notFound } from "next/navigation";
@@ -33,12 +34,12 @@ export default async function WorkOrderDetailPage({ params }: Props) {
           <div className="text-xs font-semibold uppercase text-slate-500">{tr.workOrders.faultSymptom}</div>
           <p className="mt-2 text-slate-800 dark:text-slate-200">{String(wo.fault_symptom ?? "—")}</p>
           <p className="mt-1 text-xs text-slate-500">
-            {tr.workOrders.type}: {String(wo.work_type ?? "—")} · {tr.workOrders.woStatus}:{" "}
-            {String(wo.status ?? "—")}
+            {tr.workOrders.type}: {wo.work_type ? workOrderTypeLabel(String(wo.work_type)) : "—"} ·{" "}
+            {tr.workOrders.woStatus}: {wo.status ? workOrderStatusLabel(String(wo.status)) : "—"}
           </p>
         </div>
         <div className="rounded-lg border border-slate-200 bg-white p-4 text-sm dark:border-slate-800 dark:bg-slate-950">
-          <div className="text-xs font-semibold uppercase text-slate-500">Notlar</div>
+          <div className="text-xs font-semibold uppercase text-slate-500">{tr.maintenance.notes}</div>
           <p className="mt-2 text-slate-800 dark:text-slate-200">{String(wo.internal_notes ?? "—")}</p>
         </div>
         <div className="lg:col-span-2 space-y-3">

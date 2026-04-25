@@ -43,7 +43,7 @@ export function SettingsLogoForm({ hasLogo }: Props) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/api/tenant/logo"
-            alt="Logo"
+            alt={tr.settingsBranding.logoAlt}
             className="max-h-24 max-w-xs object-contain"
           />
         </div>

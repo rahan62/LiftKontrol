@@ -24,7 +24,7 @@ export default function HakkimdaPage() {
             süreçleri; iOS uygulaması ile sahadan erişim desteklenir.
           </p>
           <p className="leading-relaxed">
-            Veriler çok kiracılı (multi-tenant) yapıda, şirket bazında ayrıştırılarak güvenli bulut
+            Veriler çok kiracılı yapıda, şirket bazında ayrıştırılarak güvenli bulut
             altyapısında işlenir. Erişim rol bazlı yetkilendirme ile sınırlıdır; herkese açık self-servis kayıt
             bulunmaz — hesaplar şirket veya tedarikçi süreçleriyle tanımlanır.
           </p>

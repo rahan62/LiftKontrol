@@ -188,7 +188,7 @@ export async function deleteCustomer(
     return err(
       e instanceof Error
         ? e.message
-        : "Delete failed (remove dependent records first if constraints block this).",
+        : "Silinemedi (bağlı kayıtlar varsa önce onları kaldırın).",
     );
   }
 }
@@ -367,7 +367,7 @@ export async function deleteSite(
       client.release();
     }
   } catch (e) {
-    return err(e instanceof Error ? e.message : "Delete failed");
+    return err(e instanceof Error ? e.message : "Silinemedi");
   }
 }
 
@@ -565,7 +565,7 @@ export async function deleteAsset(
     if (r.rowCount === 0) return err("Not found");
     return { ok: true };
   } catch (e) {
-    return err(e instanceof Error ? e.message : "Delete failed");
+    return err(e instanceof Error ? e.message : "Silinemedi");
   }
 }
 
@@ -883,6 +883,6 @@ export async function deleteFinanceEntry(
     if (r.rowCount === 0) return err("Not found");
     return { ok: true };
   } catch (e) {
-    return err(e instanceof Error ? e.message : "Delete failed");
+    return err(e instanceof Error ? e.message : "Silinemedi");
   }
 }

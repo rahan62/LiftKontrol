@@ -3,6 +3,8 @@
 import { createCustomerAction, updateCustomerAction } from "@/actions/customers";
 import { CUSTOMER_STATUSES } from "@/lib/domain/elevator-types";
 import { btnPrimary, field, label } from "@/components/forms/field-classes";
+import { customerStatusLabel } from "@/lib/i18n/display-labels";
+import { tr } from "@/lib/i18n/tr";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -76,16 +78,16 @@ export function CustomerForm({ mode, customerId, initial }: Props) {
     <form onSubmit={onSubmit} className="mx-auto max-w-2xl space-y-6 px-4 py-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-lg font-semibold text-slate-900 dark:text-white">
-          {mode === "create" ? "New customer" : "Edit customer"}
+          {mode === "create" ? tr.customers.newTitle : tr.customers.editTitle}
         </h1>
         <Link href="/app/customers" className="text-sm text-slate-600 hover:underline dark:text-slate-400">
-          Back to list
+          {tr.formActions.backToList}
         </Link>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label className={label}>Legal name *</label>
+          <label className={label}>{tr.customers.legalName}</label>
           <input
             name="legal_name"
             required
@@ -94,15 +96,20 @@ export function CustomerForm({ mode, customerId, initial }: Props) {
           />
         </div>
         <div>
-          <label className={label}>Account code</label>
-          <input name="code" className={field} defaultValue={initial?.code ?? ""} placeholder="Optional" />
+          <label className={label}>{tr.customers.accountCode}</label>
+          <input
+            name="code"
+            className={field}
+            defaultValue={initial?.code ?? ""}
+            placeholder={tr.customers.optionalPlaceholder}
+          />
         </div>
         <div>
-          <label className={label}>Status</label>
+          <label className={label}>{tr.customers.status}</label>
           <select name="status" className={field} defaultValue={initial?.status ?? "active"}>
             {CUSTOMER_STATUSES.map((s) => (
               <option key={s} value={s}>
-                {s}
+                {customerStatusLabel(s)}
               </option>
             ))}
           </select>
@@ -110,33 +117,33 @@ export function CustomerForm({ mode, customerId, initial }: Props) {
       </div>
 
       <div>
-        <div className="text-xs font-semibold uppercase text-slate-500">Billing address</div>
+        <div className="text-xs font-semibold uppercase text-slate-500">{tr.customers.billingAddressSection}</div>
         <div className="mt-2 grid gap-3 sm:grid-cols-2">
           <div className="sm:col-span-2">
-            <label className={label}>Line 1</label>
+            <label className={label}>{tr.sites.addressLine1}</label>
             <input name="addr_line1" className={field} defaultValue={b.addr_line1} />
           </div>
           <div>
-            <label className={label}>City</label>
+            <label className={label}>{tr.sites.city}</label>
             <input name="addr_city" className={field} defaultValue={b.addr_city} />
           </div>
           <div>
-            <label className={label}>Region / state</label>
+            <label className={label}>{tr.sites.regionState}</label>
             <input name="addr_region" className={field} defaultValue={b.addr_region} />
           </div>
           <div>
-            <label className={label}>Postal code</label>
+            <label className={label}>{tr.sites.postalCode}</label>
             <input name="addr_postal" className={field} defaultValue={b.addr_postal} />
           </div>
           <div>
-            <label className={label}>Country</label>
+            <label className={label}>{tr.sites.country}</label>
             <input name="addr_country" className={field} defaultValue={b.addr_country} />
           </div>
         </div>
       </div>
 
       <div>
-        <label className={label}>Notes</label>
+        <label className={label}>{tr.customers.notesField}</label>
         <textarea
           name="notes"
           rows={4}
@@ -149,13 +156,13 @@ export function CustomerForm({ mode, customerId, initial }: Props) {
 
       <div className="flex gap-3">
         <button type="submit" disabled={pending} className={btnPrimary}>
-          {pending ? "Saving…" : mode === "create" ? "Create customer" : "Save changes"}
+          {pending ? tr.formActions.saving : mode === "create" ? tr.customers.createCustomer : tr.formActions.saveChanges}
         </button>
         <Link
           href={customerId ? `/app/customers/${customerId}` : "/app/customers"}
           className="rounded-md border border-slate-300 px-4 py-2 text-sm dark:border-slate-600"
         >
-          Cancel
+          {tr.common.cancel}
         </Link>
       </div>
     </form>

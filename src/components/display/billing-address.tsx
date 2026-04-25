@@ -1,3 +1,5 @@
+import { tr } from "@/lib/i18n/tr";
+
 type BillingJson = Record<string, unknown>;
 
 function str(v: unknown): string {
@@ -6,7 +8,7 @@ function str(v: unknown): string {
 
 export function BillingAddressCard({ billing }: { billing: unknown }) {
   if (billing == null || (typeof billing === "object" && billing !== null && Object.keys(billing).length === 0)) {
-    return <p className="text-sm text-slate-500 dark:text-slate-400">No billing address on file.</p>;
+    return <p className="text-sm text-slate-500 dark:text-slate-400">{tr.billingAddressCard.none}</p>;
   }
 
   if (typeof billing !== "object" || billing === null) {
@@ -29,7 +31,7 @@ export function BillingAddressCard({ billing }: { billing: unknown }) {
       {line2 ? <div>{line2}</div> : null}
       {line3 ? <div className="text-slate-600 dark:text-slate-400">{line3}</div> : null}
       {!line1 && !line2 && !line3 ? (
-        <p className="text-slate-500">Structured fields are empty.</p>
+        <p className="text-slate-500">{tr.billingAddressCard.emptyFields}</p>
       ) : null}
     </div>
   );

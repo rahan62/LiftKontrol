@@ -98,11 +98,9 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
   if (!customers.length) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-8">
-        <p className="text-sm text-slate-600 dark:text-slate-400">
-          Add a customer first, then you can create sites for them.
-        </p>
+        <p className="text-sm text-slate-600 dark:text-slate-400">{tr.sites.addCustomerFirstForSites}</p>
         <Link href="/app/customers/new" className="mt-4 inline-block text-sm font-medium text-amber-700 hover:underline dark:text-amber-400">
-          New customer
+          {tr.customers.new}
         </Link>
       </div>
     );
@@ -112,16 +110,16 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
     <form onSubmit={onSubmit} className="mx-auto max-w-2xl space-y-6 px-4 py-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-lg font-semibold text-slate-900 dark:text-white">
-          {mode === "create" ? "New site / building" : "Edit site"}
+          {mode === "create" ? tr.sites.newSiteBuilding : tr.sites.editSite}
         </h1>
         <Link href="/app/sites" className="text-sm text-slate-600 hover:underline dark:text-slate-400">
-          Back to list
+          {tr.formActions.backToList}
         </Link>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label className={label}>Customer *</label>
+          <label className={label}>{tr.sites.customerLabel}</label>
           <select name="customer_id" required className={field} defaultValue={defaultCust}>
             {customers.map((c) => (
               <option key={c.id} value={c.id}>
@@ -131,7 +129,7 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
           </select>
         </div>
         <div className="sm:col-span-2">
-          <label className={label}>Site name *</label>
+          <label className={label}>{tr.sites.siteNameLabel}</label>
           <input name="name" required className={field} defaultValue={initial?.name ?? ""} />
         </div>
       </div>
@@ -152,26 +150,26 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
       </div>
 
       <div>
-        <div className="text-xs font-semibold uppercase text-slate-500">Service address</div>
+        <div className="text-xs font-semibold uppercase text-slate-500">{tr.sites.serviceAddressSection}</div>
         <div className="mt-2 grid gap-3 sm:grid-cols-2">
           <div className="sm:col-span-2">
-            <label className={label}>Line 1</label>
+            <label className={label}>{tr.sites.addressLine1}</label>
             <input name="addr_line1" className={field} defaultValue={a.addr_line1} />
           </div>
           <div>
-            <label className={label}>City</label>
+            <label className={label}>{tr.sites.city}</label>
             <input name="addr_city" className={field} defaultValue={a.addr_city} />
           </div>
           <div>
-            <label className={label}>Region / state</label>
+            <label className={label}>{tr.sites.regionState}</label>
             <input name="addr_region" className={field} defaultValue={a.addr_region} />
           </div>
           <div>
-            <label className={label}>Postal code</label>
+            <label className={label}>{tr.sites.postalCode}</label>
             <input name="addr_postal" className={field} defaultValue={a.addr_postal} />
           </div>
           <div>
-            <label className={label}>Country</label>
+            <label className={label}>{tr.sites.country}</label>
             <input name="addr_country" className={field} defaultValue={a.addr_country} />
           </div>
         </div>
@@ -182,7 +180,7 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
             defaultChecked={initial?.billing_same_as_service ?? true}
             className="rounded border-slate-300"
           />
-          Billing address same as service address
+          {tr.sites.billingSameAsService}
         </label>
       </div>
 
@@ -261,7 +259,7 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
       </div>
 
       <div>
-        <label className={label}>Access instructions</label>
+        <label className={label}>{tr.sites.accessInstructions}</label>
         <textarea
           name="access_instructions"
           rows={3}
@@ -271,7 +269,7 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className={label}>Machine room notes</label>
+          <label className={label}>{tr.sites.machineRoomNotesLabel}</label>
           <textarea
             name="machine_room_notes"
             rows={3}
@@ -280,17 +278,17 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
           />
         </div>
         <div>
-          <label className={label}>Shaft notes</label>
+          <label className={label}>{tr.sites.shaftNotesLabel}</label>
           <textarea name="shaft_notes" rows={3} className={field} defaultValue={initial?.shaft_notes ?? ""} />
         </div>
       </div>
       <div>
-        <label className={label}>Emergency phones</label>
+        <label className={label}>{tr.sites.emergencyPhones}</label>
         <input
           name="emergency_phones"
           className={field}
           defaultValue={initial?.emergency_phones ?? ""}
-          placeholder="Numbers or extensions"
+          placeholder={tr.sites.emergencyPhonesPlaceholder}
         />
       </div>
 
@@ -298,13 +296,13 @@ export function SiteForm({ mode, siteId, customers, defaultCustomerId, initial }
 
       <div className="flex gap-3">
         <button type="submit" disabled={pending} className={btnPrimary}>
-          {pending ? "Saving…" : mode === "create" ? "Create site" : "Save changes"}
+          {pending ? tr.formActions.saving : mode === "create" ? tr.sites.createSite : tr.formActions.saveChanges}
         </button>
         <Link
           href={siteId ? `/app/sites/${siteId}` : "/app/sites"}
           className="rounded-md border border-slate-300 px-4 py-2 text-sm dark:border-slate-600"
         >
-          Cancel
+          {tr.common.cancel}
         </Link>
       </div>
     </form>

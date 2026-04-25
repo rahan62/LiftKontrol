@@ -1,5 +1,10 @@
 import { DataTableShell } from "@/components/module/data-table-shell";
 import { listWorkOrders } from "@/lib/data/work-orders";
+import {
+  workOrderPriorityLabel,
+  workOrderStatusLabel,
+  workOrderTypeLabel,
+} from "@/lib/i18n/display-labels";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
 import Link from "next/link";
@@ -39,13 +44,13 @@ export default async function WorkOrdersPage() {
               rows.map((w) => (
                 <tr key={w.id} className="hover:bg-slate-50 dark:hover:bg-slate-900/60">
                   <td className="px-4 py-2 font-mono text-xs">{w.number}</td>
-                  <td className="px-4 py-2">{w.work_type}</td>
-                  <td className="px-4 py-2 capitalize">{w.status}</td>
+                  <td className="px-4 py-2">{workOrderTypeLabel(String(w.work_type ?? ""))}</td>
+                  <td className="px-4 py-2">{workOrderStatusLabel(String(w.status ?? ""))}</td>
                   <td className="px-4 py-2">
                     {w.is_emergency ? (
                       <span className="text-rose-600 dark:text-rose-400">{tr.workOrders.emergency}</span>
                     ) : (
-                      w.priority
+                      workOrderPriorityLabel(String(w.priority ?? ""))
                     )}
                   </td>
                   <td className="px-4 py-2 text-right">

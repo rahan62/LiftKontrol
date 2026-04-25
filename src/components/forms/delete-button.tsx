@@ -33,7 +33,7 @@ function DeleteButtonImpl({ label, confirmMessage, redirectHref, onDelete }: Imp
           setError(null);
           const r = await onDelete();
           if (!r.ok) {
-            setError(r.error ?? "Delete failed");
+            setError(r.error ?? tr.deleteUi.failed);
             setPending(false);
             return;
           }
@@ -53,8 +53,8 @@ function DeleteButtonImpl({ label, confirmMessage, redirectHref, onDelete }: Imp
 export function DeleteCustomerButton({ id }: { id: string }) {
   return (
     <DeleteButtonImpl
-      label="Delete"
-      confirmMessage="Delete this customer? This may fail if sites or assets still reference them."
+      label={tr.deleteUi.genericLabel}
+      confirmMessage={tr.deleteUi.customerConfirm}
       redirectHref="/app/customers"
       onDelete={() => deleteCustomerAction(id)}
     />
@@ -64,8 +64,8 @@ export function DeleteCustomerButton({ id }: { id: string }) {
 export function DeleteSiteButton({ id }: { id: string }) {
   return (
     <DeleteButtonImpl
-      label="Delete site"
-      confirmMessage="Delete this site? Elevator units at this site must be removed first."
+      label={tr.deleteUi.siteLabel}
+      confirmMessage={tr.deleteUi.siteConfirm}
       redirectHref="/app/sites"
       onDelete={() => deleteSiteAction(id)}
     />
@@ -75,8 +75,8 @@ export function DeleteSiteButton({ id }: { id: string }) {
 export function DeleteAssetButton({ id }: { id: string }) {
   return (
     <DeleteButtonImpl
-      label="Delete"
-      confirmMessage="Delete this elevator asset?"
+      label={tr.deleteUi.genericLabel}
+      confirmMessage={tr.deleteUi.assetConfirm}
       redirectHref="/app/assets"
       onDelete={() => deleteAssetAction(id)}
     />

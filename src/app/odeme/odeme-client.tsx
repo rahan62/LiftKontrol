@@ -144,7 +144,7 @@ export function OdemeClient({ pricing, iyzicoReady, pricePreviewTry, includesVat
             pattern="\d{11}"
             className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white"
           />
-          <p className="mt-1 text-xs text-slate-500">Sandbox’ta iyzico test verilerini kullanabilirsiniz.</p>
+          <p className="mt-1 text-xs text-slate-500">Deneme (sandbox) ortamında iyzico test verilerini kullanabilirsiniz.</p>
         </div>
         <div className="sm:col-span-2">
           <label className="text-xs text-slate-400">Fatura adresi *</label>

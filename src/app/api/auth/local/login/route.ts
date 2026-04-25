@@ -9,17 +9,17 @@ export async function POST(request: Request) {
   try {
     body = await request.json();
   } catch {
-    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    return NextResponse.json({ error: "Geçersiz JSON" }, { status: 400 });
   }
   const email = "email" in body ? body.email?.trim().toLowerCase() : "";
   const password = body.password;
   if (!email || !password) {
-    return NextResponse.json({ error: "Email and password required" }, { status: 400 });
+    return NextResponse.json({ error: "E-posta ve şifre gerekli" }, { status: 400 });
   }
 
   const user = await verifyLocalCredentials(email, password);
   if (!user) {
-    return NextResponse.json({ error: "Invalid email or password" }, { status: 401 });
+    return NextResponse.json({ error: "E-posta veya şifre hatalı" }, { status: 401 });
   }
   const remember = Boolean(body.remember);
   const maxAgeSeconds = remember ? 60 * 60 * 24 * 30 : 60 * 60 * 24;

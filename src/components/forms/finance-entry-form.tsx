@@ -131,7 +131,7 @@ export function FinanceEntryForm({ sites, assets, defaultSiteId, defaultAssetId 
         </div>
         <div className="sm:col-span-2">
           <label className={label}>{tr.financeForm.description}</label>
-          <input name="label" required className={field} placeholder="e.g. Monthly maintenance, Invoice #12" />
+          <input name="label" required className={field} placeholder={tr.financeForm.descriptionPlaceholder} />
         </div>
         <div className="sm:col-span-2">
           <label className={label}>{tr.financeForm.notes}</label>
