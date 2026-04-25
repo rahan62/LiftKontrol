@@ -1,7 +1,7 @@
 "use client";
 
 import { createAssetAction, getSitesForCustomer, updateAssetAction } from "@/actions/assets";
-import { ELEVATOR_TYPES, OPERATIONAL_STATUSES } from "@/lib/domain/elevator-types";
+import { DEFAULT_ELEVATOR_TYPE, ELEVATOR_TYPES, OPERATIONAL_STATUSES } from "@/lib/domain/elevator-types";
 import { EN8120_CONTROL_AUTHORITIES, MAINTENANCE_TRANSFER_BASES } from "@/lib/domain/en8120";
 import { ASSET_MAINTENANCE_FEE_PERIODS } from "@/lib/domain/asset-maintenance";
 import { tr } from "@/lib/i18n/tr";
@@ -192,7 +192,17 @@ export function AssetForm({
         </div>
         <div>
           <label className={label}>{tr.assetForm.elevatorType}</label>
-          <select name="elevator_type" className={field} defaultValue={initial?.elevator_type ?? "other"}>
+          <select
+            name="elevator_type"
+            className={field}
+            defaultValue={initial?.elevator_type ?? DEFAULT_ELEVATOR_TYPE}
+          >
+            {initial?.elevator_type &&
+            !ELEVATOR_TYPES.some((t) => t.value === initial.elevator_type) ? (
+              <option value={initial.elevator_type}>
+                {initial.elevator_type.replace(/_/g, " ")} (eski kayıt)
+              </option>
+            ) : null}
             {ELEVATOR_TYPES.map((t) => (
               <option key={t.value} value={t.value}>
                 {t.label}

@@ -1,4 +1,5 @@
 import { AssetForm } from "@/components/forms/asset-form";
+import { DEFAULT_ELEVATOR_TYPE } from "@/lib/domain/elevator-types";
 import { getAssetWithSiteCustomer } from "@/lib/data/assets";
 import { listCustomers } from "@/lib/data/customers";
 import { listSitesForCustomer } from "@/lib/data/sites";
@@ -37,7 +38,7 @@ export default async function EditAssetPage({ params }: Props) {
         customer_id: String(asset.customer_id),
         site_id: String(asset.site_id),
         unit_code: String(asset.unit_code ?? ""),
-        elevator_type: String(asset.elevator_type ?? "other"),
+        elevator_type: String(asset.elevator_type ?? DEFAULT_ELEVATOR_TYPE),
         brand: asset.brand ? String(asset.brand) : null,
         model: asset.model ? String(asset.model) : null,
         serial_number: asset.serial_number ? String(asset.serial_number) : null,

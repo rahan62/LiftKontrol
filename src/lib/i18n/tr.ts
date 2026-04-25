@@ -49,7 +49,7 @@ export const tr = {
     dashboard: "Panel",
     customers: "Müşteriler",
     finances: "Finans",
-    sites: "Saha / Binalar",
+    sites: "Siteler / Binalar",
     assets: "Asansörler / Demirbaş",
     contracts: "Sözleşmeler",
     maintenance: "Bakım",
@@ -250,10 +250,10 @@ export const tr = {
     } as const,
   },
   sites: {
-    listTitle: "Sahalar / binalar",
+    listTitle: "Siteler / binalar",
     listDescription:
       "Servis ve fatura adresleri; erişim notları, makine dairesi ve kuyu notları, acil numaralar.",
-    listColSite: "Saha",
+    listColSite: "Site",
     listColCustomer: "Müşteri",
     listColUpdated: "Güncellendi",
     listEmpty: "Henüz saha yok. Önce müşteri ekleyin, ardından saha oluşturun.",

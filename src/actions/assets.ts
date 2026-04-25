@@ -9,6 +9,7 @@ import {
   verifySiteForTenant,
   type AssetInput,
 } from "@/lib/data/writes";
+import { DEFAULT_ELEVATOR_TYPE } from "@/lib/domain/elevator-types";
 import { normalizeAssetMaintenanceFeePeriod } from "@/lib/domain/asset-maintenance";
 
 function parseEn8120FromForm(formData: FormData): Pick<
@@ -57,7 +58,7 @@ export async function createAssetAction(formData: FormData) {
     customer_id,
     site_id,
     unit_code,
-    elevator_type: String(formData.get("elevator_type") ?? "other"),
+    elevator_type: String(formData.get("elevator_type") ?? DEFAULT_ELEVATOR_TYPE),
     brand: String(formData.get("brand") ?? "").trim() || null,
     model: String(formData.get("model") ?? "").trim() || null,
     serial_number: String(formData.get("serial_number") ?? "").trim() || null,
@@ -99,7 +100,7 @@ export async function updateAssetAction(id: string, formData: FormData) {
     customer_id,
     site_id,
     unit_code,
-    elevator_type: String(formData.get("elevator_type") ?? "other"),
+    elevator_type: String(formData.get("elevator_type") ?? DEFAULT_ELEVATOR_TYPE),
     brand: String(formData.get("brand") ?? "").trim() || null,
     model: String(formData.get("model") ?? "").trim() || null,
     serial_number: String(formData.get("serial_number") ?? "").trim() || null,

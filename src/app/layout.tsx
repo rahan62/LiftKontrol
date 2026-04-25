@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   description:
     "Asansör bakım, onarım ve montaj operasyonları için Lift Kontrol: müşteriler, sahalar, bakım ve saha ekipleri.",
   metadataBase: new URL("https://liftkontrol.com"),
+  icons: {
+    icon: [{ url: "/brand/lift-kontrol-logo.png", type: "image/png" }],
+    apple: "/brand/lift-kontrol-logo.png",
+  },
 };
 
 export default function RootLayout({

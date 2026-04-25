@@ -1,15 +1,11 @@
+/** Web formda seçilebilir türler (DB `elevator_type` metin alanı). */
 export const ELEVATOR_TYPES = [
-  { value: "passenger", label: "Yolcu" },
-  { value: "freight", label: "Yük" },
-  { value: "hospital", label: "Hastane" },
-  { value: "panoramic", label: "Panoramik" },
-  { value: "dumbwaiter", label: "Servis asansörü" },
-  { value: "platform", label: "Platform asansörü" },
+  { value: "mr", label: "MR" },
+  { value: "mrl", label: "MRL" },
   { value: "hydraulic", label: "Hidrolik" },
-  { value: "traction", label: "Halatlı (çekiş)" },
-  { value: "mrl", label: "Makine dairesiz (MRL)" },
-  { value: "other", label: "Diğer" },
 ] as const;
+
+export const DEFAULT_ELEVATOR_TYPE = "mr" as const;
 
 export const OPERATIONAL_STATUSES = [
   { value: "in_service", label: "Hizmette" },
