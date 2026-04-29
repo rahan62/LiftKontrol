@@ -24,7 +24,7 @@ export const DEFAULT_MARKETING_PRICING: MarketingPricingContent = {
   packageSubtitle: "Yıllık lisans · tüm modüller dahil",
   priceMain: "12.000",
   priceUnit: "TL",
-  priceNote: "+ KDV · peşin yıllık faturalama",
+  priceNote: "Peşin yıllık faturalama.",
   features: [
     "Sınırsız kullanıcı ve rol bazlı yetkilendirme",
     "Müşteri, saha ve asansör varlıkları — tek merkezden",
@@ -48,6 +48,14 @@ export function isPaymentTest1TlEnabled(): boolean {
     if (v === "1" || v?.toLowerCase() === "true") return true;
   }
   return false;
+}
+
+/** Eski varsayılan copy “KDV dahil” gösterimiyle çelişirdi; DB’de kalan legacy metni düzelt. */
+function normalizeMarketingPriceNote(note: string | undefined, fallback: string): string {
+  const s = note?.trim();
+  if (!s) return fallback;
+  if (s === "+ KDV · peşin yıllık faturalama") return "Peşin yıllık faturalama.";
+  return s;
 }
 
 function coercePricing(raw: unknown): Partial<MarketingPricingContent> {
@@ -96,7 +104,7 @@ export async function getMarketingPricing(): Promise<MarketingPricingContent> {
     packageSubtitle: partial.packageSubtitle ?? base.packageSubtitle,
     priceMain: partial.priceMain ?? base.priceMain,
     priceUnit: partial.priceUnit ?? base.priceUnit,
-    priceNote: partial.priceNote ?? base.priceNote,
+    priceNote: normalizeMarketingPriceNote(partial.priceNote, base.priceNote),
     features: partial.features?.length ? partial.features : base.features,
     footerNote: partial.footerNote ?? base.footerNote,
   };
