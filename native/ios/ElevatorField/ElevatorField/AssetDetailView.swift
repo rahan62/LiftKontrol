@@ -566,7 +566,7 @@ struct AssetDetailRow: Decodable {
     if let qrPayload, !qrPayload.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
       return qrPayload
     }
-    return "/app/assets/\(id.uuidString)"
+    return "/go/\(id.uuidString.lowercased())"
   }
 
   var feeAmountDisplay: String {

@@ -4,6 +4,7 @@ import { resolveUniqueTenantSlug, slugifyTenantName } from "@/lib/billing/tenant
 import { verifyAppleSubscriptionTransaction } from "@/lib/billing/verify-apple-transaction";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role";
 
+/** App Store ödemesi sonrası yeni kiracı: Auth kullanıcı + `tenants` + `tenant_owner` üyeliği + `tenant_subscriptions`. Native `IapSubscribeSheet` burayı çağırır; web’de herkese açık form yoktur. */
 export const runtime = "nodejs";
 
 type Body = {

@@ -401,10 +401,27 @@ export const tr = {
     none: "Kayıtlı fatura adresi yok.",
     emptyFields: "Yapılandırılmış alanlar boş.",
   },
+  publicElevator: {
+    pageTitle: "Asansör yardımı",
+    pageSubtitle:
+      "Bu sayfa asansör üzerindeki QR kod ile açılır; bildiriminiz bakım firmasına iletilir. Telefon kamerası bu adresi açar.",
+    trappedSectionTitle: "Acil — kabinde misiniz?",
+    trappedSectionBody:
+      "Kabinde mahsur kaldıysanız aşağıdaki düğmeye basın. Ek bilgi yazmak zorunlu değildir.",
+    trappedButton: "Asansörde Kaldım",
+    optionalNotes: "Ek bilgi (isteğe bağlı)",
+    faultSectionTitle: "Mahsur değilseniz veya başka talep",
+    faultSectionBody:
+      "Arızayı veya talebi kısaca yazın; sahaya iş kaydı düşer (mahsur bildirimi değildir).",
+    faultLabel: "Arıza veya talep",
+    faultPlaceholder: "Örn: kapı açılmıyor, anormal ses var…",
+    faultSubmit: "Arıza bildir",
+    confirmReceived: "İş emri kaydı alındı:",
+  },
   assets: {
     title: "Asansörler / demirbaş",
     description:
-      "Her asansör benzersiz bir kayıt ve QR ile bu uygulamadaki detay sayfasına bağlanır; saha ile ilişkilidir.",
+      "Her asansör benzersiz bir kayıt ve QR ile ilişkilidir; QR kamu yardım sayfasını veya (tanımlıysa) mobil uygulamada detayı açar.",
     newAsset: "Yeni asansör",
     unit: "Ünite",
     site: "Saha / bina",

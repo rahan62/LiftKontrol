@@ -268,7 +268,8 @@ struct MainShellView: View {
 
 private enum ElevatorQrPayload {
   static func assetId(from raw: String) -> UUID? {
-    let pattern = #"/app/assets/([0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12})"#
+    let pattern =
+      #"/(?:app/assets|go)/([0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12})"#
     guard let re = try? NSRegularExpression(pattern: pattern),
           let m = re.firstMatch(in: raw, range: NSRange(raw.startIndex..., in: raw)),
           let r = Range(m.range(at: 1), in: raw)
@@ -410,7 +411,7 @@ private struct ElevatorQrScanScreen: View {
         .font(.caption)
         .foregroundStyle(.secondary)
 
-      TextField("https://…/app/assets/…", text: $pasteText, axis: .vertical)
+      TextField("https://…/go/… veya …/app/assets/…", text: $pasteText, axis: .vertical)
         .textFieldStyle(.plain)
         .lineLimit(3...5)
         .padding(12)

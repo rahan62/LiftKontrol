@@ -3,9 +3,12 @@ import { SiteFooter } from "@/components/marketing/site-footer";
 import { tr } from "@/lib/i18n/tr";
 
 /**
- * Public registration is disabled. Companies are onboarded by the vendor; admins add users internally.
+ * New tenant onboarding: App Store subscription via the native app (`Abone ol`), not a public web form.
+ * @see `src/app/api/billing/apple/register-tenant`
  */
 export default function SignupPage() {
+  const appStoreUrl = process.env.NEXT_PUBLIC_IOS_APP_STORE_URL?.trim();
+
   return (
     <div className="flex min-h-0 flex-1 flex-col overflow-y-auto bg-slate-100 dark:bg-slate-950">
       <div className="flex flex-1 flex-col items-center justify-center px-4 py-8">
@@ -14,9 +17,23 @@ export default function SignupPage() {
           <p className="mt-3 text-center text-sm leading-relaxed text-slate-600 dark:text-slate-400">{tr.signup.intro}</p>
           <p className="mt-4 text-center text-sm text-slate-600 dark:text-slate-400">{tr.signup.customersNote}</p>
           <div className="mt-8 flex flex-col gap-2">
+            {appStoreUrl ? (
+              <a
+                href={appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full rounded-md bg-slate-900 py-2.5 text-center text-sm font-medium text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+              >
+                {tr.signup.appStoreCta}
+              </a>
+            ) : null}
             <Link
               href="/login"
-              className="block w-full rounded-md bg-slate-900 py-2.5 text-center text-sm font-medium text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+              className={`block w-full rounded-md py-2.5 text-center text-sm font-medium ${
+                appStoreUrl
+                  ? "border border-slate-300 text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
+                  : "bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+              }`}
             >
               {tr.signup.signIn}
             </Link>

@@ -1,3 +1,4 @@
+import CoreLocation
 import Foundation
 import MapKit
 import Supabase
@@ -22,9 +23,15 @@ enum AppleMapsDrivingRouteOpener {
   static func openDrivingRoute(stops: [(lat: Double, lng: Double, title: String)]) {
     let items: [MKMapItem] = stops.compactMap { s in
       guard s.lat >= -90, s.lat <= 90, s.lng >= -180, s.lng <= 180 else { return nil }
-      let coord = CLLocationCoordinate2D(latitude: s.lat, longitude: s.lng)
-      let placemark = MKPlacemark(coordinate: coord)
-      let item = MKMapItem(placemark: placemark)
+      let item: MKMapItem
+      if #available(iOS 26.0, *) {
+        let location = CLLocation(latitude: s.lat, longitude: s.lng)
+        item = MKMapItem(location: location, address: nil)
+      } else {
+        let coord = CLLocationCoordinate2D(latitude: s.lat, longitude: s.lng)
+        let placemark = MKPlacemark(coordinate: coord)
+        item = MKMapItem(placemark: placemark)
+      }
       item.name = s.title
       return item
     }

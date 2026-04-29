@@ -200,6 +200,43 @@ export async function getAssetWithSiteCustomer(
   };
 }
 
+/** Kamu QR sayfası: oturum yok; UUID ile tek satır doğrular (DATABASE_URL gerekir). */
+export type ElevatorPublicContextRow = {
+  tenant_id: string;
+  customer_id: string;
+  site_id: string;
+  unit_code: string | null;
+  site_name: string | null;
+};
+
+export async function getElevatorPublicContext(assetId: string): Promise<ElevatorPublicContextRow | null> {
+  const id = assetId.trim().toLowerCase();
+  if (
+    !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(id)
+  ) {
+    return null;
+  }
+  try {
+    const pool = getPool();
+    const { rows } = await pool.query<ElevatorPublicContextRow>(
+      `SELECT ea.tenant_id::text AS tenant_id,
+              ea.customer_id::text AS customer_id,
+              ea.site_id::text AS site_id,
+              ea.unit_code,
+              s.name AS site_name
+       FROM elevator_assets ea
+       INNER JOIN sites s ON s.id = ea.site_id AND s.tenant_id = ea.tenant_id
+       WHERE ea.id = $1::uuid`,
+      [id],
+    );
+    const row = rows[0];
+    if (!row?.customer_id || !row?.site_id) return null;
+    return row;
+  } catch {
+    return null;
+  }
+}
+
 export async function getElevatorUnitCode(tenantId: string, assetId: string): Promise<string | null> {
   if (isSupabaseConfigured()) {
     const supabase = await createClient();

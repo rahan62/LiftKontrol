@@ -404,7 +404,7 @@ struct AssetEditView: View {
         .eq("id", value: assetId)
         .execute()
       if let base = AppConfig.publicAppWebBaseURL {
-        let qrUrl = "\(base)/app/assets/\(assetId.uuidString.lowercased())"
+        let qrUrl = "\(base)/go/\(assetId.uuidString.lowercased())"
         try await client
           .from("elevator_assets")
           .update(QrPayloadUpdateEdit(qr_payload: qrUrl))

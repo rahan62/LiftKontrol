@@ -14,17 +14,20 @@ enum TrStrings {
     static let email = "E-posta"
     static let password = "Şifre"
     static let tagline = "Asansör bakımı ve saha servisi"
-    static let noPublicSignup = "Erişim şirketiniz veya tedarikçiniz tarafından verilir; herkese açık kayıt yoktur."
+    static let noPublicSignup =
+      "Web’de herkese açık kayıt formu yoktur. Yeni bir servis şirketi (kiracı) bu uygulamada «Abone ol» ile oluşturulur; satın alma doğrulandıktan sonra firma kaydı, yönetici hesabınız ve abonelik sunucuda otomatik açılır."
     static let aboutSignup = "Kayıt hakkında"
-    static let landingOnlyOnWeb = "Tanıtım ana sayfası yalnızca web üzerindedir; bu uygulama giriş sonrası panele yönlendirir."
-    static let membersOnlyFooter = "Yalnızca üyeler kullanabilir"
+    static let landingOnlyOnWeb =
+      "Aynı e-posta ve şifre ile liftkontrol web paneline de giriş yapabilirsiniz (tarayıcıdan /login)."
+    static let membersOnlyFooter =
+      "Hesabınız varsa yukarıdan giriş yapın. Yeni şirket için «Abone ol» düğmesine dokunun."
   }
 
   enum Iap {
     static let subscribe = "Abone ol"
     static let sheetTitle = "Kurumsal abonelik"
     static let sheetIntro =
-      "Aşağıdaki bilgiler web sitemizdeki paketle aynıdır. Ödeme App Store üzerinden alınır; ardından firmanız ve yönetici hesabınız oluşturulur."
+      "Ödeme App Store üzerinden alınır. İşlem doğrulandıktan sonra şirketiniz (kiracı), «kiracı sahibi» rolünüz ve aboneliğiniz sunucuda otomatik oluşturulur; oturum açılır. Aynı e-posta ve şifre ile web uygulamasına (/login) da giriş yapabilirsiniz. Paket içeriği web sitemizdeki pazarlama metniyle uyumludur."
     static let accountSection = "Hesap bilgileri"
     static let companyName = "Firma adı"
     static let purchaseAndRegister = "Satın al ve hesap oluştur"
@@ -44,12 +47,17 @@ enum TrStrings {
     static let registerFailed = "Kayıt tamamlanamadı"
     static let emailExists = "Bu e-posta zaten kayıtlı. Giriş yapın veya başka bir adres kullanın."
     static let subscriptionUsed = "Bu abonelik zaten kullanılmış. Destek ile iletişime geçin."
+    static let legalLinksTitle = "Yasal"
+    static let privacyPolicy = "Gizlilik Politikası"
+    static let termsOfUseEULA = "Kullanım Şartları (EULA)"
+    static let autoRenewSubscriptionNotice =
+      "Otomatik yenilenen yıllık abonelik. Ödeme App Store’dan; iptal en az 24 saat önce (Hesap → Abonelikler)."
   }
 
   enum Signup {
-    static let title = "Erişim şirketiniz tarafından verilir"
+    static let title = "Kayıt ve erişim"
     static let intro =
-      "Bu uygulama yalnızca asansör servis şirketleri içindir. Herkese açık kayıt sunmuyoruz. Organizasyonunuz ürünü satın aldığında sizin için bir yönetici hesabı oluşturulur; yönetici çalışanları şirket çalışma alanına ekler."
+      "Lift Kontrol yalnızca asansör servis şirketleri içindir. Yeni bir şirket kuruyorsanız giriş ekranındaki «Abone ol» ile App Store aboneliğini tamamlayın: ödeme doğrulandıktan sonra firmanız, yönetici hesabınız ve aboneliğiniz otomatik oluşturulur ve uygulamada oturum açılır. Ek çalışanları daha sonra şirket çalışma alanından davet edebilirsiniz."
     static let customersNote =
       "Hizmet verdiğiniz bina ve tesis yöneticileri uygulama içinde «Müşteriler» bölümünde görünür; ürünün ayrı bir kiracısı değildirler."
   }
@@ -74,7 +82,7 @@ enum TrStrings {
     static let awaitingTenant = "Şirket erişimi bekleniyor"
     static let qrScanTitle = "Asansör QR okut"
     static let qrScanPasteHint = "Bağlantıyı buraya yapıştırabilirsiniz."
-    static let qrScanInvalid = "Bu metin geçerli bir asansör bağlantısı değil (/app/assets/…)."
+    static let qrScanInvalid = "Bu metin geçerli bir asansör bağlantısı değil (/go/… veya /app/assets/…)."
     static let qrScanOpenPasted = "Asansöre git"
   }
 
@@ -115,6 +123,9 @@ enum TrStrings {
     static let listTitle = "Asansörler"
     static let listDescription =
       "Her asansör benzersiz bir kayıt ve QR ile web uygulamasındaki detay sayfasına bağlanır; saha ile ilişkilidir."
+    /// PostgREST `PGRST116` — `.single()` veya tekil yanıt bekleyen sorgu 0/2+ satır döndüğünde; incelenen sürümde Asansörler listesinde nadir.
+    static let listLoadPostgrestAmbiguous =
+      "Asansör listesi alınamadı (sunucu yanıtı). Oturumu kapatıp tekrar giriş yapın veya destek talebi açın."
     static let empty = "Henüz asansör yok. Saha altından veya buradan ekleyin."
     static let newTitle = "Yeni asansör"
     static let editTitle = "Asansörü düzenle"

@@ -14,6 +14,7 @@
     "start": "next start",
     "lint": "eslint",
     "db:migrate": "node scripts/migrate.cjs",
+    "db:resync-qr-payloads": "node scripts/resync-elevator-qr-payloads.cjs",
     "db:apply-sql": "node scripts/apply-sql.cjs",
     "db:seed-admin": "node scripts/seed-admin.cjs",
     "db:seed-supabase-admin": "node scripts/seed-supabase-admin.cjs",

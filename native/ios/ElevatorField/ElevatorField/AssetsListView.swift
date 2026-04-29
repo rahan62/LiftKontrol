@@ -74,8 +74,15 @@ struct AssetsListView: View {
         .execute()
       rows = response.value
     } catch {
-      loadError = error.localizedDescription
+      loadError = Self.userFacingListError(error)
     }
+  }
+
+  private static func userFacingListError(_ error: Error) -> String {
+    if let pe = error as? PostgrestError, pe.code == "PGRST116" {
+      return TrStrings.Assets.listLoadPostgrestAmbiguous
+    }
+    return error.localizedDescription
   }
 }
 
@@ -97,6 +104,28 @@ private struct AssetListRowDTO: Decodable, Identifiable {
     case unsafeFlag = "unsafe_flag"
     case siteId = "site_id"
     case sites
+  }
+
+  init(from decoder: Decoder) throws {
+    let c = try decoder.container(keyedBy: CodingKeys.self)
+    id = try c.decode(UUID.self, forKey: .id)
+    unitCode = try c.decode(String.self, forKey: .unitCode)
+    brand = try c.decodeIfPresent(String.self, forKey: .brand)
+    model = try c.decodeIfPresent(String.self, forKey: .model)
+    operationalStatus = try c.decode(String.self, forKey: .operationalStatus)
+    unsafeFlag = try c.decode(Bool.self, forKey: .unsafeFlag)
+    siteId = try c.decode(UUID.self, forKey: .siteId)
+    if c.contains(.sites) {
+      if let one = try? c.decode(SiteNameEmbed.self, forKey: .sites) {
+        sites = one
+      } else if let arr = try? c.decode([SiteNameEmbed].self, forKey: .sites) {
+        sites = arr.first
+      } else {
+        sites = nil
+      }
+    } else {
+      sites = nil
+    }
   }
 
   struct SiteNameEmbed: Decodable {

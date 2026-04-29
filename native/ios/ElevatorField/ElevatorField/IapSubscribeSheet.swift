@@ -90,6 +90,7 @@ struct IapSubscribeSheet: View {
               .font(.subheadline)
               .foregroundStyle(IapSubscribePalette.muted)
             accountFields
+            legalBlock
             Text(pricing.footerNote)
               .font(.caption)
               .foregroundStyle(IapSubscribePalette.muted.opacity(0.85))
@@ -251,6 +252,27 @@ struct IapSubscribeSheet: View {
         }
       }
     }
+  }
+
+  private var legalBlock: some View {
+    VStack(alignment: .leading, spacing: 10) {
+      Text(TrStrings.Iap.legalLinksTitle)
+        .font(.subheadline.weight(.semibold))
+        .foregroundStyle(.white)
+      Text(TrStrings.Iap.autoRenewSubscriptionNotice)
+        .font(.caption)
+        .foregroundStyle(IapSubscribePalette.muted)
+        .fixedSize(horizontal: false, vertical: true)
+      if let p = AppConfig.marketingPrivacyPolicyURL {
+        Link(TrStrings.Iap.privacyPolicy, destination: p)
+          .font(.subheadline)
+          .foregroundStyle(IapSubscribePalette.amber)
+      }
+      Link(TrStrings.Iap.termsOfUseEULA, destination: AppConfig.appStoreStandardEULAURL)
+        .font(.subheadline)
+        .foregroundStyle(IapSubscribePalette.amber)
+    }
+    .frame(maxWidth: .infinity, alignment: .leading)
   }
 
   private var accountFields: some View {

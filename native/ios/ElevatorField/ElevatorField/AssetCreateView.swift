@@ -338,7 +338,7 @@ struct AssetCreateView: View {
         .execute()
       let newId = response.value.id
       if let base = AppConfig.publicAppWebBaseURL {
-        let qrUrl = "\(base)/app/assets/\(newId.uuidString.lowercased())"
+        let qrUrl = "\(base)/go/\(newId.uuidString.lowercased())"
         try await client
           .from("elevator_assets")
           .update(QrPayloadUpdate(qr_payload: qrUrl))

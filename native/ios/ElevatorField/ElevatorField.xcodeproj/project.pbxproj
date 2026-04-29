@@ -10,8 +10,6 @@
 		0D34325DBE6279C27535161E /* ModulePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32966120B20049FDD9D5B17A /* ModulePlaceholderView.swift */; };
 		20B6241B70D26864380A13FB /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1567C9952423E8F6C4F86E /* AppNavigation.swift */; };
 		741B91DD915D37B8872EE20E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B153051F3974D97850F671FD /* LoginView.swift */; };
-		IAPSUB0000000000000011 /* LiftStoreKitPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = IAPSUB0000000000000001 /* LiftStoreKitPurchase.swift */; };
-		IAPSUB0000000000000012 /* IapSubscribeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = IAPSUB0000000000000002 /* IapSubscribeSheet.swift */; };
 		7988319663F3B40CB968EC60 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5EB4E5D70F72E9BD98F35124 /* Supabase */; };
 		7DEABD1E6DD471C575931C86 /* MainShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC18B6D1639D483D051684 /* MainShellView.swift */; };
 		A1B2C3D45E6F708192A3B4C6 /* WorkspaceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D45E6F708192A3B4C5 /* WorkspaceAccess.swift */; };
@@ -48,6 +46,8 @@
 		F8E7D6C5B4A3928171625372 /* WorkOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7D6C5B4A3928171625371 /* WorkOrderDetailView.swift */; };
 		F9E8D7C6B5A4938271605123 /* AssetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E8D7C6B5A4938271605124 /* AssetEditView.swift */; };
 		G6G6G6G6G6G60718293A4F20 /* RouteClusterLocalRebuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = G6G6G6G6G6G60718293A4F21 /* RouteClusterLocalRebuilder.swift */; };
+		IAPSUB0000000000000011 /* LiftStoreKitPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = IAPSUB0000000000000001 /* LiftStoreKitPurchase.swift */; };
+		IAPSUB0000000000000012 /* IapSubscribeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = IAPSUB0000000000000002 /* IapSubscribeSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +57,6 @@
 		4C685C88CDFCE09619D64C63 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		52FC390717E086EDDA7A732B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		58B0D9605A7E204073AD2B5F /* Local.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.example.xcconfig; sourceTree = "<group>"; };
-		SKCONF0000000000000001 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 		59C6B36756DB221F8557D989 /* TenantMembership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantMembership.swift; sourceTree = "<group>"; };
 		6717B811705988A1425D296A /* ElevatorFieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorFieldApp.swift; sourceTree = "<group>"; };
 		6F8FFF5BD71BAF2AA87EE8C8 /* WorkspaceDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceDashboardView.swift; sourceTree = "<group>"; };
@@ -68,8 +67,6 @@
 		AB1567C9952423E8F6C4F86E /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
 		B0FC18B6D1639D483D051684 /* MainShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShellView.swift; sourceTree = "<group>"; };
 		B153051F3974D97850F671FD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		IAPSUB0000000000000001 /* LiftStoreKitPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftStoreKitPurchase.swift; sourceTree = "<group>"; };
-		IAPSUB0000000000000002 /* IapSubscribeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IapSubscribeSheet.swift; sourceTree = "<group>"; };
 		B2C3D4E56F708192A3B4C5D6 /* TrStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrStrings.swift; sourceTree = "<group>"; };
 		C0FFEE01C0FFEE02C0FFEE04 /* CallbacksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbacksListView.swift; sourceTree = "<group>"; };
 		C1A2B3D4E5F60718293A4B51 /* SitesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SitesListView.swift; sourceTree = "<group>"; };
@@ -99,6 +96,9 @@
 		F8E7D6C5B4A3928171625371 /* WorkOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOrderDetailView.swift; sourceTree = "<group>"; };
 		F9E8D7C6B5A4938271605124 /* AssetEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetEditView.swift; sourceTree = "<group>"; };
 		G6G6G6G6G6G60718293A4F21 /* RouteClusterLocalRebuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteClusterLocalRebuilder.swift; sourceTree = "<group>"; };
+		IAPSUB0000000000000001 /* LiftStoreKitPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftStoreKitPurchase.swift; sourceTree = "<group>"; };
+		IAPSUB0000000000000002 /* IapSubscribeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IapSubscribeSheet.swift; sourceTree = "<group>"; };
+		SKCONF0000000000000001 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,9 +312,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = U8U7K857G5;
 				INFOPLIST_FILE = ElevatorField/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,9 +460,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = U8U7K857G5;
 				INFOPLIST_FILE = ElevatorField/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

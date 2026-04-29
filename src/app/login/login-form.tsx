@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import Link from "next/link";
 import { localLoginAction, supabaseLoginAction, type LoginActionState } from "@/app/login/actions";
 import { BrandLogo } from "@/components/layout/brand-logo";
 import { isSupabaseConfigured } from "@/lib/auth/config";
@@ -72,6 +73,14 @@ export function LoginForm() {
         </button>
       </form>
       <p className="mt-4 text-center text-sm text-slate-600 dark:text-slate-400">{tr.auth.noPublicSignup}</p>
+      <p className="mt-3 text-center text-sm">
+        <Link
+          href="/signup"
+          className="font-medium text-slate-900 underline-offset-2 hover:underline dark:text-white"
+        >
+          {tr.auth.signupExplainerLink}
+        </Link>
+      </p>
     </div>
   );
 }

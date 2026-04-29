@@ -75,4 +75,13 @@ enum AppConfig {
     while out.hasSuffix("/") { out.removeLast() }
     return out.isEmpty ? nil : out
   }
+
+  /// Web `src/app/privacy` — App Store “Privacy Policy URL” alanı ile aynı rota.
+  static var marketingPrivacyPolicyURL: URL? {
+    guard let base = publicAppWebBaseURL else { return nil }
+    return URL(string: base + "/privacy")
+  }
+
+  /// Apple’ın standart lisans metni; App Açıklaması veya metadata’da EULA olarak verilebilen işlevsel bağlantı.
+  static let appStoreStandardEULAURL = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
 }

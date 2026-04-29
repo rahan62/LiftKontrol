@@ -1,4 +1,5 @@
 import CoreLocation
+import MapKit
 import SwiftUI
 import Supabase
 
@@ -176,18 +177,29 @@ struct SiteDetailView: View {
   }
 
   private static func geocodeAddressString(_ address: String) async throws -> CLLocationCoordinate2D {
-    let geocoder = CLGeocoder()
-    return try await withCheckedThrowingContinuation { cont in
-      geocoder.geocodeAddressString(address) { placemarks, error in
-        if let error {
-          cont.resume(throwing: error)
-          return
+    if #available(iOS 26.0, *) {
+      guard let request = MKGeocodingRequest(addressString: address) else {
+        throw SiteGeocodeError.noPlacemark
+      }
+      let items = try await request.mapItems
+      guard let first = items.first else {
+        throw SiteGeocodeError.noPlacemark
+      }
+      return first.location.coordinate
+    } else {
+      let geocoder = CLGeocoder()
+      return try await withCheckedThrowingContinuation { cont in
+        geocoder.geocodeAddressString(address) { placemarks, error in
+          if let error {
+            cont.resume(throwing: error)
+            return
+          }
+          guard let coord = placemarks?.first?.location?.coordinate else {
+            cont.resume(throwing: SiteGeocodeError.noPlacemark)
+            return
+          }
+          cont.resume(returning: coord)
         }
-        guard let coord = placemarks?.first?.location?.coordinate else {
-          cont.resume(throwing: SiteGeocodeError.noPlacemark)
-          return
-        }
-        cont.resume(returning: coord)
       }
     }
   }
