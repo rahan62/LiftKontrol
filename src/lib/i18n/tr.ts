@@ -417,7 +417,7 @@ export const tr = {
     empty: "Henüz asansör yok. Saha altından veya buradan ekleyin.",
     siteElevators: "Bu sahada asansörler",
     qrTitle: "QR kod",
-    qrDownload: "QR kodunu indir (PNG)",
+    qrPrintTag: "Yazdırılabilir etiket indir (PNG)",
     idHint: "Veritabanı birincil anahtarı (UUID).",
     specsSection: "Teknik özellikler",
     elevatorType: "Asansör tipi",

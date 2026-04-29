@@ -1,4 +1,4 @@
-import { ElevatorQrDownloadButton } from "@/components/assets/elevator-qr-download-button";
+import { ElevatorPrintTagButton } from "@/components/assets/elevator-print-tag-button";
 import { ElevatorQrSvg } from "@/components/assets/elevator-qr-svg";
 import { DeleteAssetButton, DeleteFinanceEntryButton } from "@/components/forms/delete-button";
 import { DataTableShell } from "@/components/module/data-table-shell";
@@ -167,7 +167,12 @@ export default async function AssetDetailPage({ params }: Props) {
           <div className="text-xs font-semibold uppercase text-slate-500">{tr.assets.qrTitle}</div>
           <div className="mt-3 flex flex-wrap items-start gap-4">
             <ElevatorQrSvg url={qrUrl} />
-            <ElevatorQrDownloadButton url={qrUrl} filename={`asansor-qr-${id}.png`} />
+            <ElevatorPrintTagButton
+              qrUrl={qrUrl}
+              elevatorId={id}
+              siteName={siteName}
+              filename={`asansor-etiket-${id}.png`}
+            />
           </div>
         </div>
       </div>
