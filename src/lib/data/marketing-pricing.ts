@@ -39,6 +39,17 @@ export const DEFAULT_MARKETING_PRICING: MarketingPricingContent = {
     "Fiyat, kampanya süresi ve kurumsal ihtiyaçlar için özel koşullar hakkında bilgi almak istiyorsanız",
 };
 
+/** `/fiyatlar` ve `/odeme` için geçici 1 TL sandbox test kartı.
+ * `NEXT_PUBLIC_*` derlemede gömülür; sunucu-only `PAYMENT_TEST_1TL` da kabul edilir (yeniden başlatma gerekir). */
+export function isPaymentTest1TlEnabled(): boolean {
+  const candidates = [process.env.NEXT_PUBLIC_PAYMENT_TEST_1TL, process.env.PAYMENT_TEST_1TL];
+  for (const raw of candidates) {
+    const v = raw?.trim();
+    if (v === "1" || v?.toLowerCase() === "true") return true;
+  }
+  return false;
+}
+
 function coercePricing(raw: unknown): Partial<MarketingPricingContent> {
   if (!raw || typeof raw !== "object" || Array.isArray(raw)) return {};
   const o = raw as Record<string, unknown>;
@@ -76,7 +87,7 @@ export async function getMarketingPricing(): Promise<MarketingPricingContent> {
   }
 
   const base = DEFAULT_MARKETING_PRICING;
-  return {
+  const merged: MarketingPricingContent = {
     eyebrow: partial.eyebrow ?? base.eyebrow,
     title: partial.title ?? base.title,
     description: partial.description ?? base.description,
@@ -88,5 +99,27 @@ export async function getMarketingPricing(): Promise<MarketingPricingContent> {
     priceNote: partial.priceNote ?? base.priceNote,
     features: partial.features?.length ? partial.features : base.features,
     footerNote: partial.footerNote ?? base.footerNote,
+  };
+
+  if (!isPaymentTest1TlEnabled()) return merged;
+
+  return {
+    ...merged,
+    eyebrow: "Sandbox test",
+    title: "Test ödemesi — 1 TL",
+    description:
+      "iyzico sandbox’ta başarılı ödeme akışını doğrulamak için geçici düşük tutar. Canlıya çıkmadan önce NEXT_PUBLIC_PAYMENT_TEST_1TL ortam değişkenini kaldırın.",
+    campaignBadge: "Test — sandbox",
+    packageTitle: "Lift Kontrol — Sandbox doğrulama",
+    packageSubtitle: "Tek seferlik test ödemesi (1 TRY)",
+    priceMain: "1",
+    priceUnit: "TL",
+    priceNote: "KDV dahil gösterim · tahsilat 1,00 TRY (IYZICO_PRICE_INCLUDES_VAT=1 kullanın)",
+    features: [
+      "Ödeme akışını /odeme üzerinden tamamlayın",
+      "Sandbox test kartları için iyzico dokümantasyonuna bakın",
+      "Üretim fiyatına dönmek için bu modu kapatın",
+    ],
+    footerNote: merged.footerNote,
   };
 }

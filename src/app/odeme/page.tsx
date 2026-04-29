@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { SiteFooter } from "@/components/marketing/site-footer";
-import { getMarketingPricing } from "@/lib/data/marketing-pricing";
+import { getMarketingPricing, isPaymentTest1TlEnabled } from "@/lib/data/marketing-pricing";
 import { computeLiftKontrolChargeTry, isIyzicoConfigured } from "@/lib/payments/iyzico-server";
 import { PaymentTrustStrip } from "@/components/marketing/payment-trust-strip";
 import { OdemeClient } from "./odeme-client";
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/odeme" },
   robots: { index: false, follow: true },
 };
+
+export const dynamic = "force-dynamic";
 
 export default async function OdemePage() {
   const pricing = await getMarketingPricing();
@@ -34,6 +36,12 @@ export default async function OdemePage() {
         <Link href="/fiyatlar" className="text-sm text-amber-400 hover:text-amber-300">
           ← Fiyatlandırma
         </Link>
+        {isPaymentTest1TlEnabled() ? (
+          <p className="mt-3 rounded-lg border border-amber-500/35 bg-amber-950/40 px-3 py-2 text-xs text-amber-100">
+            Sandbox test modu: tahsilat tutarı 1,00 TRY. Üretimde{" "}
+            <code className="rounded bg-slate-900 px-1">NEXT_PUBLIC_PAYMENT_TEST_1TL</code> kapatın.
+          </p>
+        ) : null}
         <h1 className="mt-4 text-2xl font-semibold text-white">Satın al</h1>
         <p className="mt-2 text-sm text-slate-400">
           Tek ürün: yıllık lisans. Ödeme işlemi iyzico güvenli ödeme sayfasında tamamlanır.

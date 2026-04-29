@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketingHeader } from "@/components/marketing/marketing-header";
 import { SiteFooter } from "@/components/marketing/site-footer";
-import { getMarketingPricing } from "@/lib/data/marketing-pricing";
+import { getMarketingPricing, isPaymentTest1TlEnabled } from "@/lib/data/marketing-pricing";
 import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     "Lift Kontrol: asansör bakım ve saha operasyonları için tek paket, şeffaf yıllık fiyat. İlk yıla özel kampanya.",
   alternates: { canonical: "/fiyatlar" },
 };
+
+/** Fiyat ve test modu ortam değişkeninden okunsun (statik önbellekte eski tutarı göstermeyelim). */
+export const dynamic = "force-dynamic";
 
 export default async function FiyatlarPage() {
   const pricing = await getMarketingPricing();
@@ -28,6 +31,20 @@ export default async function FiyatlarPage() {
       <MarketingHeader />
 
       <main className="relative mx-auto w-full max-w-6xl flex-1 px-6 py-16 sm:py-24">
+        {isPaymentTest1TlEnabled() ? (
+          <div
+            role="status"
+            className="mx-auto mb-10 max-w-2xl rounded-xl border border-amber-500/45 bg-amber-950/50 px-4 py-3 text-center text-sm leading-relaxed text-amber-100"
+          >
+            <strong className="font-semibold">Sandbox test modu aktif:</strong> fiyat 1 TL olarak gösterilir.
+            Canlıya çıkmadan önce{" "}
+            <code className="rounded bg-slate-900/80 px-1.5 py-0.5 text-xs">NEXT_PUBLIC_PAYMENT_TEST_1TL</code>{" "}
+            değişkenini kaldırın ve gerçek fiyatı{" "}
+            <code className="rounded bg-slate-900/80 px-1.5 py-0.5 text-xs">platform_settings.marketing_pricing</code>{" "}
+            ile ayarlayın.
+          </div>
+        ) : null}
+
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400/90">
             {pricing.eyebrow}
