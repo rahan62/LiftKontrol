@@ -1,3 +1,4 @@
+import { ElevatorQrDownloadButton } from "@/components/assets/elevator-qr-download-button";
 import { ElevatorQrSvg } from "@/components/assets/elevator-qr-svg";
 import { DeleteAssetButton, DeleteFinanceEntryButton } from "@/components/forms/delete-button";
 import { DataTableShell } from "@/components/module/data-table-shell";
@@ -164,13 +165,9 @@ export default async function AssetDetailPage({ params }: Props) {
 
         <div className="rounded-lg border border-slate-200 bg-white p-4 text-sm dark:border-slate-800 dark:bg-slate-950">
           <div className="text-xs font-semibold uppercase text-slate-500">{tr.assets.qrTitle}</div>
-          <div className="mt-3 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+          <div className="mt-3 flex flex-wrap items-start gap-4">
             <ElevatorQrSvg url={qrUrl} />
-            <div className="min-w-0 space-y-1">
-              <p className="break-all text-xs text-slate-600 dark:text-slate-400">{qrUrl}</p>
-              <CopyTextButton text={qrUrl} />
-              <p className="text-xs text-slate-500">{tr.assets.qrHint}</p>
-            </div>
+            <ElevatorQrDownloadButton url={qrUrl} filename={`asansor-qr-${id}.png`} />
           </div>
         </div>
       </div>

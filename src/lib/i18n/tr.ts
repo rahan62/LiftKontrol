@@ -23,10 +23,12 @@ export const tr = {
     email: "E-posta",
     password: "Şifre",
     tagline: "Asansör bakımı ve saha servisi",
-    noPublicSignup: "Erişim şirketiniz veya tedarikçiniz tarafından verilir; herkese açık kayıt yoktur.",
+    noPublicSignup:
+      "Web üzerinden herkese açık kayıt formu yoktur. Yeni bir asansör servis şirketi kurmak için Lift Kontrol iOS uygulamasında App Store aboneliği («Abone ol») ile başlayın; satın alma doğrulandıktan sonra şirketiniz ve yönetici hesabınız otomatik oluşturulur. Ardından bu sayfadan giriş yapın.",
     notConfigured: "Kimlik doğrulama yapılandırılmadı.",
     rememberMe: "Beni hatırla (30 gün)",
     aboutSignup: "Kayıt hakkında",
+    signupExplainerLink: "Yeni şirket kaydı — iOS «Abone ol»",
     landingOnlyOnWeb: "Tanıtım ana sayfası yalnızca web üzerindedir; bu uygulama giriş sonrası panele yönlendirir.",
   },
   onboarding: {
@@ -37,13 +39,14 @@ export const tr = {
     returnHome: "Ana sayfaya dön",
   },
   signup: {
-    title: "Erişim şirketiniz tarafından verilir",
+    title: "Kayıt ve erişim",
     intro:
-      "Bu uygulama yalnızca asansör servis şirketleri içindir. Herkese açık kayıt sunmuyoruz. Organizasyonunuz ürünü satın aldığında sizin için bir yönetici hesabı oluşturulur; yönetici çalışanları şirket çalışma alanına ekler.",
+      "Yeni bir servis şirketi için kayıt yalnızca Lift Kontrol iOS uygulamasında yapılır: giriş ekranındaki «Abone ol» ile App Store üzerinden abone olun. Ödeme Apple tarafından doğrulandığında şirketiniz (kiracı), yönetici hesabınız ve aboneliğiniz sistemde otomatik açılır; aynı e-posta ve şifre ile web panele giriş yapabilirsiniz. Web’de herkese açık kayıt formu sunmuyoruz.",
     customersNote:
-      "Hizmet verdiğiniz bina ve tesis yöneticileri uygulama içinde «Müşteriler» bölümünde görünür; ürünün ayrı bir kiracısı değildirler.",
-    signIn: "Giriş yap",
+      "Bina ve tesis yöneticileri (müşterileriniz) uygulamada «Müşteriler» altında tutulur; onlar için ayrı ürün kiracısı yoktur. Şirket içi ek kullanıcılar yönetici tarafından davet edilir.",
+    signIn: "Zaten hesabım var — giriş",
     backHome: "Ana sayfaya dön",
+    appStoreCta: "Lift Kontrol’ü App Store’da indir",
   },
   nav: {
     dashboard: "Panel",
@@ -414,8 +417,7 @@ export const tr = {
     empty: "Henüz asansör yok. Saha altından veya buradan ekleyin.",
     siteElevators: "Bu sahada asansörler",
     qrTitle: "QR kod",
-    qrHint:
-      "Her asansörün bir QR kodu vardır; kayıt oluşunca bu bağlantı otomatik yazılır (web ve tanımlıysa iOS). Telefonla taranır ve asansör sayfasını açar. Dış etiket için ortamda NEXT_PUBLIC_APP_URL (web) ve iOS’ta PUBLIC_APP_URL kullanın.",
+    qrDownload: "QR kodunu indir (PNG)",
     idHint: "Veritabanı birincil anahtarı (UUID).",
     specsSection: "Teknik özellikler",
     elevatorType: "Asansör tipi",
