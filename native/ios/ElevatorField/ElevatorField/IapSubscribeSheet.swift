@@ -427,7 +427,9 @@ struct IapSubscribeSheet: View {
       let decoded = try JSONDecoder().decode(RegisterTenantResponse.self, from: data)
 
       if !decoded.ok {
-        if decoded.code == "EMAIL_EXISTS" {
+        if decoded.code == "INVALID_PASSWORD" {
+          message = TrStrings.Iap.invalidPasswordForExistingEmail
+        } else if decoded.code == "EMAIL_EXISTS" {
           message = TrStrings.Iap.emailExists
         } else if decoded.code == "SUBSCRIPTION_ALREADY_USED" {
           message = TrStrings.Iap.subscriptionUsed

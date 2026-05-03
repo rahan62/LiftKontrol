@@ -45,7 +45,10 @@ enum TrStrings {
     static let purchaseUnknown = "Satın alma tamamlanamadı."
     static let apiBaseMissing = "Web sunucu adresi eksik (PUBLIC_APP_URL)."
     static let registerFailed = "Kayıt tamamlanamadı"
+    /// Sunucu şifreyi doğrulayamazsa (eski sürüm); geçerli akışta `invalidPasswordForExistingEmail`.
     static let emailExists = "Bu e-posta zaten kayıtlı. Giriş yapın veya başka bir adres kullanın."
+    static let invalidPasswordForExistingEmail =
+      "Bu e-posta zaten kayıtlı; şifre web ile uyuşmuyor. Web hesabınızın şifresini kullanın veya sıfırlayın."
     static let subscriptionUsed = "Bu abonelik zaten kullanılmış. Destek ile iletişime geçin."
     static let legalLinksTitle = "Yasal"
     static let privacyPolicy = "Gizlilik Politikası"
