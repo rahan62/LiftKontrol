@@ -90,7 +90,6 @@ enum TrStrings {
     static let menuSection = "Menü"
     static let openMenu = "Menüyü aç"
     static let otherSection = "Diğer"
-    static let detailFormsSection = "Detay / formlar"
     static let sessionSection = "Oturum"
     static let awaitingTenant = "Şirket erişimi bekleniyor"
     static let qrScanTitle = "Asansör QR okut"

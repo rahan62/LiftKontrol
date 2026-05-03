@@ -62,10 +62,6 @@ struct MainShellView: View {
     AppRoute.additional.filter { access.includes(route: $0) }
   }
 
-  private var nestedRoutes: [AppRoute] {
-    AppRoute.nestedExamples.filter { access.includes(route: $0) }
-  }
-
   var body: some View {
     NavigationStack(path: $navPath) {
       detailView(for: selected ?? leadTabRoute)
@@ -128,13 +124,6 @@ struct MainShellView: View {
         if access == .admin, !additionalRoutes.isEmpty {
           Section(TrStrings.Layout.otherSection) {
             ForEach(additionalRoutes) { route in
-              menuRow(route)
-            }
-          }
-        }
-        if access == .admin, !nestedRoutes.isEmpty {
-          Section(TrStrings.Layout.detailFormsSection) {
-            ForEach(nestedRoutes) { route in
               menuRow(route)
             }
           }
