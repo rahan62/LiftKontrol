@@ -13,6 +13,8 @@ enum TrStrings {
     static let signInFailed = "Giriş başarısız"
     static let email = "E-posta"
     static let password = "Şifre"
+    static let passwordNew = "Yeni şifre"
+    static let passwordAgainField = "Yeni şifre tekrar"
     static let tagline = "Asansör bakımı ve saha servisi"
     static let noPublicSignup =
       "Web’de herkese açık kayıt formu yoktur. Yeni bir servis şirketi (kiracı) bu uygulamada «Abone ol» ile oluşturulur; satın alma doğrulandıktan sonra firma kaydı, yönetici hesabınız ve abonelik sunucuda otomatik açılır."
@@ -21,6 +23,14 @@ enum TrStrings {
       "Aynı e-posta ve şifre ile liftkontrol web paneline de giriş yapabilirsiniz (tarayıcıdan /login)."
     static let membersOnlyFooter =
       "Hesabınız varsa yukarıdan giriş yapın. Yeni şirket için «Abone ol» düğmesine dokunun."
+  }
+
+  enum Settings {
+    static let passwordSection = "Hesap şifresi"
+    static let passwordFooter =
+      "Oturum açıkken yeni şifrenizi girin. En az 8 karakter; iki alan eşleşmelidir."
+    static let savePassword = "Şifreyi kaydet"
+    static let passwordUpdated = "Şifre güncellendi."
   }
 
   enum Iap {

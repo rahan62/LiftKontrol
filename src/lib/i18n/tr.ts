@@ -24,11 +24,11 @@ export const tr = {
     password: "Şifre",
     tagline: "Asansör bakımı ve saha servisi",
     noPublicSignup:
-      "Web üzerinden herkese açık kayıt formu yoktur. Yeni bir asansör servis şirketi kurmak için Lift Kontrol iOS uygulamasında App Store aboneliği («Abone ol») ile başlayın; satın alma doğrulandıktan sonra şirketiniz ve yönetici hesabınız otomatik oluşturulur. Ardından bu sayfadan giriş yapın.",
+      "Web üzerinden herkese açık kayıt formu yoktur. Yeni şirket için Lift Kontrol iOS uygulamasında «Abone ol» (App Store) veya web’de güvenli ödeme sayfasını (/odeme) kullanın; ödeme doğrulandıktan sonra şirketiniz ve yönetici hesabınız oluşturulur. Ardından bu sayfadan giriş yapın.",
     notConfigured: "Kimlik doğrulama yapılandırılmadı.",
     rememberMe: "Beni hatırla (30 gün)",
     aboutSignup: "Kayıt hakkında",
-    signupExplainerLink: "Yeni şirket kaydı — iOS «Abone ol»",
+    signupExplainerLink: "Yeni şirket kaydı — iOS veya web ödeme",
     landingOnlyOnWeb: "Tanıtım ana sayfası yalnızca web üzerindedir; bu uygulama giriş sonrası panele yönlendirir.",
   },
   onboarding: {
@@ -41,12 +41,21 @@ export const tr = {
   signup: {
     title: "Kayıt ve erişim",
     intro:
-      "Yeni bir servis şirketi için kayıt yalnızca Lift Kontrol iOS uygulamasında yapılır: giriş ekranındaki «Abone ol» ile App Store üzerinden abone olun. Ödeme Apple tarafından doğrulandığında şirketiniz (kiracı), yönetici hesabınız ve aboneliğiniz sistemde otomatik açılır; aynı e-posta ve şifre ile web panele giriş yapabilirsiniz. Web’de herkese açık kayıt formu sunmuyoruz.",
+      "Yeni bir servis şirketi için kayıt iki yoldan yapılır: iOS uygulamasında «Abone ol» (App Store) veya web’de `/odeme` üzerinden iyzico ile güvenli ödeme. Ödeme doğrulandığında şirketiniz (kiracı), yönetici hesabınız ve aboneliğiniz otomatik açılır; aynı e-posta ve şifre ile web panele ve iOS’a giriş yapabilirsiniz.",
     customersNote:
       "Bina ve tesis yöneticileri (müşterileriniz) uygulamada «Müşteriler» altında tutulur; onlar için ayrı ürün kiracısı yoktur. Şirket içi ek kullanıcılar yönetici tarafından davet edilir.",
     signIn: "Zaten hesabım var — giriş",
     backHome: "Ana sayfaya dön",
     appStoreCta: "Lift Kontrol’ü App Store’da indir",
+  },
+  settingsPassword: {
+    sectionTitle: "Hesap şifresi",
+    sectionHint:
+      "Oturum açıkken yeni şifrenizi belirleyin. İki alanın eşleşmesi gerekir (en az 8 karakter).",
+    newPassword: "Yeni şifre",
+    confirmPassword: "Yeni şifre tekrar",
+    success: "Şifreniz güncellendi.",
+    submit: "Şifreyi kaydet",
   },
   nav: {
     dashboard: "Panel",

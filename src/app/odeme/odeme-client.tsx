@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { MarketingPricingContent } from "@/lib/data/marketing-pricing";
 import { formatIyzicoMoney } from "@/lib/payments/parse-try-price";
@@ -25,13 +25,29 @@ export function OdemeClient({
   const [checkoutHtml, setCheckoutHtml] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+
+  const passwordBorder = useMemo(() => {
+    if (passwordConfirm.length === 0) return "border-slate-700";
+    if (password !== passwordConfirm) return "border-red-500";
+    if (password.length >= 8) return "border-green-600";
+    return "border-amber-600";
+  }, [password, passwordConfirm]);
+
+  const passwordsOk = password.length >= 8 && password === passwordConfirm;
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError(null);
+    if (!passwordsOk) {
+      setError("Şifreler en az 8 karakter olmalı ve birbiriyle eşleşmelidir.");
+      return;
+    }
     setBusy(true);
     const fd = new FormData(e.currentTarget);
     const body: Record<string, string> = {
+      companyName: String(fd.get("companyName") || ""),
       name: String(fd.get("name") || ""),
       surname: String(fd.get("surname") || ""),
       email: String(fd.get("email") || ""),
@@ -40,6 +56,8 @@ export function OdemeClient({
       registrationAddress: String(fd.get("registrationAddress") || ""),
       city: String(fd.get("city") || ""),
       zipCode: String(fd.get("zipCode") || ""),
+      password,
+      passwordConfirm,
     };
     if (checkoutProduct === "demo") body.product = "demo";
 
@@ -74,7 +92,8 @@ export function OdemeClient({
         <p className="mt-2 text-sm text-amber-200/80">
           Ortam değişkenleri: <code className="rounded bg-slate-900 px-1">IYZIPAY_URI</code>,{" "}
           <code className="rounded bg-slate-900 px-1">IYZIPAY_API_KEY</code>,{" "}
-          <code className="rounded bg-slate-900 px-1">IYZIPAY_SECRET_KEY</code>
+          <code className="rounded bg-slate-900 px-1">IYZIPAY_SECRET_KEY</code>,{" "}
+          <code className="rounded bg-slate-900 px-1">CHECKOUT_PENDING_SECRET</code>
         </p>
         <Link href="/contact" className="mt-4 inline-block text-sm text-amber-300 underline hover:text-amber-200">
           İletişim
@@ -101,6 +120,8 @@ export function OdemeClient({
     );
   }
 
+  const submitEnabled = passwordsOk && !busy;
+
   return (
     <form onSubmit={(ev) => void onSubmit(ev)} className="space-y-4">
       {error ? (
@@ -121,18 +142,66 @@ export function OdemeClient({
         <p className="mt-1 text-xs text-slate-500">{pricing.priceNote}</p>
       </div>
 
+      <p className="text-xs leading-relaxed text-slate-500">
+        Ödeme sonrası firmanız ve hesabınız otomatik oluşturulur; aşağıda belirlediğiniz şifre ile{" "}
+        <Link href="/login" className="text-amber-500/90 underline hover:text-amber-400">
+          giriş
+        </Link>{" "}
+        yapabilirsiniz (iOS uygulamasında da aynı e-posta ve şifre).
+      </p>
+
       <div className="grid gap-3 sm:grid-cols-2">
+        <div className="sm:col-span-2">
+          <label className="text-xs text-slate-400">Firma / şirket adı *</label>
+          <input
+            name="companyName"
+            required
+            autoComplete="organization"
+            className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white"
+          />
+        </div>
         <div>
           <label className="text-xs text-slate-400">Ad *</label>
           <input name="name" required className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white" />
         </div>
         <div>
           <label className="text-xs text-slate-400">Soyad *</label>
-          <input name="surname" required className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white" />
+          <input
+            name="surname"
+            required
+            className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white"
+          />
         </div>
         <div className="sm:col-span-2">
           <label className="text-xs text-slate-400">E-posta *</label>
-          <input name="email" type="email" required className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white" />
+          <input
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white"
+          />
+        </div>
+        <div>
+          <label className="text-xs text-slate-400">Şifre *</label>
+          <input
+            name="passwordIgnored"
+            type="password"
+            autoComplete="new-password"
+            value={password}
+            onChange={(ev) => setPassword(ev.target.value)}
+            className={`mt-1 w-full rounded-md border bg-slate-950 px-3 py-2 text-white ${passwordBorder}`}
+          />
+        </div>
+        <div>
+          <label className="text-xs text-slate-400">Şifre tekrar *</label>
+          <input
+            type="password"
+            autoComplete="new-password"
+            value={passwordConfirm}
+            onChange={(ev) => setPasswordConfirm(ev.target.value)}
+            className={`mt-1 w-full rounded-md border bg-slate-950 px-3 py-2 text-white ${passwordBorder}`}
+          />
         </div>
         <div>
           <label className="text-xs text-slate-400">Cep telefonu *</label>
@@ -190,8 +259,8 @@ export function OdemeClient({
 
       <button
         type="submit"
-        disabled={busy}
-        className="w-full rounded-lg bg-amber-500 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400 disabled:opacity-60"
+        disabled={!submitEnabled}
+        className="w-full rounded-lg bg-amber-500 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400 disabled:opacity-50 disabled:hover:bg-amber-500"
       >
         {busy ? "Hazırlanıyor…" : "Ödemeye geç"}
       </button>

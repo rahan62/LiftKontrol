@@ -1,7 +1,16 @@
 import { NextResponse } from "next/server";
 import { DEMO_PRODUCT_PRICING } from "@/lib/data/demo-product-pricing";
 import { getMarketingPricing } from "@/lib/data/marketing-pricing";
-import { type BuyerCheckoutInput, iyzicoCheckoutFormInitialize, isIyzicoConfigured } from "@/lib/payments/iyzico-server";
+import {
+  type BuyerCheckoutInput,
+  iyzicoCheckoutFormInitialize,
+  isIyzicoConfigured,
+} from "@/lib/payments/iyzico-server";
+import {
+  isCheckoutPendingCryptoConfigured,
+  sealCheckoutPendingPayload,
+} from "@/lib/payments/checkout-pending-crypto";
+import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role";
 
 function clientIp(request: Request): string {
   const xf = request.headers.get("x-forwarded-for");
@@ -64,6 +73,24 @@ export async function POST(request: Request) {
       { status: 503 },
     );
   }
+  if (!isCheckoutPendingCryptoConfigured()) {
+    return NextResponse.json(
+      {
+        status: "failure",
+        errorMessage:
+          "CHECKOUT_PENDING_SECRET eksik. Sunucuya en az 16 karakterlik bir gizli anahtar tanımlayın (iyzico oturumu için şifreli önbellek).",
+      },
+      { status: 503 },
+    );
+  }
+
+  const service = createServiceRoleSupabaseClient();
+  if (!service) {
+    return NextResponse.json(
+      { status: "failure", errorMessage: "Supabase servis anahtarı yapılandırılmamış." },
+      { status: 503 },
+    );
+  }
 
   let json: Record<string, unknown>;
   try {
@@ -73,12 +100,29 @@ export async function POST(request: Request) {
   }
 
   const product = json.product === "demo" ? "demo" : "default";
+  const companyName = String(json.companyName || "").trim();
+  const password = String(json.password || "");
+  const passwordConfirm = String(json.passwordConfirm || "");
+
   const buyerPayload = { ...json };
   delete buyerPayload.product;
+  delete buyerPayload.companyName;
+  delete buyerPayload.password;
+  delete buyerPayload.passwordConfirm;
 
   const v = validateBuyer(buyerPayload);
   if (!v.ok) {
     return NextResponse.json({ status: "failure", errorMessage: v.error }, { status: 400 });
+  }
+
+  if (!companyName) {
+    return NextResponse.json({ status: "failure", errorMessage: "Firma / şirket adı gerekli." }, { status: 400 });
+  }
+  if (password.length < 8) {
+    return NextResponse.json({ status: "failure", errorMessage: "Şifre en az 8 karakter olmalıdır." }, { status: 400 });
+  }
+  if (password !== passwordConfirm) {
+    return NextResponse.json({ status: "failure", errorMessage: "Şifreler eşleşmiyor." }, { status: 400 });
   }
 
   try {
@@ -91,13 +135,40 @@ export async function POST(request: Request) {
       basketItemId,
     });
 
-    if (result.status !== "success" || !result.checkoutFormContent) {
+    if (result.status !== "success" || !result.checkoutFormContent || !result.token) {
       return NextResponse.json(
         {
           status: "failure",
           errorMessage: result.errorMessage || result.errorCode || "iyzico oturumu başlatılamadı.",
         },
         { status: 422 },
+      );
+    }
+
+    let sealed;
+    try {
+      sealed = sealCheckoutPendingPayload({
+        companyName,
+        email: v.buyer.email.trim().toLowerCase(),
+        password,
+        product,
+      });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : "Oturum şifrelemesi başarısız.";
+      return NextResponse.json({ status: "failure", errorMessage: msg }, { status: 500 });
+    }
+
+    const expiresAt = new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString();
+    const { error: insErr } = await service.from("iyzico_checkout_pending").insert({
+      checkout_token: result.token,
+      ciphertext: sealed.ciphertextB64,
+      nonce: sealed.nonceB64,
+      expires_at: expiresAt,
+    });
+    if (insErr) {
+      return NextResponse.json(
+        { status: "failure", errorMessage: insErr.message || "Ödeme oturumu kaydedilemedi." },
+        { status: 500 },
       );
     }
 

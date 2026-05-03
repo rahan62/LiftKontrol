@@ -32,6 +32,7 @@ enum WorkspaceAccess: Equatable {
     "/app/work-orders",
     "/app/work-orders/new",
     "/app/work-orders/[id]",
+    "/app/settings",
   ]
 
   /// Menüde gösterim sırası (sidebar sırasından bağımsız).
@@ -41,6 +42,7 @@ enum WorkspaceAccess: Equatable {
     "/app/maintenance",
     "/app/schedule",
     "/app/work-orders",
+    "/app/settings",
   ]
 
   func includes(route: AppRoute) -> Bool {

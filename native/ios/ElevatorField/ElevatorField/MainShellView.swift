@@ -257,6 +257,8 @@ struct MainShellView: View {
         CallbacksListView(client: client)
       case "/app/finances":
         FinancesListView(client: client)
+      case "/app/settings":
+        WorkspaceSettingsView(client: client)
       default:
         ModulePlaceholderView(route: route)
       }

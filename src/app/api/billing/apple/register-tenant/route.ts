@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
-import type { SupabaseClient } from "@supabase/supabase-js";
 import { getAppleIapConfigFromEnv } from "@/lib/billing/apple-iap-config";
-import { resolveUniqueTenantSlug, slugifyTenantName } from "@/lib/billing/tenant-slug";
+import { provisionSubscribedTenant } from "@/lib/billing/provision-subscribed-tenant";
 import {
   verifyAppleSubscriptionTransaction,
   type VerifiedAppleSubscription,
@@ -21,27 +19,6 @@ type Body = {
 
 function bad(msg: string, status = 400) {
   return NextResponse.json({ ok: false as const, error: msg }, { status });
-}
-
-function isDuplicateEmailAdminCreateUser(err: { message?: string; code?: string }): boolean {
-  const code = err.code;
-  if (code === "email_exists") return true;
-  const msg = (err.message || "").toLowerCase();
-  return msg.includes("already") || msg.includes("registered") || msg.includes("exists");
-}
-
-async function fetchPrimaryTenantId(service: SupabaseClient, userId: string): Promise<string | null> {
-  const { data, error } = await service
-    .from("tenant_members")
-    .select("tenant_id")
-    .eq("user_id", userId)
-    .eq("is_active", true)
-    .order("joined_at", { ascending: true })
-    .limit(1)
-    .maybeSingle();
-
-  if (error || data?.tenant_id == null) return null;
-  return String(data.tenant_id);
 }
 
 export async function POST(request: Request) {
@@ -103,48 +80,36 @@ export async function POST(request: Request) {
   const endsAt =
     verified.expiresDateMs != null ? new Date(verified.expiresDateMs).toISOString() : null;
 
-  const subscriptionInsert = {
-    plan_code: "apple_iap",
-    status: "active",
-    started_at: startedAt,
-    ends_at: endsAt,
-    billing_provider: "apple",
-    apple_original_transaction_id: verified.originalTransactionId,
-    apple_product_id: verified.productId,
-    apple_environment: verified.environment,
-    metadata: {
-      apple_transaction_id: verified.transactionId,
-      provisioned_via: "ios_register_tenant",
-    },
-  };
-
-  let userId: string | null = null;
-  let createdNewAuthUser = false;
-
-  const { data: createdUser, error: createErr } = await service.auth.admin.createUser({
-    email,
-    password,
-    email_confirm: true,
-    user_metadata: { full_name: companyName },
-  });
-
-  if (!createErr && createdUser.user?.id) {
-    userId = createdUser.user.id;
-    createdNewAuthUser = true;
-  } else if (createErr && isDuplicateEmailAdminCreateUser(createErr)) {
-    const anonUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
-    const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
-    if (!anonUrl || !anonKey) {
-      return bad("Supabase anon yapılandırması eksik.", 503);
-    }
-    const anon = createClient(anonUrl, anonKey, {
-      auth: { persistSession: false, autoRefreshToken: false },
-    });
-    const { data: signData, error: signErr } = await anon.auth.signInWithPassword({
+  try {
+    const { tenantId, userId, slug } = await provisionSubscribedTenant(service, {
       email,
       password,
+      companyName,
+      subscriptionFields: {
+        plan_code: "apple_iap",
+        status: "active",
+        started_at: startedAt,
+        ends_at: endsAt,
+        billing_provider: "apple",
+        apple_original_transaction_id: verified.originalTransactionId,
+        apple_product_id: verified.productId,
+        apple_environment: verified.environment,
+        metadata: {
+          apple_transaction_id: verified.transactionId,
+          provisioned_via: "ios_register_tenant",
+        },
+      },
     });
-    if (signErr || !signData.user?.id) {
+
+    return NextResponse.json({
+      ok: true as const,
+      tenantId,
+      userId,
+      slug,
+    });
+  } catch (e) {
+    const code = (e as { code?: string }).code;
+    if (code === "INVALID_PASSWORD") {
       return NextResponse.json(
         {
           ok: false as const,
@@ -155,79 +120,7 @@ export async function POST(request: Request) {
         { status: 401 },
       );
     }
-    userId = signData.user.id;
-    createdNewAuthUser = false;
-  } else {
-    return bad(createErr?.message || "Kullanıcı oluşturulamadı.", 500);
-  }
-
-  let tenantId: string | null = null;
-  let slug = "";
-  /** Yeni firma satırı bu istekte oluşturulduysa hata halinde silinir */
-  let createdTenantThisRequest = false;
-
-  try {
-    const existingTenantId = await fetchPrimaryTenantId(service, userId);
-
-    if (existingTenantId) {
-      tenantId = existingTenantId;
-      const { data: trow } = await service.from("tenants").select("slug").eq("id", tenantId).single();
-      slug = String(trow?.slug ?? "");
-
-      const { error: se } = await service.from("tenant_subscriptions").insert({
-        tenant_id: tenantId,
-        ...subscriptionInsert,
-      });
-      if (se) throw new Error(se.message);
-    } else {
-      const baseSlug = slugifyTenantName(companyName) || "tenant";
-      slug = await resolveUniqueTenantSlug(service, baseSlug);
-
-      const { data: tenant, error: te } = await service
-        .from("tenants")
-        .insert({
-          name: companyName,
-          slug,
-          billing_email: email,
-        })
-        .select("id")
-        .single();
-
-      if (te || !tenant) {
-        throw new Error(te?.message ?? "Firma kaydı başarısız.");
-      }
-      tenantId = tenant.id;
-      createdTenantThisRequest = true;
-
-      const { error: me } = await service.from("tenant_members").insert({
-        tenant_id: tenantId,
-        user_id: userId,
-        system_role: "tenant_owner",
-        is_active: true,
-      });
-      if (me) throw new Error(me.message);
-
-      const { error: se } = await service.from("tenant_subscriptions").insert({
-        tenant_id: tenantId,
-        ...subscriptionInsert,
-      });
-      if (se) throw new Error(se.message);
-    }
-  } catch (e) {
-    if (createdTenantThisRequest && tenantId) {
-      await service.from("tenants").delete().eq("id", tenantId);
-    }
-    if (createdNewAuthUser && userId) {
-      await service.auth.admin.deleteUser(userId);
-    }
     const msg = e instanceof Error ? e.message : "Kayıt tamamlanamadı.";
     return bad(msg, 500);
   }
-
-  return NextResponse.json({
-    ok: true as const,
-    tenantId,
-    userId,
-    slug,
-  });
 }

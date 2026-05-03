@@ -10,6 +10,7 @@ import { useSearchParams } from "next/navigation";
 
 export function LoginForm() {
   const searchParams = useSearchParams();
+  const prefilledEmail = searchParams.get("email") ?? "";
   const next = searchParams.get("next") ?? "/app";
   const loginAction = isSupabaseConfigured() ? supabaseLoginAction : localLoginAction;
   const [state, formAction, pending] = useActionState(loginAction, null as LoginActionState);
@@ -35,6 +36,7 @@ export function LoginForm() {
             type="email"
             autoComplete="email"
             required
+            defaultValue={prefilledEmail}
             className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-950"
           />
         </div>

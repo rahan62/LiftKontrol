@@ -1,6 +1,8 @@
+import { ChangePasswordForm } from "@/components/settings/change-password-form";
 import { RoutePlanningSettingsForm } from "@/components/settings/route-planning-settings-form";
 import { SettingsLogoForm } from "@/components/settings/settings-logo-form";
 import { DataTableShell } from "@/components/module/data-table-shell";
+import { isSupabaseConfigured } from "@/lib/auth/config";
 import { getTenantBranding } from "@/lib/data/tenant-branding";
 import { getRoutePlanningSettings } from "@/lib/data/tenant-route-settings";
 import { tr } from "@/lib/i18n/tr";
@@ -24,6 +26,7 @@ export default async function SettingsPage() {
       actions={null}
     >
       <div className="space-y-6">
+        {isSupabaseConfigured() ? <ChangePasswordForm /> : null}
         <div className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950">
           <div className="text-xs font-semibold uppercase text-slate-500">Dosya depolama</div>
           <p className="mt-2 text-sm text-slate-800 dark:text-slate-200">

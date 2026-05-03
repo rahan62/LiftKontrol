@@ -66,6 +66,7 @@ struct IapSubscribeSheet: View {
   @State private var companyName = ""
   @State private var email = ""
   @State private var password = ""
+  @State private var passwordConfirm = ""
   @State private var busy = false
   @State private var message: String?
 
@@ -287,7 +288,7 @@ struct IapSubscribeSheet: View {
         .textInputAutocapitalization(.words)
         .foregroundStyle(.white)
         .padding(12)
-        .background(fieldBackground)
+        .background(fieldBackground(stroke: neutralFieldStroke))
 
       fieldLabel(TrStrings.Auth.email)
       TextField("", text: $email)
@@ -296,14 +297,21 @@ struct IapSubscribeSheet: View {
         .textInputAutocapitalization(.never)
         .foregroundStyle(.white)
         .padding(12)
-        .background(fieldBackground)
+        .background(fieldBackground(stroke: neutralFieldStroke))
 
       fieldLabel(TrStrings.Auth.password)
       SecureField("", text: $password)
         .textContentType(.newPassword)
         .foregroundStyle(.white)
         .padding(12)
-        .background(fieldBackground)
+        .background(fieldBackground(stroke: passwordStroke))
+
+      fieldLabel(TrStrings.Auth.passwordAgainField)
+      SecureField("", text: $passwordConfirm)
+        .textContentType(.newPassword)
+        .foregroundStyle(.white)
+        .padding(12)
+        .background(fieldBackground(stroke: passwordStroke))
     }
   }
 
@@ -313,13 +321,24 @@ struct IapSubscribeSheet: View {
       .foregroundStyle(IapSubscribePalette.muted)
   }
 
-  private var fieldBackground: some View {
+  private var passwordStroke: Color {
+    if passwordConfirm.isEmpty { return Color.white.opacity(0.12) }
+    if password != passwordConfirm { return Color(red: 1, green: 0.35, blue: 0.38).opacity(0.95) }
+    if password.count >= 8 { return Color.green.opacity(0.72) }
+    return Color.orange.opacity(0.62)
+  }
+
+  private func fieldBackground(stroke: Color) -> some View {
     RoundedRectangle(cornerRadius: 10, style: .continuous)
       .fill(Color.white.opacity(0.08))
       .overlay(
         RoundedRectangle(cornerRadius: 10, style: .continuous)
-          .strokeBorder(Color.white.opacity(0.12), lineWidth: 1)
+          .strokeBorder(stroke, lineWidth: 1.5)
       )
+  }
+
+  private var neutralFieldStroke: Color {
+    Color.white.opacity(0.12)
   }
 
   private var bottomBar: some View {
@@ -371,6 +390,7 @@ struct IapSubscribeSheet: View {
     !companyName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
       && !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
       && password.count >= 8
+      && password == passwordConfirm
   }
 
   private func loadMarketing() async {
