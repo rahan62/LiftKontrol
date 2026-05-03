@@ -130,7 +130,7 @@ async function redirectAfterRetrieve(token: string): Promise<NextResponse> {
         password: payload.password,
         companyName: payload.companyName,
         subscriptionFields: {
-          plan_code: payload.product === "demo" ? "iyzico_demo" : "iyzico_yearly",
+          plan_code: "iyzico_yearly",
           status: "active",
           started_at: new Date().toISOString(),
           ends_at: endsAt.toISOString(),

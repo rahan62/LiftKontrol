@@ -5,7 +5,6 @@ export type CheckoutPendingPayload = {
   companyName: string;
   email: string;
   password: string;
-  product: "demo" | "default";
 };
 
 const SALT = Buffer.from("liftkontrol-iyzico-pending-v1", "utf8");
@@ -55,8 +54,7 @@ export function unsealCheckoutPendingPayload(ciphertextB64: string, nonceB64: st
   if (
     typeof parsed.companyName !== "string" ||
     typeof parsed.email !== "string" ||
-    typeof parsed.password !== "string" ||
-    (parsed.product !== "demo" && parsed.product !== "default")
+    typeof parsed.password !== "string"
   ) {
     throw new Error("Geçersiz ödeme oturumu.");
   }

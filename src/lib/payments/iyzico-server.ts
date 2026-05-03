@@ -166,7 +166,7 @@ export async function iyzicoCheckoutFormInitialize(params: {
       id: itemId,
       name: params.pricing.packageTitle.slice(0, 128),
       category1: "Yazılım",
-      category2: params.basketItemId === "liftkontrol-demo" ? "Demo" : "Abonelik",
+      category2: "Abonelik",
       itemType: Iyzipay.BASKET_ITEM_TYPE.VIRTUAL,
       price: priceStr,
     },

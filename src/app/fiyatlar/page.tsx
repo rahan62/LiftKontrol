@@ -104,23 +104,6 @@ export default async function FiyatlarPage() {
           </div>
         </div>
 
-        <div className="relative mx-auto mt-10 max-w-lg rounded-xl border border-slate-700/90 bg-slate-900/60 px-6 py-5">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold text-white">Demo Ürünü</p>
-              <p className="mt-1 text-xs text-slate-500">
-                Ödeme ve callback akışını denemek için <span className="text-slate-400">1 TL</span> sabit tutar.
-              </p>
-            </div>
-            <Link
-              href="/odeme/demo"
-              className="inline-flex shrink-0 items-center justify-center rounded-lg border border-slate-600 bg-slate-800 px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-slate-700"
-            >
-              Demo satın al
-            </Link>
-          </div>
-        </div>
-
         <p className="mx-auto mt-12 max-w-md text-center text-xs leading-relaxed text-slate-600">
           {pricing.footerNote}{" "}
           <Link href="/contact" className="text-amber-500/90 underline-offset-2 hover:text-amber-400 hover:underline">

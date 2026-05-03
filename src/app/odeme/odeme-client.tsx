@@ -11,8 +11,6 @@ type Props = {
   iyzicoReady: boolean;
   pricePreviewTry: number;
   includesVat: boolean;
-  /** API gövdesine `product: "demo"` ekler (1 TL Demo Ürünü). */
-  checkoutProduct?: "default" | "demo";
 };
 
 export function OdemeClient({
@@ -20,7 +18,6 @@ export function OdemeClient({
   iyzicoReady,
   pricePreviewTry,
   includesVat,
-  checkoutProduct = "default",
 }: Props) {
   const [checkoutHtml, setCheckoutHtml] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -59,8 +56,6 @@ export function OdemeClient({
       password,
       passwordConfirm,
     };
-    if (checkoutProduct === "demo") body.product = "demo";
-
     try {
       const res = await fetch("/api/iyzico/checkout-form", {
         method: "POST",

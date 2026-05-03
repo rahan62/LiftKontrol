@@ -102,6 +102,7 @@ const nextConfig: NextConfig = {
       { source: "/hakkimizda", destination: "/hakkimda", permanent: true },
       { source: "/app/finances", destination: "/app/accounting/receivables", permanent: false },
       { source: "/app/finances/new", destination: "/app/accounting/entries/new", permanent: false },
+      { source: "/odeme/demo", destination: "/odeme", permanent: false },
     ];
   },
   ...(allowedDevOrigins.length > 0 ? { allowedDevOrigins } : {}),

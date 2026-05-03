@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { DEMO_PRODUCT_PRICING } from "@/lib/data/demo-product-pricing";
 import { getMarketingPricing } from "@/lib/data/marketing-pricing";
 import {
   type BuyerCheckoutInput,
@@ -99,13 +98,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ status: "failure", errorMessage: "Geçersiz istek gövdesi." }, { status: 400 });
   }
 
-  const product = json.product === "demo" ? "demo" : "default";
   const companyName = String(json.companyName || "").trim();
   const password = String(json.password || "");
   const passwordConfirm = String(json.passwordConfirm || "");
 
   const buyerPayload = { ...json };
-  delete buyerPayload.product;
   delete buyerPayload.companyName;
   delete buyerPayload.password;
   delete buyerPayload.passwordConfirm;
@@ -126,13 +123,11 @@ export async function POST(request: Request) {
   }
 
   try {
-    const pricing = product === "demo" ? DEMO_PRODUCT_PRICING : await getMarketingPricing();
-    const basketItemId = product === "demo" ? "liftkontrol-demo" : undefined;
+    const pricing = await getMarketingPricing();
     const result = await iyzicoCheckoutFormInitialize({
       pricing,
       buyer: v.buyer,
       clientIp: clientIp(request),
-      basketItemId,
     });
 
     if (result.status !== "success" || !result.checkoutFormContent || !result.token) {
@@ -151,7 +146,6 @@ export async function POST(request: Request) {
         companyName,
         email: v.buyer.email.trim().toLowerCase(),
         password,
-        product,
       });
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Oturum şifrelemesi başarısız.";
