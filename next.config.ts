@@ -16,6 +16,14 @@ const nextConfig: NextConfig = {
   },
   /** iyzipay dinamik `require` kullanır; paket sunucuda harici yüklenir (Turbopack derlemesi için gerekli). */
   serverExternalPackages: ["iyzipay"],
+  /**
+   * iyzipay açılışta `lib/resources` için fs ile klasör tarar; Vercel serverless/NFT bu dizini bazen
+   * artefakta taşımaz → ENOENT scandir. Kütüphaneyi trace’a zorla (ör. önceki “çalışan” deploy’da
+   * bundler sürümü veya serverExternalPackages farkı ile klasör yanlışlıkla dahil kalmış olabilirdi).
+   */
+  outputFileTracingIncludes: {
+    "/*": ["./node_modules/iyzipay/**/*"],
+  },
   async redirects() {
     return [{ source: "/hakkimizda", destination: "/hakkimda", permanent: true }];
   },
