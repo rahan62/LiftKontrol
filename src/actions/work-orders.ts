@@ -180,7 +180,8 @@ export async function completeWorkOrderWithBillingAction(payload: {
 
   revalidatePath("/app/work-orders");
   revalidatePath(`/app/work-orders/${payload.work_order_id}`);
-  revalidatePath("/app/finances");
+    revalidatePath("/app/accounting/receivables");
+    revalidatePath("/app/accounting/current-accounts");
   revalidatePath(`/app/assets/${assetId}`);
   revalidatePath("/app/schedule");
 

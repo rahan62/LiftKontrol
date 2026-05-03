@@ -2,6 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import {
   BookMarked,
   Building2,
+  Calculator,
   ClipboardCheck,
   ClipboardList,
   Factory,
@@ -15,7 +16,6 @@ import {
   Settings,
   Truck,
   Users,
-  Wallet,
   Wrench,
 } from "lucide-react";
 import { tr } from "@/lib/i18n/tr";
@@ -30,7 +30,7 @@ export type AppNavItem = {
 export const appNavItems: AppNavItem[] = [
   { href: "/app", label: tr.nav.dashboard, icon: LayoutDashboard },
   { href: "/app/customers", label: tr.nav.customers, icon: Users },
-  { href: "/app/finances", label: tr.nav.finances, icon: Wallet },
+  { href: "/app/accounting", label: tr.nav.accounting, icon: Calculator },
   { href: "/app/sites", label: tr.nav.sites, icon: MapPin },
   { href: "/app/assets", label: tr.nav.assets, icon: Building2 },
   { href: "/app/contracts", label: tr.nav.contracts, icon: FileText },

@@ -1,12 +1,31 @@
+import { DashboardRangeForm } from "@/components/dashboard/dashboard-range-form";
 import { AppHeader } from "@/components/layout/app-header";
 import { StatCard } from "@/components/ui/stat-card";
+import { defaultDashboardRangeUTC, resolveDashboardRange } from "@/lib/dashboard-range";
 import { getDashboardCounts } from "@/lib/data/dashboard";
-import { listUpcomingPeriodicControls } from "@/lib/data/upcoming-periodic";
+import { getDashboardMetricTotals } from "@/lib/data/dashboard-metrics";
+import { formatMoneyAmount } from "@/lib/format/money";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
 import Link from "next/link";
 
-export default async function AdminDashboardPage() {
+function metricHref(slug: string, from: string, to: string) {
+  const q = new URLSearchParams({ from, to }).toString();
+  return `/app/dashboard/${slug}?${q}`;
+}
+
+function formatRevenueTotals(rows: { currency: string; sum: number }[]): string {
+  if (!rows.length) return "—";
+  return rows.map((r) => formatMoneyAmount(String(r.sum), r.currency)).join(" · ");
+}
+
+type Search = Promise<{ from?: string; to?: string }>;
+
+export default async function AdminDashboardPage({ searchParams }: { searchParams: Search }) {
+  const sp = await searchParams;
+  const { from, to } = resolveDashboardRange(sp.from, sp.to);
+  const defaults = defaultDashboardRangeUTC();
+
   const ctx = await getTenantContext();
   const tenantId = ctx?.tenantId;
 
@@ -14,22 +33,36 @@ export default async function AdminDashboardPage() {
   let contractCount = 0;
   let assetCount = 0;
   let workOrderCount = 0;
-  let openBreakdowns = 0;
-  let openCallbacks = 0;
-  let upcomingPeriodic: Awaited<ReturnType<typeof listUpcomingPeriodicControls>> = [];
+  let metrics = {
+    maintenanceExpectedSlots: 0,
+    maintenanceCoveredCount: 0,
+    revenueByCurrency: [] as { currency: string; sum: number }[],
+    failuresCreatedCount: 0,
+    failuresUnsolvedCount: 0,
+    periodicDueCount: 0,
+  };
 
   if (tenantId) {
-    const counts = await getDashboardCounts(tenantId);
-    customerCount = counts.customerCount;
-    contractCount = counts.contractCount;
-    assetCount = counts.assetCount;
-    workOrderCount = counts.workOrderCount;
-    openBreakdowns = counts.openBreakdowns;
-    openCallbacks = counts.openCallbacks;
     try {
-      upcomingPeriodic = await listUpcomingPeriodicControls(tenantId, 20);
+      const counts = await getDashboardCounts(tenantId);
+      customerCount = counts.customerCount;
+      contractCount = counts.contractCount;
+      assetCount = counts.assetCount;
+      workOrderCount = counts.workOrderCount;
     } catch {
-      upcomingPeriodic = [];
+      /* ignore */
+    }
+    try {
+      metrics = await getDashboardMetricTotals(tenantId, from, to);
+    } catch {
+      metrics = {
+        maintenanceExpectedSlots: 0,
+        maintenanceCoveredCount: 0,
+        revenueByCurrency: [],
+        failuresCreatedCount: 0,
+        failuresUnsolvedCount: 0,
+        periodicDueCount: 0,
+      };
     }
   }
 
@@ -62,6 +95,70 @@ export default async function AdminDashboardPage() {
         }
       />
       <div className="space-y-8 px-8 py-8">
+        <section className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-950">
+          <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{tr.dashboard.rangeSection}</h2>
+          <p className="mt-1 text-xs text-slate-500">{tr.dashboard.rangeHint}</p>
+          <div className="mt-3">
+            <DashboardRangeForm
+              from={from}
+              to={to}
+              labels={{
+                from: tr.dashboard.dateFrom,
+                to: tr.dashboard.dateTo,
+                apply: tr.dashboard.applyRange,
+              }}
+            />
+          </div>
+          {!sp.from && !sp.to ? (
+            <p className="mt-2 text-xs text-slate-400">
+              {tr.dashboard.defaultRangeNote}: {defaults.from} … {defaults.to}
+            </p>
+          ) : null}
+        </section>
+
+        <section>
+          <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{tr.dashboard.dynamicMetrics}</h2>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <StatCard
+              label={tr.dashboard.maintenanceExpected}
+              value={metrics.maintenanceExpectedSlots}
+              hint={tr.dashboard.maintenanceExpectedHint}
+              href={metricHref("maintenance-expected", from, to)}
+            />
+            <StatCard
+              label={tr.dashboard.maintenanceCovered}
+              value={metrics.maintenanceCoveredCount}
+              hint={tr.dashboard.maintenanceCoveredHint}
+              href={metricHref("maintenance-covered", from, to)}
+            />
+            <StatCard
+              label={tr.dashboard.revenuePayments}
+              value={formatRevenueTotals(metrics.revenueByCurrency)}
+              hint={tr.dashboard.revenuePaymentsHint}
+              href={metricHref("revenue", from, to)}
+            />
+            <StatCard
+              label={tr.dashboard.failuresTotal}
+              value={metrics.failuresCreatedCount}
+              hint={tr.dashboard.failuresTotalHint}
+              href={metricHref("failures", from, to)}
+            />
+            <StatCard
+              label={tr.dashboard.failuresOpen}
+              value={metrics.failuresUnsolvedCount}
+              hint={tr.dashboard.failuresOpenHint}
+              variant={metrics.failuresUnsolvedCount > 0 ? "danger" : "default"}
+              href={metricHref("failures-open", from, to)}
+            />
+            <StatCard
+              label={tr.dashboard.periodicUpcoming}
+              value={metrics.periodicDueCount}
+              hint={tr.dashboard.periodicUpcomingHint}
+              href={metricHref("periodic-upcoming", from, to)}
+            />
+          </div>
+        </section>
+
         <section>
           <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{tr.dashboard.portfolio}</h2>
           <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -71,59 +168,7 @@ export default async function AdminDashboardPage() {
             <StatCard label={tr.dashboard.workOrders} value={workOrderCount} />
           </div>
         </section>
-        {upcomingPeriodic.length ? (
-          <section>
-            <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{tr.revisions.upcomingPeriodic}</h2>
-            <p className="mt-1 text-xs text-slate-500">{tr.revisions.upcomingPeriodicHint}</p>
-            <div className="mt-3 overflow-hidden rounded-lg border border-amber-200 bg-amber-50/50 dark:border-amber-900/50 dark:bg-amber-950/20">
-              <table className="min-w-full text-sm">
-                <thead className="bg-amber-100/80 text-left text-xs font-semibold uppercase text-amber-950 dark:bg-amber-950/40 dark:text-amber-100">
-                  <tr>
-                    <th className="px-4 py-2">{tr.assets.unit}</th>
-                    <th className="px-4 py-2">{tr.assets.site}</th>
-                    <th className="px-4 py-2">{tr.customers.name}</th>
-                    <th className="px-4 py-2">{tr.en8120.nextControlDue}</th>
-                    <th className="px-4 py-2">{tr.revisions.daysLeft}</th>
-                    <th className="px-4 py-2" />
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-amber-200/80 dark:divide-amber-900/40">
-                  {upcomingPeriodic.map((u) => (
-                    <tr key={u.asset_id}>
-                      <td className="px-4 py-2 font-mono text-xs">{u.unit_code}</td>
-                      <td className="px-4 py-2 text-slate-800 dark:text-slate-200">{u.site_name ?? "—"}</td>
-                      <td className="px-4 py-2 text-slate-700 dark:text-slate-300">{u.customer_name ?? "—"}</td>
-                      <td className="px-4 py-2 font-mono text-xs">{u.next_control_due}</td>
-                      <td className="px-4 py-2 text-slate-700 dark:text-slate-300">{u.days_until_due}</td>
-                      <td className="px-4 py-2 text-right">
-                        <Link
-                          href={`/app/assets/${u.asset_id}`}
-                          className="font-medium text-amber-800 hover:underline dark:text-amber-300"
-                        >
-                          {tr.assets.open}
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        ) : null}
 
-        <section>
-          <h2 className="text-sm font-semibold text-slate-900 dark:text-slate-100">{tr.dashboard.risk}</h2>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <StatCard
-              label={tr.dashboard.openBreakdowns}
-              value={openBreakdowns}
-              variant={openBreakdowns > 0 ? "danger" : "default"}
-            />
-            <StatCard label={tr.dashboard.callbacks} value={openCallbacks} hint="Tekrarlayan işler" />
-            <StatCard label={tr.dashboard.maintenanceDue} value="—" hint={tr.dashboard.maintenanceDueHint} />
-            <StatCard label={tr.dashboard.slaRisk} value="—" hint={tr.dashboard.slaHint} />
-          </div>
-        </section>
         <p className="text-xs text-slate-500">
           Yerel modda sayılar için{" "}
           <code className="rounded bg-slate-200 px-1 dark:bg-slate-800">DATABASE_URL</code> kullanılır.{" "}

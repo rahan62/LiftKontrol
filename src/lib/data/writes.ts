@@ -641,11 +641,18 @@ export async function insertFinanceEntry(
   tenantId: string,
   input: FinanceEntryInput,
 ): Promise<{ ok: true; id: string } | { ok: false; error: string }> {
+  const isTenantExpense = input.entry_type === "expense";
   const hasSite = Boolean(input.site_id && !input.elevator_asset_id);
   const hasAsset = Boolean(input.elevator_asset_id && !input.site_id);
-  if (!hasSite && !hasAsset) {
-    return err("Choose either a site or an elevator");
+
+  if (isTenantExpense) {
+    if (hasSite || hasAsset || input.site_id || input.elevator_asset_id) {
+      return err("Şirket gideri için saha veya asansör seçilmez");
+    }
+  } else if (!hasSite && !hasAsset) {
+    return err("Saha veya asansör seçin");
   }
+
   if (hasSite && input.site_id) {
     const ok = await siteBelongsToTenant(tenantId, input.site_id);
     if (!ok) return err("Invalid site");
@@ -657,15 +664,15 @@ export async function insertFinanceEntry(
 
   const row = {
     tenant_id: tenantId,
-    site_id: hasSite ? input.site_id! : null,
-    elevator_asset_id: hasAsset ? input.elevator_asset_id! : null,
+    site_id: isTenantExpense ? null : hasSite ? input.site_id! : null,
+    elevator_asset_id: isTenantExpense ? null : hasAsset ? input.elevator_asset_id! : null,
     entry_type: input.entry_type,
     amount: input.amount,
     currency: input.currency.trim() || "TRY",
     label: input.label.trim(),
     notes: input.notes?.trim() || null,
     occurred_on: input.occurred_on,
-    payment_status: input.payment_status ?? "unpaid",
+    payment_status: input.payment_status ?? (isTenantExpense ? "paid" : "unpaid"),
   };
 
   if (isSupabaseConfigured()) {

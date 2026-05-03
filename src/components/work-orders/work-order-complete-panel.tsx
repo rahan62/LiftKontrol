@@ -52,7 +52,7 @@ export function WorkOrderCompletePanel({
       return;
     }
     if (res.financeEntryId) {
-      router.push(`/app/finances?createdFee=${encodeURIComponent(res.financeEntryId)}`);
+      router.push(`/app/accounting/receivables?createdFee=${encodeURIComponent(res.financeEntryId)}`);
       return;
     }
     router.refresh();

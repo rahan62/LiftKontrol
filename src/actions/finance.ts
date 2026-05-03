@@ -16,6 +16,15 @@ function money(fd: FormData, key: string): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+function revalidateAccountingPaths() {
+  revalidatePath("/app/accounting");
+  revalidatePath("/app/accounting/current-accounts");
+  revalidatePath("/app/accounting/receivables");
+  revalidatePath("/app/accounting/profit-loss");
+  revalidatePath("/app/sites");
+  revalidatePath("/app/assets");
+}
+
 export async function createFinanceEntryAction(formData: FormData) {
   const tenantId = await requireTenantId();
   const scope = String(formData.get("scope") ?? "site");
@@ -28,48 +37,58 @@ export async function createFinanceEntryAction(formData: FormData) {
     return { ok: false as const, error: "Tutar gerekli" };
   }
 
-  const input: FinanceEntryInput =
-    scope === "elevator"
-      ? {
-          site_id: null,
-          elevator_asset_id: elevator_asset_id || null,
-          entry_type: String(formData.get("entry_type") ?? "other"),
-          amount: amountVal,
-          currency: String(formData.get("currency") ?? "TRY").trim() || "TRY",
-          label: String(formData.get("label") ?? "").trim(),
-          notes: String(formData.get("notes") ?? "").trim() || null,
-          occurred_on: String(formData.get("occurred_on") ?? "").trim() || new Date().toISOString().slice(0, 10),
-          payment_status: "unpaid",
-        }
-      : {
-          site_id: site_id || null,
-          elevator_asset_id: null,
-          entry_type: String(formData.get("entry_type") ?? "other"),
-          amount: amountVal,
-          currency: String(formData.get("currency") ?? "TRY").trim() || "TRY",
-          label: String(formData.get("label") ?? "").trim(),
-          notes: String(formData.get("notes") ?? "").trim() || null,
-          occurred_on: String(formData.get("occurred_on") ?? "").trim() || new Date().toISOString().slice(0, 10),
-          payment_status: "unpaid",
-        };
-
-  if (!input.label) {
+  const label = String(formData.get("label") ?? "").trim();
+  if (!label) {
     return { ok: false as const, error: "Açıklama gerekli" };
   }
-  if (scope === "site" && !input.site_id) {
-    return { ok: false as const, error: "Saha seçin" };
-  }
-  if (scope === "elevator" && !input.elevator_asset_id) {
-    return { ok: false as const, error: "Asansör seçin" };
+
+  const common = {
+    amount: amountVal,
+    currency: String(formData.get("currency") ?? "TRY").trim() || "TRY",
+    label,
+    notes: String(formData.get("notes") ?? "").trim() || null,
+    occurred_on: String(formData.get("occurred_on") ?? "").trim() || new Date().toISOString().slice(0, 10),
+  };
+
+  let input: FinanceEntryInput;
+
+  if (scope === "tenant_expense") {
+    input = {
+      site_id: null,
+      elevator_asset_id: null,
+      entry_type: "expense",
+      ...common,
+      payment_status: "paid",
+    };
+  } else if (scope === "elevator") {
+    if (!elevator_asset_id) {
+      return { ok: false as const, error: "Asansör seçin" };
+    }
+    input = {
+      site_id: null,
+      elevator_asset_id,
+      entry_type: String(formData.get("entry_type") ?? "other"),
+      ...common,
+      payment_status: "unpaid",
+    };
+  } else {
+    if (!site_id) {
+      return { ok: false as const, error: "Saha seçin" };
+    }
+    input = {
+      site_id,
+      elevator_asset_id: null,
+      entry_type: String(formData.get("entry_type") ?? "other"),
+      ...common,
+      payment_status: "unpaid",
+    };
   }
 
   const result = await insertFinanceEntry(tenantId, input);
   if (!result.ok) {
     return { ok: false as const, error: result.error };
   }
-  revalidatePath("/app/finances");
-  revalidatePath("/app/sites");
-  revalidatePath("/app/assets");
+  revalidateAccountingPaths();
   return { ok: true as const, id: result.id };
 }
 
@@ -79,9 +98,7 @@ export async function deleteFinanceEntryAction(id: string) {
   if (!result.ok) {
     return { ok: false as const, error: result.error };
   }
-  revalidatePath("/app/finances");
-  revalidatePath("/app/sites");
-  revalidatePath("/app/assets");
+  revalidateAccountingPaths();
   return { ok: true as const };
 }
 
@@ -91,8 +108,6 @@ export async function markFinanceEntryPaidAction(id: string, paid: boolean) {
   if (!result.ok) {
     return { ok: false as const, error: result.error };
   }
-  revalidatePath("/app/finances");
-  revalidatePath("/app/sites");
-  revalidatePath("/app/assets");
+  revalidateAccountingPaths();
   return { ok: true as const };
 }

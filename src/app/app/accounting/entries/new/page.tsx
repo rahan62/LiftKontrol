@@ -4,7 +4,7 @@ import { listSites } from "@/lib/data/sites";
 import { getTenantContext } from "@/lib/tenant/server";
 import { redirect } from "next/navigation";
 
-export default async function NewFinanceEntryPage({
+export default async function NewAccountingEntryPage({
   searchParams,
 }: {
   searchParams: Promise<{ site_id?: string; asset_id?: string }>;

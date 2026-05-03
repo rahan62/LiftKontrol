@@ -98,7 +98,11 @@ const nextConfig: NextConfig = {
     "/*": paymentGatewayTraceIncludes,
   },
   async redirects() {
-    return [{ source: "/hakkimizda", destination: "/hakkimda", permanent: true }];
+    return [
+      { source: "/hakkimizda", destination: "/hakkimda", permanent: true },
+      { source: "/app/finances", destination: "/app/accounting/receivables", permanent: false },
+      { source: "/app/finances/new", destination: "/app/accounting/entries/new", permanent: false },
+    ];
   },
   ...(allowedDevOrigins.length > 0 ? { allowedDevOrigins } : {}),
 };

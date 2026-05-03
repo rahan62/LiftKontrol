@@ -10,6 +10,8 @@ SELECT 'elevator_assets', tenant_id::text, count(*)::bigint FROM public.elevator
 UNION ALL
 SELECT 'finance_entries', tenant_id::text, count(*)::bigint FROM public.finance_entries GROUP BY tenant_id
 UNION ALL
+SELECT 'customer_accounts', tenant_id::text, count(*)::bigint FROM public.customer_accounts GROUP BY tenant_id
+UNION ALL
 SELECT 'work_orders', tenant_id::text, count(*)::bigint FROM public.work_orders GROUP BY tenant_id
 UNION ALL
 SELECT 'field_crews', tenant_id::text, count(*)::bigint FROM public.field_crews GROUP BY tenant_id

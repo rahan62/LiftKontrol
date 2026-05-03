@@ -37,7 +37,8 @@ export async function upsertMonthlyMaintenanceAction(
 
   const fee = await maybeCreateSiteMaintenanceFeeFinance(tenantId, assetId, yearMonth);
   if (fee.created && fee.financeEntryId) {
-    revalidatePath("/app/finances");
+    revalidatePath("/app/accounting/receivables");
+    revalidatePath("/app/accounting/current-accounts");
     revalidatePath(`/app/assets/${assetId}`);
     return { ok: true as const, financeEntryId: fee.financeEntryId };
   }

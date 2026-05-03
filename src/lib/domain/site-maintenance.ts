@@ -13,5 +13,6 @@ export const FINANCE_ENTRY_TYPES = [
   { value: "credit_note", label: "İade / mahsup" },
   { value: "fee", label: "Ücret / borç" },
   { value: "adjustment", label: "Düzeltme" },
+  { value: "expense", label: "Şirket gideri" },
   { value: "other", label: "Diğer" },
 ] as const;

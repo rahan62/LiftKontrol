@@ -76,6 +76,8 @@ enum TrStrings {
   }
 
   enum Common {
+    /// Web `tr.common.none`
+    static let none = "—"
     static let loading = "Yükleniyor…"
     static let cancel = "İptal"
     static let edit = "Düzenle"
@@ -125,6 +127,34 @@ enum TrStrings {
       "Sonraki kontrol tarihi 20 gün içinde olan asansörler (en8120_next_control_due)."
     static let daysLeft = "gün kaldı"
     static let openModuleHint = "İlgili modülü açar"
+    static let chartPortfolio = "Portföy dağılımı"
+    static let chartRisk = "Risk özeti"
+    static let rangeSection = "Tarih aralığı"
+    static let rangeHint =
+      "UTC takvim günü ile bakım tamamlanma, ödemeler (occurred_on) ve arıza iş emirleri oluşturulma tarihleri süzgellenir."
+    static let dateFrom = "Başlangıç"
+    static let dateTo = "Bitiş"
+    static let applyRange = "Uygula"
+    static let dynamicMetrics = "Dönem özeti"
+    static let maintenanceExpected = "Bakım yapılacak asansör (planlı)"
+    static let maintenanceExpectedHint =
+      "Aralığın her ayı için devreden çıkmamış her asansör bir bakım yükü oluşturur (ay × ünite)."
+    static let maintenanceCovered = "Tamamlanan bakım kayıtları"
+    static let maintenanceCoveredHint = "Tamamlanma zamanı aralıkta olan aylık bakım kayıtları."
+    static let revenuePayments = "Toplanan gelir (ödemeler)"
+    static let revenuePaymentsHint = "Finans kaydı türü ödeme; gerçekleşme tarihi aralıkta."
+    static let failuresTotal = "Toplam arıza"
+    static let failuresTotalHint = "Aralıkta oluşturulan acil arıza iş emirleri."
+    static let failuresOpen = "Çözülmemiş arızalar"
+    static let failuresOpenHint = "Aralıkta oluşturulmuş ve hâlâ açık veya iptal dışı arızalar."
+    static let periodicUpcoming = "Periyodik kontroller (EN 81-20)"
+    static let periodicUpcomingHint = "Sonraki kontrol tarihi seçilen aralıkta olan asansörler."
+    static let listLimitNote = "Liste en fazla 200 satır gösterir."
+    static let colDueMonth = "Beklenen ay"
+    static let colCompletedAt = "Tamamlandı"
+    static let colYearMonth = "Kayıt ayı"
+    static let colOccurredOn = "Tarih"
+    static let colCreatedAt = "Oluşturulma"
   }
 
   enum Assets {
@@ -160,6 +190,8 @@ enum TrStrings {
     static let qrTitle = "QR kod"
     static let qrHint =
       "Her asansörün bir QR kodu vardır; kayıt sonrası bağlantı veritabanına yazılır. Mobilde de tam URL için Local.xcconfig içinde PUBLIC_APP_URL (web’deki NEXT_PUBLIC_APP_URL ile aynı) tanımlayın."
+    /// Web `tr.assets.qrPrintTag`
+    static let qrPrintTag = "Yazdırılabilir etiket indir (PNG)"
     static let specsSection = "Teknik özellikler"
     static let stops = "Durak sayısı"
     static let capacityKg = "Kapasite (kg)"

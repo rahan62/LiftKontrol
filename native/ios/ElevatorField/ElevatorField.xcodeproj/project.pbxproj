@@ -17,7 +17,6 @@
 		A55E70000000000000000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55E70000000000000000001 /* Assets.xcassets */; };
 		AC69B967A89C02208D4DDCEC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DFFDDB0728D323045AD748 /* RootView.swift */; };
 		B13344FB83871506C4603F00 /* WorkspaceDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8FFF5BD71BAF2AA87EE8C8 /* WorkspaceDashboardView.swift */; };
-		E8E8E8E8E8E80718293A4F30 /* WorkspaceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8E8E8E8E80718293A4F31 /* WorkspaceSettingsView.swift */; };
 		B2C3D4E56F708192A3B4C5D7 /* TrStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E56F708192A3B4C5D6 /* TrStrings.swift */; };
 		C0FFEE01C0FFEE02C0FFEE03 /* CallbacksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FFEE01C0FFEE02C0FFEE04 /* CallbacksListView.swift */; };
 		C1A2B3D4E5F60718293A4B52 /* SitesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A2B3D4E5F60718293A4B51 /* SitesListView.swift */; };
@@ -35,7 +34,9 @@
 		E3E3E3E3E3E30718293A4B93 /* FieldTabBarChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E3E3E3E3E30718293A4B92 /* FieldTabBarChrome.swift */; };
 		E4E4E4E4E4E40718293A4C10 /* FieldMobileModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E4E4E4E4E40718293A4C11 /* FieldMobileModules.swift */; };
 		E6E6E6E6E6E60718293A4F10 /* FieldRoutePlanningSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E6E6E6E6E60718293A4F11 /* FieldRoutePlanningSync.swift */; };
+		E8E8E8E8E8E80718293A4F30 /* WorkspaceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E8E8E8E8E80718293A4F31 /* WorkspaceSettingsView.swift */; };
 		ED6F70EC6E9968DDAE815B0B /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE34ACFAFAA8C276DFFFEC4 /* AppConfig.swift */; };
+		F0F0F0F0F0F00718293A4E50 /* ElevatorQrSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0F0F0F0F00718293A4E51 /* ElevatorQrSupport.swift */; };
 		F1F1F1F1F1F10718293A4C00 /* TechComplianceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1F1F1F1F10718293A4C01 /* TechComplianceViews.swift */; };
 		F5F5F5F5F5F50718293A4D10 /* ScheduleClustersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F5F5F5F5F50718293A4D11 /* ScheduleClustersView.swift */; };
 		F8E7D6C5B4A3928171625312 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7D6C5B4A3928171625311 /* OnboardingView.swift */; };
@@ -49,6 +50,7 @@
 		G6G6G6G6G6G60718293A4F20 /* RouteClusterLocalRebuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = G6G6G6G6G6G60718293A4F21 /* RouteClusterLocalRebuilder.swift */; };
 		IAPSUB0000000000000011 /* LiftStoreKitPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = IAPSUB0000000000000001 /* LiftStoreKitPurchase.swift */; };
 		IAPSUB0000000000000012 /* IapSubscribeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = IAPSUB0000000000000002 /* IapSubscribeSheet.swift */; };
+		QQMETRICSV18293A4E50 /* DashboardMetricViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = QQMETRICSV18293A4E51 /* DashboardMetricViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +63,6 @@
 		59C6B36756DB221F8557D989 /* TenantMembership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenantMembership.swift; sourceTree = "<group>"; };
 		6717B811705988A1425D296A /* ElevatorFieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorFieldApp.swift; sourceTree = "<group>"; };
 		6F8FFF5BD71BAF2AA87EE8C8 /* WorkspaceDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceDashboardView.swift; sourceTree = "<group>"; };
-		E8E8E8E8E8E80718293A4F31 /* WorkspaceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceSettingsView.swift; sourceTree = "<group>"; };
 		7A197C3CD636654072461598 /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
 		9B37ECFAA8CDD0A6B7361E31 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		A1B2C3D45E6F708192A3B4C5 /* WorkspaceAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceAccess.swift; sourceTree = "<group>"; };
@@ -86,6 +87,8 @@
 		E3E3E3E3E3E30718293A4B92 /* FieldTabBarChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldTabBarChrome.swift; sourceTree = "<group>"; };
 		E4E4E4E4E4E40718293A4C11 /* FieldMobileModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldMobileModules.swift; sourceTree = "<group>"; };
 		E6E6E6E6E6E60718293A4F11 /* FieldRoutePlanningSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldRoutePlanningSync.swift; sourceTree = "<group>"; };
+		E8E8E8E8E8E80718293A4F31 /* WorkspaceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceSettingsView.swift; sourceTree = "<group>"; };
+		F0F0F0F0F0F00718293A4E51 /* ElevatorQrSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevatorQrSupport.swift; sourceTree = "<group>"; };
 		F127AE91498F28690813165E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		F1F1F1F1F1F10718293A4C01 /* TechComplianceViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechComplianceViews.swift; sourceTree = "<group>"; };
 		F5F5F5F5F5F50718293A4D11 /* ScheduleClustersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleClustersView.swift; sourceTree = "<group>"; };
@@ -100,6 +103,7 @@
 		G6G6G6G6G6G60718293A4F21 /* RouteClusterLocalRebuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteClusterLocalRebuilder.swift; sourceTree = "<group>"; };
 		IAPSUB0000000000000001 /* LiftStoreKitPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftStoreKitPurchase.swift; sourceTree = "<group>"; };
 		IAPSUB0000000000000002 /* IapSubscribeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IapSubscribeSheet.swift; sourceTree = "<group>"; };
+		QQMETRICSV18293A4E51 /* DashboardMetricViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardMetricViews.swift; sourceTree = "<group>"; };
 		SKCONF0000000000000001 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +156,7 @@
 				AB1567C9952423E8F6C4F86E /* AppNavigation.swift */,
 				C0FFEE01C0FFEE02C0FFEE04 /* CallbacksListView.swift */,
 				C1A2B3D4E5F60718293A4B59 /* AssetDetailView.swift */,
+				F0F0F0F0F0F00718293A4E51 /* ElevatorQrSupport.swift */,
 				F9E8D7C6B5A4938271605124 /* AssetEditView.swift */,
 				C1A2B3D4E5F60718293A4B5B /* AssetCreateView.swift */,
 				C1A2B3D4E5F60718293A4B57 /* AssetsListView.swift */,
@@ -185,6 +190,7 @@
 				59C6B36756DB221F8557D989 /* TenantMembership.swift */,
 				A1B2C3D45E6F708192A3B4C5 /* WorkspaceAccess.swift */,
 				6F8FFF5BD71BAF2AA87EE8C8 /* WorkspaceDashboardView.swift */,
+				QQMETRICSV18293A4E51 /* DashboardMetricViews.swift */,
 				E8E8E8E8E8E80718293A4F31 /* WorkspaceSettingsView.swift */,
 				F8E7D6C5B4A3928171625371 /* WorkOrderDetailView.swift */,
 				F8E7D6C5B4A3928171625361 /* WorkOrdersListView.swift */,
@@ -224,7 +230,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2640;
 			};
 			buildConfigurationList = FD14EF209828EEDF92A00CF1 /* Build configuration list for PBXProject "ElevatorField" */;
 			developmentRegion = en;
@@ -277,6 +283,7 @@
 				AC69B967A89C02208D4DDCEC /* RootView.swift in Sources */,
 				C3FF64B3F04587A4FDB22A71 /* TenantMembership.swift in Sources */,
 				B13344FB83871506C4603F00 /* WorkspaceDashboardView.swift in Sources */,
+				QQMETRICSV18293A4E50 /* DashboardMetricViews.swift in Sources */,
 				E8E8E8E8E8E80718293A4F30 /* WorkspaceSettingsView.swift in Sources */,
 				A1B2C3D45E6F708192A3B4C6 /* WorkspaceAccess.swift in Sources */,
 				B2C3D4E56F708192A3B4C5D7 /* TrStrings.swift in Sources */,
@@ -301,6 +308,7 @@
 				C1A2B3D4E5F60718293A4B5A /* AssetDetailView.swift in Sources */,
 				F9E8D7C6B5A4938271605123 /* AssetEditView.swift in Sources */,
 				C1A2B3D4E5F60718293A4B5C /* AssetCreateView.swift in Sources */,
+				F0F0F0F0F0F00718293A4E50 /* ElevatorQrSupport.swift in Sources */,
 				D1D1D1D1D1D10718293A4E20 /* En8120NextControlDueFormatting.swift in Sources */,
 				E6E6E6E6E6E60718293A4F10 /* FieldRoutePlanningSync.swift in Sources */,
 				G6G6G6G6G6G60718293A4F20 /* RouteClusterLocalRebuilder.swift in Sources */,
@@ -385,6 +393,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -452,6 +461,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;

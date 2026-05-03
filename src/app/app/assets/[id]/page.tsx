@@ -105,7 +105,7 @@ export default async function AssetDetailPage({ params }: Props) {
             {tr.maintenance.goToParts}
           </Link>
           <Link
-            href={`/app/finances/new?asset_id=${encodeURIComponent(id)}`}
+            href={`/app/accounting/entries/new?asset_id=${encodeURIComponent(id)}`}
             className="rounded-md border border-slate-300 px-3 py-1.5 text-sm dark:border-slate-600"
           >
             {tr.finances.newEntry}
@@ -286,7 +286,7 @@ export default async function AssetDetailPage({ params }: Props) {
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-sm font-semibold text-slate-900 dark:text-white">{tr.assets.financeThisElevator}</h2>
           <Link
-            href={`/app/finances/new?asset_id=${encodeURIComponent(id)}`}
+            href={`/app/accounting/entries/new?asset_id=${encodeURIComponent(id)}`}
             className="text-sm font-medium text-amber-700 hover:underline dark:text-amber-400"
           >
             {tr.finances.newEntry}

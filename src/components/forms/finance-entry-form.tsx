@@ -6,7 +6,9 @@ import { tr } from "@/lib/i18n/tr";
 import { btnPrimary, field, label } from "@/components/forms/field-classes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+
+const CUSTOMER_SCOPED_TYPES = FINANCE_ENTRY_TYPES.filter((t) => t.value !== "expense");
 
 type Props = {
   sites: { id: string; name: string }[];
@@ -19,10 +21,12 @@ export function FinanceEntryForm({ sites, assets, defaultSiteId, defaultAssetId 
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
-  const [scope, setScope] = useState<"site" | "elevator">(() => {
+  const [scope, setScope] = useState<"site" | "elevator" | "tenant_expense">(() => {
     if (defaultAssetId && assets.some((a) => a.id === defaultAssetId)) return "elevator";
     return "site";
   });
+
+  const typeOptions = useMemo(() => (scope === "tenant_expense" ? [] : CUSTOMER_SCOPED_TYPES), [scope]);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -30,13 +34,16 @@ export function FinanceEntryForm({ sites, assets, defaultSiteId, defaultAssetId 
     setPending(true);
     const fd = new FormData(e.currentTarget);
     fd.set("scope", scope);
+    if (scope === "tenant_expense") {
+      fd.set("entry_type", "expense");
+    }
     try {
       const res = await createFinanceEntryAction(fd);
       if (!res.ok) {
         setError(res.error);
         return;
       }
-      router.push("/app/finances");
+      router.push("/app/accounting/receivables");
       router.refresh();
     } finally {
       setPending(false);
@@ -49,14 +56,14 @@ export function FinanceEntryForm({ sites, assets, defaultSiteId, defaultAssetId 
     <form onSubmit={onSubmit} className="mx-auto max-w-2xl space-y-6 px-4 py-8">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-lg font-semibold text-slate-900 dark:text-white">{tr.financeForm.title}</h1>
-        <Link href="/app/finances" className="text-sm text-slate-600 hover:underline dark:text-slate-400">
+        <Link href="/app/accounting/receivables" className="text-sm text-slate-600 hover:underline dark:text-slate-400">
           {tr.financeForm.back}
         </Link>
       </div>
 
       <div className="rounded-lg border border-slate-200 p-4 dark:border-slate-700">
         <div className="text-xs font-semibold uppercase text-slate-500">{tr.financeForm.appliesTo}</div>
-        <div className="mt-2 flex flex-wrap gap-4 text-sm">
+        <div className="mt-2 flex flex-col gap-3 text-sm sm:flex-row sm:flex-wrap">
           <label className="flex cursor-pointer items-center gap-2">
             <input
               type="radio"
@@ -75,8 +82,19 @@ export function FinanceEntryForm({ sites, assets, defaultSiteId, defaultAssetId 
             />
             {tr.financeForm.elevatorScope}
           </label>
+          <label className="flex cursor-pointer items-center gap-2">
+            <input
+              type="radio"
+              name="scope_ui"
+              checked={scope === "tenant_expense"}
+              onChange={() => setScope("tenant_expense")}
+            />
+            {tr.financeForm.tenantExpenseScope}
+          </label>
         </div>
-        {scope === "site" ? (
+        {scope === "tenant_expense" ? (
+          <p className="mt-3 text-xs text-slate-600 dark:text-slate-400">{tr.accounting.expenseNote}</p>
+        ) : scope === "site" ? (
           <div className="mt-3">
             <label className={label}>Saha *</label>
             <select name="site_id" required className={field} defaultValue={defaultSiteId ?? ""}>
@@ -107,16 +125,20 @@ export function FinanceEntryForm({ sites, assets, defaultSiteId, defaultAssetId 
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className={label}>{tr.financeForm.type}</label>
-          <select name="entry_type" className={field} defaultValue="fee">
-            {FINANCE_ENTRY_TYPES.map((t) => (
-              <option key={t.value} value={t.value}>
-                {t.label}
-              </option>
-            ))}
-          </select>
-        </div>
+        {scope !== "tenant_expense" ? (
+          <div>
+            <label className={label}>{tr.financeForm.type}</label>
+            <select name="entry_type" className={field} defaultValue="fee">
+              {typeOptions.map((t) => (
+                <option key={t.value} value={t.value}>
+                  {t.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        ) : (
+          <input type="hidden" name="entry_type" value="expense" />
+        )}
         <div>
           <label className={label}>{tr.financeForm.date}</label>
           <input name="occurred_on" type="date" required className={field} defaultValue={today} />
@@ -145,7 +167,10 @@ export function FinanceEntryForm({ sites, assets, defaultSiteId, defaultAssetId 
         <button type="submit" disabled={pending} className={btnPrimary}>
           {pending ? tr.financeForm.saving : tr.financeForm.save}
         </button>
-        <Link href="/app/finances" className="rounded-md border border-slate-300 px-4 py-2 text-sm dark:border-slate-600">
+        <Link
+          href="/app/accounting/receivables"
+          className="rounded-md border border-slate-300 px-4 py-2 text-sm dark:border-slate-600"
+        >
           {tr.financeForm.cancel}
         </Link>
       </div>

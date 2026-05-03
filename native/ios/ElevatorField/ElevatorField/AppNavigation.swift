@@ -14,7 +14,7 @@ struct AppRoute: Hashable, Identifiable {
   static let sidebar: [AppRoute] = [
     AppRoute(webPath: "/app", title: "Panel", systemImage: "rectangle.split.2x1"),
     AppRoute(webPath: "/app/customers", title: "Müşteriler", systemImage: "person.2"),
-    AppRoute(webPath: "/app/finances", title: "Finans", systemImage: "banknote"),
+    AppRoute(webPath: "/app/accounting", title: "Muhasebe", systemImage: "function"),
     AppRoute(webPath: "/app/sites", title: "Saha / Binalar", systemImage: "mappin.and.ellipse"),
     AppRoute(webPath: "/app/assets", title: "Asansörler", systemImage: "building.2"),
     AppRoute(webPath: "/app/contracts", title: "Sözleşmeler", systemImage: "doc.text"),
@@ -51,7 +51,7 @@ struct AppRoute: Hashable, Identifiable {
     AppRoute(webPath: "/app/assets/new", title: "· Asansör ekle", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/contracts/new", title: "· Sözleşme ekle", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/stock/new", title: "· Stok kalemi ekle", systemImage: "plus.circle"),
-    AppRoute(webPath: "/app/finances/new", title: "· Finans kaydı", systemImage: "plus.circle"),
+    AppRoute(webPath: "/app/accounting/entries/new", title: "· Muhasebe kaydı", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/periodic-controls/new", title: "· Periyodik kontrol", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/work-orders/new", title: "· Yeni iş emri", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/work-orders/[id]", title: "· İş emri detayı", systemImage: "number"),

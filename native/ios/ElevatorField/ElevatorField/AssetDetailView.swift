@@ -1,5 +1,6 @@
 import SwiftUI
 import Supabase
+import UIKit
 
 struct AssetDetailView: View {
   let client: SupabaseClient
@@ -12,6 +13,11 @@ struct AssetDetailView: View {
   @State private var maintActionBusy = false
   @State private var loadError: String?
   @State private var loading = true
+  /// Liste QR satırı için `load()` içinde ağ ile paralel üretilir (ilk açılışta ekstra layout işi olmasın).
+  @State private var qrListPreviewImage: UIImage?
+  @State private var qrListPreviewFailed = false
+  /// Paylaşım yalnızca dosya hazır olduğunda açılır (ilk dokunuşta boş sheet önlenir).
+  @State private var elevatorTagShareItem: ElevatorTagSharePayload?
 
   var body: some View {
     Group {
@@ -125,14 +131,7 @@ struct AssetDetailView: View {
                 .foregroundStyle(.red)
             }
           }
-          Section(TrStrings.Assets.qrTitle) {
-            Text(row.qrDisplayUrl)
-              .font(.caption)
-              .textSelection(.enabled)
-            Text(TrStrings.Assets.qrHint)
-              .font(.caption2)
-              .foregroundStyle(.tertiary)
-          }
+          qrSection(row: row)
           Section(TrStrings.Assets.maintenanceFeeSection) {
             LabeledContent(TrStrings.Assets.maintenanceFeeAmount, value: row.feeAmountDisplay)
             LabeledContent(TrStrings.Assets.feePeriodLabel, value: labelFeePeriod(row.maintenanceFeePeriod))
@@ -208,6 +207,9 @@ struct AssetDetailView: View {
           }
         }
         .refreshable { await load() }
+        .sheet(item: $elevatorTagShareItem) { payload in
+          ShareSheet(items: [payload.image])
+        }
       } else {
         ContentUnavailableView(TrStrings.Assets.listTitle, systemImage: "building.2", description: Text("—"))
       }
@@ -217,9 +219,72 @@ struct AssetDetailView: View {
     .task { await load() }
   }
 
+  @ViewBuilder
+  private func qrSection(row: AssetDetailRow) -> some View {
+    let qrUrl = ElevatorQrUrl.resolved(
+      publicBase: AppConfig.publicAppWebBaseURL,
+      qrPayload: row.qrPayload,
+      assetId: row.id
+    )
+    Section(TrStrings.Assets.qrTitle) {
+      VStack(alignment: .leading, spacing: 12) {
+        HStack(alignment: .top, spacing: 16) {
+          Group {
+            if let qrListPreviewImage {
+              Image(uiImage: qrListPreviewImage)
+                .interpolation(.none)
+                .resizable()
+                .scaledToFit()
+            } else if qrListPreviewFailed {
+              Image(systemName: "exclamationmark.triangle")
+                .symbolRenderingMode(.hierarchical)
+                .foregroundStyle(.orange)
+                .accessibilityLabel(TrStrings.Common.errorTitle)
+            } else {
+              ProgressView()
+                .progressViewStyle(.circular)
+                .accessibilityLabel(TrStrings.Assets.qrTitle)
+            }
+          }
+          .frame(width: 200, height: 200)
+          Button {
+            preparePrintTagShare(row: row, qrUrl: qrUrl)
+          } label: {
+            Label(TrStrings.Assets.qrPrintTag, systemImage: "square.and.arrow.down")
+          }
+          .buttonStyle(.bordered)
+        }
+        Text(qrUrl)
+          .font(.caption)
+          .foregroundStyle(.secondary)
+          .textSelection(.enabled)
+        Text(TrStrings.Assets.qrHint)
+          .font(.caption2)
+          .foregroundStyle(.tertiary)
+      }
+    }
+  }
+
+  private func preparePrintTagShare(row: AssetDetailRow, qrUrl: String) {
+    guard
+      let img = ElevatorPrintTagImage.make(
+        qrUrl: qrUrl,
+        elevatorId: row.id,
+        siteName: row.sites?.display,
+        noneLabel: TrStrings.Common.none
+      )
+    else { return }
+    // Bir sonraki run loop’ta sheet — dokunma işleyicisi zaman aşımı / LS gürültüsünü hafifletmeye yardımcı olabilir.
+    DispatchQueue.main.async {
+      elevatorTagShareItem = ElevatorTagSharePayload(image: img)
+    }
+  }
+
   private func load() async {
     loading = true
     loadError = nil
+    qrListPreviewImage = nil
+    qrListPreviewFailed = false
     defer { loading = false }
     do {
       guard let tenantId = try await TenantScope.firstTenantId(client: client) else {
@@ -242,39 +307,67 @@ struct AssetDetailView: View {
         .eq("id", value: assetId)
         .single()
         .execute()
-      row = assetRes.value
-      let finRes: PostgrestResponse<[FinanceEntryRowDTO]> = try await client
-        .from("finance_entries")
-        .select("id, entry_type, amount, currency, label, occurred_on, payment_status")
-        .eq("tenant_id", value: tenantId)
-        .eq("elevator_asset_id", value: assetId)
-        .order("occurred_on", ascending: false)
-        .execute()
-      financeRows = finRes.value
+      let loadedRow = assetRes.value
+      let qrUrlString = ElevatorQrUrl.resolved(
+        publicBase: AppConfig.publicAppWebBaseURL,
+        qrPayload: loadedRow.qrPayload,
+        assetId: loadedRow.id
+      )
 
       let ym = Self.yearMonthFirstDayString(for: Date())
-      let maintRes: PostgrestResponse<[AssetCurrentMonthMaint]> = try await client
-        .from("elevator_monthly_maintenance")
-        .select("id, completed_at")
-        .eq("tenant_id", value: tenantId)
-        .eq("elevator_asset_id", value: assetId)
-        .eq("year_month", value: ym)
-        .limit(1)
-        .execute()
-      currentMonthMaint = maintRes.value.first
+      // `async let … = client…execute()` çıkarımı PostgrestResponse<Void veriyor; Task.value ile hedef tür sabitlenir.
+      async let finRes = try await Task {
+        let r: PostgrestResponse<[FinanceEntryRowDTO]> = try await client
+          .from("finance_entries")
+          .select("id, entry_type, amount, currency, label, occurred_on, payment_status")
+          .eq("tenant_id", value: tenantId)
+          .eq("elevator_asset_id", value: assetId)
+          .order("occurred_on", ascending: false)
+          .execute()
+        return r
+      }.value
+      async let maintRes = try await Task {
+        let r: PostgrestResponse<[AssetCurrentMonthMaint]> = try await client
+          .from("elevator_monthly_maintenance")
+          .select("id, completed_at")
+          .eq("tenant_id", value: tenantId)
+          .eq("elevator_asset_id", value: assetId)
+          .eq("year_month", value: ym)
+          .limit(1)
+          .execute()
+        return r
+      }.value
+      async let woRes = try await Task {
+        let r: PostgrestResponse<[AssetWorkOrderRowDTO]> = try await client
+          .from("work_orders")
+          .select("id, number, work_type, status, is_emergency")
+          .eq("tenant_id", value: tenantId)
+          .eq("elevator_asset_id", value: assetId)
+          .order("created_at", ascending: false)
+          .limit(15)
+          .execute()
+        return r
+      }.value
+      async let qrImg = Task.detached(priority: .userInitiated) {
+        ElevatorQrImage.image(for: qrUrlString, pointWidth: 400)
+      }.value
 
-      let woRes: PostgrestResponse<[AssetWorkOrderRowDTO]> = try await client
-        .from("work_orders")
-        .select("id, number, work_type, status, is_emergency")
-        .eq("tenant_id", value: tenantId)
-        .eq("elevator_asset_id", value: assetId)
-        .order("created_at", ascending: false)
-        .limit(15)
-        .execute()
-      workOrderRows = woRes.value
+      let fin = try await finRes
+      let maint = try await maintRes
+      let wo = try await woRes
+      let qrBitmap = await qrImg
+
+      row = loadedRow
+      financeRows = fin.value
+      currentMonthMaint = maint.value.first
+      workOrderRows = wo.value
+      qrListPreviewImage = qrBitmap
+      qrListPreviewFailed = qrBitmap == nil
     } catch {
       loadError = error.localizedDescription
       row = nil
+      qrListPreviewImage = nil
+      qrListPreviewFailed = false
     }
   }
 
@@ -428,6 +521,11 @@ struct AssetDetailView: View {
   ]
 }
 
+private struct ElevatorTagSharePayload: Identifiable {
+  let id = UUID()
+  let image: UIImage
+}
+
 struct AssetDetailRow: Decodable {
   let id: UUID
   let unitCode: String
@@ -560,13 +658,6 @@ struct AssetDetailRow: Decodable {
 
   var siteDisplayName: String {
     sites?.display ?? "—"
-  }
-
-  var qrDisplayUrl: String {
-    if let qrPayload, !qrPayload.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-      return qrPayload
-    }
-    return "/go/\(id.uuidString.lowercased())"
   }
 
   var feeAmountDisplay: String {

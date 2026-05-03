@@ -1,18 +1,19 @@
 import SwiftUI
 import Supabase
 
-/// `/app` — web `getDashboardCounts` + `listUpcomingPeriodicControls` (20 gün) ile aynı mantık; kiracı: ilk üyelik.
+/// Web `/app` paneli; tarih aralığına göre dönem özetleri ve liste drill-down.
 struct WorkspaceDashboardView: View {
   let client: SupabaseClient
   let access: WorkspaceAccess
-  /// Panel istatistik satırı → ilgili modül (`/app/...`).
   let onNavigate: (String) -> Void
 
   @State private var rows: [TenantMembershipRow] = []
   @State private var loadError: String?
   @State private var loading = true
   @State private var counts: DashboardCountsPayload?
-  @State private var upcoming: [UpcomingPeriodicPayload] = []
+  @State private var dynamicMetrics: DashboardDynamicMetrics = .empty
+  @State private var rangeStart: Date = DashboardUTC.defaultMonthBounds().0
+  @State private var rangeEnd: Date = DashboardUTC.defaultMonthBounds().1
 
   var body: some View {
     Group {
@@ -46,6 +47,85 @@ struct WorkspaceDashboardView: View {
           .font(.caption)
           .foregroundStyle(.tertiary)
       }
+
+      Section {
+        DatePicker(TrStrings.Dashboard.dateFrom, selection: $rangeStart, displayedComponents: .date)
+        DatePicker(TrStrings.Dashboard.dateTo, selection: $rangeEnd, displayedComponents: .date)
+        Button(TrStrings.Dashboard.applyRange) {
+          Task { await load() }
+        }
+      } header: {
+        Text(TrStrings.Dashboard.rangeSection)
+      } footer: {
+        Text(TrStrings.Dashboard.rangeHint)
+          .font(.caption)
+          .foregroundStyle(.secondary)
+      }
+
+      Section {
+        NavigationLink {
+          DashboardMetricListView(client: client, kind: .maintenanceExpected, rangeStart: rangeStart, rangeEnd: rangeEnd)
+        } label: {
+          dashboardMetricLabel(
+            title: TrStrings.Dashboard.maintenanceExpected,
+            value: "\(dynamicMetrics.maintenanceExpectedSlots)",
+            caption: TrStrings.Dashboard.maintenanceExpectedHint
+          )
+        }
+        NavigationLink {
+          DashboardMetricListView(client: client, kind: .maintenanceCovered, rangeStart: rangeStart, rangeEnd: rangeEnd)
+        } label: {
+          dashboardMetricLabel(
+            title: TrStrings.Dashboard.maintenanceCovered,
+            value: "\(dynamicMetrics.maintenanceCoveredCount)",
+            caption: TrStrings.Dashboard.maintenanceCoveredHint
+          )
+        }
+        NavigationLink {
+          DashboardMetricListView(client: client, kind: .revenue, rangeStart: rangeStart, rangeEnd: rangeEnd)
+        } label: {
+          dashboardMetricLabel(
+            title: TrStrings.Dashboard.revenuePayments,
+            value: dynamicMetrics.revenueDisplay(),
+            caption: TrStrings.Dashboard.revenuePaymentsHint
+          )
+        }
+        NavigationLink {
+          DashboardMetricListView(client: client, kind: .failures, rangeStart: rangeStart, rangeEnd: rangeEnd)
+        } label: {
+          dashboardMetricLabel(
+            title: TrStrings.Dashboard.failuresTotal,
+            value: "\(dynamicMetrics.failuresCreatedCount)",
+            caption: TrStrings.Dashboard.failuresTotalHint
+          )
+        }
+        NavigationLink {
+          DashboardMetricListView(client: client, kind: .failuresOpen, rangeStart: rangeStart, rangeEnd: rangeEnd)
+        } label: {
+          dashboardMetricLabel(
+            title: TrStrings.Dashboard.failuresOpen,
+            value: "\(dynamicMetrics.failuresUnsolvedCount)",
+            caption: TrStrings.Dashboard.failuresOpenHint,
+            emphasizeValue: dynamicMetrics.failuresUnsolvedCount > 0
+          )
+        }
+        NavigationLink {
+          DashboardMetricListView(client: client, kind: .periodicUpcoming, rangeStart: rangeStart, rangeEnd: rangeEnd)
+        } label: {
+          dashboardMetricLabel(
+            title: TrStrings.Dashboard.periodicUpcoming,
+            value: "\(dynamicMetrics.periodicDueCount)",
+            caption: TrStrings.Dashboard.periodicUpcomingHint
+          )
+        }
+      } header: {
+        Text(TrStrings.Dashboard.dynamicMetrics)
+      } footer: {
+        Text(TrStrings.Dashboard.listLimitNote)
+          .font(.caption2)
+          .foregroundStyle(.tertiary)
+      }
+
       if let counts {
         Section(TrStrings.Dashboard.portfolio) {
           statNavigationRow(label: TrStrings.Dashboard.customers, value: counts.customerCount, path: "/app/customers")
@@ -63,56 +143,25 @@ struct WorkspaceDashboardView: View {
           statNavigationRow(label: TrStrings.Dashboard.callbacks, value: counts.openCallbacks, path: "/app/callbacks")
         }
       }
-      if !upcoming.isEmpty {
-        Section {
-          ForEach(upcoming, id: \.id) { row in
-            NavigationLink {
-              AssetDetailView(client: client, assetId: row.id)
-            } label: {
-              VStack(alignment: .leading, spacing: 6) {
-                Text(row.unitCode)
-                  .font(.headline)
-                Text("\(TrStrings.Assets.site): \(row.siteName ?? "—")")
-                  .font(.subheadline)
-                  .foregroundStyle(.secondary)
-                Text("\(TrStrings.Assets.customerName): \(row.customerName ?? "—")")
-                  .font(.subheadline)
-                  .foregroundStyle(.secondary)
-                HStack {
-                  Text("\(TrStrings.En8120.nextControlDue): \(row.nextControlDuePrefix)")
-                    .font(.caption)
-                  Spacer()
-                  if let d = row.daysUntilDue {
-                    Text("\(d) \(TrStrings.Dashboard.daysLeft)")
-                      .font(.caption)
-                      .foregroundStyle(.secondary)
-                  }
-                }
-              }
-              .padding(.vertical, 4)
-            }
-          }
-        } header: {
-          VStack(alignment: .leading, spacing: 4) {
-            Text(TrStrings.Dashboard.upcomingPeriodic)
-            Text(TrStrings.Dashboard.upcomingPeriodicHint)
-              .font(.caption)
-              .foregroundStyle(.secondary)
-          }
-        }
-      }
-      Section(TrStrings.Membership.sectionTitle) {
-        ForEach(rows, id: \.id) { row in
-          VStack(alignment: .leading, spacing: 4) {
-            Text(row.systemRole.replacingOccurrences(of: "_", with: " ").capitalized)
-              .font(.subheadline)
-            Text(row.tenantId.uuidString)
-              .font(.caption2)
-              .foregroundStyle(.tertiary)
-          }
-        }
-      }
     }
+  }
+
+  private func dashboardMetricLabel(title: String, value: String, caption: String, emphasizeValue: Bool = false)
+    -> some View
+  {
+    VStack(alignment: .leading, spacing: 6) {
+      Text(title)
+        .font(.subheadline)
+        .foregroundStyle(.primary)
+      Text(value)
+        .font(.title2.weight(.semibold))
+        .foregroundStyle(emphasizeValue ? Color.red : Color.primary)
+      Text(caption)
+        .font(.caption2)
+        .foregroundStyle(.tertiary)
+        .fixedSize(horizontal: false, vertical: true)
+    }
+    .padding(.vertical, 4)
   }
 
   @ViewBuilder
@@ -158,13 +207,18 @@ struct WorkspaceDashboardView: View {
       rows = membershipResponse.value
       guard let tenantId = rows.first?.tenantId else {
         counts = nil
-        upcoming = []
+        dynamicMetrics = .empty
         return
       }
       async let countsTask = fetchCounts(tenantId: tenantId)
-      async let upcomingTask = fetchUpcoming(tenantId: tenantId)
+      async let dynTask = DashboardMetricsFetcher.fetch(
+        client: client,
+        tenantId: tenantId,
+        rangeStart: rangeStart,
+        rangeEnd: rangeEnd
+      )
       counts = try await countsTask
-      upcoming = (try? await upcomingTask) ?? []
+      dynamicMetrics = (try? await dynTask) ?? .empty
     } catch {
       loadError = error.localizedDescription
     }
@@ -208,32 +262,6 @@ struct WorkspaceDashboardView: View {
       .execute()
     return response.count ?? 0
   }
-
-  private func fetchUpcoming(tenantId: UUID) async throws -> [UpcomingPeriodicPayload] {
-    let today = Self.isoDateOnly.string(from: Date())
-    let endDate = Calendar.current.date(byAdding: .day, value: 20, to: Date()) ?? Date()
-    let end = Self.isoDateOnly.string(from: endDate)
-    let response: PostgrestResponse<[UpcomingPeriodicRow]> = try await client
-      .from("elevator_assets")
-      .select("id,unit_code,en8120_next_control_due,sites(name),customers(legal_name)")
-      .eq("tenant_id", value: tenantId)
-      .gte("en8120_next_control_due", value: today)
-      .lte("en8120_next_control_due", value: end)
-      .order("en8120_next_control_due", ascending: true)
-      .order("unit_code", ascending: true)
-      .limit(20)
-      .execute()
-    return response.value.map(UpcomingPeriodicPayload.init(row:))
-  }
-
-  private static let isoDateOnly: DateFormatter = {
-    let f = DateFormatter()
-    f.calendar = Calendar(identifier: .gregorian)
-    f.locale = Locale(identifier: "en_US_POSIX")
-    f.timeZone = TimeZone(identifier: "UTC")
-    f.dateFormat = "yyyy-MM-dd"
-    return f
-  }()
 }
 
 private struct DashboardCountsPayload {
@@ -243,64 +271,4 @@ private struct DashboardCountsPayload {
   let workOrderCount: Int
   let openBreakdowns: Int
   let openCallbacks: Int
-}
-
-private struct UpcomingPeriodicRow: Decodable {
-  let id: UUID
-  let unitCode: String
-  let en8120NextControlDue: String?
-  let sites: SiteEmbed?
-  let customers: CustomerEmbed?
-
-  enum CodingKeys: String, CodingKey {
-    case id
-    case unitCode = "unit_code"
-    case en8120NextControlDue = "en8120_next_control_due"
-    case sites
-    case customers
-  }
-
-  struct SiteEmbed: Decodable {
-    let name: String?
-  }
-
-  struct CustomerEmbed: Decodable {
-    let legalName: String?
-    enum CodingKeys: String, CodingKey {
-      case legalName = "legal_name"
-    }
-  }
-}
-
-private struct UpcomingPeriodicPayload: Identifiable {
-  let id: UUID
-  let unitCode: String
-  let siteName: String?
-  let customerName: String?
-  let nextControlDuePrefix: String
-  let daysUntilDue: Int?
-
-  init(row: UpcomingPeriodicRow) {
-    id = row.id
-    unitCode = row.unitCode
-    siteName = row.sites?.name
-    customerName = row.customers?.legalName
-    let raw = row.en8120NextControlDue ?? ""
-    nextControlDuePrefix = String(raw.prefix(10))
-    daysUntilDue = Self.computeDaysUntilDue(datePrefix: nextControlDuePrefix)
-  }
-
-  private static func computeDaysUntilDue(datePrefix: String) -> Int? {
-    guard datePrefix.count >= 10 else { return nil }
-    let f = DateFormatter()
-    f.calendar = Calendar(identifier: .gregorian)
-    f.locale = Locale(identifier: "en_US_POSIX")
-    f.timeZone = TimeZone.current
-    f.dateFormat = "yyyy-MM-dd"
-    guard let target = f.date(from: String(datePrefix.prefix(10))) else { return nil }
-    let cal = Calendar.current
-    let start = cal.startOfDay(for: Date())
-    let end = cal.startOfDay(for: target)
-    return cal.dateComponents([.day], from: start, to: end).day
-  }
 }

@@ -28,7 +28,8 @@ export async function recordPartsUsageAction(payload: {
   }
   revalidatePath("/app/maintenance");
   revalidatePath("/app/stock");
-  revalidatePath("/app/finances");
+    revalidatePath("/app/accounting/receivables");
+    revalidatePath("/app/accounting/current-accounts");
   revalidatePath("/app/sites");
   revalidatePath("/app/assets");
   revalidatePath("/app/work-orders");

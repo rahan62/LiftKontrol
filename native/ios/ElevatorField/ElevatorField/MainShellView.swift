@@ -244,7 +244,7 @@ struct MainShellView: View {
         WorkOrderCreateView(client: client)
       case "/app/callbacks":
         CallbacksListView(client: client)
-      case "/app/finances":
+      case "/app/accounting":
         FinancesListView(client: client)
       case "/app/settings":
         WorkspaceSettingsView(client: client)

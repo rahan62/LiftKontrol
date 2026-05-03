@@ -30,6 +30,12 @@ export default async function CustomerDetailPage({ params }: Props) {
             {tr.customers.edit}
           </Link>
           <Link
+            href={`/app/accounting/current-accounts/${encodeURIComponent(id)}`}
+            className="rounded-md border border-slate-300 px-3 py-1.5 text-sm dark:border-slate-600"
+          >
+            {tr.accounting.currentAccounts}
+          </Link>
+          <Link
             href={`/app/sites/new?customer_id=${encodeURIComponent(id)}`}
             className="rounded-md border border-slate-300 px-3 py-1.5 text-sm dark:border-slate-600"
           >

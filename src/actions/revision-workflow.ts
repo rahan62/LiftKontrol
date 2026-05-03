@@ -83,7 +83,8 @@ export async function recordRevisionDownPaymentAction(
     payment_status: "unpaid",
   });
   if (!res.ok) return { ok: false, error: res.error };
-  revalidatePath("/app/finances");
+  revalidatePath("/app/accounting/receivables");
+  revalidatePath("/app/accounting/current-accounts");
   revalidatePath(`/app/revisions/${revisionId}`);
   return { ok: true, financeEntryId: res.id };
 }
@@ -306,7 +307,8 @@ export async function submitFinalInspectionAction(
     });
     if (fee.created && fee.financeEntryId) {
       financeEntryId = fee.financeEntryId;
-      revalidatePath("/app/finances");
+      revalidatePath("/app/accounting/receivables");
+      revalidatePath("/app/accounting/current-accounts");
       revalidatePath(`/app/assets/${meta.elevator_asset_id}`);
     }
   }

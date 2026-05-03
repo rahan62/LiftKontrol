@@ -7,6 +7,8 @@ export type FinanceEntryRow = {
   id: string;
   site_id: string | null;
   elevator_asset_id: string | null;
+  customer_id: string | null;
+  customer_name: string | null;
   entry_type: string;
   amount: string;
   currency: string;
@@ -22,13 +24,16 @@ const baseFrom = `
   FROM finance_entries fe
   LEFT JOIN sites s ON s.id = fe.site_id AND s.tenant_id = fe.tenant_id
   LEFT JOIN elevator_assets ea ON ea.id = fe.elevator_asset_id AND ea.tenant_id = fe.tenant_id
-  LEFT JOIN sites sa ON sa.id = ea.site_id AND sa.tenant_id = fe.tenant_id
+  LEFT JOIN sites sa ON sa.id = ea.site_id AND sa.tenant_id = ea.tenant_id
+  LEFT JOIN customers c ON c.id = fe.customer_id AND c.tenant_id = fe.tenant_id
 `;
 
 const selectCols = `
   SELECT fe.id,
          fe.site_id,
          fe.elevator_asset_id,
+         fe.customer_id,
+         c.legal_name AS customer_name,
          fe.entry_type,
          fe.amount::text AS amount,
          fe.currency,
@@ -38,9 +43,10 @@ const selectCols = `
          fe.created_at::text AS created_at,
          fe.payment_status,
          CASE
+           WHEN fe.entry_type = 'expense' THEN 'Şirket gideri'
            WHEN fe.site_id IS NOT NULL THEN COALESCE(s.name, 'Site')
            WHEN fe.elevator_asset_id IS NOT NULL THEN
-             COALESCE(ea.unit_code, 'Unit') || ' · ' || COALESCE(sa.name, 'Site')
+             COALESCE(ea.unit_code, 'Ünite') || ' · ' || COALESCE(sa.name, 'Site')
            ELSE '—'
          END AS scope_label
 `;
@@ -52,7 +58,7 @@ export async function listFinanceEntries(tenantId: string): Promise<FinanceEntry
     const { data: fe } = await supabase
       .from("finance_entries")
       .select(
-        "id, site_id, elevator_asset_id, entry_type, amount, currency, label, notes, occurred_on, created_at, payment_status",
+        "id, site_id, elevator_asset_id, customer_id, entry_type, amount, currency, label, notes, occurred_on, created_at, payment_status",
       )
       .eq("tenant_id", tenantId)
       .order("occurred_on", { ascending: false })
@@ -72,6 +78,7 @@ type FinanceEntryRowRaw = {
   id: string;
   site_id: string | null;
   elevator_asset_id: string | null;
+  customer_id?: string | null;
   entry_type: string;
   amount: string | number;
   currency: string;
@@ -91,6 +98,18 @@ async function hydrateFinanceScopeLabels(
   const assetIds = [...new Set(rows.map((r) => r.elevator_asset_id).filter(Boolean))] as string[];
   const siteMap = new Map<string, { name: string }>();
   const assetMap = new Map<string, { unit_code: string; site_id: string }>();
+  const custIds = [...new Set(rows.map((r) => r.customer_id).filter(Boolean))] as string[];
+  const custMap = new Map<string, string>();
+  if (custIds.length) {
+    const { data: custs } = await supabase
+      .from("customers")
+      .select("id, legal_name")
+      .eq("tenant_id", tenantId)
+      .in("id", custIds);
+    for (const c of custs ?? []) {
+      custMap.set(String(c.id), String((c as { legal_name?: string }).legal_name ?? "—"));
+    }
+  }
   if (siteIds.length) {
     const { data: sites } = await supabase
       .from("sites")
@@ -125,12 +144,15 @@ async function hydrateFinanceScopeLabels(
     }
   }
   return rows.map((r) => {
+    const cid = r.customer_id ?? null;
     let scope_label = "—";
-    if (r.site_id) {
+    if (r.entry_type === "expense") {
+      scope_label = "Şirket gideri";
+    } else if (r.site_id) {
       scope_label = siteMap.get(r.site_id)?.name ?? "Site";
     } else if (r.elevator_asset_id) {
       const a = assetMap.get(r.elevator_asset_id);
-      const unit = a?.unit_code ?? "Unit";
+      const unit = a?.unit_code ?? "Ünite";
       const sname = a?.site_id ? (siteMap.get(a.site_id)?.name ?? "Site") : "Site";
       scope_label = `${unit} · ${sname}`;
     }
@@ -138,6 +160,8 @@ async function hydrateFinanceScopeLabels(
       id: r.id,
       site_id: r.site_id,
       elevator_asset_id: r.elevator_asset_id,
+      customer_id: cid,
+      customer_name: cid ? (custMap.get(cid) ?? null) : null,
       entry_type: r.entry_type,
       amount: String(r.amount ?? ""),
       currency: r.currency,
@@ -161,7 +185,7 @@ export async function listFinanceEntriesForSite(
     const { data: fe } = await supabase
       .from("finance_entries")
       .select(
-        "id, site_id, elevator_asset_id, entry_type, amount, currency, label, notes, occurred_on, created_at, payment_status",
+        "id, site_id, elevator_asset_id, customer_id, entry_type, amount, currency, label, notes, occurred_on, created_at, payment_status",
       )
       .eq("tenant_id", tenantId)
       .eq("site_id", siteId)
@@ -188,7 +212,7 @@ export async function listFinanceEntriesForAsset(
     const { data: fe } = await supabase
       .from("finance_entries")
       .select(
-        "id, site_id, elevator_asset_id, entry_type, amount, currency, label, notes, occurred_on, created_at, payment_status",
+        "id, site_id, elevator_asset_id, customer_id, entry_type, amount, currency, label, notes, occurred_on, created_at, payment_status",
       )
       .eq("tenant_id", tenantId)
       .eq("elevator_asset_id", assetId)
@@ -201,6 +225,33 @@ export async function listFinanceEntriesForAsset(
   const { rows } = await pool.query<FinanceEntryRow>(
     `${selectCols} ${baseFrom} WHERE fe.tenant_id = $1 AND fe.elevator_asset_id = $2 ORDER BY fe.occurred_on DESC, fe.created_at DESC`,
     [tenantId, assetId],
+  );
+  return rows;
+}
+
+export async function listFinanceEntriesForCustomer(
+  tenantId: string,
+  customerId: string,
+): Promise<FinanceEntryRow[]> {
+  if (isSupabaseConfigured()) {
+    const supabase = await createClient();
+    if (!supabase) return [];
+    const { data: fe } = await supabase
+      .from("finance_entries")
+      .select(
+        "id, site_id, elevator_asset_id, customer_id, entry_type, amount, currency, label, notes, occurred_on, created_at, payment_status",
+      )
+      .eq("tenant_id", tenantId)
+      .eq("customer_id", customerId)
+      .order("occurred_on", { ascending: false })
+      .order("created_at", { ascending: false });
+    if (!fe?.length) return [];
+    return await hydrateFinanceScopeLabels(supabase, tenantId, fe as FinanceEntryRowRaw[]);
+  }
+  const pool = getPool();
+  const { rows } = await pool.query<FinanceEntryRow>(
+    `${selectCols} ${baseFrom} WHERE fe.tenant_id = $1 AND fe.customer_id = $2 ORDER BY fe.occurred_on DESC, fe.created_at DESC`,
+    [tenantId, customerId],
   );
   return rows;
 }
