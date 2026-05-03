@@ -20,7 +20,7 @@ struct AppRoute: Hashable, Identifiable {
     AppRoute(webPath: "/app/contracts", title: "Sözleşmeler", systemImage: "doc.text"),
     AppRoute(webPath: "/app/maintenance", title: "Bakım", systemImage: "list.clipboard"),
     AppRoute(webPath: "/app/revision-articles", title: "EN 81-20 maddeleri", systemImage: "bookmark"),
-    AppRoute(webPath: "/app/periodic-controls", title: "Periyodik kontroller", systemImage: "checkmark.clipboard"),
+    AppRoute(webPath: "/app/periodic-controls", title: "Periyodik kontroller", systemImage: "checklist"),
     AppRoute(webPath: "/app/revisions", title: "Revizyonlar", systemImage: "square.stack.3d.up"),
     AppRoute(webPath: "/app/work-orders", title: "İş emirleri", systemImage: "wrench.and.screwdriver"),
     AppRoute(webPath: "/app/callbacks", title: "Geri aramalar", systemImage: "phone"),

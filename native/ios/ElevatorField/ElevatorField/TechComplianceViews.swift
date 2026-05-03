@@ -107,11 +107,11 @@ struct PeriodicControlsListView: View {
       if loading {
         ProgressView(TrStrings.Common.loading)
       } else if let loadError {
-        ContentUnavailableView(TrStrings.PeriodicControls.title, systemImage: "checkmark.clipboard", description: Text(loadError))
+        ContentUnavailableView(TrStrings.PeriodicControls.title, systemImage: "checklist", description: Text(loadError))
       } else if rows.isEmpty {
         ContentUnavailableView(
           TrStrings.PeriodicControls.title,
-          systemImage: "checkmark.clipboard",
+          systemImage: "checklist",
           description: Text(TrStrings.PeriodicControls.empty)
         )
       } else {
