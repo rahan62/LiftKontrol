@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { DEMO_PRODUCT_PRICING } from "@/lib/data/demo-product-pricing";
 import { getMarketingPricing } from "@/lib/data/marketing-pricing";
 import { type BuyerCheckoutInput, iyzicoCheckoutFormInitialize, isIyzicoConfigured } from "@/lib/payments/iyzico-server";
 
@@ -71,17 +72,23 @@ export async function POST(request: Request) {
     return NextResponse.json({ status: "failure", errorMessage: "Geçersiz istek gövdesi." }, { status: 400 });
   }
 
-  const v = validateBuyer(json);
+  const product = json.product === "demo" ? "demo" : "default";
+  const buyerPayload = { ...json };
+  delete buyerPayload.product;
+
+  const v = validateBuyer(buyerPayload);
   if (!v.ok) {
     return NextResponse.json({ status: "failure", errorMessage: v.error }, { status: 400 });
   }
 
   try {
-    const pricing = await getMarketingPricing();
+    const pricing = product === "demo" ? DEMO_PRODUCT_PRICING : await getMarketingPricing();
+    const basketItemId = product === "demo" ? "liftkontrol-demo" : undefined;
     const result = await iyzicoCheckoutFormInitialize({
       pricing,
       buyer: v.buyer,
       clientIp: clientIp(request),
+      basketItemId,
     });
 
     if (result.status !== "success" || !result.checkoutFormContent) {

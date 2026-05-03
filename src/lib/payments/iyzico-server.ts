@@ -118,6 +118,8 @@ export async function iyzicoCheckoutFormInitialize(params: {
   pricing: MarketingPricingContent;
   buyer: BuyerCheckoutInput;
   clientIp: string;
+  /** Sepet kalemi id (iyzico); öntanımlı yıllık lisans. */
+  basketItemId?: string;
 }): Promise<CheckoutFormInitializeResult> {
   const client = getClient();
   const { paid } = computeLiftKontrolChargeTry(params.pricing);
@@ -158,12 +160,13 @@ export async function iyzicoCheckoutFormInitialize(params: {
     zipCode: buyer.zipCode,
   };
 
+  const itemId = (params.basketItemId || "liftkontrol-yearly").slice(0, 128);
   const basketItems = [
     {
-      id: "liftkontrol-yearly",
+      id: itemId,
       name: params.pricing.packageTitle.slice(0, 128),
       category1: "Yazılım",
-      category2: "Abonelik",
+      category2: params.basketItemId === "liftkontrol-demo" ? "Demo" : "Abonelik",
       itemType: Iyzipay.BASKET_ITEM_TYPE.VIRTUAL,
       price: priceStr,
     },

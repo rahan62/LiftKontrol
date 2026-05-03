@@ -11,9 +11,17 @@ type Props = {
   iyzicoReady: boolean;
   pricePreviewTry: number;
   includesVat: boolean;
+  /** API gövdesine `product: "demo"` ekler (1 TL Demo Ürünü). */
+  checkoutProduct?: "default" | "demo";
 };
 
-export function OdemeClient({ pricing, iyzicoReady, pricePreviewTry, includesVat }: Props) {
+export function OdemeClient({
+  pricing,
+  iyzicoReady,
+  pricePreviewTry,
+  includesVat,
+  checkoutProduct = "default",
+}: Props) {
   const [checkoutHtml, setCheckoutHtml] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +31,7 @@ export function OdemeClient({ pricing, iyzicoReady, pricePreviewTry, includesVat
     setError(null);
     setBusy(true);
     const fd = new FormData(e.currentTarget);
-    const body = {
+    const body: Record<string, string> = {
       name: String(fd.get("name") || ""),
       surname: String(fd.get("surname") || ""),
       email: String(fd.get("email") || ""),
@@ -33,6 +41,7 @@ export function OdemeClient({ pricing, iyzicoReady, pricePreviewTry, includesVat
       city: String(fd.get("city") || ""),
       zipCode: String(fd.get("zipCode") || ""),
     };
+    if (checkoutProduct === "demo") body.product = "demo";
 
     try {
       const res = await fetch("/api/iyzico/checkout-form", {
