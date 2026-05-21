@@ -1,5 +1,5 @@
 import { CustomerForm } from "@/components/forms/customer-form";
-import { getCustomer } from "@/lib/data/customers";
+import { getCustomer, getPrimaryCustomerContact } from "@/lib/data/customers";
 import { getTenantContext } from "@/lib/tenant/server";
 import { notFound, redirect } from "next/navigation";
 
@@ -12,6 +12,8 @@ export default async function EditCustomerPage({ params }: Props) {
 
   const row = await getCustomer(ctx.tenantId, id);
   if (!row) notFound();
+
+  const primary = await getPrimaryCustomerContact(ctx.tenantId, id);
 
   const billing = row.billing_address as Record<string, string> | null;
 
@@ -32,6 +34,9 @@ export default async function EditCustomerPage({ params }: Props) {
               postal_code: billing.postal_code,
               country: billing.country,
             }
+          : null,
+        primary_contact: primary
+          ? { name: primary.name, phone: primary.phone }
           : null,
       }}
     />

@@ -4,12 +4,15 @@ import { revalidatePath } from "next/cache";
 import { requireTenantId } from "@/lib/auth/require-tenant";
 import { maybeCreateSiteMaintenanceFeeFinance } from "@/lib/data/maintenance-site-fee-finance";
 import { getPool } from "@/lib/db/pool";
+import { enqueueMaintenanceSmsForMaintenanceId } from "@/lib/sms/enqueue-maintenance";
 
 export async function upsertMonthlyMaintenanceAction(
   assetId: string,
   yearMonth: string,
   notes: string,
   checklistJson?: string | null,
+  /** Açık seçilmezse bakım kaydı oluşur; cari borç satırı eklenmez. */
+  postContractedMonthlyFee = false,
 ): Promise<{ ok: true; financeEntryId?: string } | { ok: false; error: string }> {
   const tenantId = await requireTenantId();
   let checklistObj: Record<string, unknown> = {};
@@ -24,16 +27,25 @@ export async function upsertMonthlyMaintenanceAction(
     }
   }
   const pool = getPool();
-  await pool.query(
+  const { rows } = await pool.query<{ id: string }>(
     `INSERT INTO elevator_monthly_maintenance (tenant_id, elevator_asset_id, year_month, notes, monthly_checklist)
      VALUES ($1, $2, $3::date, $4, $5::jsonb)
      ON CONFLICT (tenant_id, elevator_asset_id, year_month)
      DO UPDATE SET completed_at = now(),
        notes = EXCLUDED.notes,
-       monthly_checklist = EXCLUDED.monthly_checklist`,
+       monthly_checklist = EXCLUDED.monthly_checklist
+     RETURNING id::text`,
     [tenantId, assetId, yearMonth, notes.trim() || null, JSON.stringify(checklistObj)],
   );
+  const maintenanceId = rows[0]?.id;
+  if (maintenanceId) {
+    void enqueueMaintenanceSmsForMaintenanceId(maintenanceId).catch(() => {});
+  }
   revalidatePath("/app/maintenance");
+
+  if (!postContractedMonthlyFee) {
+    return { ok: true as const };
+  }
 
   const fee = await maybeCreateSiteMaintenanceFeeFinance(tenantId, assetId, yearMonth);
   if (fee.created && fee.financeEntryId) {

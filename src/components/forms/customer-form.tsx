@@ -3,8 +3,10 @@
 import { createCustomerAction, updateCustomerAction } from "@/actions/customers";
 import { CUSTOMER_STATUSES } from "@/lib/domain/elevator-types";
 import { btnPrimary, field, label } from "@/components/forms/field-classes";
+import { TrGsmTenDigitInput } from "@/components/forms/tr-gsm-ten-digit-input";
 import { customerStatusLabel } from "@/lib/i18n/display-labels";
 import { tr } from "@/lib/i18n/tr";
+import { trGsmTenDigitsFromAny } from "@/lib/sms/phone-tr";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -26,6 +28,7 @@ type Props = {
     status: string;
     notes: string | null;
     billing_address: Billing | null;
+    primary_contact?: { name: string; phone: string | null } | null;
   };
 };
 
@@ -113,6 +116,33 @@ export function CustomerForm({ mode, customerId, initial }: Props) {
               </option>
             ))}
           </select>
+        </div>
+      </div>
+
+      <div>
+        <div className="text-xs font-semibold uppercase text-slate-500">{tr.customers.primaryContactSection}</div>
+        <div className="mt-3 grid gap-4 sm:grid-cols-2">
+          <div className="sm:col-span-2">
+            <label className={label} htmlFor="primary_contact_name">
+              {tr.customers.primaryContactName}
+            </label>
+            <input
+              id="primary_contact_name"
+              name="primary_contact_name"
+              className={field}
+              defaultValue={initial?.primary_contact?.name ?? ""}
+              placeholder={tr.customers.optionalPlaceholder}
+              autoComplete="name"
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <TrGsmTenDigitInput
+              defaultDigits={trGsmTenDigitsFromAny(initial?.primary_contact?.phone ?? "")}
+              label={tr.customers.primaryContactMobile}
+              hint={tr.customers.primaryContactMobileHint}
+              placeholder="5XXXXXXXXX"
+            />
+          </div>
         </div>
       </div>
 

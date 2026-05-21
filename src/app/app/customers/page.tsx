@@ -3,6 +3,7 @@ import { listCustomers } from "@/lib/data/customers";
 import { customerStatusLabel } from "@/lib/i18n/display-labels";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
+import { Users } from "lucide-react";
 import Link from "next/link";
 
 export default async function CustomersPage() {
@@ -13,6 +14,7 @@ export default async function CustomersPage() {
 
   return (
     <DataTableShell
+      titleIcon={Users}
       title={tr.customers.title}
       description={tr.customers.description}
       actions={

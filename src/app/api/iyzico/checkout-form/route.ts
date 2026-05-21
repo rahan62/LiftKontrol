@@ -9,6 +9,7 @@ import {
   isCheckoutPendingCryptoConfigured,
   sealCheckoutPendingPayload,
 } from "@/lib/payments/checkout-pending-crypto";
+import { formatTrGsmE164 } from "@/lib/sms/phone-tr";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role";
 
 function clientIp(request: Request): string {
@@ -19,7 +20,9 @@ function clientIp(request: Request): string {
   return request.headers.get("x-real-ip")?.trim() || "127.0.0.1";
 }
 
-function validateBuyer(body: Record<string, unknown>): { ok: true; buyer: BuyerCheckoutInput } | { ok: false; error: string } {
+function validateBuyer(
+  body: Record<string, unknown>,
+): { ok: true; buyer: BuyerCheckoutInput; ownerPhoneE164: string } | { ok: false; error: string } {
   const name = String(body.name || "").trim();
   const surname = String(body.surname || "").trim();
   const email = String(body.email || "").trim();
@@ -35,8 +38,12 @@ function validateBuyer(body: Record<string, unknown>): { ok: true; buyer: BuyerC
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return { ok: false, error: "Geçerli bir e-posta girin." };
   }
-  if (!gsmNumber || gsmNumber.replace(/\D/g, "").length < 10) {
-    return { ok: false, error: "Geçerli bir cep telefonu girin." };
+  const ownerPhoneE164 = formatTrGsmE164(gsmNumber);
+  if (!ownerPhoneE164) {
+    return {
+      ok: false,
+      error: "Cep numarası Türkiye GSM formatında olmalıdır (10 hane, 5 ile başlar).",
+    };
   }
   if (identityNumber.length !== 11) {
     return { ok: false, error: "T.C. kimlik numarası 11 hane olmalıdır." };
@@ -62,6 +69,7 @@ function validateBuyer(body: Record<string, unknown>): { ok: true; buyer: BuyerC
       zipCode: zipCode || "34000",
       country: "Turkey",
     },
+    ownerPhoneE164,
   };
 }
 
@@ -146,6 +154,7 @@ export async function POST(request: Request) {
         companyName,
         email: v.buyer.email.trim().toLowerCase(),
         password,
+        ownerPhoneE164: v.ownerPhoneE164,
       });
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Oturum şifrelemesi başarısız.";

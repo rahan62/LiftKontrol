@@ -3,6 +3,7 @@ import { listAssets } from "@/lib/data/assets";
 import { operationalStatusLabel } from "@/lib/i18n/display-labels";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
+import { Building2 } from "lucide-react";
 import Link from "next/link";
 
 export default async function AssetsPage() {
@@ -13,6 +14,7 @@ export default async function AssetsPage() {
 
   return (
     <DataTableShell
+      titleIcon={Building2}
       title={tr.assets.title}
       description={tr.assets.description}
       actions={

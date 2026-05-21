@@ -24,25 +24,13 @@ struct AppRoute: Hashable, Identifiable {
     AppRoute(webPath: "/app/revisions", title: "Revizyonlar", systemImage: "square.stack.3d.up"),
     AppRoute(webPath: "/app/work-orders", title: "İş emirleri", systemImage: "wrench.and.screwdriver"),
     AppRoute(webPath: "/app/callbacks", title: "Geri aramalar", systemImage: "phone"),
-    AppRoute(webPath: "/app/projects", title: "Montaj / Projeler", systemImage: "gearshape.2"),
     AppRoute(webPath: "/app/schedule", title: "Program / Sevkiyat", systemImage: "truck.box"),
-    AppRoute(webPath: "/app/stock", title: "Stok / Envanter", systemImage: "shippingbox"),
-    AppRoute(webPath: "/app/quotations", title: "Teklifler", systemImage: "doc.badge.plus"),
-    AppRoute(webPath: "/app/reports", title: "Raporlar / KPI", systemImage: "gauge.with.dots.needle.67percent"),
     AppRoute(webPath: "/app/documents", title: "Belgeler", systemImage: "folder"),
     AppRoute(webPath: "/app/settings", title: "Ayarlar", systemImage: "gearshape"),
   ]
 
   /// Extra top-level pages that exist in the web app but are not in `appNavItems`.
-  static let additional: [AppRoute] = [
-    AppRoute(webPath: "/app/dispatch", title: "Sevk / Dispatch", systemImage: "arrow.triangle.branch"),
-    AppRoute(webPath: "/app/field", title: "Saha", systemImage: "iphone"),
-    AppRoute(webPath: "/app/warehouse", title: "Depo", systemImage: "archivebox"),
-    AppRoute(webPath: "/app/onboarding", title: "Kurulum", systemImage: "hand.wave"),
-    AppRoute(webPath: "/app/settings/users", title: "Ayarlar · Kullanıcılar", systemImage: "person.badge.key"),
-    AppRoute(webPath: "/app/maintenance/parts", title: "Bakım · Parça kullanımı", systemImage: "wrench.adjustable"),
-    AppRoute(webPath: "/app/schedule/clusters", title: "Program · Kümeler", systemImage: "circle.hexagongrid"),
-  ]
+  static let additional: [AppRoute] = []
 
   /// Form / nested routes to implement after list screens (matches common `*/new`, `*/[id]` pages).
   static let nestedExamples: [AppRoute] = [
@@ -50,7 +38,6 @@ struct AppRoute: Hashable, Identifiable {
     AppRoute(webPath: "/app/sites/new", title: "· Saha ekle", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/assets/new", title: "· Asansör ekle", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/contracts/new", title: "· Sözleşme ekle", systemImage: "plus.circle"),
-    AppRoute(webPath: "/app/stock/new", title: "· Stok kalemi ekle", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/accounting/entries/new", title: "· Muhasebe kaydı", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/periodic-controls/new", title: "· Periyodik kontrol", systemImage: "plus.circle"),
     AppRoute(webPath: "/app/work-orders/new", title: "· Yeni iş emri", systemImage: "plus.circle"),
@@ -63,11 +50,14 @@ struct AppRoute: Hashable, Identifiable {
   ]
 
   static var allGroupedForPlaceholder: [String: [AppRoute]] {
-    [
+    var groups: [String: [AppRoute]] = [
       "Menü": sidebar,
-      "Diğer sayfalar": additional,
       "Detay / formlar (sırayla)": nestedExamples,
     ]
+    if !additional.isEmpty {
+      groups["Diğer sayfalar"] = additional
+    }
+    return groups
   }
 
   /// Panel özet satırları ve kısayollar için `webPath` → rota.

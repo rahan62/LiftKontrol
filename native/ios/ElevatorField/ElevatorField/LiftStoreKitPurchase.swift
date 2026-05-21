@@ -24,6 +24,16 @@ enum LiftPurchaseError: LocalizedError {
   }
 }
 
+/// Result of syncing with App Store and inspecting subscription state for `IAP_PRODUCT_ID`.
+enum RestoreSubscriptionOutcome: Equatable {
+  /// `Transaction.currentEntitlements` contains a verified transaction for our product (or equivalent via latest).
+  case activeEntitlementFound
+  /// İşlem geçmişi var ama artık geçerli erişim yok (yanlış zamanlama için `Transaction.latest` ile tekrar işaretlendi).
+  case inactivePriorPurchase
+  /// Bu ürün kimliği için bu Apple kimliğiyle kayıtlı işlem bulunmadı — farklı Apple hesabı, sandbox/canlı uyumsuzluğu veya hiç App Store ödemesi yok.
+  case noMatchingPurchaseFound
+}
+
 @MainActor
 enum LiftStoreKitPurchase {
   static var productId: String {
@@ -68,5 +78,43 @@ enum LiftStoreKitPurchase {
     case .verified(let safe):
       return safe
     }
+  }
+
+  /// Calls `AppStore.sync()` then inspects entitlements (`Transaction.currentEntitlements`) for `IAP_PRODUCT_ID`.
+  /// If listed entitlements miss the product (gecikme, önbellek), non-revoked `Transaction.latest(for:)` ve süresi dolmamışsa yine başarılı sayılır.
+  /// App access stays tied to Supabase login; callers should instruct the user to sign in after a successful restore.
+  /// - Throws on misconfigured product id or StoreKit sync failure.
+  static func restoreSubscriptionEntitlements() async throws -> RestoreSubscriptionOutcome {
+    let id = productId
+    guard !id.isEmpty, !id.contains("REPLACE_ME") else {
+      throw LiftPurchaseError.misconfiguredProduct
+    }
+    try await AppStore.sync()
+
+    for await verification in Transaction.currentEntitlements {
+      guard case .verified(let transaction) = verification else { continue }
+      if transaction.productID == id {
+        return .activeEntitlementFound
+      }
+    }
+
+    if let latestVerification = await Transaction.latest(for: id) {
+      switch latestVerification {
+      case .verified(let transaction):
+        if transaction.revocationDate != nil {
+          return .inactivePriorPurchase
+        }
+        let now = Date()
+        if let expires = transaction.expirationDate {
+          return expires >= now ? .activeEntitlementFound : .inactivePriorPurchase
+        }
+        // Non-subscription / beklenmedik süre bilgisi yok — en son işlem doğrulanmış ise erişimi var sayın.
+        return .activeEntitlementFound
+      case .unverified:
+        break
+      }
+    }
+
+    return .noMatchingPurchaseFound
   }
 }

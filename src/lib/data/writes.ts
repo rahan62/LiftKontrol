@@ -171,6 +171,86 @@ export async function updateCustomer(
   return { ok: true };
 }
 
+export async function upsertPrimaryCustomerContact(
+  tenantId: string,
+  customerId: string,
+  contactName: string | null,
+  phoneE164: string | null,
+): Promise<{ ok: true } | { ok: false; error: string }> {
+  try {
+    if (!contactName || !phoneE164) {
+      if (isSupabaseConfigured()) {
+        const supabase = await createClient();
+        if (!supabase) return err("Supabase not available");
+        const { error } = await supabase
+          .from("customer_contacts")
+          .delete()
+          .eq("tenant_id", tenantId)
+          .eq("customer_id", customerId)
+          .eq("is_primary", true);
+        if (error) return err(error.message);
+        return { ok: true };
+      }
+      const pool = getPool();
+      await pool.query(
+        `DELETE FROM customer_contacts WHERE tenant_id = $1::uuid AND customer_id = $2::uuid AND is_primary = true`,
+        [tenantId, customerId],
+      );
+      return { ok: true };
+    }
+
+    if (isSupabaseConfigured()) {
+      const supabase = await createClient();
+      if (!supabase) return err("Supabase not available");
+      const { data: existing, error: selErr } = await supabase
+        .from("customer_contacts")
+        .select("id")
+        .eq("tenant_id", tenantId)
+        .eq("customer_id", customerId)
+        .eq("is_primary", true)
+        .maybeSingle();
+      if (selErr) return err(selErr.message);
+      if (existing?.id) {
+        const { error } = await supabase
+          .from("customer_contacts")
+          .update({ name: contactName, phone: phoneE164 })
+          .eq("id", existing.id)
+          .eq("tenant_id", tenantId);
+        if (error) return err(error.message);
+      } else {
+        const { error } = await supabase.from("customer_contacts").insert({
+          tenant_id: tenantId,
+          customer_id: customerId,
+          name: contactName,
+          phone: phoneE164,
+          is_primary: true,
+          is_emergency: false,
+        });
+        if (error) return err(error.message);
+      }
+      return { ok: true };
+    }
+
+    const pool = getPool();
+    const upd = await pool.query(
+      `UPDATE customer_contacts
+       SET name = $3, phone = $4, updated_at = now()
+       WHERE tenant_id = $1::uuid AND customer_id = $2::uuid AND is_primary = true`,
+      [tenantId, customerId, contactName, phoneE164],
+    );
+    if (!upd.rowCount) {
+      await pool.query(
+        `INSERT INTO customer_contacts (tenant_id, customer_id, name, phone, is_primary, is_emergency)
+         VALUES ($1::uuid, $2::uuid, $3, $4, true, false)`,
+        [tenantId, customerId, contactName, phoneE164],
+      );
+    }
+    return { ok: true };
+  } catch (e) {
+    return err(e instanceof Error ? e.message : "İletişim kaydedilemedi");
+  }
+}
+
 export async function deleteCustomer(
   tenantId: string,
   id: string,

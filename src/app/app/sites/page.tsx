@@ -2,6 +2,7 @@ import { DataTableShell } from "@/components/module/data-table-shell";
 import { listSites } from "@/lib/data/sites";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
+import { MapPin } from "lucide-react";
 import Link from "next/link";
 
 export default async function SitesPage() {
@@ -12,6 +13,7 @@ export default async function SitesPage() {
 
   return (
     <DataTableShell
+      titleIcon={MapPin}
       title={tr.sites.listTitle}
       description={tr.sites.listDescription}
       actions={

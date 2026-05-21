@@ -129,6 +129,7 @@ async function redirectAfterRetrieve(token: string): Promise<NextResponse> {
         email: payload.email,
         password: payload.password,
         companyName: payload.companyName,
+        ownerPhoneE164: payload.ownerPhoneE164 ?? null,
         subscriptionFields: {
           plan_code: "iyzico_yearly",
           status: "active",

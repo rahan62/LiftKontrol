@@ -8,18 +8,20 @@ export async function financeEntryExistsForAssetNotesContaining(
   elevatorAssetId: string,
   notesSubstring: string,
 ): Promise<boolean> {
-  const pattern = `%${notesSubstring}%`;
+  /** PostgREST / SQL LIKE için joker kullan; yanlış eşleşmeyi engeller. */
+  const pattern = `%${notesSubstring.replace(/%/g, "\\%").replace(/_/g, "\\_")}%`;
   if (isSupabaseConfigured()) {
     const supabase = await createClient();
     if (!supabase) return false;
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("finance_entries")
       .select("id")
       .eq("tenant_id", tenantId)
       .eq("elevator_asset_id", elevatorAssetId)
-      .ilike("notes", pattern)
+      .like("notes", pattern)
       .limit(1)
       .maybeSingle();
+    if (error) return true;
     return Boolean(data?.id);
   }
   const pool = getPool();

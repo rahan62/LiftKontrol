@@ -9,9 +9,11 @@ struct LoginView: View {
   @State private var email = ""
   @State private var password = ""
   @State private var busy = false
+  @State private var restoreBusy = false
   @State private var message: String?
   @State private var showSignupInfo = false
   @State private var showIapSubscribe = false
+  @State private var showRestoreSuccess = false
 
   private let contentMaxWidth: CGFloat = 320
 
@@ -120,7 +122,7 @@ struct LoginView: View {
               )
               .foregroundStyle(.white)
             }
-            .disabled(!canSubmit || busy)
+            .disabled(!canSubmit || busy || restoreBusy)
             .buttonStyle(.plain)
           }
           .frame(maxWidth: contentMaxWidth)
@@ -143,8 +145,30 @@ struct LoginView: View {
             .foregroundStyle(.white)
         }
         .buttonStyle(.plain)
+        .disabled(busy || restoreBusy)
         .padding(.horizontal, 24)
-        .padding(.bottom, 4)
+        .padding(.bottom, 8)
+
+        Button {
+          Task { await restorePurchases() }
+        } label: {
+          Group {
+            if restoreBusy {
+              ProgressView()
+                .tint(.white.opacity(0.85))
+            } else {
+              Text(TrStrings.Iap.restorePurchases)
+                .font(.subheadline.weight(.medium))
+                .underline()
+            }
+          }
+          .frame(maxWidth: .infinity)
+          .padding(.vertical, 10)
+        }
+        .buttonStyle(.plain)
+        .disabled(busy || restoreBusy)
+        .foregroundStyle(.white.opacity(0.72))
+        .accessibilityHint(TrStrings.Iap.restorePurchasesHint)
 
         Text(TrStrings.Auth.membersOnlyFooter)
           .font(.caption)
@@ -163,10 +187,35 @@ struct LoginView: View {
         .presentationDetents([.large])
         .presentationDragIndicator(.visible)
     }
+    .alert(TrStrings.Iap.restoreSuccessTitle, isPresented: $showRestoreSuccess) {
+      Button(TrStrings.Common.ok) {}
+    } message: {
+      Text(TrStrings.Iap.restoreSuccessBody)
+    }
   }
 
   private var canSubmit: Bool {
     !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !password.isEmpty
+  }
+
+  private func restorePurchases() async {
+    restoreBusy = true
+    message = nil
+    defer { restoreBusy = false }
+    do {
+      switch try await LiftStoreKitPurchase.restoreSubscriptionEntitlements() {
+      case .activeEntitlementFound:
+        showRestoreSuccess = true
+      case .inactivePriorPurchase:
+        message = TrStrings.Iap.restoreSubscriptionInactive
+      case .noMatchingPurchaseFound:
+        message = TrStrings.Iap.restoreNoEntitlement
+      }
+    } catch let e as LiftPurchaseError {
+      message = e.localizedDescription
+    } catch {
+      message = String(format: TrStrings.Iap.restoreFailedFmt, error.localizedDescription)
+    }
   }
 
   private func signIn() async {

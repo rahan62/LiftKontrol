@@ -5,6 +5,8 @@ export type CheckoutPendingPayload = {
   companyName: string;
   email: string;
   password: string;
+  /** `+905xxxxxxxxxx`; hoş geldin SMS için */
+  ownerPhoneE164?: string;
 };
 
 const SALT = Buffer.from("liftkontrol-iyzico-pending-v1", "utf8");
@@ -50,7 +52,7 @@ export function unsealCheckoutPendingPayload(ciphertextB64: string, nonceB64: st
   const decipher = createDecipheriv("aes-256-gcm", key, nonce);
   decipher.setAuthTag(tag);
   const plain = Buffer.concat([decipher.update(enc), decipher.final()]);
-  const parsed = JSON.parse(plain.toString("utf8")) as CheckoutPendingPayload;
+  const parsed = JSON.parse(plain.toString("utf8")) as Record<string, unknown>;
   if (
     typeof parsed.companyName !== "string" ||
     typeof parsed.email !== "string" ||
@@ -58,7 +60,16 @@ export function unsealCheckoutPendingPayload(ciphertextB64: string, nonceB64: st
   ) {
     throw new Error("Geçersiz ödeme oturumu.");
   }
-  return parsed;
+  const ownerPhoneE164 =
+    typeof parsed.ownerPhoneE164 === "string" && parsed.ownerPhoneE164.trim()
+      ? parsed.ownerPhoneE164.trim()
+      : undefined;
+  return {
+    companyName: parsed.companyName,
+    email: parsed.email,
+    password: parsed.password,
+    ...(ownerPhoneE164 ? { ownerPhoneE164 } : {}),
+  };
 }
 
 export function isCheckoutPendingCryptoConfigured(): boolean {

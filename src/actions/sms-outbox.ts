@@ -14,10 +14,15 @@ export async function enqueueTenantSmsAction(
   const parsed =
     maxRaw != null && String(maxRaw).trim() !== "" ? Number.parseInt(String(maxRaw), 10) : NaN;
   const maxAttempts = Number.isFinite(parsed) && parsed > 0 ? parsed : undefined;
-  return enqueueSmsOutbox({
+  const r = await enqueueSmsOutbox({
     tenantId,
     phone,
     body,
     ...(maxAttempts != null ? { maxAttempts } : {}),
   });
+  if (!r.ok) return r;
+  if (!("id" in r)) {
+    return { ok: false, error: "Bu gönderim zaten kuyrukta" };
+  }
+  return { ok: true, id: r.id };
 }

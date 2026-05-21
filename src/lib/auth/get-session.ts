@@ -11,6 +11,8 @@ export async function getSessionUser(): Promise<SessionUser | null> {
   if (isSupabaseConfigured()) {
     const supabase = await createClient();
     if (!supabase) return null;
+    /** Sunucuda çerezi tazelemek için; form gönderimi / server action sonrası çıkış gibi sapmaları azaltır. */
+    await supabase.auth.getSession();
     const {
       data: { user },
     } = await supabase.auth.getUser();

@@ -6,6 +6,9 @@ export type ElevatorMonthRow = {
   site_id: string;
   site_name: string;
   customer_name: string;
+  /** Ünite için sözleşme tutarı (borç seçeneği ipucunda kullanılır). */
+  maintenance_fee: unknown;
+  maintenance_fee_period: string | null;
   maintenance_id: string | null;
   completed_at: string | null;
   notes: string | null;

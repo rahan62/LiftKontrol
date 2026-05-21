@@ -22,24 +22,43 @@ enum TrStrings {
     static let landingOnlyOnWeb =
       "Aynı e-posta ve şifre ile liftkontrol web paneline de giriş yapabilirsiniz (tarayıcıdan /login)."
     static let membersOnlyFooter =
-      "Hesabınız varsa yukarıdan giriş yapın. Yeni şirket için «Abone ol» düğmesine dokunun."
+      "Uygulama aktif kurumsal abonelik gerektirir. Hesabınız varsa giriş yapın; yeni şirket için «Abone ol» ile aboneliği App Store üzerinden başlatın."
   }
 
   enum Settings {
+    static let title = "Ayarlar"
     static let passwordSection = "Hesap şifresi"
     static let passwordFooter =
       "Oturum açıkken yeni şifrenizi girin. En az 8 karakter; iki alan eşleşmelidir."
     static let savePassword = "Şifreyi kaydet"
     static let passwordUpdated = "Şifre güncellendi."
+    static let accountDeletionSection = "Hesap silme"
+    static let accountDeletionFooter =
+      "Hesabınızı kalıcı kaldırır; bu cihazdan çıkış yapılır. Şirkette yalnız siz varsanız ilgili iş verisi silinir. Kiracı sahibiyseniz ve başka aktif üyeler varsa silme engellenir — önce yetki devri gerekir. App Store aboneliğiniz bu ekrandan iptal olmaz; Apple hesabınızdan Abonelikler’den yönetin."
+    static let deleteAccount = "Hesabımı kalıcı olarak sil…"
+    static let deleteAccountSheetTitle = "Hesabı kalıcı sil"
+    static let deletePasswordPrompt = "Mevcut şifre"
+    static let deleteConfirmPhraseLabel = "Onay metni"
+    static let deleteConfirmPhraseHintFmt =
+      "Aşağıya tam olarak şunu yazın: %@"
+    static let deleteSubmit = "Hesabı sil"
+    static let deleteBusy = "Siliniyor…"
+    static let deleteDone = "Hesap kaldırıldı; çıkış yapılıyor."
+    static let deleteClose = "Kapat"
+    static let deleteConfirmPhraseToken = "LIFT_KONTROL_HESAP_SIL"
   }
 
   enum Iap {
     static let subscribe = "Abone ol"
     static let sheetTitle = "Kurumsal abonelik"
     static let sheetIntro =
-      "Ödeme App Store üzerinden alınır. İşlem doğrulandıktan sonra şirketiniz (kiracı), «kiracı sahibi» rolünüz ve aboneliğiniz sunucuda otomatik oluşturulur; oturum açılır. Aynı e-posta ve şifre ile web uygulamasına (/login) da giriş yapabilirsiniz. Paket içeriği web sitemizdeki pazarlama metniyle uyumludur."
+      "Bu uygulama yalnızca aktif kurumsal (yıllık) abonelikle kullanılabilir. Ödeme App Store üzerinden alınır. İşlem doğrulandıktan sonra şirketiniz (kiracı), «kiracı sahibi» rolünüz ve aboneliğiniz sunucuda otomatik oluşturulur; oturum açılır. Aynı e-posta ve şifre ile web uygulamasına (/login) da giriş yapabilirsiniz. Paket içeriği web sitemizdeki pazarlama metniyle uyumludur."
     static let accountSection = "Hesap bilgileri"
     static let companyName = "Firma adı"
+    static let ownerMobile = "Cep telefonu (isteğe bağlı)"
+    static let ownerMobileHint =
+      "İsteğe bağlı. Girerseniz +90 ile kaydedilir; tanıdık bir numara ise hoş geldin SMS gönderebilir. Boş bırakabilirsiniz."
+    static let ownerPhoneInvalid = "Geçerli bir cep numarası girin (10 hane, 5 ile başlar)."
     static let purchaseAndRegister = "Satın al ve hesap oluştur"
     static let appStorePriceLabel = "App Store ödeme tutarı"
     static let referencePriceLabel = "Web sitesi referans fiyatı"
@@ -65,6 +84,17 @@ enum TrStrings {
     static let termsOfUseEULA = "Kullanım Şartları (EULA)"
     static let autoRenewSubscriptionNotice =
       "Otomatik yenilenen yıllık abonelik. Ödeme App Store’dan; iptal en az 24 saat önce (Hesap → Abonelikler)."
+    static let restorePurchases = "Satın alımları geri yükle"
+    static let restorePurchasesHint =
+      "App Store ile eşitler; bu Apple hesabında aktif kurumsal abonelik varsa cihaza yansır. Uygulamaya firma hesabınızla giriş yapmanız gerekir."
+    static let restoreSuccessTitle = "Abonelik bulundu"
+    static let restoreSuccessBody =
+      "App Store ile eşitleme tamamlandı; bu Apple hesabında aktif abonelik var. Şirket e-postanız ve şifrenizle «Giriş yap» kullanın."
+    static let restoreNoEntitlement =
+      "Bu Apple hesabıyla bu uygulamanın kurumsal aboneliği App Store kayıtlarında görünmüyor. Sık nedenler: (1) Aboneliği satın alan Apple Kimliği farklı — Ayarlar → App Store’dan satın alma için oturum açtığınız kimliği kontrol edin. (2) Test/satın alma App Store Sandbox hesabıylaysa (Xcode/TestFlight/In‑App Purchases sandbox), ortam uyumsuzluğu: satın almayı gerçekleştirdiğiniz sandbox Apple Kimliğiyle deneyin. (3) Ürün hiç App Store ile satın alınmadı veya yayın sürecinde yanlış `IAP_PRODUCT_ID` yüklendi. Henüz firmayı kurduysanız abonelik yalnızca satın alan Apple Kimliğiyle ilişkilidir — uygulamaya yine firma e‑postanızla «Giriş yapın»."
+    static let restoreSubscriptionInactive =
+      "Bu Apple hesabıyla daha önce abonelik vardı; süresi dolmuş veya iptal edilmiş görünüyor. Erişim için aboneliği yenileyebilir («Abone ol») veya destek ile iletişime geçebilirsiniz."
+    static let restoreFailedFmt = "Geri yükleme başarısız: %@"
   }
 
   enum Signup {

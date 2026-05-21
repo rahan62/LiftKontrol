@@ -58,10 +58,6 @@ struct MainShellView: View {
     }
   }
 
-  private var additionalRoutes: [AppRoute] {
-    AppRoute.additional.filter { access.includes(route: $0) }
-  }
-
   var body: some View {
     NavigationStack(path: $navPath) {
       detailView(for: selected ?? leadTabRoute)
@@ -119,13 +115,6 @@ struct MainShellView: View {
         Section(TrStrings.Layout.menuSection) {
           ForEach(menuPrimarySectionRoutes) { route in
             menuRow(route)
-          }
-        }
-        if access == .admin, !additionalRoutes.isEmpty {
-          Section(TrStrings.Layout.otherSection) {
-            ForEach(additionalRoutes) { route in
-              menuRow(route)
-            }
           }
         }
         Section(TrStrings.Layout.sessionSection) {
@@ -218,8 +207,6 @@ struct MainShellView: View {
         AssetCreateView(client: client)
       case "/app/maintenance":
         MaintenanceMonthView(client: client)
-      case "/app/stock":
-        StockListView(client: client)
       case "/app/maintenance/parts":
         PartsUsageListView(client: client)
       case "/app/schedule":
@@ -247,7 +234,7 @@ struct MainShellView: View {
       case "/app/accounting":
         FinancesListView(client: client)
       case "/app/settings":
-        WorkspaceSettingsView(client: client)
+        WorkspaceSettingsView(client: client, onAccountDeleted: { await onSignOut() })
       default:
         ModulePlaceholderView(route: route)
       }

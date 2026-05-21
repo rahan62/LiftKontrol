@@ -25,13 +25,19 @@ function staleMinutes(): number {
   return Number.isFinite(n) && n > 0 ? n : DEFAULT_STALE_MIN;
 }
 
-/** Kuyruğa ekle (sunucu tarafı; tenant opsiyonel). */
+export type EnqueueSmsOutboxResult =
+  | { ok: true; id: string }
+  | { ok: true; skipped: true }
+  | { ok: false; error: string };
+
+/** Kuyruğa ekle (sunucu tarafı; tenant opsiyonel). `dedupeKey` doluysa aynı tenant+anahtar ikinci kez eklenmez. */
 export async function enqueueSmsOutbox(input: {
   tenantId: string | null;
   phone: string;
   body: string;
   maxAttempts?: number;
-}): Promise<{ ok: true; id: string } | { ok: false; error: string }> {
+  dedupeKey?: string | null;
+}): Promise<EnqueueSmsOutboxResult> {
   const normalized = normalizeTrGsmForNetgsm(input.phone);
   if (!normalized) {
     return { ok: false, error: "Geçersiz GSM (10 hane, 5 ile başlamalı)" };
@@ -43,7 +49,27 @@ export async function enqueueSmsOutbox(input: {
   const maxAttempts =
     input.maxAttempts != null && input.maxAttempts > 0 ? Math.min(input.maxAttempts, 20) : 5;
 
+  const dedupe = input.dedupeKey?.trim() ?? "";
   const pool = getPool();
+
+  if (dedupe && !input.tenantId) {
+    return { ok: false, error: "dedupe_key kullanımı için tenant_id zorunlu" };
+  }
+
+  if (dedupe && input.tenantId) {
+    const { rows } = await pool.query<{ id: string | null }>(
+      `insert into public.sms_outbox (tenant_id, phone, body, max_attempts, dedupe_key)
+       values ($1::uuid, $2, $3, $4, $5)
+       on conflict (tenant_id, dedupe_key) where dedupe_key is not null
+       do nothing
+       returning id::text`,
+      [input.tenantId, normalized, body, maxAttempts, dedupe],
+    );
+    const id = rows[0]?.id;
+    if (!id) return { ok: true, skipped: true };
+    return { ok: true, id };
+  }
+
   const { rows } = await pool.query<{ id: string }>(
     `insert into public.sms_outbox (tenant_id, phone, body, max_attempts)
      values ($1::uuid, $2, $3, $4)

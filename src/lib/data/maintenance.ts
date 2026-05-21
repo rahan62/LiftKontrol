@@ -23,6 +23,8 @@ export async function listElevatorMonthOverview(
   const { rows } = await pool.query<{
     asset_id: string;
     unit_code: string;
+    maintenance_fee: unknown;
+    maintenance_fee_period: string | null;
     site_id: string;
     site_name: string;
     customer_name: string;
@@ -33,6 +35,8 @@ export async function listElevatorMonthOverview(
   }>(
     `SELECT ea.id AS asset_id,
             ea.unit_code,
+            ea.maintenance_fee,
+            ea.maintenance_fee_period,
             s.id AS site_id,
             s.name AS site_name,
             c.legal_name AS customer_name,
@@ -54,6 +58,8 @@ export async function listElevatorMonthOverview(
   return rows.map((r) => ({
     asset_id: r.asset_id,
     unit_code: r.unit_code,
+    maintenance_fee: r.maintenance_fee,
+    maintenance_fee_period: r.maintenance_fee_period,
     site_id: r.site_id,
     site_name: r.site_name,
     customer_name: r.customer_name,

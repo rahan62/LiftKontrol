@@ -9,3 +9,15 @@ export function normalizeTrGsmForNetgsm(raw: string): string | null {
   if (!/^5\d{9}$/.test(s)) return null;
   return s;
 }
+
+/** Veritabanı / gösterim için E.164 (+905xxxxxxxxxx). */
+export function formatTrGsmE164(raw: string): string | null {
+  const ten = normalizeTrGsmForNetgsm(raw);
+  if (!ten) return null;
+  return `+90${ten}`;
+}
+
+/** Saklı veya yapıştırılmış değerden UI için 10 hane (yoksa boş). */
+export function trGsmTenDigitsFromAny(raw: string | null | undefined): string {
+  return normalizeTrGsmForNetgsm(raw ?? "") ?? "";
+}

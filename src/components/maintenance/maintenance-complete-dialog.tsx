@@ -13,6 +13,12 @@ function defaultStatus(): Record<string, string> {
   return o;
 }
 
+function positiveFee(amount: unknown): number | null {
+  if (amount === null || amount === undefined) return null;
+  const n = typeof amount === "number" ? amount : Number(amount);
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
 type Props = {
   open: boolean;
   unitLabel: string;
@@ -21,6 +27,8 @@ type Props = {
   assetId: string;
   initialNotes?: string | null;
   initialChecklist?: Record<string, string> | null;
+  maintenanceFeePeriod?: string | null;
+  maintenanceFee?: unknown;
 };
 
 export function MaintenanceCompleteDialog({
@@ -31,12 +39,19 @@ export function MaintenanceCompleteDialog({
   assetId,
   initialNotes,
   initialChecklist,
+  maintenanceFeePeriod,
+  maintenanceFee,
 }: Props) {
   const router = useRouter();
   const [notes, setNotes] = useState("Tamamlandı");
   const [status, setStatus] = useState<Record<string, string>>(defaultStatus);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [postContractedMonthlyFee, setPostContractedMonthlyFee] = useState(false);
+
+  const feeAmt = positiveFee(maintenanceFee);
+  const eligibleForMonthlyContractFee =
+    String(maintenanceFeePeriod ?? "").trim() === "monthly" && feeAmt !== null;
 
   useEffect(() => {
     if (!open) return;
@@ -50,6 +65,7 @@ export function MaintenanceCompleteDialog({
     }
     setStatus(base);
     setError(null);
+    setPostContractedMonthlyFee(false);
   }, [open, initialNotes, initialChecklist]);
 
   const checklistJson = useMemo(() => JSON.stringify(status), [status]);
@@ -59,7 +75,13 @@ export function MaintenanceCompleteDialog({
   async function submit() {
     setError(null);
     setPending(true);
-    const res = await upsertMonthlyMaintenanceAction(assetId, yearMonth, notes, checklistJson);
+    const res = await upsertMonthlyMaintenanceAction(
+      assetId,
+      yearMonth,
+      notes,
+      checklistJson,
+      postContractedMonthlyFee,
+    );
     setPending(false);
     if (!res.ok) {
       setError("Kayıt başarısız");
@@ -80,7 +102,29 @@ export function MaintenanceCompleteDialog({
           {tr.maintenance.monthlyDialogTitle} — {unitLabel}
         </h3>
         <p className="mt-1 text-xs text-slate-500">{tr.maintenance.monthlyDialogSubtitle}</p>
-        <p className="mt-2 text-xs text-amber-800/90 dark:text-amber-200/90">{tr.maintenance.monthlyFinanceAutoHint}</p>
+        {eligibleForMonthlyContractFee && feeAmt !== null ? (
+          <label className="mt-3 flex cursor-pointer items-start gap-2 rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-900/50">
+            <input
+              type="checkbox"
+              className="mt-0.5"
+              checked={postContractedMonthlyFee}
+              onChange={(e) => setPostContractedMonthlyFee(e.target.checked)}
+            />
+            <span>
+              <span className="font-medium text-slate-900 dark:text-slate-100">{tr.maintenance.postMonthlyFeeCheckbox}</span>
+              <span className="mt-1 block text-xs font-mono text-slate-700 dark:text-slate-300">
+                {Intl.NumberFormat("tr-TR", { style: "currency", currency: "TRY", maximumFractionDigits: 2 }).format(
+                  feeAmt,
+                )}
+              </span>
+              <span className="mt-1 block text-xs text-slate-600 dark:text-slate-400">
+                {tr.maintenance.postMonthlyFeeCheckboxHint}
+              </span>
+            </span>
+          </label>
+        ) : (
+          <p className="mt-2 text-xs text-slate-600 dark:text-slate-400">{tr.maintenance.monthlyFeeOptionalWhenConfigured}</p>
+        )}
 
         <div className="mt-4 space-y-3">
           {MONTHLY_MAINTENANCE_CHECKPOINTS.map((c) => (

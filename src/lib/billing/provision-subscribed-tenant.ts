@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { resolveUniqueTenantSlug, slugifyTenantName } from "@/lib/billing/tenant-slug";
+import { sendTenantWelcomeSmsBestEffort } from "@/lib/sms/tenant-welcome-sms";
 
 export function isDuplicateEmailAdminCreateUser(err: { message?: string; code?: string }): boolean {
   const code = err.code;
@@ -35,6 +36,7 @@ export async function provisionSubscribedTenant(
     password: string;
     companyName: string;
     subscriptionFields: SubscriptionInsertFields;
+    ownerPhoneE164?: string | null;
   },
 ): Promise<{
   tenantId: string;
@@ -46,6 +48,7 @@ export async function provisionSubscribedTenant(
   const password = input.password;
   const companyName = input.companyName.trim();
   const subscriptionFields = input.subscriptionFields;
+  const ownerPhoneE164 = input.ownerPhoneE164?.trim() || null;
 
   let userId: string | null = null;
   let createdNewAuthUser = false;
@@ -145,6 +148,14 @@ export async function provisionSubscribedTenant(
       await service.auth.admin.deleteUser(userId);
     }
     throw e;
+  }
+
+  if (createdTenantThisRequest && ownerPhoneE164) {
+    try {
+      await sendTenantWelcomeSmsBestEffort(companyName, ownerPhoneE164);
+    } catch (e) {
+      console.warn("[provisionSubscribedTenant] welcome sms failed", e);
+    }
   }
 
   return {

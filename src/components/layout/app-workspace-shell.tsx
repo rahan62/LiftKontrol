@@ -3,7 +3,7 @@
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { signOutClient } from "@/lib/auth/sign-out-client";
 import { BrandLogo } from "@/components/layout/brand-logo";
-import { appNavItems } from "@/components/layout/app-nav-config";
+import { appNavSections } from "@/components/layout/app-nav-config";
 import { cn } from "@/lib/utils";
 import { tr } from "@/lib/i18n/tr";
 import { Menu, X } from "lucide-react";
@@ -33,30 +33,37 @@ function NavLinks({
   onNavigate?: () => void;
 }) {
   return (
-    <nav className="flex-1 space-y-0.5 overflow-y-auto overscroll-contain p-2">
-      {appNavItems.map((item) => {
-        const active =
-          item.href === "/app"
-            ? pathname === "/app"
-            : pathname === item.href || pathname.startsWith(`${item.href}/`);
-        const Icon = item.icon;
-        return (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={onNavigate}
-            className={cn(
-              "flex min-h-11 items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors lg:min-h-0 lg:gap-2 lg:px-2 lg:py-1.5",
-              active
-                ? "bg-slate-800 text-white"
-                : "text-slate-400 hover:bg-slate-900 hover:text-white",
-            )}
-          >
-            <Icon className="h-5 w-5 shrink-0 opacity-80 lg:h-4 lg:w-4" />
-            <span className="truncate">{item.label}</span>
-          </Link>
-        );
-      })}
+    <nav className="flex-1 space-y-3 overflow-y-auto overscroll-contain p-2">
+      {appNavSections.map((section) => (
+        <div key={section.heading} className="space-y-0.5">
+          <div className="px-2 pt-1 pb-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+            {section.heading}
+          </div>
+          {section.items.map((item) => {
+            const active =
+              item.href === "/app"
+                ? pathname === "/app"
+                : pathname === item.href || pathname.startsWith(`${item.href}/`);
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={onNavigate}
+                className={cn(
+                  "flex min-h-11 items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors lg:min-h-0 lg:gap-2 lg:px-2 lg:py-1.5",
+                  active
+                    ? "bg-teal-600 text-white shadow-sm"
+                    : "text-slate-400 hover:bg-slate-900 hover:text-white",
+                )}
+              >
+                <Icon className="h-5 w-5 shrink-0 opacity-90 lg:h-4 lg:w-4" />
+                <span className="truncate">{item.label}</span>
+              </Link>
+            );
+          })}
+        </div>
+      ))}
     </nav>
   );
 }

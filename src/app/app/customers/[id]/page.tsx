@@ -1,7 +1,7 @@
 import { BillingAddressCard } from "@/components/display/billing-address";
 import { DeleteCustomerButton } from "@/components/forms/delete-button";
 import { DataTableShell } from "@/components/module/data-table-shell";
-import { getCustomer } from "@/lib/data/customers";
+import { getCustomer, getPrimaryCustomerContact } from "@/lib/data/customers";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
 import Link from "next/link";
@@ -16,6 +16,8 @@ export default async function CustomerDetailPage({ params }: Props) {
 
   const customer = await getCustomer(ctx.tenantId, id);
   if (!customer) notFound();
+
+  const primaryContact = await getPrimaryCustomerContact(ctx.tenantId, id);
 
   return (
     <DataTableShell
@@ -47,12 +49,29 @@ export default async function CustomerDetailPage({ params }: Props) {
     >
       <div className="grid gap-4 lg:grid-cols-3">
         <div className="rounded-lg border border-slate-200 bg-white p-4 text-sm dark:border-slate-800 dark:bg-slate-950">
+          <div className="text-xs font-semibold uppercase text-slate-500">{tr.customers.primaryContactSection}</div>
+          {primaryContact ? (
+            <dl className="mt-2 space-y-2 text-slate-700 dark:text-slate-300">
+              <div>
+                <dt className="text-xs text-slate-500">{tr.customers.primaryContactName}</dt>
+                <dd className="mt-0.5">{primaryContact.name}</dd>
+              </div>
+              <div>
+                <dt className="text-xs text-slate-500">{tr.customers.primaryContactMobile}</dt>
+                <dd className="mt-0.5">{primaryContact.phone ?? "—"}</dd>
+              </div>
+            </dl>
+          ) : (
+            <p className="mt-2 text-slate-600 dark:text-slate-400">{tr.customers.primaryContactEmpty}</p>
+          )}
+        </div>
+        <div className="rounded-lg border border-slate-200 bg-white p-4 text-sm dark:border-slate-800 dark:bg-slate-950">
           <div className="text-xs font-semibold uppercase text-slate-500">{tr.customers.billingSection}</div>
           <div className="mt-2">
             <BillingAddressCard billing={customer.billing_address} />
           </div>
         </div>
-        <div className="rounded-lg border border-slate-200 bg-white p-4 text-sm dark:border-slate-800 dark:bg-slate-950 lg:col-span-2">
+        <div className="rounded-lg border border-slate-200 bg-white p-4 text-sm dark:border-slate-800 dark:bg-slate-950 lg:col-span-3">
           <div className="text-xs font-semibold uppercase text-slate-500">{tr.customers.notesSection}</div>
           <p className="mt-2 text-slate-700 dark:text-slate-300">{String(customer.notes ?? "—")}</p>
         </div>

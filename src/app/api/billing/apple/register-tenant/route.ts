@@ -6,8 +6,9 @@ import {
   type VerifiedAppleSubscription,
 } from "@/lib/billing/verify-apple-transaction";
 import { createServiceRoleSupabaseClient } from "@/lib/supabase/service-role";
+import { formatTrGsmE164 } from "@/lib/sms/phone-tr";
 
-/** App Store ödemesi sonrası kiracı: Auth kullanıcı + `tenants` (+ üyelik) + `tenant_subscriptions`. Aynı e-posta/şifre web `/login` ve iOS Supabase oturumu ile uyumludur. Native `IapSubscribeSheet` burayı çağırır. */
+/** App Store ödemesi sonrası kiracı: Auth kullanıcı + `tenants` (+ üyelik) + `tenant_subscriptions`. Gövde: transactionId, companyName, email, password; `ownerPhone` (Türkiye GSM +90…) isteğe bağlı. Native `IapSubscribeSheet` burayı çağırır. */
 export const runtime = "nodejs";
 
 type Body = {
@@ -15,6 +16,7 @@ type Body = {
   companyName?: string;
   email?: string;
   password?: string;
+  ownerPhone?: string;
 };
 
 function bad(msg: string, status = 400) {
@@ -43,6 +45,11 @@ export async function POST(request: Request) {
   const companyName = String(body.companyName ?? "").trim();
   const email = String(body.email ?? "").trim().toLowerCase();
   const password = String(body.password ?? "");
+  const ownerPhoneRaw = String(body.ownerPhone ?? "").trim();
+  const ownerPhoneE164 = ownerPhoneRaw ? formatTrGsmE164(ownerPhoneRaw) : null;
+  if (ownerPhoneRaw && !ownerPhoneE164) {
+    return bad("Cep telefonu geçersiz (10 hane, 5 ile başlar) veya alanı boş bırakın.");
+  }
 
   if (!transactionId || !companyName || !email || !password) {
     return bad("transactionId, companyName, email ve password gerekli.");
@@ -85,6 +92,7 @@ export async function POST(request: Request) {
       email,
       password,
       companyName,
+      ownerPhoneE164: ownerPhoneE164 ?? undefined,
       subscriptionFields: {
         plan_code: "apple_iap",
         status: "active",

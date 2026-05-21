@@ -8,6 +8,14 @@
     {
       "path": "/api/cron/sms-outbox",
       "schedule": "0 14 * * *"
+    },
+    {
+      "path": "/api/cron/sms-enqueue-maintenance",
+      "schedule": "30 * * * *"
+    },
+    {
+      "path": "/api/cron/sms-monthly-cari",
+      "schedule": "0 6 1 * *"
     }
   ]
 }

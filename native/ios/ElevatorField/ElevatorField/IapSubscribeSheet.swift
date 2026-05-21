@@ -67,8 +67,11 @@ struct IapSubscribeSheet: View {
   @State private var email = ""
   @State private var password = ""
   @State private var passwordConfirm = ""
+  @State private var ownerPhone = ""
   @State private var busy = false
+  @State private var restoreBusy = false
   @State private var message: String?
+  @State private var showRestoreSuccess = false
 
   private let contentMaxWidth: CGFloat = 400
 
@@ -113,7 +116,7 @@ struct IapSubscribeSheet: View {
           Button(TrStrings.Common.cancel) {
             dismiss()
           }
-          .disabled(busy)
+          .disabled(busy || restoreBusy)
           .foregroundStyle(.white.opacity(0.85))
         }
       }
@@ -127,6 +130,11 @@ struct IapSubscribeSheet: View {
         async let m: Void = loadMarketing()
         async let p: Void = loadStoreProduct()
         _ = await (m, p)
+      }
+      .alert(TrStrings.Iap.restoreSuccessTitle, isPresented: $showRestoreSuccess) {
+        Button(TrStrings.Common.ok) {}
+      } message: {
+        Text(TrStrings.Iap.restoreSuccessBody)
       }
     }
   }
@@ -312,6 +320,24 @@ struct IapSubscribeSheet: View {
         .foregroundStyle(.white)
         .padding(12)
         .background(fieldBackground(stroke: passwordStroke))
+
+      fieldLabel(TrStrings.Iap.ownerMobile)
+      TextField("5XXXXXXXXX (boş bırakılabilir)", text: $ownerPhone)
+        .textContentType(.telephoneNumber)
+        .keyboardType(.phonePad)
+        .foregroundStyle(.white)
+        .padding(12)
+        .background(fieldBackground(stroke: ownerPhoneStroke))
+        .onChange(of: ownerPhone) { _, newValue in
+          let clipped = String(normalizedTenDigits(newValue).prefix(10))
+          if clipped != ownerPhone {
+            ownerPhone = clipped
+          }
+        }
+      Text(TrStrings.Iap.ownerMobileHint)
+        .font(.caption2)
+        .foregroundStyle(IapSubscribePalette.muted.opacity(0.85))
+        .fixedSize(horizontal: false, vertical: true)
     }
   }
 
@@ -341,6 +367,31 @@ struct IapSubscribeSheet: View {
     Color.white.opacity(0.12)
   }
 
+  private var ownerPhoneStroke: Color {
+    if ownerPhone.isEmpty { return neutralFieldStroke }
+    return ownerPhoneValid ? Color.green.opacity(0.55) : Color.orange.opacity(0.62)
+  }
+
+  private var ownerPhoneValid: Bool {
+    guard !ownerPhone.isEmpty else { return true }
+    let d = String(normalizedTenDigits(ownerPhone).prefix(10))
+    guard d.count == 10, let first = d.first else { return false }
+    return first == "5"
+  }
+
+  /// Türkiye GSM için yapıştırılmış metinden rakamları çıkarır (`90`, baştaki `0` şeridi atılır).
+  private func normalizedTenDigits(_ raw: String) -> String {
+    let digitsOnly = raw.filter { $0.isNumber }
+    var d = digitsOnly
+    if d.count >= 12, d.hasPrefix("90") {
+      d = String(d.dropFirst(2))
+    }
+    if d.count >= 11, d.hasPrefix("0") {
+      d = String(d.dropFirst())
+    }
+    return d
+  }
+
   private var bottomBar: some View {
     VStack(spacing: 10) {
       if let message {
@@ -350,6 +401,29 @@ struct IapSubscribeSheet: View {
           .multilineTextAlignment(.center)
           .frame(maxWidth: .infinity)
       }
+      Button {
+        Task { await restorePurchasesOnly() }
+      } label: {
+        Group {
+          if restoreBusy {
+            ProgressView()
+              .tint(IapSubscribePalette.amber)
+          } else {
+            Text(TrStrings.Iap.restorePurchases)
+              .font(.subheadline.weight(.semibold))
+          }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
+        .background(
+          RoundedRectangle(cornerRadius: 12, style: .continuous)
+            .strokeBorder(IapSubscribePalette.amber.opacity(0.55), lineWidth: 1)
+        )
+        .foregroundStyle(IapSubscribePalette.amber)
+      }
+      .buttonStyle(.plain)
+      .disabled(busy || restoreBusy)
+      .accessibilityHint(TrStrings.Iap.restorePurchasesHint)
       Button {
         Task { await purchaseAndRegister() }
       } label: {
@@ -366,12 +440,12 @@ struct IapSubscribeSheet: View {
         .padding(.vertical, 14)
         .background(
           RoundedRectangle(cornerRadius: 12, style: .continuous)
-            .fill(canSubmit && !busy ? IapSubscribePalette.amber : IapSubscribePalette.amber.opacity(0.35))
+            .fill(canSubmit && !busy && !restoreBusy ? IapSubscribePalette.amber : IapSubscribePalette.amber.opacity(0.35))
         )
         .foregroundStyle(Color(red: 0.12, green: 0.1, blue: 0.06))
       }
       .buttonStyle(.plain)
-      .disabled(!canSubmit || busy)
+      .disabled(!canSubmit || busy || restoreBusy)
       Text(TrStrings.Iap.purchaseAndRegister)
         .font(.caption2)
         .foregroundStyle(IapSubscribePalette.muted)
@@ -391,6 +465,7 @@ struct IapSubscribeSheet: View {
       && !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
       && password.count >= 8
       && password == passwordConfirm
+      && ownerPhoneValid
   }
 
   private func loadMarketing() async {
@@ -417,6 +492,26 @@ struct IapSubscribeSheet: View {
     }
   }
 
+  private func restorePurchasesOnly() async {
+    restoreBusy = true
+    message = nil
+    defer { restoreBusy = false }
+    do {
+      switch try await LiftStoreKitPurchase.restoreSubscriptionEntitlements() {
+      case .activeEntitlementFound:
+        showRestoreSuccess = true
+      case .inactivePriorPurchase:
+        message = TrStrings.Iap.restoreSubscriptionInactive
+      case .noMatchingPurchaseFound:
+        message = TrStrings.Iap.restoreNoEntitlement
+      }
+    } catch let e as LiftPurchaseError {
+      message = e.localizedDescription
+    } catch {
+      message = String(format: TrStrings.Iap.restoreFailedFmt, error.localizedDescription)
+    }
+  }
+
   private func purchaseAndRegister() async {
     busy = true
     message = nil
@@ -428,18 +523,30 @@ struct IapSubscribeSheet: View {
     }
 
     do {
+      let ten = String(normalizedTenDigits(ownerPhone).prefix(10))
+      if !ten.isEmpty {
+        guard ten.count == 10, ten.first == "5" else {
+          message = TrStrings.Iap.ownerPhoneInvalid
+          return
+        }
+      }
+
       let product = try await LiftStoreKitPurchase.loadSubscriptionProduct()
       let transactionId = try await LiftStoreKitPurchase.purchase(product)
 
-      var req = URLRequest(url: api)
-      req.httpMethod = "POST"
-      req.setValue("application/json", forHTTPHeaderField: "Content-Type")
-      let payload: [String: String] = [
+      var payload: [String: Any] = [
         "transactionId": transactionId,
         "companyName": companyName.trimmingCharacters(in: .whitespacesAndNewlines),
         "email": email.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(),
         "password": password,
       ]
+      if ten.count == 10, ten.first == "5" {
+        payload["ownerPhone"] = "+90\(ten)"
+      }
+
+      var req = URLRequest(url: api)
+      req.httpMethod = "POST"
+      req.setValue("application/json", forHTTPHeaderField: "Content-Type")
       req.httpBody = try JSONSerialization.data(withJSONObject: payload)
 
       let (data, response) = try await URLSession.shared.data(for: req)

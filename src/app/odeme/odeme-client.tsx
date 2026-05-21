@@ -203,8 +203,10 @@ export function OdemeClient({
           <input
             name="gsmNumber"
             required
-            placeholder="05xx xxx xx xx"
-            className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white"
+            placeholder="5XXXXXXXXX veya 05XX..."
+            inputMode="numeric"
+            autoComplete="tel-national"
+            className="mt-1 w-full rounded-md border border-slate-700 bg-slate-950 px-3 py-2 text-white placeholder:text-slate-500"
           />
         </div>
         <div>

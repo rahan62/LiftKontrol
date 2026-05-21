@@ -184,6 +184,8 @@ export function MaintenanceMonthClient({ year, month, initialRows }: Props) {
         yearMonth={yearMonth}
         initialNotes={dialogRow?.notes ?? null}
         initialChecklist={dialogRow?.monthly_checklist ?? null}
+        maintenanceFee={dialogRow?.maintenance_fee}
+        maintenanceFeePeriod={dialogRow?.maintenance_fee_period ?? null}
         onClose={() => setDialogRow(null)}
       />
     </div>

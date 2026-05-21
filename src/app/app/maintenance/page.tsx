@@ -4,6 +4,7 @@ import { listElevatorMonthOverview } from "@/lib/data/maintenance";
 import { firstDayOfMonth } from "@/lib/domain/maintenance-month";
 import { tr } from "@/lib/i18n/tr";
 import { getTenantContext } from "@/lib/tenant/server";
+import { ClipboardList } from "lucide-react";
 import { redirect } from "next/navigation";
 
 export default async function MaintenancePage({
@@ -26,7 +27,7 @@ export default async function MaintenancePage({
   const rows = await listElevatorMonthOverview(ctx.tenantId, ym);
 
   return (
-    <DataTableShell title={tr.maintenance.title} description={tr.maintenance.description}>
+    <DataTableShell titleIcon={ClipboardList} title={tr.maintenance.title} description={tr.maintenance.description}>
       <MaintenanceMonthClient year={y} month={m} initialRows={rows} />
     </DataTableShell>
   );

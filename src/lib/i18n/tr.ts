@@ -58,6 +58,13 @@ export const tr = {
     submit: "Şifreyi kaydet",
   },
   nav: {
+    sectionOverview: "Genel",
+    sectionCustomerFlow: "Müşteri & saha",
+    sectionFinance: "Finans & sözleşme",
+    sectionTechnical: "Bakım & uyumluluk",
+    sectionFieldOps: "Saha operasyonu",
+    sectionInsight: "Raporlar & belgeler",
+    sectionCompany: "Şirket",
     dashboard: "Panel",
     customers: "Müşteriler",
     accounting: "Muhasebe",
@@ -120,8 +127,11 @@ export const tr = {
     monthlyDialogTitle: "Aylık bakım ziyareti",
     monthlyDialogSubtitle:
       "Sözleşmeli aylık bakımda ray, kapı, motor yağı, fren ve tampon kontrolleri; sonuçları kaydedin.",
-    monthlyFinanceAutoHint:
-      "Sözleşmede aylık bakım ücreti tanımlı ve dönem «aylık» ise, kayıt finansa otomatik eklenir (tekrar oluşturulmaz).",
+    postMonthlyFeeCheckbox: "Bu ay için sözleşme bakım ücretini cariye borç olarak yaz",
+    postMonthlyFeeCheckboxHint:
+      "İşaretlenmezse bu ekrandan yalnızca bakım kaydı oluşur. Borç oluşturmak için «Bekleyen tahsilatlar» veya asansör sayfasından da ekleyebilirsiniz.",
+    monthlyFeeOptionalWhenConfigured:
+      "Ünitede aylık sözleşme ücreti / dönemi tanımlı değilse cari için otomatik borç seçeneği gösterilmez (isterseniz muhasebe formundan elle ekleyin).",
     monthlyCheckCol: "Aylık kontrol",
     updateMonthly: "Güncelle",
   },
@@ -329,6 +339,15 @@ export const tr = {
     accountCode: "Hesap kodu",
     optionalPlaceholder: "İsteğe bağlı",
     billingAddressSection: "Fatura adresi",
+    primaryContactSection: "Yetkili iletişim (SMS / cari bildirimleri)",
+    primaryContactName: "Yetkili adı",
+    primaryContactMobile: "Cep telefonu",
+    primaryContactMobileHint: "Türkiye cep: 10 hane, 5 ile başlar. Ülke kodu otomatik eklenir (+90).",
+    primaryContactNeedPhone: "Yetkili adı yazdıysanız geçerli bir cep numarası girin.",
+    primaryContactNeedName: "Cep numarası girdiyseniz yetkili adını yazın.",
+    primaryContactNeedTenDigits: "Cep numarası tam 10 hane olmalıdır (5 ile başlar).",
+    primaryContactInvalidGsm: "Geçersiz cep numarası. Örnek format: 5XX XXX XX XX.",
+    primaryContactEmpty: "Henüz birincil yetkili kaydı yok. Düzenle ile ekleyebilirsiniz.",
     createCustomer: "Müşteri oluştur",
     statusLabels: {
       active: "Aktif",
