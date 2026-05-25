@@ -16,8 +16,10 @@ export function revisionCompletionMarker(revisionId: string): string {
 }
 
 /**
- * After final inspection, record **remaining** revision fee as one elevator-scoped row
- * (total teklif − peşinat ve önceki otomatik tamamlama satırları). Tek satır; idempotent.
+ * Son kontrol sonrası tek bir asansör kapsamlı borç/satır oluşturur (idempotent).
+ * Anlaşılan teklif tutarı (`total_fee_try`) üzerinden, bu revizyona daha önce işlenmiş
+ * (peşinat + aynı revizyonun otomatik kapanış) satırları düştükten sonraki **kalan** tutar yazılır.
+ * Kalan 0 TRY olsa bile (veya anlaşılan tutar 0 olsa bile) kayıt eklenir; bekleyen tahsilat için 0 ise `paid`.
  */
 export async function maybeCreateRevisionCompletionFinance(
   tenantId: string,
@@ -43,28 +45,36 @@ export async function maybeCreateRevisionCompletionFinance(
     return { created: false };
   }
 
-  const total = opts.totalFeeTry;
-  if (!Number.isFinite(total) || total <= 0) {
-    return { created: false };
-  }
+  const agreedTry = Number.isFinite(opts.totalFeeTry) && opts.totalFeeTry >= 0 ? opts.totalFeeTry : 0;
 
   const already = await sumRevisionLinkedFinanceAmount(tenantId, opts.revisionId, opts.elevatorAssetId);
-  const remaining = Math.max(0, total - already);
-  if (remaining <= 0.009) {
-    return { created: false };
-  }
+  const remainingTry = Math.max(0, agreedTry - already);
+  const amountPosted = Number(remainingTry.toFixed(2));
 
   const ticketLabel = TICKET_TR[opts.finalTicket];
+  const agreedFmt = agreedTry.toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  let label = `Revizyon bakiyesi — ${opts.unitCode} (${ticketLabel} bilet)`;
+  if (amountPosted <= 0 && agreedTry > 0) {
+    label = `Revizyon tamamı — ${opts.unitCode} (${ticketLabel} bilet) · kalan 0 TRY`;
+  }
+  if (amountPosted <= 0 && agreedTry <= 0) {
+    label = `Revizyon tamamı — ${opts.unitCode} (${ticketLabel} bilet) · 0 TRY`;
+  }
+
   const result = await insertFinanceEntry(tenantId, {
     site_id: null,
     elevator_asset_id: opts.elevatorAssetId,
     entry_type: "fee",
-    amount: remaining,
+    amount: amountPosted,
     currency: "TRY",
-    label: `Revizyon bakiyesi — ${opts.unitCode} (${ticketLabel} bilet)`,
-    notes: `${marker}\nKontrol sonrası otomatik kayıt (kalan tutar, peşinat düşülmüş).`,
+    label,
+    notes: `${marker}\nAnlaşılan revizyon tutarı: ${agreedFmt} TRY. Kontrol tamamı; cariye yazılan kalan tutar ${amountPosted.toFixed(2)} TRY (otomatik).`,
     occurred_on: opts.occurredOn,
-    payment_status: "unpaid",
+    payment_status: amountPosted > 0 ? "unpaid" : "paid",
   });
 
   if (!result.ok) {

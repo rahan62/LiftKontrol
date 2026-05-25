@@ -13,6 +13,7 @@ import {
 import type { ElevatorRevisionDetail } from "@/lib/data/elevator-revisions";
 import { tr } from "@/lib/i18n/tr";
 import { btnPrimary, field, label } from "@/components/forms/field-classes";
+import { TicketTierSwatch } from "@/components/en8120/ticket-tier-swatch";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -412,8 +413,8 @@ export function RevisionWorkflowPanel({ rev }: Props) {
                     className="mt-0.5 rounded border-slate-300"
                   />
                   <span>
-                    <span className="font-mono text-xs text-amber-700">{l.article_code}</span> {l.title}
-                    <span className="ml-2 text-xs text-slate-500">({TIER_LABEL[l.ticket_tier] ?? l.ticket_tier})</span>
+                    <span className="font-mono text-xs text-amber-700">{l.article_code}</span> {l.title}{" "}
+                    <TicketTierSwatch tier={l.ticket_tier} className="ml-1 align-middle" />
                   </span>
                 </label>
               </li>

@@ -1,6 +1,7 @@
 "use client";
 
 import { createElevatorRevisionAction } from "@/actions/elevator-revisions";
+import { TicketTierSwatch } from "@/components/en8120/ticket-tier-swatch";
 import type { RevisionArticleRow } from "@/lib/data/revision-articles";
 import { tr } from "@/lib/i18n/tr";
 import { btnPrimary, field, label } from "@/components/forms/field-classes";
@@ -99,17 +100,17 @@ export function CreateRevisionModal({ open, periodicControlId, articles, onClose
                     className="mt-1 rounded border-slate-300"
                   />
                   <span className="min-w-0 flex-1 text-sm">
-                    <span className="font-mono text-xs text-amber-700 dark:text-amber-400">{a.article_code}</span>{" "}
-                    <span className="rounded bg-slate-100 px-1 text-[10px] uppercase text-slate-600 dark:bg-slate-800 dark:text-slate-400">
-                      {a.ticket_tier}
-                    </span>{" "}
-                    <span className="text-slate-900 dark:text-slate-100">{a.title}</span>
-                    <span className="ml-2 font-mono text-xs text-slate-500">
-                      {parseCost(a.default_cost_try).toLocaleString("tr-TR", {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                      })}{" "}
-                      ₺
+                    <span className="inline-flex flex-wrap items-center gap-1.5 align-middle">
+                      <span className="font-mono text-xs text-amber-700 dark:text-amber-400">{a.article_code}</span>
+                      <TicketTierSwatch tier={a.ticket_tier} />{" "}
+                      <span className="text-slate-900 dark:text-slate-100">{a.title}</span>
+                      <span className="ml-auto font-mono text-xs text-slate-500 sm:ml-2">
+                        {parseCost(a.default_cost_try).toLocaleString("tr-TR", {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        })}{" "}
+                        ₺
+                      </span>
                     </span>
                   </span>
                 </label>

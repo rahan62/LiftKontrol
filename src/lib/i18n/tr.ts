@@ -146,6 +146,17 @@ export const tr = {
       "Revizyon, periyodik kontrole hazırlıktır; her maddenin revizyon gerektiğinde maliyeti tanımlanabilir.",
     nextControlDueHint:
       "Planlanan periyodik kontrol son tarihi. 20 gün kala ana sayfada «yaklaşan kontroller» listesinde gösterilir.",
+    revisionArticleNew: "Yeni madde",
+    revisionArticleEdit: "Maddeyi düzenle",
+    revisionArticleCode: "Madde kodu",
+    revisionArticleTitle: "Başlık",
+    revisionArticleDescription: "Açıklama",
+    revisionArticleDefaultCost: "Varsayılan maliyet (TRY)",
+    revisionArticleCodeCol: "Kod",
+    revisionArticleTitleCol: "Başlık",
+    revisionArticleTryCol: "TRY",
+    revisionArticlesEmpty:
+      "Henüz madde yok. «Yeni madde» ile revizyon kataloğuna kalem ekleyin; fiyat ve etiket bandını burada veya düzenlemeden güncelleyebilirsiniz.",
   },
   stock: {
     title: "Stok / envanter",

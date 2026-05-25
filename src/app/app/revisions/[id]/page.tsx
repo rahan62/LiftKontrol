@@ -1,4 +1,5 @@
 import { RevisionWorkflowPanel } from "@/components/revisions/revision-workflow-panel";
+import { TicketTierSwatch } from "@/components/en8120/ticket-tier-swatch";
 import { DataTableShell } from "@/components/module/data-table-shell";
 import { formatMoneyAmount } from "@/lib/format/money";
 import { getElevatorRevision } from "@/lib/data/elevator-revisions";
@@ -118,7 +119,11 @@ export default async function RevisionDetailPage({ params }: Props) {
               {rev.lines.map((l) => (
                 <tr key={l.id}>
                   <td className="px-4 py-2 font-mono text-xs text-amber-700 dark:text-amber-400">{l.article_code}</td>
-                  <td className="px-4 py-2 text-xs capitalize text-slate-600">{l.ticket_tier}</td>
+                  <td className="px-4 py-2">
+                    <div className="flex justify-center py-0.5">
+                      <TicketTierSwatch tier={l.ticket_tier} />
+                    </div>
+                  </td>
                   <td className="px-4 py-2">
                     <div className="font-medium text-slate-900 dark:text-slate-100">{l.title}</div>
                     {l.description ? (

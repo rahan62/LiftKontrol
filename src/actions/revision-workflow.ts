@@ -295,7 +295,8 @@ export async function submitFinalInspectionAction(
 
   let financeEntryId: string | undefined;
   if (ticket && (ticket === "green" || ticket === "blue" || ticket === "yellow" || ticket === "red")) {
-    const totalFeeTry = Number.parseFloat(meta.total_fee_try);
+    const totalParsed = Number.parseFloat(meta.total_fee_try);
+    const totalFeeTry = Number.isFinite(totalParsed) ? totalParsed : 0;
     const occurredOn = new Date().toISOString().slice(0, 10);
     const fee = await maybeCreateRevisionCompletionFinance(tenantId, {
       revisionId,
